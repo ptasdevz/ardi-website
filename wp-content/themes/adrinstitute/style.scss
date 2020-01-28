@@ -1,0 +1,80 @@
+/* 
+Theme Name: ADR Institute
+Author: ptasdevz
+Version: 1.0
+*/
+$body-bck-grnd-color: #e7e7e7;
+$primary-color: #1D2089;
+$seondary-color: #C96033;
+$testimonial-color: #FDF9F2;
+body{
+    background:$body-bck-grnd-color;
+    margin: 0;
+    height: 100vh; //percentage of the view port height 1== 1% of the view port
+    width: 90vw;
+}
+.grid_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 4.5fr 0.85fr 5.29fr 4.83fr 1.28fr;
+    grid-template-areas:
+    "header         header          header          header" 
+    "img_carousel img_carousel  img_carousel  img_carousel"
+    "req_assesment  req_assesment   sign_up         sign_up"
+    "main           main            main            main"
+    "testimonial    testimonial     testimonial     testimonial"
+    "footer         footer          footer          footer";
+    
+}
+header{
+    background:$primary-color;
+    width: 100%;
+    grid-area: header;
+ 
+}
+section.img_carousel {
+    background: brown;
+    grid-area: img_carousel;
+}
+section.req_assesment {
+    background: $seondary-color;
+    grid-area: req_assesment;
+}
+section.sign_up {
+    background: $seondary-color;
+    grid-area: sign_up;
+
+}
+main {
+    background: #fff;
+    grid-area: main;
+    display:grid;
+    width:100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "kids_corner our_svc  pt_resources  community";
+    section.kids_corner {
+        grid-area: kids_corner;
+    }
+    section.our_svc {
+        grid-area: our_svc;
+    }
+
+    section.pt_resources {
+        grid-area: pt_resources;
+    }
+    section.community {
+        grid-area: community;
+    }
+}
+section.testimonial {
+    background: $testimonial-color;
+    grid-area: testimonial;
+}
+
+footer {
+    background:$primary-color;
+    width: 100%;
+    grid-area: footer;
+}

@@ -5,5 +5,5 @@
 </head>
 
 <body <?php body_class(); ?>>
-
-<header class="sticky-top"></header>
+<div class="grid_container">
+<header class="sticky-top">header</header>
