@@ -1,13 +1,43 @@
-<?php get_header(); ?>
-    <section class="img_carousel">img_carousel</section>
-    <section class="req_assesment">req_assesment</section>
-    <section class="sign_up">signup</section>
-    <main>
-        main
-        <section class="kids_corner">kids corner</section>
-        <section class="our_svc">our services</section>
-        <section class="pt_resources">parent teacher resources</section>
-        <section class="community">community</section>
-    </main>
-    <section class="testimonial">testimonial</section>
+<?php
+ get_header();
+$upload_dir = wp_upload_dir();
+//echo "<pre>";
+        // print_r($upload_dir["basedir"]. '/2020/01/imgs/');
+        //print_r($respDecode);
+        //print_r($respDecode->success);
+?>
+<section class="img_carousel">img_carousel</section>
+<section class="req_assesment">req_assesment</section>
+<section class="sign_up">signup</section>
+<main>
+    <div id="kids_corner" class="card">
+        <img src="<?php echo get_template_directory_uri();  ?>/assets/imgs/kids_corner.png" alt="kids_corner">
+        <div class="info">
+            <h6>kids corner</h6>
+            <p>reading activities worksheets instructional videos</p>
+        </div>
+    </div>
+    <div id="our_svc" class="card">
+        <img src="<?php echo get_template_directory_uri();  ?>/assets/imgs/our_services.png" alt="our_services">
+        <div class="info">
+            <h6>our services</h6>
+            <p>Reading Assessment Remedial Reading Remedial Writing Stories and Essay Writing and more...</p>
+        </div>
+    </div>
+    <div id="pt_resources" class="card">
+        <img src="<?php echo get_template_directory_uri();  ?>/assets/imgs/pt_resources.png" alt="pt_resources">
+        <div class="info">
+            <h6>parent teacher resources</h6>
+            <p>Get tips and trick to help your child improve their reading and writing. </p>
+        </div>
+    </div>
+    <div id="community" class="card">
+        <img src="<?php echo get_template_directory_uri();  ?>/assets/imgs/community_scaled.png" alt="community">
+        <div class="info">
+            <h6>Community</h6>
+            <p>Join our community and ask questions on topics related to literacy and learning. </p>
+        </div>
+    </div>
+</main>
+<section class="testimonial">testimonial</section>
 <?php get_footer(); ?>
