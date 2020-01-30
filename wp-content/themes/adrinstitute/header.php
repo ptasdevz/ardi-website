@@ -6,4 +6,4 @@
 
 <body <?php body_class(); ?>>
 <div class="grid_container">
-<header class="sticky-top">header</header>
+<header>header</header>

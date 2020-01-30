@@ -1,14 +1,30 @@
 <?php
- get_header();
+get_header();
 $upload_dir = wp_upload_dir();
 //echo "<pre>";
-        // print_r($upload_dir["basedir"]. '/2020/01/imgs/');
-        //print_r($respDecode);
-        //print_r($respDecode->success);
+// print_r($upload_dir["basedir"]. '/2020/01/imgs/');
+//print_r($respDecode);
+//print_r($respDecode->success);
 ?>
-<section class="img_carousel">img_carousel</section>
-<section class="req_assesment">req_assesment</section>
-<section class="sign_up">signup</section>
+    <section class="s_img_rq_assessment_signup">
+        <div class="s_rq_assessment_signup">
+            <div class="card rq_assessment">
+                <div class="info">
+                    <h6>request an assessment</h6>
+                    <p>discover your child's reading level</p>
+                </div>
+                <div class="card-background"></div>
+            </div>
+            <div class="card signup">
+                <div class="info">
+                    <h6>signup</h6>
+                    <p>help your strugginlg reader</p>
+                </div>
+                <div class="card-background"></div>
+            </div>
+        </div>
+        <div class="img_carousel"></div>
+    </section>
 <main>
     <div id="kids_corner" class="card">
         <img src="<?php echo get_template_directory_uri();  ?>/assets/imgs/kids_corner.png" alt="kids_corner">
@@ -39,5 +55,5 @@ $upload_dir = wp_upload_dir();
         </div>
     </div>
 </main>
-<section class="testimonial">testimonial</section>
+<section class="s_testimonial">testimonial</section>
 <?php get_footer(); ?>

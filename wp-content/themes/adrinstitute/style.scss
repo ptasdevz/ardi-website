@@ -4,98 +4,154 @@ Author: ptasdevz
 Version: 1.0
 */
 $body-bck-grnd-color: #e7e7e7;
-$primary-color: #1D2089;
-$seondary-color: #EEB335;
-$testimonial-color: #FDF9F2;
-$main-card-colors:rgb(127,3,9), rgb(58,136,138), rgb(58,136,138),  rgb(58,136,138);
-body{
-    background:$body-bck-grnd-color;
-    margin: 0;
-    height: 100vh; //percentage of the view port height 1== 1% of the view port
+$primary-color: #1d2089;
+$secondary-color: #eeb335;
+$secondary-color-80: hsl(41, 78, 93);
+$s_req_assessment_signup-card-colors: $secondary-color, $secondary-color;
+$s_req_assessment_signup-border-color: #c96033;
+$s_req_assessment_signup-text-header-color: #7f0309;
+$s_req_assessment_signup-text-color: #fff;
+$main-card-colors: $s_req_assessment_signup-text-header-color, rgb(58, 136, 138), rgb(58, 136, 138), rgb(58, 136, 138);
+$s_testimonial-color: #fdf9f2;
+$transform-scale-factor:0.95;
+
+body {
+  margin: 0px auto 0px auto;
+  width: 100%;
+  background: $body-bck-grnd-color;
+  height: 100vh; //percentage of the view port height 1== 1% of the view port
 }
 .grid_container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 4.5fr 0.85fr 5.29fr 4.83fr 1.28fr;
-    grid-template-areas:
-    "header         header          header          header" 
-    "img_carousel img_carousel  img_carousel  img_carousel"
-    "req_assesment  req_assesment   sign_up         sign_up"
-    "main           main            main            main"
-    "testimonial    testimonial     testimonial     testimonial"
-    "footer         footer          footer          footer";
-    
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 5.35fr 5.29fr 4.83fr 1.28fr;
+  grid-template-areas:
+    "header                      header                       header                        header"
+    "s_img_rq_assessment_signup  s_img_rq_assessment_signup   s_img_rq_assessment_signup    s_img_rq_assessment_signup"
+    "main                        main                         main                          main"
+    "s_testimonial               s_testimonial                s_testimonial                 s_testimonial"
+    "footer                      footer                       footer                        footer";
 }
-header{
-    background:$primary-color;
+header {
+  background: $primary-color;
+  width: 100%;
+  height: 100%;
+  grid-area: header;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+section.s_img_rq_assessment_signup {
+  grid-area: s_img_rq_assessment_signup;
+  width: 100%;
+  position: relative;
+
+  .img_carousel {
     width: 100%;
-    grid-area: header;
- 
-}
-section.img_carousel {
-    background: brown;
-    grid-area: img_carousel;
-}
-section.req_assesment {
-    background: $seondary-color;
-    grid-area: req_assesment;
-}
-section.sign_up {
-    background: $seondary-color;
-    grid-area: sign_up;
+    height: 100%;
+    background-image: url("assets/imgs/home_img.png");
+    background-size: cover;
+    position: absolute;
+  }
 
-}
-main {
-    background: #fff;
-    padding: 2rem;
-    grid-area: main;
-    display:grid;
-    grid-gap: 1.5rem;
-    width:100%;
-    grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));
+  .s_rq_assessment_signup {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+
     .card {
+      background-color: transparent;
+      border-color: $s_req_assessment_signup-border-color;
+      transition: transform 1s;
+      z-index: 1;
 
-        @for $i from 1 through 4 {
-            &:nth-of-type(#{$i}){
-                h6{
-                    background: nth($main-card-colors, $i);
-                }
-            }
-        }
-        transition: transform 1s;
-        &:hover{
-            transform: translateY(-10px);
-        }
-        img{
-            width:100%;
-        }
-        .info {
-        
-            text-align: center;
-            p {
-                font-family: 'Segoe UI';
-                text-transform: capitalize;
-                padding: .5rem 4rem;
-            }
-            h6 {
-                text-transform: uppercase;
-                font-weight: bold;
-                font-family: 'Candara';
-                color: $seondary-color;
-                margin:0;
-                padding: .5rem;
-            }
+      &:hover {
+        transform: scale($transform-scale-factor);
+      }
 
+      .card-background {
+        @for $i from 1 through 2 {
+          &:nth-of-type(#{$i}) {
+            background: nth($s_req_assessment_signup-card-colors, $i);
+          }
         }
+        opacity: 0.4;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: -1;
+      }
+      .info {
+        text-align: center;
+        font-family: Candara;
+        text-transform: capitalize;
+        font-size: 1.2rem;
+        color: $s_req_assessment_signup-text-color;
+
+        h6 {
+          margin: 0;
+          font-family: lemongrass-script, sans-serif;
+          text-transform: uppercase;
+          padding-top: 1rem;
+          font-size: 1.1rem;
+          color: $s_req_assessment_signup-text-header-color;
+        }
+      }
     }
+  }
 }
-section.testimonial {
-    background: $testimonial-color;
-    grid-area: testimonial;
+
+main {
+  background: #fff;
+  padding: 2rem;
+  grid-area: main;
+  display: grid;
+  grid-gap: 1.5rem;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  .card {
+    @for $i from 1 through 4 {
+      &:nth-of-type(#{$i}) {
+        h6 {
+          background: nth($main-card-colors, $i);
+        }
+      }
+    }
+    transition: transform 1s;
+    &:hover {
+      transform: scale($transform-scale-factor);
+    }
+    img {
+      width: 100%;
+    }
+    .info {
+      text-align: center;
+      p {
+        font-family: "Segoe UI";
+        text-transform: capitalize;
+        padding: 0.5rem 4rem;
+      }
+      h6 {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-family: "Candara";
+        color: $secondary-color;
+        margin: 0;
+        padding: 0.5rem;
+      }
+    }
+  }
+}
+section.s_testimonial {
+  background: $s_testimonial-color;
+  grid-area: s_testimonial;
 }
 
 footer {
-    background:$primary-color;
-    width: 100%;
-    grid-area: footer;
+  background: $primary-color;
+  width: 100%;
+  grid-area: footer;
 }
