@@ -1,0 +1,210 @@
+/* 
+Theme Name: ADR Institute
+Author: ptasdevz
+Version: 1.0
+*/
+body {
+  margin: 0px auto 0px auto;
+  width: 80vw;
+  background: #e7e7e7;
+  height: 100vh;
+}
+
+.grid_container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 5.35fr 5.29fr 4.83fr 1.28fr;
+      grid-template-rows: 1fr 5.35fr 5.29fr 4.83fr 1.28fr;
+      grid-template-areas: "header                      header                       header                        header" "s_img_rq_assessment_signup  s_img_rq_assessment_signup   s_img_rq_assessment_signup    s_img_rq_assessment_signup" "main                        main                         main                          main" "s_testimonial               s_testimonial                s_testimonial                 s_testimonial" "footer                      footer                       footer                        footer";
+}
+
+header {
+  background: #1d2089;
+  width: 100%;
+  height: 100%;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: header;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+section.s_img_rq_assessment_signup {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: s_img_rq_assessment_signup;
+  width: 100%;
+  position: relative;
+}
+
+section.s_img_rq_assessment_signup .img_carousel {
+  width: 100%;
+  height: 100%;
+  background-image: url("assets/imgs/home_img.png");
+  background-size: cover;
+  position: absolute;
+}
+
+section.s_img_rq_assessment_signup .home_page_text {
+  border: 1px solid green;
+  position: absolute;
+  top: 25%;
+  left: 12%;
+  z-index: 1;
+  text-align: center;
+  color: #7f0309;
+}
+
+section.s_img_rq_assessment_signup .home_page_text h1 {
+  font-weight: bold;
+  text-shadow: 2px 2px 2px #000;
+  color: #fff;
+}
+
+section.s_img_rq_assessment_signup .s_rq_assessment_signup {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(30rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+section.s_img_rq_assessment_signup .s_rq_assessment_signup .card {
+  background-color: transparent;
+  border-color: #c96033;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+  z-index: 1;
+}
+
+section.s_img_rq_assessment_signup .s_rq_assessment_signup .card:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+section.s_img_rq_assessment_signup .s_rq_assessment_signup .card .card-background {
+  opacity: 0.4;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+section.s_img_rq_assessment_signup .s_rq_assessment_signup .card .card-background:nth-of-type(1) {
+  background: #eeb335;
+}
+
+section.s_img_rq_assessment_signup .s_rq_assessment_signup .card .card-background:nth-of-type(2) {
+  background: #eeb335;
+}
+
+section.s_img_rq_assessment_signup .s_rq_assessment_signup .card .info {
+  text-align: center;
+  font-family: Candara;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+section.s_img_rq_assessment_signup .s_rq_assessment_signup .card .info h6 {
+  margin: 0;
+  font-family: lemongrass-script, sans-serif;
+  text-transform: uppercase;
+  padding-top: 1rem;
+  font-size: 1.1rem;
+  color: #7f0309;
+}
+
+main {
+  background: #fff;
+  padding: 2rem;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: main;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 1.5rem;
+  width: 100%;
+  -ms-grid-columns: (minmax(14rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+}
+
+main .card {
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+main .card:nth-of-type(1) h6 {
+  background: #7f0309;
+}
+
+main .card:nth-of-type(2) h6 {
+  background: #3a888a;
+}
+
+main .card:nth-of-type(3) h6 {
+  background: #3a888a;
+}
+
+main .card:nth-of-type(4) h6 {
+  background: #3a888a;
+}
+
+main .card:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+main .card img {
+  width: 100%;
+}
+
+main .card .info {
+  text-align: center;
+}
+
+main .card .info p {
+  font-family: "Segoe UI";
+  text-transform: capitalize;
+  padding: 0.5rem 4rem;
+}
+
+main .card .info h6 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Candara";
+  color: #eeb335;
+  margin: 0;
+  padding: 0.5rem;
+}
+
+section.s_testimonial {
+  background: #fdf9f2;
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: s_testimonial;
+}
+
+footer {
+  background: #1d2089;
+  width: 100%;
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: footer;
+}
+/*# sourceMappingURL=style1.css.map */

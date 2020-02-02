@@ -1,0 +1,9 @@
+{
+				"name": "adrinstitute",
+				"version": "1.0.0",
+				"description": "Custom Theme",
+				"author": "PtasDevz",
+				"dependencies": {
+								"@glidejs/glide": "^3.4.1"
+				}
+}

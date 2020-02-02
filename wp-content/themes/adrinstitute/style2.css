@@ -3,7 +3,6 @@ Theme Name: ADR Institute
 Author: ptasdevz
 Version: 1.0
 */
-@import url("https://fonts.googleapis.com/css?family=PlayFair+Display");
 body,
 html {
   height: 100%;
@@ -24,29 +23,59 @@ body .grid_container {
 }
 
 body .grid_container header {
-  background-color: #1d2089;
-  text-decoration: none;
-  z-index: 10;
-  margin: 0;
-  padding: 0;
-  height: 4rem;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  text-decoration: none;
+  background-color: #1d2089;
+  z-index: 1;
+  margin: 0;
+  padding: 16px;
 }
 
 body .grid_container header .header_info {
-  background: #1d2089;
   width: 100%;
-  height: 4rem;
+  height: 100%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 50% 50%;
       grid-template-columns: 50% 50%;
   -ms-grid-rows: 100%;
       grid-template-rows: 100%;
-      grid-template-areas: "logo nav-btn";
+      grid-template-areas: "logo nav-menu";
+}
+
+body .grid_container header .header_info .navigation {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: nav-menu;
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+body .grid_container header .header_info .navigation li {
   padding: 4px;
+}
+
+body .grid_container header .header_info .navigation li {
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+body .grid_container header .header_info .navigation li:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+body .grid_container header .header_info .navigation li a {
+  color: #fff !important;
+  font-weight: bold;
 }
 
 body .grid_container header .header_info .logo {
@@ -61,81 +90,13 @@ body .grid_container header .header_info .logo {
 body .grid_container header .header_info .logo img {
   -o-object-fit: contain;
      object-fit: contain;
-  width: 30%;
-  height: 100%;
+  width: 68%;
+  max-height: 100%;
   display: block;
   position: absolute;
   top: 50%;
   -webkit-transform: translate(0%, -50%);
           transform: translate(0%, -50%);
-}
-
-body .grid_container header .header_info .nav_btn {
-  background: #1d2089;
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
-  grid-area: nav-btn;
-  color: #fff;
-  text-align: right;
-  text-decoration: none;
-  margin: 0;
-  padding: 0;
-}
-
-body .grid_container header .header_info .nav_btn span {
-  font-size: 200%;
-  cursor: pointer;
-  text-align: center;
-  line-height: 2;
-  padding-right: 16px;
-}
-
-body .grid_container header .navigation {
-  width: 100%;
-  height: 0%;
-  background: #1d2089;
-  overflow-y: visible;
-  padding: 0;
-  margin: 0;
-  display: none;
-}
-
-body .grid_container header .navigation .navigation-content {
-  padding: 0 !important;
-  background: rgba(29, 32, 137, 0.98);
-  width: 100%;
-  height: 100vh;
-  text-align: center;
-  text-transform: uppercase;
-  position: relative;
-  text-align: center;
-}
-
-body .grid_container header .navigation .navigation-content .navigation-links {
-  list-style-type: none;
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  font-size: 2rem;
-  -webkit-transform: translate(-50%, -25%);
-          transform: translate(-50%, -25%);
-}
-
-body .grid_container header .navigation .navigation-content .navigation-links li {
-  padding: 16px 0;
-  -webkit-transition: -webkit-transform 1s;
-  transition: -webkit-transform 1s;
-  transition: transform 1s;
-  transition: transform 1s, -webkit-transform 1s;
-}
-
-body .grid_container header .navigation .navigation-content .navigation-links li:hover {
-  -webkit-transform: scale(0.95);
-          transform: scale(0.95);
-}
-
-body .grid_container header .navigation .navigation-content .navigation-links li a {
-  color: #fff !important;
 }
 
 body .grid_container section.s_img_rq_assessment_signup {
@@ -153,6 +114,7 @@ body .grid_container section.s_img_rq_assessment_signup .img_carousel {
 }
 
 body .grid_container section.s_img_rq_assessment_signup .home_page_text {
+  border: 1px solid green;
   position: absolute;
   top: 8%;
   text-align: center;
@@ -259,7 +221,7 @@ body .grid_container main .card .info {
 
 body .grid_container main .card .info p {
   text-transform: capitalize;
-  padding: 0.5rem;
+  padding: 0.5rem 0.5rem;
 }
 
 body .grid_container main .card .info h6 {
@@ -269,77 +231,6 @@ body .grid_container main .card .info h6 {
   color: #eeb335;
   margin: 0;
   padding: 0.5rem;
-}
-
-body .grid_container .s_testimonial {
-  background: #fdf9f2;
-  font-family: "PlayFair Display", "serif";
-  margin: 0;
-}
-
-body .grid_container .s_testimonial h1 {
-  color: #7f0309;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 50px;
-  font-weight: bold;
-  font-family: Candara;
-  padding-top: 1.5rem;
-}
-
-body .grid_container .s_testimonial figure {
-  background: #fff;
-  display: block;
-  padding: 0.5rem;
-}
-
-body .grid_container .s_testimonial figure blockquote {
-  font-size: 1.2rem;
-  font-style: italic;
-  padding: 0.5rem;
-  text-align: center;
-}
-
-body .grid_container .s_testimonial figure figcaption {
-  text-align: center;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-body .grid_container .s_testimonial .glide__arrow--right {
-  right: -70px !important;
-}
-
-body .grid_container .s_testimonial .glide__arrow--left {
-  left: -70px !important;
-}
-
-body .grid_container .s_testimonial .glide__arrow {
-  color: rgba(127, 3, 9, 0.7);
-}
-
-body .grid_container .s_testimonial .glide__bullets {
-  background: rgba(127, 3, 9, 0.7);
-  border-radius: 1.5rem;
-}
-
-body .grid_container .s_testimonial .glide__bullets button {
-  height: 0.5rem !important;
-  width: 0.5rem !important;
-}
-
-body .grid_container .s_testimonial .glide {
-  width: 80% !important;
-  margin: 12% auto 5% auto;
-}
-
-body .grid_container .s_testimonial .fa {
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
 }
 
 body .grid_container footer {
@@ -355,4 +246,4 @@ body .grid_container footer p {
   font-weight: bold;
   text-decoration: none;
 }
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style2.css.map */
