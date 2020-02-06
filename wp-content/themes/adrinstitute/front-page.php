@@ -6,6 +6,7 @@ $upload_dir = wp_upload_dir();
 //print_r($respDecode);
 //print_r($respDecode->success);
 ?>
+
 <section class="s_img_rq_assessment_signup">
     <div class="home_page_text">
         <h1>Assessment Diagnostic </h1>
@@ -14,14 +15,14 @@ $upload_dir = wp_upload_dir();
         <h3>Remediation That Works!</h3>
     </div>
     <div class="s_rq_assessment_signup">
-        <div class="card rq_assessment">
+        <div id ="rq_assessment" class="card">
             <div class="info">
                 <h6>request an assessment</h6>
                 <p>discover your child's reading level</p>
             </div>
             <div class="card-background"></div>
         </div>
-        <div class="card signup">
+        <div id ="signup" class="card">
             <div class="info">
                 <h6>signup</h6>
                 <p>help your strugginlg reader</p>
@@ -61,6 +62,7 @@ $upload_dir = wp_upload_dir();
         </div>
     </div>
 </main>
+
 <section class="s_testimonial">
     <div class="glide">
 

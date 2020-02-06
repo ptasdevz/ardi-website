@@ -4,38 +4,47 @@ Author: ptasdevz
 Version: 1.0
 */
 @import url("https://fonts.googleapis.com/css?family=PlayFair+Display");
-@import url("https://fonts.googleapis.com/css?family=candara");
-* {
-  margin: 0px;
-}
-
 body,
 html {
   height: 100%;
   width: 100%;
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  font-size: 35px;
   color: #707070;
 }
 
-body .grid_container header {
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+}
+
+body .grid_container {
+  background-color: #fff;
+  position: absolute;
   width: 100%;
-  height: 4rem;
+}
+
+body .grid_container header {
   background-color: #1d2089;
   text-decoration: none;
   z-index: 10;
+  margin: 0;
+  padding: 0;
+  height: 4rem;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  /*
-    *Desktop layout: Header info and navigation info. 
-    */
+}
+
+@media (min-width: 840px) {
+  body .grid_container header {
+    height: 2rem;
+  }
 }
 
 body .grid_container header .header_info {
   background: #1d2089;
+  width: 100%;
+  height: 4rem;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 50% 50%;
@@ -46,23 +55,38 @@ body .grid_container header .header_info {
   padding: 4px;
 }
 
+@media (min-width: 840px) {
+  body .grid_container header .header_info {
+    height: 2rem;
+  }
+}
+
 body .grid_container header .header_info .logo {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: logo;
+  width: 100%;
+  height: 100%;
   position: relative;
 }
 
 body .grid_container header .header_info .logo img {
-  width: 64px;
-  height: 64px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 30%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
 }
 
 body .grid_container header .header_info .nav_btn {
+  background: #1d2089;
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: nav-btn;
-  background: #1d2089;
   color: #fff;
   text-align: right;
   text-decoration: none;
@@ -124,83 +148,17 @@ body .grid_container header .navigation .navigation-content .navigation-links li
 
 body .grid_container header .navigation .navigation-content .navigation-links li a {
   color: #fff !important;
-  text-decoration: none;
-}
-
-body .grid_container header .navigation .navigation-content .navigation-links li a:hover {
-  color: #eeb335 !important;
-}
-
-@media (min-width: 840px) {
-  body .grid_container header {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 20% 80%;
-        grid-template-columns: 20% 80%;
-    -ms-grid-rows: 100%;
-        grid-template-rows: 100%;
-        grid-template-areas: "header-info nav";
-    height: 6rem;
-  }
-  body .grid_container header .header_info {
-    -ms-grid-columns: 100% 0%;
-        grid-template-columns: 100% 0%;
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    grid-area: header-info;
-  }
-  body .grid_container header .header_info .logo img {
-    position: absolute;
-    top: 0%;
-    width: 140px;
-    height: 140px;
-  }
-  body .grid_container header .nav_btn {
-    display: none;
-  }
-  body .grid_container header .navigation {
-    display: block;
-    -ms-grid-row: 1;
-    -ms-grid-column: 2;
-    grid-area: nav;
-    position: relative;
-    height: 100%;
-  }
-  body .grid_container header .navigation .navigation-content {
-    display: block;
-    height: auto;
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translate(0, -50%);
-            transform: translate(0, -50%);
-  }
-  body .grid_container header .navigation .navigation-content .navigation-links {
-    position: static;
-    font-size: 1rem;
-    font-weight: bold;
-    -webkit-transform: none;
-            transform: none;
-    text-align: left;
-    padding: 0px;
-  }
-  body .grid_container header .navigation .navigation-content .navigation-links li {
-    display: inline-block;
-    padding-right: 24px;
-  }
 }
 
 body .grid_container section.s_img_rq_assessment_signup {
   width: 100%;
-  height: 24rem;
+  height: 100%;
   position: relative;
-  /*
-    *Desktop Layout: image carousel with signup and request assesment links
-    */
 }
 
 body .grid_container section.s_img_rq_assessment_signup .img_carousel {
   width: 100%;
-  height: 100%;
+  height: 1000px;
   background-image: url("assets/imgs/home_img.png");
   background-size: cover;
   background-position: center;
@@ -209,18 +167,19 @@ body .grid_container section.s_img_rq_assessment_signup .img_carousel {
 body .grid_container section.s_img_rq_assessment_signup .home_page_text {
   position: absolute;
   top: 8%;
-  padding-left: 4px;
   text-align: center;
   color: #7f0309;
 }
 
+body .grid_container section.s_img_rq_assessment_signup .home_page_text h1 {
+  font-size: 50px;
+}
+
 body .grid_container section.s_img_rq_assessment_signup .home_page_text h3 {
-  font-size: 16px;
-  font-weight: normal;
+  font-size: 40px;
 }
 
 body .grid_container section.s_img_rq_assessment_signup .home_page_text h1 {
-  font-size: 20px;
   font-weight: bold;
   text-shadow: 2px 2px 2px #000;
   color: #fff;
@@ -234,7 +193,7 @@ body .grid_container section.s_img_rq_assessment_signup .s_rq_assessment_signup 
 
 body .grid_container section.s_img_rq_assessment_signup .s_rq_assessment_signup .card {
   background-color: rgba(242, 164, 57, 0.7);
-  border: 1px solid rgba(127, 3, 9, 0.4);
+  border-color: #7f0309;
   -webkit-transition: -webkit-transform 1s;
   transition: -webkit-transform 1s;
   transition: transform 1s;
@@ -248,7 +207,7 @@ body .grid_container section.s_img_rq_assessment_signup .s_rq_assessment_signup 
 
 body .grid_container section.s_img_rq_assessment_signup .s_rq_assessment_signup .card .info {
   text-align: center;
-  font-family: "Candara";
+  font-family: Candara;
   text-transform: capitalize;
   font-size: 1.2rem;
   color: #fdf9f2;
@@ -256,63 +215,22 @@ body .grid_container section.s_img_rq_assessment_signup .s_rq_assessment_signup 
 
 body .grid_container section.s_img_rq_assessment_signup .s_rq_assessment_signup .card .info h6 {
   margin: 0;
-  font-family: "lemongrass-script, sans-serif";
+  font-family: lemongrass-script, sans-serif;
   text-transform: uppercase;
   padding-top: 1rem;
   font-size: 1.1rem;
   color: #7f0309;
 }
 
-@media (min-width: 840px) {
-  body .grid_container section.s_img_rq_assessment_signup {
-    height: 25rem;
-  }
-  body .grid_container section.s_img_rq_assessment_signup .img_carousel {
-    background-size: cover;
-    background-position: center;
-  }
-  body .grid_container section.s_img_rq_assessment_signup .home_page_text {
-    top: 34%;
-    left: 4%;
-  }
-  body .grid_container section.s_img_rq_assessment_signup .home_page_text h3 {
-    font-size: 26px;
-  }
-  body .grid_container section.s_img_rq_assessment_signup .home_page_text h1 {
-    font-size: 30px;
-  }
-  body .grid_container section.s_img_rq_assessment_signup .s_rq_assessment_signup {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 50% 50%;
-        grid-template-columns: 50% 50%;
-    -ms-grid-rows: 100%;
-        grid-template-rows: 100%;
-        grid-template-areas: "rq_assessment signup";
-  }
-  body .grid_container section.s_img_rq_assessment_signup .s_rq_assessment_signup #rq_assessment {
-    -ms-grid-row: 1;
-    -ms-grid-column: 1;
-    grid-area: rq_assessment;
-  }
-  body .grid_container section.s_img_rq_assessment_signup .s_rq_assessment_signup #signup {
-    -ms-grid-row: 1;
-    -ms-grid-column: 2;
-    grid-area: signup;
-  }
-}
-
 body .grid_container main {
-  padding: 0 8px;
+  padding: 0 16px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(14rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  -ms-grid-columns: (minmax(12rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  width: 100%;
   grid-gap: 0.5rem;
   margin-top: 0.5rem;
-  /*
-        *Desktop layout for main area
-        */
 }
 
 body .grid_container main .card {
@@ -363,73 +281,51 @@ body .grid_container main .card .info h6 {
   color: #eeb335;
   margin: 0;
   padding: 0.5rem;
-  font-size: 1rem;
-}
-
-@media (min-width: 840px) {
-  body .grid_container main {
-    -ms-grid-columns: (minmax(12rem, 1fr))[auto-fit];
-        grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-    padding: 0 16px;
-    height: 20rem;
-  }
-  body .grid_container main .card .info p {
-    text-align: center;
-    width: 55%;
-    margin: 0 auto;
-  }
 }
 
 body .grid_container .s_testimonial {
   background: #fdf9f2;
   font-family: "PlayFair Display", "serif";
   margin: 0;
-  height: auto;
 }
 
 body .grid_container .s_testimonial h1 {
   color: #7f0309;
   text-transform: uppercase;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 50px;
   font-weight: bold;
   font-family: Candara;
   padding-top: 1.5rem;
 }
 
 body .grid_container .s_testimonial figure {
-  background: #fdf9f2;
+  background: #fff;
   display: block;
   padding: 0.5rem;
 }
 
 body .grid_container .s_testimonial figure blockquote {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-style: italic;
   padding: 0.5rem;
-  text-align: left;
+  text-align: center;
 }
 
 body .grid_container .s_testimonial figure figcaption {
-  text-align: right;
+  text-align: center;
   margin-bottom: 1rem;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-body .grid_container .s_testimonial .glide__track {
-  height: 14rem !important;
-}
-
 body .grid_container .s_testimonial .glide__arrow--right {
-  right: -50px !important;
-  top: 50%;
+  right: -70px !important;
 }
 
 body .grid_container .s_testimonial .glide__arrow--left {
-  left: -50px !important;
-  top: 50%;
+  left: -70px !important;
 }
 
 body .grid_container .s_testimonial .glide__arrow {
@@ -437,10 +333,8 @@ body .grid_container .s_testimonial .glide__arrow {
 }
 
 body .grid_container .s_testimonial .glide__bullets {
-  bottom: 2%;
   background: rgba(127, 3, 9, 0.7);
   border-radius: 1.5rem;
-  margin-bottom: 4px;
 }
 
 body .grid_container .s_testimonial .glide__bullets button {
@@ -449,7 +343,7 @@ body .grid_container .s_testimonial .glide__bullets button {
 }
 
 body .grid_container .s_testimonial .glide {
-  width: 70% !important;
+  width: 80% !important;
   margin: 12% auto 5% auto;
 }
 
@@ -460,19 +354,10 @@ body .grid_container .s_testimonial .fa {
   text-rendering: auto;
 }
 
-@media (min-width: 840px) {
-  body .grid_container .s_testimonial .glide__track {
-    height: auto !important;
-  }
-  body .grid_container .s_testimonial .glide {
-    width: 90% !important;
-  }
-}
-
 body .grid_container footer {
   background: #1d2089;
   width: 100%;
-  height: 4rem;
+  height: 9rem;
   padding: 16px;
 }
 
@@ -482,4 +367,4 @@ body .grid_container footer p {
   font-weight: bold;
   text-decoration: none;
 }
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style3.css.map */

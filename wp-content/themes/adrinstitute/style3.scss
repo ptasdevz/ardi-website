@@ -3,8 +3,6 @@ Theme Name: ADR Institute
 Author: ptasdevz
 Version: 1.0
 */
-@import url("https://fonts.googleapis.com/css?family=PlayFair+Display");
-@import url("https://fonts.googleapis.com/css?family=candara");
 
 $colors: (
   primary: #1d2089,
@@ -22,17 +20,13 @@ $colors: (
   text-2: #fff,
   text-3: #707070
 );
-
 $main-card-colors: #7f0309, #3a888a, #3a888a, #3a888a;
 $padding: 16px;
 $padding-nav: 4px;
 $padding-main-cards: 0.5rem;
 $header-height-mobile: 4rem;
-$img-rq-assesment-height-mobile: 24rem;
-$header-height-deskop: 6rem;
-$img-rq-assesment-height-desktop: 25rem;
-$main-height-desktop: 20rem;
 $transform-scale-factor: 0.95;
+
 @function color($color-name) {
   @return map-get($colors, $color-name);
 }
@@ -43,52 +37,70 @@ $desktop: 840px;
     @content;
   }
 }
-* {
-  margin: 0px;
-}
-
 body,
 html {
   height: 100%;
   width: 100%;
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  font-size: 35px;
   color: color(text-3);
 }
 body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+
   .grid_container {
+    background-color: color(base);
+    position: absolute;
+    width: 100%;
+
     header {
-      width: 100%;
-      height: $header-height-mobile;
+      
       background-color: color(primary);
       text-decoration: none;
       z-index: 10;
+      margin: 0;
+      padding: 0;
+      height: $header-height-mobile;
       position: sticky;
       top: 0;
 
+      @include desktop{
+        height: 2rem;
+      }
+
       .header_info {
         background: color(primary);
+        width: 100%;
+        height: $header-height-mobile;
         display: grid;
         grid-template-columns: 50% 50%;
         grid-template-rows: 100%;
         grid-template-areas: "logo nav-btn";
         padding: $padding-nav;
+        @include desktop{
+          height: 2rem;
+        }
 
         .logo {
           grid-area: logo;
+          width: 100%;
+          height: 100%;
           position: relative;
 
           img {
-            width: 64px;
-            height: 64px;
+            object-fit: contain;
+            width: 30%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 50%;
+            transform: translate(0%, -50%);
           }
         }
 
         .nav_btn {
-          grid-area: nav-btn;
           background: color(primary);
+          grid-area: nav-btn;
           color: color(text-2);
           text-align: right;
           text-decoration: none;
@@ -103,7 +115,6 @@ body {
           }
         }
       }
-
       .navigation {
         width: 100%;
         height: 0%;
@@ -140,68 +151,7 @@ body {
 
             li a {
               color: color(text-2) !important;
-              text-decoration: none;
-              &:hover {
-                color:color(secondary) !important;
-              }
-            }
-          }
-        }
-      }
-      /*
-    *Desktop layout: Header info and navigation info. 
-    */
-      @include desktop {
-        //desktop header grid
-        display: grid;
-        grid-template-columns: 20% 80%;
-        grid-template-rows: 100%;
-        grid-template-areas: "header-info nav";
-        height: $header-height-deskop;
-
-        .header_info {
-          grid-template-columns: 100% 0%; // mobile header grid
-          grid-area: header-info;
-          .logo {
-            img {
-              position: absolute;
-              top: 0%;
-              width: 140px;
-              height: 140px;
-            }
-          }
-        }
-        .nav_btn {
-          display: none;
-        }
-        .navigation {
-          display: block;
-          grid-area: nav;
-          position: relative;
-          height: 100%;
-
-          .navigation-content {
-            display: block;
-            height: auto;
-            position: absolute;
-            top: 50%;
-            transform: translate(0, -50%);
-
-            .navigation-links {
-              position: static;
-              font-size: 1rem;
-              font-weight: bold;
-              transform: none;
-              text-align: left;
-              padding: 0px;
-              li {
-                display: inline-block;
-                padding-right: 24px;
-                // transition: transform 1s;
-                // &:hover {
-                //   transform: scale($transform-scale-factor);
-                // }
-              }
+              //   font-weight: bold;
             }
           }
         }
@@ -209,12 +159,12 @@ body {
     }
     section.s_img_rq_assessment_signup {
       width: 100%;
-      height: $img-rq-assesment-height-mobile;
+      height: 100%;
       position: relative;
 
       .img_carousel {
         width: 100%;
-        height: 100%;
+        height: 1000px;
         background-image: url("assets/imgs/home_img.png");
         background-size: cover;
         background-position: center;
@@ -222,28 +172,37 @@ body {
       .home_page_text {
         position: absolute;
         top: 8%;
-        padding-left: $padding-nav;
         text-align: center;
         color: color(text-1);
+        h1 {
+          font-size: 50px;
+        }
         h3 {
-          font-size: 16px;
-          font-weight: normal;
+          font-size: 40px;
         }
         h1 {
-          font-size: 20px;
           font-weight: bold;
           text-shadow: 2px 2px 2px #000;
           color: color(text-2);
         }
       }
+
       .s_rq_assessment_signup {
+        // display: grid;
+        // grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+        // grid-template-columns: 100%;
+        // grid-template-rows: 50% 50%;
+        // grid-template-areas:
+        // "rq_assessment"
+        // "sign_up";
+
         width: 100%;
         position: absolute;
         bottom: 0;
 
         .card {
           background-color: color(secondary-transparent);
-          border: 1px solid rgba(127, 3, 9, 0.4);
+          border-color: color(accent);
           transition: transform 1s;
 
           &:hover {
@@ -252,14 +211,14 @@ body {
 
           .info {
             text-align: center;
-            font-family: "Candara";
+            font-family: Candara;
             text-transform: capitalize;
             font-size: 1.2rem;
             color: color(accent-1);
 
             h6 {
               margin: 0;
-              font-family: "lemongrass-script, sans-serif";
+              font-family: lemongrass-script, sans-serif;
               text-transform: uppercase;
               padding-top: 1rem;
               font-size: 1.1rem;
@@ -268,46 +227,12 @@ body {
           }
         }
       }
-      /*
-    *Desktop Layout: image carousel with signup and request assesment links
-    */
-      @include desktop {
-        height: $img-rq-assesment-height-desktop;
-
-        .img_carousel {
-          background-size: cover;
-          background-position: center;
-        }
-        .home_page_text {
-          top: 34%;
-          left: 4%;
-          h3 {
-            font-size: 26px;
-          }
-          h1 {
-            font-size: 30px;
-          }
-        }
-        .s_rq_assessment_signup {
-          display: grid;
-          grid-template-columns: 50% 50%;
-          grid-template-rows: 100%;
-          grid-template-areas: "rq_assessment signup";
-
-          #rq_assessment {
-            grid-area: rq_assessment;
-          }
-          #signup {
-            grid-area: signup;
-          }
-        }
-      }
     }
-
     main {
-      padding: 0 8px;
+      padding: 0 $padding;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+      width: 100%;
       grid-gap: $padding-main-cards;
       margin-top: $padding-main-cards;
       .card {
@@ -338,89 +263,64 @@ body {
             color: color(secondary);
             margin: 0;
             padding: $padding-main-cards;
-            font-size: 1rem;
-          }
-        }
-      }
-
-      /*
-        *Desktop layout for main area
-        */
-      @include desktop {
-        grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-        padding: 0 $padding;
-        height: $main-height-desktop;
-        .card {
-          .info {
-            p {
-              text-align: center;
-              width: 55%;
-              margin: 0 auto;
-            }
           }
         }
       }
     }
-
     .s_testimonial {
+      @import url("https://fonts.googleapis.com/css?family=PlayFair+Display");
       background: color(accent-1);
       font-family: "PlayFair Display", "serif";
       margin: 0;
-      height: auto;
       h1 {
         color: color(accent);
         text-transform: uppercase;
         text-align: center;
-        font-size: 1.5rem;
+        font-size: 50px;
         font-weight: bold;
         font-family: Candara;
         padding-top: 1.5rem;
       }
       figure {
-        background: color(accent-1);
+        background: color(text-2);
         display: block;
         padding: 0.5rem;
 
         blockquote {
-          font-size: 1rem;
+          font-size: 1.2rem;
           font-style: italic;
           padding: 0.5rem;
-          text-align: left;
+          text-align: center;
         }
         figcaption {
-          text-align: right;
+          text-align: center;
           margin-bottom: 1rem;
-          font-size: 0.7rem;
+          font-size: 0.9rem;
           font-weight: bold;
           text-transform: uppercase;
         }
       }
-      .glide__track {
-        height: 14rem !important;
-      }
       .glide__arrow--right {
-        right: -50px !important;
-        top: 50%;
+        right: -70px !important;
+        // top:50%;
       }
       .glide__arrow--left {
-        left: -50px !important;
-        top: 50%;
+        left: -70px !important;
+        // top:50%;
       }
       .glide__arrow {
         color: color(text-1-transparent);
       }
       .glide__bullets {
-        bottom: 2%;
         background: color(text-1-transparent);
         border-radius: 1.5rem;
-        margin-bottom: 4px;
         button {
           height: 0.5rem !important;
           width: 0.5rem !important;
         }
       }
       .glide {
-        width: 70% !important;
+        width: 80% !important;
         margin: 12% auto 5% auto;
       }
       .fa {
@@ -429,19 +329,11 @@ body {
         font-size: inherit;
         text-rendering: auto;
       }
-      @include desktop {
-        .glide__track {
-          height: auto !important;
-        }
-        .glide {
-          width: 90% !important;
-        }
-      }
     }
     footer {
       background: color(primary);
       width: 100%;
-      height: $header-height-mobile;
+      height: 9rem;
       padding: $padding;
       p {
         text-transform: uppercase;
