@@ -3,6 +3,7 @@
 //enqueue css style sheets
 function load_style_sheets()
 {
+
     // wp_register_style(
     //     'bootstrap_style',
     //     get_template_directory_uri() . '/assets/css/bootstrap/bootstrap.min.css',
@@ -10,7 +11,7 @@ function load_style_sheets()
     //     false,
     //     'all'
     // );
-    // wp_enqueue_style('bootstrap_style');
+    wp_enqueue_style('bootstrap_style');
 
     wp_enqueue_style('glider');
 
@@ -42,9 +43,19 @@ function load_style_sheets()
     );
     wp_enqueue_style('font_awesome');
 
+    wp_register_style(
+        'adobe_typekit',
+        "https://use.typekit.net/zos4hme.css",
+        array(),
+        false,
+        'all'
+    );
+    wp_enqueue_style('adobe_typekit');
 
     wp_register_style('scripts_style', get_template_directory_uri() . '/style.css', array(), false, 'all');
     wp_enqueue_style('scripts_style');
+
+
 }
 add_action('wp_enqueue_scripts', 'load_style_sheets');
 

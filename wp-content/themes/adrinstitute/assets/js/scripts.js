@@ -1,6 +1,6 @@
-$(document).ready(function () {
+    $(document).ready(function () {
 
-
+    // $("body").hide();
     //=======================Mobile Navigation Drawer=====================
     var hamburgerBtn = "☰";
     var times = "×";
@@ -11,10 +11,14 @@ $(document).ready(function () {
 
         if (currVal == hamburgerBtn) {
             $("#nav_drawer_btn span").html(times);
+            $("#nav_drawer_btn span").css("line-height","1.1");
+            $("#nav_drawer_btn span").css("font-size","300%");
             $(".navigation").slideDown();
         }
         else {
             $("#nav_drawer_btn span").html(hamburgerBtn);
+            $("#nav_drawer_btn span").css("line-height","2");
+            $("#nav_drawer_btn span").css("font-size","200%");
             $(".navigation").slideUp();
         }
 

@@ -9,16 +9,19 @@ Version: 1.0
 $colors: (
   primary: #1d2089,
   primary-overlay: rgba(29, 32, 137, 0.98),
+  primary-transparent: rgba(29, 32, 137, 0.7),
   secondary: #eeb335,
   secondary-transparent: rgba(242, 164, 57, 0.7),
   accent: #7f0309,
+  accent-transparent: rgba(127, 3, 9, 0.4),
   accent-1: #fdf9f2,
+  accent-1-darken: darken(#fdf9f2, 15%),
   accent-1-transparent: rgba(253, 249, 242, 0.9),
   accent-2: #3a888a,
-  base: #fff,
-  base-1: #e7e7e7,
+  base-1: #fff,
+  base: #e7e7e7,
   text-1: #7f0309,
-  text-1-transparent: rgba(127, 3, 9, 0.7),
+  text-1-transparent: rgba(127, 3, 9, 0.4),
   text-2: #fff,
   text-3: #707070
 );
@@ -43,6 +46,12 @@ $desktop: 840px;
     @content;
   }
 }
+$tablet: 702px;
+@mixin tablet {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
+}
 * {
   margin: 0px;
 }
@@ -56,9 +65,11 @@ html {
   margin-right: auto;
   font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
   color: color(text-3);
+  background: color(base);
 }
 body {
   .grid_container {
+    background: color(base-1);
     header {
       width: 100%;
       height: $header-height-mobile;
@@ -124,12 +135,13 @@ body {
           text-align: center;
 
           .navigation-links {
+            padding: 0 !important;
             list-style-type: none;
             position: absolute;
-            top: 25%;
+            top: 18%;
             left: 50%;
-            font-size: 2rem;
-            transform: translate(-50%, -25%);
+            font-size: 1.5rem;
+            transform: translate(-50%, -50%);
             li {
               padding: $padding-nav * 4 0;
               transition: transform 1s;
@@ -142,7 +154,7 @@ body {
               color: color(text-2) !important;
               text-decoration: none;
               &:hover {
-                color:color(secondary) !important;
+                color: color(secondary) !important;
               }
             }
           }
@@ -243,7 +255,7 @@ body {
 
         .card {
           background-color: color(secondary-transparent);
-          border: 1px solid rgba(127, 3, 9, 0.4);
+          border: 1px solid color(accent-transparent);
           transition: transform 1s;
 
           &:hover {
@@ -252,14 +264,16 @@ body {
 
           .info {
             text-align: center;
-            font-family: "Candara";
+            font-family: Candara, sans-serif;
             text-transform: capitalize;
             font-size: 1.2rem;
             color: color(accent-1);
 
             h6 {
               margin: 0;
-              font-family: "lemongrass-script, sans-serif";
+              font-family: lemongrass-script, sans-serif;
+              font-style: normal;
+              font-weight: 400;
               text-transform: uppercase;
               padding-top: 1rem;
               font-size: 1.1rem;
@@ -360,6 +374,23 @@ body {
           }
         }
       }
+      /*
+        *Desktop layout for main area
+        */
+      @include tablet {
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+        padding: 0 $padding;
+        height: $main-height-desktop;
+        .card {
+          .info {
+            p {
+              text-align: center;
+              width: 55%;
+              margin: 0 auto;
+            }
+          }
+        }
+      }
     }
 
     .s_testimonial {
@@ -407,11 +438,11 @@ body {
         top: 50%;
       }
       .glide__arrow {
-        color: color(text-1-transparent);
+        color: color(text-3);
       }
       .glide__bullets {
         bottom: 2%;
-        background: color(text-1-transparent);
+        background: color(accent-1-darken);
         border-radius: 1.5rem;
         margin-bottom: 4px;
         button {
@@ -440,7 +471,6 @@ body {
     }
     footer {
       background: color(primary);
-      width: 100%;
       height: $header-height-mobile;
       padding: $padding;
       p {

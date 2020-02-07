@@ -18,6 +18,11 @@ html {
   margin-right: auto;
   font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
   color: #707070;
+  background: #e7e7e7;
+}
+
+body .grid_container {
+  background: #fff;
 }
 
 body .grid_container header {
@@ -100,13 +105,14 @@ body .grid_container header .navigation .navigation-content {
 }
 
 body .grid_container header .navigation .navigation-content .navigation-links {
+  padding: 0 !important;
   list-style-type: none;
   position: absolute;
-  top: 25%;
+  top: 18%;
   left: 50%;
-  font-size: 2rem;
-  -webkit-transform: translate(-50%, -25%);
-          transform: translate(-50%, -25%);
+  font-size: 1.5rem;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 body .grid_container header .navigation .navigation-content .navigation-links li {
@@ -248,7 +254,7 @@ body .grid_container section.s_img_rq_assessment_signup .s_rq_assessment_signup 
 
 body .grid_container section.s_img_rq_assessment_signup .s_rq_assessment_signup .card .info {
   text-align: center;
-  font-family: "Candara";
+  font-family: Candara, sans-serif;
   text-transform: capitalize;
   font-size: 1.2rem;
   color: #fdf9f2;
@@ -256,7 +262,9 @@ body .grid_container section.s_img_rq_assessment_signup .s_rq_assessment_signup 
 
 body .grid_container section.s_img_rq_assessment_signup .s_rq_assessment_signup .card .info h6 {
   margin: 0;
-  font-family: "lemongrass-script, sans-serif";
+  font-family: lemongrass-script, sans-serif;
+  font-style: normal;
+  font-weight: 400;
   text-transform: uppercase;
   padding-top: 1rem;
   font-size: 1.1rem;
@@ -310,6 +318,9 @@ body .grid_container main {
       grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
   grid-gap: 0.5rem;
   margin-top: 0.5rem;
+  /*
+        *Desktop layout for main area
+        */
   /*
         *Desktop layout for main area
         */
@@ -380,6 +391,20 @@ body .grid_container main .card .info h6 {
   }
 }
 
+@media (min-width: 702px) {
+  body .grid_container main {
+    -ms-grid-columns: (minmax(10rem, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    padding: 0 16px;
+    height: 20rem;
+  }
+  body .grid_container main .card .info p {
+    text-align: center;
+    width: 55%;
+    margin: 0 auto;
+  }
+}
+
 body .grid_container .s_testimonial {
   background: #fdf9f2;
   font-family: "PlayFair Display", "serif";
@@ -433,12 +458,12 @@ body .grid_container .s_testimonial .glide__arrow--left {
 }
 
 body .grid_container .s_testimonial .glide__arrow {
-  color: rgba(127, 3, 9, 0.7);
+  color: #707070;
 }
 
 body .grid_container .s_testimonial .glide__bullets {
   bottom: 2%;
-  background: rgba(127, 3, 9, 0.7);
+  background: #f3dab0;
   border-radius: 1.5rem;
   margin-bottom: 4px;
 }
@@ -471,7 +496,6 @@ body .grid_container .s_testimonial .fa {
 
 body .grid_container footer {
   background: #1d2089;
-  width: 100%;
   height: 4rem;
   padding: 16px;
 }

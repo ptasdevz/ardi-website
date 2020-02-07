@@ -24,7 +24,7 @@
 
 	</head>
 
-	<body <?php body_class(); ?>>
+	<body <?php body_class(); ?> style="display: none">
 
 		<?php
 		wp_body_open();

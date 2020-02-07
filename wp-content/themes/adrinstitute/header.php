@@ -5,6 +5,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+    <!-- <script>0</script> -->
     <div class="grid_container">
         <header>
 
