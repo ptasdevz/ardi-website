@@ -56,6 +56,7 @@ body .grid_container header .header_info .logo {
   -ms-grid-column: 1;
   grid-area: logo;
   position: relative;
+  z-index: 10;
 }
 
 body .grid_container header .header_info .logo img {
@@ -317,6 +318,9 @@ body .grid_container main {
   -ms-grid-columns: (minmax(14rem, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
   grid-gap: 0.5rem;
+  /*
+      * IE10+ CSS 
+      */
   margin-top: 0.5rem;
   /*
         *Desktop layout for main area
@@ -324,6 +328,32 @@ body .grid_container main {
   /*
         *Desktop layout for main area
         */
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  body .grid_container main {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+  }
+  body .grid_container main #kids_corner {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    margin-right: 0.5rem;
+  }
+  body .grid_container main #our_svc {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    margin-right: 0.5rem;
+  }
+  body .grid_container main #pt_resources {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    margin-right: 0.5rem;
+  }
+  body .grid_container main #community {
+    -ms-grid-row: 1;
+    -ms-grid-column: 4;
+  }
 }
 
 body .grid_container main .card {

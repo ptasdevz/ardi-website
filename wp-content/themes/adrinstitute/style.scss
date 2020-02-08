@@ -90,6 +90,7 @@ body {
         .logo {
           grid-area: logo;
           position: relative;
+          z-index: 10;
 
           img {
             width: 64px;
@@ -323,6 +324,36 @@ body {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
       grid-gap: $padding-main-cards;
+
+      /*
+      * IE10+ CSS 
+      */
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        
+        display: -ms-grid;
+        -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        #kids_corner {
+          -ms-grid-row: 1;
+          -ms-grid-column: 1;
+          margin-right: $padding-main-cards;
+        }
+        #our_svc {
+          -ms-grid-row: 1;
+          -ms-grid-column: 2;
+          margin-right: $padding-main-cards;
+
+        }
+        #pt_resources {
+          -ms-grid-row: 1;
+          -ms-grid-column: 3;
+          margin-right: $padding-main-cards;
+        }
+        #community {
+          -ms-grid-row: 1;
+          -ms-grid-column: 4;
+        }
+      }
+
       margin-top: $padding-main-cards;
       .card {
         @for $i from 1 through 4 {
