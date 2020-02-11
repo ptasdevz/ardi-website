@@ -641,7 +641,7 @@ body .grid_container footer .footer_social_media {
   width: 100%;
   height: auto;
   margin-bottom: 1rem;
-  padding-top: .5rem;
+  padding-top: 0.5rem;
 }
 
 body .grid_container footer .footer_social_media p {
@@ -649,9 +649,9 @@ body .grid_container footer .footer_social_media p {
   color: #fff;
   text-align: center;
   font-weight: bold;
-  font-size: 0.75rem;
+  font-size: 1rem;
   text-decoration: none;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 body .grid_container footer .footer_social_media ul {
@@ -661,16 +661,16 @@ body .grid_container footer .footer_social_media ul {
 
 body .grid_container footer .footer_social_media ul li {
   display: inline-block;
-  font-size: 1.2rem;
-  height: 2rem;
-  width: 2rem;
+  font-size: 1.5rem;
+  height: 2.5rem;
+  width: 2.5rem;
   background: #fff;
   border-radius: 100%;
   -webkit-transition: -webkit-transform 1s;
   transition: -webkit-transform 1s;
   transition: transform 1s;
   transition: transform 1s, -webkit-transform 1s;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 body .grid_container footer .footer_social_media ul li:hover {
@@ -684,7 +684,7 @@ body .grid_container footer .footer_social_media ul li a {
 }
 
 body .grid_container footer .footer_social_media ul li a i {
-  line-height: 2rem;
+  line-height: 2.5rem;
 }
 
 body .grid_container footer .footer_social_media ul li a:hover {
@@ -702,12 +702,12 @@ body .grid_container footer .footer_links ul {
 }
 
 body .grid_container footer .footer_links ul li {
-  font-size: .75rem;
+  font-size: 1rem;
   -webkit-transition: -webkit-transform 1s;
   transition: -webkit-transform 1s;
   transition: transform 1s;
   transition: transform 1s, -webkit-transform 1s;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 body .grid_container footer .footer_links ul li:hover {
@@ -721,7 +721,7 @@ body .grid_container footer .footer_links ul li a {
 }
 
 body .grid_container footer .footer_links ul li a i {
-  line-height: .75rem;
+  line-height: 0.75rem;
 }
 
 body .grid_container footer .footer_links ul li a:hover {
@@ -729,7 +729,7 @@ body .grid_container footer .footer_links ul li a:hover {
 }
 
 body .grid_container footer .copyright {
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
   text-decoration: none;
   text-align: center;
   font-size: 0.75rem;
@@ -738,7 +738,7 @@ body .grid_container footer .copyright {
 }
 
 body .grid_container footer .copyright p {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
 }
 
 body .grid_container footer .copyright .adr_acronym {
@@ -777,6 +777,7 @@ body .grid_container footer .copyright .adr_acronym {
             transform: translate(25%, 0%);
   }
   body .grid_container footer .footer_social_media p {
+    font-size: 0.75rem;
     text-align: left;
     float: left;
     margin: 0px 1rem 0px 0px;
@@ -787,12 +788,16 @@ body .grid_container footer .copyright .adr_acronym {
     border-left: 1px solid #707070;
     height: 2rem;
     float: left;
-    margin: 0px .5rem;
+    margin: 0px 0.5rem;
   }
   body .grid_container footer .footer_social_media ul {
     text-align: center;
     display: inline-block;
     margin: 0px 1rem 0px 0.5rem;
+  }
+  body .grid_container footer .footer_social_media ul li {
+    height: 2.5rem;
+    width: 2.5rem;
   }
   body .grid_container footer .horizontal_line {
     border-bottom: 1px solid #707070;
@@ -804,6 +809,7 @@ body .grid_container footer .copyright .adr_acronym {
     margin-top: 1rem;
   }
   body .grid_container footer .footer_links ul li {
+    font-size: 0.75rem;
     display: inline-block;
     padding-right: 1rem;
   }
