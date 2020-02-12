@@ -26,7 +26,8 @@ $colors: (
   text-3: #707070
 );
 
-$main-card-colors: #7f0309, #3a888a, #3a888a, #3a888a;
+$main-card-colors-header-bg: #7f0309, #1d2089,lighten( #3a888a,10%), #eeb335;
+$main-card-colors-header-bg-text: #eeb335, #fff, #1d2089, #7f0309;
 $padding: 16px;
 $social-meida-icon-size-mobile: 2.5rem;
 $social-meida-icon-size-desktop: 2.5rem;
@@ -96,10 +97,18 @@ body {
           grid-area: logo;
           position: relative;
           z-index: 10;
+      
 
           img {
             width: 64px;
             height: 64px;
+            background: color(text-2);
+            border-radius: 100%;
+            box-shadow: 0px 4px 20px #000;
+            transition: transform 1s;
+            &:hover {
+              transform: scale($transform-scale-factor);
+            }
           }
         }
 
@@ -368,7 +377,8 @@ body {
         @for $i from 1 through 4 {
           &:nth-of-type(#{$i}) {
             h6 {
-              background: nth($main-card-colors, $i);
+              background: nth($main-card-colors-header-bg, $i);
+              color: nth($main-card-colors-header-bg-text,$i);
             }
           }
         }
@@ -389,7 +399,6 @@ body {
             text-transform: uppercase;
             font-weight: bold;
             font-family: "Candara";
-            color: color(secondary);
             margin: 0;
             padding: $padding-main-cards;
             font-size: 1rem;

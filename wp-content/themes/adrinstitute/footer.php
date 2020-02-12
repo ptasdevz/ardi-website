@@ -18,7 +18,7 @@
         </ul>
     </div>
     <div class="copyright">
-        <p><span class="fa fa-copyright"></span>2020 <span class="adr_acronym">adr</span> institute grenada. all right reserved.</p>
+        <p><span class="fa fa-copyright"></span>2020 <span class="adr_acronym">adr</span> institute grenada. all rights reserved.</p>
     </div>
 </footer>
 <?php wp_footer(); ?>
