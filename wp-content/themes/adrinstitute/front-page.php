@@ -1,97 +1,123 @@
 <?php
 get_header();
 $upload_dir = wp_upload_dir();
-//echo "<pre>";
-// print_r($upload_dir["basedir"]. '/2020/01/imgs/');
-//print_r($respDecode);
-//print_r($respDecode->success);
 ?>
 
 <section class="s_img_rq_assessment_signup">
     <div class="home_page_text">
-        <h1>Assessment Diagnostic </h1>
-        <h1>Remediation </h1>
-        <h1>Institute</h1>
-        <h3>Remediation That Works!</h3>
+        <?php $front_page_title = get_field('front_page_title');
+        if ($front_page_title) :?>
+            <h1><?php echo $front_page_title['title_1']; ?></h1>
+            <h1><?php echo $front_page_title['title_2']; ?></h1>
+            <h1><?php echo $front_page_title['title_3']; ?></h1>
+            <h3><?php echo $front_page_title['sub_title']; ?></h3>
+        <?php endif?>
     </div>
     <div class="s_rq_assessment_signup">
-        <div id ="rq_assessment" class="card">
+        <div id="rq_assessment" class="card">
             <div class="info">
-                <h6>request an assessment</h6>
-                <p>discover your child's reading level</p>
+                <?php $header_link_1 = get_field('header_link_1');
+                if ($header_link_1) : ?>
+                    <h6><?php echo $header_link_1['title'] ?></h6>
+                    <p><?php echo $header_link_1['sub_title'] ?></p>
+                <?php endif ?>
             </div>
             <div class="card-background"></div>
         </div>
-        <div id ="signup" class="card">
+        <div id="signup" class="card">
             <div class="info">
-                <h6>signup</h6>
-                <p>help your strugginlg reader</p>
+                <?php $header_link_2 = get_field('header_link_2');
+                if ($header_link_2) : ?>
+                    <h6><?php echo $header_link_2['title'] ?></h6>
+                    <p><?php echo $header_link_2['sub_title'] ?></p>
+                <?php endif ?>
             </div>
             <div class="card-background"></div>
         </div>
     </div>
-    <div class="img_carousel"></div>
+    <div class="img_carousel" style="background-image: url('<?php the_field('front_page_bckgrn_header_img'); ?>')"></div>
 </section>
 <main>
-    <div id="kids_corner" class="card">
-        <img src="<?php echo get_template_directory_uri();  ?>/assets/imgs/kids_corner.png" alt="kids_corner">
-        <div class="info">
-            <h6>kids corner</h6>
-            <p>reading activities worksheets instructional videos</p>
-        </div>
-    </div>
-    <div id="our_svc" class="card">
-        <img src="<?php echo get_template_directory_uri();  ?>/assets/imgs/our_services.png" alt="our_services">
-        <div class="info">
-            <h6>our services</h6>
-            <p>Reading Assessment Remedial Reading Remedial Writing Stories and Essay Writing and more...</p>
-        </div>
-    </div>
-    <div id="pt_resources" class="card">
-        <img src="<?php echo get_template_directory_uri();  ?>/assets/imgs/pt_resources.png" alt="pt_resources">
-        <div class="info">
-            <h6>parent teacher resources</h6>
-            <p>Get tips and trick to help your child improve their reading and writing. </p>
-        </div>
-    </div>
-    <div id="community" class="card">
-        <img src="<?php echo get_template_directory_uri();  ?>/assets/imgs/community_scaled.png" alt="community">
-        <div class="info">
-            <h6>Community</h6>
-            <p>Join our community and ask questions on topics related to literacy and learning. </p>
-        </div>
-    </div>
+    <?php if (have_rows('main_block_1')) : ?>
+        <?php while (have_rows('main_block_1')) : the_row();
+            // Get sub field values.
+            $image = get_sub_field('img');
+            $title = get_sub_field('title');
+            $desc = get_sub_field('desc'); ?>
+
+            <div id="kids_corner" class="card">
+                <img src="<?php echo $image['url'] ?>" alt="<?php $image['alt'] ?>">
+                <div class="info">
+                    <h6><?php echo $title ?></h6>
+                    <p><?php echo $desc ?></p>
+                </div>
+            </div>
+        <?php endwhile ?>
+    <?php endif ?>
+    <?php if (have_rows('main_block_2')) : ?>
+        <?php while (have_rows('main_block_2')) : the_row();
+            // Get sub field values.
+            $image = get_sub_field('img');
+            $title = get_sub_field('title');
+            $desc = get_sub_field('desc'); ?>
+
+            <div id="kids_corner" class="card">
+                <img src="<?php echo $image['url'] ?>" alt="<?php $image['alt'] ?>">
+                <div class="info">
+                    <h6><?php echo $title ?></h6>
+                    <p><?php echo $desc ?></p>
+                </div>
+            </div>
+        <?php endwhile ?>
+    <?php endif ?>
+    <?php if (have_rows('main_block_3')) : ?>
+        <?php while (have_rows('main_block_3')) : the_row();
+            // Get sub field values.
+            $image = get_sub_field('img');
+            $title = get_sub_field('title');
+            $desc = get_sub_field('desc'); ?>
+
+            <div id="kids_corner" class="card">
+                <img src="<?php echo $image['url'] ?>" alt="<?php $image['alt'] ?>">
+                <div class="info">
+                    <h6><?php echo $title ?></h6>
+                    <p><?php echo $desc ?></p>
+                </div>
+            </div>
+        <?php endwhile ?>
+    <?php endif ?>
+    <?php if (have_rows('main_block_4')) : ?>
+        <?php while (have_rows('main_block_4')) : the_row();
+            // Get sub field values.
+            $image = get_sub_field('img');
+            $title = get_sub_field('title');
+            $desc = get_sub_field('desc'); ?>
+
+            <div id="kids_corner" class="card">
+                <img src="<?php echo $image['url'] ?>" alt="<?php $image['alt'] ?>">
+                <div class="info">
+                    <h6><?php echo $title ?></h6>
+                    <p><?php echo $desc ?></p>
+                </div>
+            </div>
+        <?php endwhile ?>
+    <?php endif ?>
 </main>
 
 <section class="s_testimonial">
+    <?php
+    $testimonials = $wpdb->get_results("SELECT testimonial_text, attestant FROM adri_testimonials WHERE is_active = 1
+                    ORDER BY date_created DESC"); ?>
     <div class="glide">
-
         <h1>testimonials</h1>
-
         <div class="glide__track" data-glide-el="track">
             <div class="glide__slides">
-
-                <figure class="glide__slide">
-                    <blockquote>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi dolorem aut expedita deserunt fugit odit itaque aspernatur mollitia at voluptas?</blockquote>
-                    <figcaption>john doe</figcaption>
-                </figure>
-                <figure class="glide__slide">
-                    <blockquote>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi dolorem aut expedita deserunt fugit odit itaque aspernatur mollitia at voluptas?</blockquote>
-                    <figcaption>mike doe</figcaption>
-                </figure>
-                <figure class="glide__slide">
-                    <blockquote>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi dolorem aut expedita deserunt fugit odit itaque aspernatur mollitia at voluptas?</blockquote>
-                    <figcaption>loren jack</figcaption>
-                </figure>
-                <figure class="glide__slide">
-                    <blockquote>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi dolorem aut expedita deserunt fugit odit itaque aspernatur mollitia at voluptas?</blockquote>
-                    <figcaption>mark doe</figcaption>
-                </figure>
-                <figure class="glide__slide">
-                    <blockquote>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi dolorem aut expedita deserunt fugit odit itaque aspernatur mollitia at voluptas?</blockquote>
-                    <figcaption>john millman</figcaption>
-                </figure>
-
+                <?php foreach ($testimonials as $testimonial) : ?>
+                    <figure class="glide__slide">
+                        <blockquote><?php echo $testimonial->testimonial_text ?></blockquote>
+                        <figcaption><?php echo $testimonial->attestant ?></figcaption>
+                    </figure>
+                <?php endforeach; ?>
             </div>
         </div>
 

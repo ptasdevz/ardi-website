@@ -121,7 +121,7 @@ body .grid_container header .navigation .navigation-content {
   text-align: center;
 }
 
-body .grid_container header .navigation .navigation-content .navigation-links {
+body .grid_container header .navigation .navigation-content .header_nav_links {
   padding: 0 !important;
   list-style-type: none;
   position: absolute;
@@ -132,7 +132,7 @@ body .grid_container header .navigation .navigation-content .navigation-links {
           transform: translate(-50%, -50%);
 }
 
-body .grid_container header .navigation .navigation-content .navigation-links li {
+body .grid_container header .navigation .navigation-content .header_nav_links li {
   padding: 16px 0;
   -webkit-transition: -webkit-transform 1s;
   transition: -webkit-transform 1s;
@@ -140,17 +140,17 @@ body .grid_container header .navigation .navigation-content .navigation-links li
   transition: transform 1s, -webkit-transform 1s;
 }
 
-body .grid_container header .navigation .navigation-content .navigation-links li:hover {
+body .grid_container header .navigation .navigation-content .header_nav_links li:hover {
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
 }
 
-body .grid_container header .navigation .navigation-content .navigation-links li a {
+body .grid_container header .navigation .navigation-content .header_nav_links li a {
   color: #fff !important;
   text-decoration: none;
 }
 
-body .grid_container header .navigation .navigation-content .navigation-links li a:hover {
+body .grid_container header .navigation .navigation-content .header_nav_links li a:hover {
   color: #eeb335 !important;
 }
 
@@ -198,7 +198,7 @@ body .grid_container header .navigation .navigation-content .navigation-links li
     -webkit-transform: translate(0, -50%);
             transform: translate(0, -50%);
   }
-  body .grid_container header .navigation .navigation-content .navigation-links {
+  body .grid_container header .navigation .navigation-content .header_nav_links {
     position: static;
     font-size: 1rem;
     font-weight: bold;
@@ -207,7 +207,7 @@ body .grid_container header .navigation .navigation-content .navigation-links li
     text-align: left;
     padding: 0px;
   }
-  body .grid_container header .navigation .navigation-content .navigation-links li {
+  body .grid_container header .navigation .navigation-content .header_nav_links li {
     display: inline-block;
     padding-right: 24px;
   }
@@ -708,17 +708,17 @@ body .grid_container footer .footer_social_media ul li a:hover {
   color: #eeb335 !important;
 }
 
-body .grid_container footer .footer_links {
+body .grid_container footer .footer_nav_links {
   margin-bottom: 1rem;
 }
 
-body .grid_container footer .footer_links ul {
+body .grid_container footer .footer_nav_links ul {
   list-style-type: none;
   text-align: center;
   text-transform: capitalize;
 }
 
-body .grid_container footer .footer_links ul li {
+body .grid_container footer .footer_nav_links ul li {
   font-size: 1rem;
   -webkit-transition: -webkit-transform 1s;
   transition: -webkit-transform 1s;
@@ -727,21 +727,21 @@ body .grid_container footer .footer_links ul li {
   margin-bottom: 0.5rem;
 }
 
-body .grid_container footer .footer_links ul li:hover {
+body .grid_container footer .footer_nav_links ul li:hover {
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
 }
 
-body .grid_container footer .footer_links ul li a {
+body .grid_container footer .footer_nav_links ul li a {
   color: #fff !important;
   text-decoration: none;
 }
 
-body .grid_container footer .footer_links ul li a i {
+body .grid_container footer .footer_nav_links ul li a i {
   line-height: 0.75rem;
 }
 
-body .grid_container footer .footer_links ul li a:hover {
+body .grid_container footer .footer_nav_links ul li a:hover {
   color: #eeb335 !important;
 }
 
@@ -821,11 +821,11 @@ body .grid_container footer .copyright .adr_acronym {
     width: 50%;
     margin: 0 auto;
   }
-  body .grid_container footer .footer_links ul {
+  body .grid_container footer .footer_nav_links ul {
     text-align: center;
     margin-top: 1rem;
   }
-  body .grid_container footer .footer_links ul li {
+  body .grid_container footer .footer_nav_links ul li {
     font-size: 0.75rem;
     display: inline-block;
     padding-right: 1rem;
