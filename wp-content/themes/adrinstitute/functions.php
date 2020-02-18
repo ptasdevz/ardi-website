@@ -34,14 +34,14 @@ function load_style_sheets()
     );
     wp_enqueue_style('glide-optional');
 
-    wp_register_style(
-        'font_awesome',
-        "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css",
-        array(),
-        false,
-        'all'
-    );
-    wp_enqueue_style('font_awesome');
+    // wp_register_style(
+    //     'font_awesome',
+    //     "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css",
+    //     array(),
+    //     false,
+    //     'all'
+    // );
+    // wp_enqueue_style('font_awesome');
 
     wp_register_style(
         'adobe_typekit',
@@ -78,9 +78,28 @@ add_action('wp_enqueue_scripts', 'load_js');
 function load_meta_tags()
 {
     echo '<meta name="viewport" content="width=device-width, initial-scale=1.0" >';
+    echo '<script src="https://kit.fontawesome.com/592fd30525.js" crossorigin="anonymous"></script>';
 }
 
 add_action('wp_head', 'load_meta_tags');
+
+function load_footer_scripts(){
+
+}
+add_action('wp_footer','load_footer_scripts');
+
+// function my_acf_fallback ($value, $post_id, $field){
+
+//     // $value = get_field('social_media_tagline');
+// echo "<pre>";
+// print_r($value);
+// // print_r($post_id);
+// // print_r($field);
+// echo "</pre>";
+// // die();
+// // return $value;
+// }
+// add_filter('acf/load_value/name=social_media_tagline','my_acf_fallback',10,3);
 
 /**
  * Enable support for post thumbnails and featured images.
@@ -98,24 +117,3 @@ register_nav_menus(array(
     "header_menu" => __('Header Menu', 'theme'),
     "footer_menu" => __('Footer Menu', 'theme'),
 ));
-
-
-// add_filter('wp_get_attachment_url', 'make_url_relative');
-// function make_url_relative($url)
-// {
-//     $relativeurl = wp_make_link_relative($url);
-//     return 'my_wp_root' . $relativeurl;
-// };
-
-// function switch_to_relative_url($html, $id, $caption, $title, $align, $url, $size, $alt)
-// {
-//     $imageurl = wp_get_attachment_image_src($id, $size);
-//     $relativeurl = wp_make_link_relative($imageurl[0]);
-//     $html = str_replace($imageurl[0], $relativeurl, $html);
-
-//     return $html;
-// }
-// add_filter('image_send_to_editor', 'switch_to_relative_url', 10, 8);
-
-// remove_filter( 'the_content', 'wpautop' );
-// remove_filter( 'the_excerpt', 'wpautop' );

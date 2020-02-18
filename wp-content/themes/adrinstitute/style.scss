@@ -29,8 +29,8 @@ $colors: (
 $main-card-colors-header-bg: #7f0309, #1d2089,lighten( #3a888a,10%), #eeb335;
 $main-card-colors-header-bg-text: #eeb335, #fff, #1d2089, #7f0309;
 $padding: 16px;
-$social-meida-icon-size-mobile: 2.5rem;
-$social-meida-icon-size-desktop: 2.5rem;
+$social-meida-icon-size-mobile: 1.5rem;
+$social-meida-icon-size-desktop: 1.5rem;
 $footer-text-mobile: 1rem;
 $footer-text-desktop: 0.75rem;
 $padding-nav: 4px;
@@ -609,8 +609,7 @@ body {
             font-size: 1.5rem;
             height: $social-meida-icon-size-mobile;
             width: $social-meida-icon-size-mobile;
-            background: color(text-2);
-            border-radius: 100%;
+            // border-radius: 100%;
             transition: transform 1s;
             &:hover {
               transform: scale($transform-scale-factor);
@@ -620,12 +619,14 @@ body {
           li a {
             i {
               line-height: $social-meida-icon-size-mobile;
+              color: color(text-2);
+              &:hover {
+                color: color(secondary) !important;
+              }
             }
             color: color(primary) !important;
             text-decoration: none;
-            &:hover {
-              color: color(secondary) !important;
-            }
+          
           }
         }
       }

@@ -6,12 +6,12 @@ $upload_dir = wp_upload_dir();
 <section class="s_img_rq_assessment_signup">
     <div class="home_page_text">
         <?php $front_page_title = get_field('front_page_title');
-        if ($front_page_title) :?>
+        if ($front_page_title) : ?>
             <h1><?php echo $front_page_title['title_1']; ?></h1>
             <h1><?php echo $front_page_title['title_2']; ?></h1>
             <h1><?php echo $front_page_title['title_3']; ?></h1>
             <h3><?php echo $front_page_title['sub_title']; ?></h3>
-        <?php endif?>
+        <?php endif ?>
     </div>
     <div class="s_rq_assessment_signup">
         <div id="rq_assessment" class="card">
@@ -106,18 +106,26 @@ $upload_dir = wp_upload_dir();
 
 <section class="s_testimonial">
     <?php
-    $testimonials = $wpdb->get_results("SELECT testimonial_text, attestant FROM adri_testimonials WHERE is_active = 1
-                    ORDER BY date_created DESC"); ?>
+    // $testimonials = $wpdb->get_results("SELECT testimonial_text, attestant FROM adri_testimonials WHERE is_active = 1
+    //                 ORDER BY date_created DESC");
+    $testimonial_data = get_field('testimonial_data');
+    $body = $testimonial_data['body'];
+    $count = count($body);
+
+    ?>
     <div class="glide">
-        <h1>testimonials</h1>
+        <h1><?php the_field("testimonial_title"); ?></h1>
         <div class="glide__track" data-glide-el="track">
             <div class="glide__slides">
-                <?php foreach ($testimonials as $testimonial) : ?>
-                    <figure class="glide__slide">
-                        <blockquote><?php echo $testimonial->testimonial_text ?></blockquote>
-                        <figcaption><?php echo $testimonial->attestant ?></figcaption>
-                    </figure>
-                <?php endforeach; ?>
+
+                <?php for ($i =0; $i<$count; $i++):
+                    if ($body[$i][2]['c'] === 'true') : ?>
+                        <figure class="glide__slide">
+                            <blockquote><?php echo $body[$i][0]['c'] ?></blockquote>
+                            <figcaption><?php echo $body[$i][1]['c'] ?></figcaption>
+                        </figure>
+                <?php endif;
+                endfor; ?>
             </div>
         </div>
 

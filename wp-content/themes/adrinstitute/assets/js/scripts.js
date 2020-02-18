@@ -28,6 +28,7 @@
     //=========================Testimonials Using Glide=====================
     var glide = new Glide('.glide', {
         type: 'carousel',
+        startAt: 1,
         perView: 2,
         focusAt: '1',
         breakpoints: {

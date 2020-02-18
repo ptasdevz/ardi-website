@@ -27,3 +27,130 @@
 [15-Feb-2020 03:40:00 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 38
 [15-Feb-2020 03:41:08 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 38
 [15-Feb-2020 03:41:10 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 38
+[17-Feb-2020 17:55:48 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in C:\Users\jason\gitprojects\ardi-website\wp-admin\includes\plugin-install.php on line 182
+[17-Feb-2020 18:27:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_file() in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php:111
+Stack trace:
+#0 C:\Users\jason\gitprojects\ardi-website\wp-includes\template-loader.php(98): include()
+#1 C:\Users\jason\gitprojects\ardi-website\wp-blog-header.php(19): require_once('C:\\Users\\jason\\...')
+#2 C:\Users\jason\gitprojects\ardi-website\index.php(17): require('C:\\Users\\jason\\...')
+#3 {main}
+  thrown in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 111
+[17-Feb-2020 18:28:54 UTC] PHP Notice:  Array to string conversion in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 119
+[17-Feb-2020 18:28:54 UTC] PHP Notice:  Undefined variable: Array in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 119
+[17-Feb-2020 18:28:54 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 119
+[17-Feb-2020 18:28:54 UTC] PHP Notice:  Array to string conversion in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 119
+[17-Feb-2020 18:28:54 UTC] PHP Notice:  Undefined variable: Array in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 119
+[17-Feb-2020 18:28:54 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 119
+[17-Feb-2020 18:28:54 UTC] PHP Notice:  Array to string conversion in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 119
+[17-Feb-2020 18:28:54 UTC] PHP Notice:  Undefined variable: Array in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 119
+[17-Feb-2020 18:28:54 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 119
+[17-Feb-2020 18:28:54 UTC] PHP Notice:  Array to string conversion in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 119
+[17-Feb-2020 18:28:54 UTC] PHP Notice:  Undefined variable: Array in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 119
+[17-Feb-2020 18:28:54 UTC] PHP Warning:  Invalid argument supplied for foreach() in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 119
+[17-Feb-2020 18:29:36 UTC] PHP Notice:  Undefined index: a in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 122
+[17-Feb-2020 18:29:36 UTC] PHP Notice:  Undefined index: b in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 123
+[17-Feb-2020 18:29:36 UTC] PHP Notice:  Undefined index: a in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 122
+[17-Feb-2020 18:29:36 UTC] PHP Notice:  Undefined index: b in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 123
+[17-Feb-2020 18:29:36 UTC] PHP Notice:  Undefined index: a in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 122
+[17-Feb-2020 18:29:36 UTC] PHP Notice:  Undefined index: b in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 123
+[17-Feb-2020 18:29:36 UTC] PHP Notice:  Undefined index: a in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 122
+[17-Feb-2020 18:29:36 UTC] PHP Notice:  Undefined index: b in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 123
+[17-Feb-2020 18:42:07 UTC] PHP Notice:  Undefined variable: td in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 127
+[17-Feb-2020 18:42:07 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 127
+[17-Feb-2020 18:42:07 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 127
+[17-Feb-2020 18:42:07 UTC] PHP Notice:  Undefined variable: td in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 127
+[17-Feb-2020 18:42:07 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 127
+[17-Feb-2020 18:42:07 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 127
+[17-Feb-2020 18:42:07 UTC] PHP Notice:  Undefined variable: td in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 127
+[17-Feb-2020 18:42:07 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 127
+[17-Feb-2020 18:42:07 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 127
+[17-Feb-2020 18:42:07 UTC] PHP Notice:  Undefined variable: td in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 127
+[17-Feb-2020 18:42:07 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 127
+[17-Feb-2020 18:42:07 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 127
+[17-Feb-2020 18:55:44 UTC] PHP Notice:  Undefined index: c in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 125
+[17-Feb-2020 18:55:44 UTC] PHP Notice:  Undefined index: c in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 125
+[17-Feb-2020 18:55:44 UTC] PHP Notice:  Undefined index: c in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 125
+[17-Feb-2020 18:55:44 UTC] PHP Notice:  Undefined index: c in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 125
+[17-Feb-2020 18:59:48 UTC] PHP Notice:  Undefined index: c in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 125
+[17-Feb-2020 18:59:48 UTC] PHP Notice:  Undefined index: c in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 125
+[17-Feb-2020 18:59:48 UTC] PHP Notice:  Undefined index: c in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 125
+[17-Feb-2020 18:59:48 UTC] PHP Notice:  Undefined index: c in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 125
+[17-Feb-2020 19:01:18 UTC] PHP Notice:  Undefined offset: 4 in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 125
+[17-Feb-2020 19:01:18 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 125
+[17-Feb-2020 19:01:18 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 125
+[17-Feb-2020 19:02:31 UTC] PHP Notice:  Undefined offset: 4 in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 125
+[17-Feb-2020 19:02:31 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 125
+[17-Feb-2020 19:02:31 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 125
+[17-Feb-2020 19:06:47 UTC] PHP Notice:  Undefined offset: 4 in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 126
+[17-Feb-2020 19:06:47 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 126
+[17-Feb-2020 19:06:47 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 126
+[17-Feb-2020 19:25:46 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in C:\Users\jason\gitprojects\ardi-website\wp-includes\update.php on line 162
+[17-Feb-2020 19:30:35 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in C:\Users\jason\gitprojects\ardi-website\wp-admin\includes\plugin-install.php on line 182
+[17-Feb-2020 20:48:39 UTC] PHP Fatal error:  Uncaught Error: Object of class stdClass could not be converted to string in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\footer.php:15
+Stack trace:
+#0 C:\Users\jason\gitprojects\ardi-website\wp-includes\template.php(722): require_once()
+#1 C:\Users\jason\gitprojects\ardi-website\wp-includes\template.php(671): load_template('C:\\Users\\jason\\...', true)
+#2 C:\Users\jason\gitprojects\ardi-website\wp-includes\general-template.php(76): locate_template(Array, true)
+#3 C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php(152): get_footer()
+#4 C:\Users\jason\gitprojects\ardi-website\wp-includes\template-loader.php(98): include('C:\\Users\\jason\\...')
+#5 C:\Users\jason\gitprojects\ardi-website\wp-blog-header.php(19): require_once('C:\\Users\\jason\\...')
+#6 C:\Users\jason\gitprojects\ardi-website\index.php(17): require('C:\\Users\\jason\\...')
+#7 {main}
+  thrown in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\footer.php on line 15
+[17-Feb-2020 22:46:35 UTC] PHP Parse error:  syntax error, unexpected 'add_theme_support' (T_STRING), expecting '(' in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\functions.php on line 91
+[17-Feb-2020 22:46:35 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-includes\class-wp-recovery-mode-email-service.php on line 339
+[17-Feb-2020 22:46:35 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-includes\class-wp-recovery-mode-email-service.php on line 340
+[17-Feb-2020 23:11:42 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in C:\Users\jason\gitprojects\ardi-website\wp-admin\includes\translation-install.php on line 67
+[18-Feb-2020 00:39:15 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function add_filter(), 1 passed in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\functions.php on line 94 and at least 2 expected in C:\Users\jason\gitprojects\ardi-website\wp-includes\plugin.php:108
+Stack trace:
+#0 C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\functions.php(94): add_filter('acf/load_value/...')
+#1 C:\Users\jason\gitprojects\ardi-website\wp-settings.php(497): include('C:\\Users\\jason\\...')
+#2 C:\Users\jason\gitprojects\ardi-website\wp-config.php(94): require_once('C:\\Users\\jason\\...')
+#3 C:\Users\jason\gitprojects\ardi-website\wp-load.php(37): require_once('C:\\Users\\jason\\...')
+#4 C:\Users\jason\gitprojects\ardi-website\wp-admin\admin-ajax.php(22): require_once('C:\\Users\\jason\\...')
+#5 {main}
+  thrown in C:\Users\jason\gitprojects\ardi-website\wp-includes\plugin.php on line 108
+[18-Feb-2020 00:40:15 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ';' or ',' in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\functions.php on line 93
+[18-Feb-2020 00:40:34 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\functions.php on line 94
+[18-Feb-2020 00:41:24 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function add_filter(), 1 passed in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\functions.php on line 99 and at least 2 expected in C:\Users\jason\gitprojects\ardi-website\wp-includes\plugin.php:108
+Stack trace:
+#0 C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\functions.php(99): add_filter('acf/load_value/...')
+#1 C:\Users\jason\gitprojects\ardi-website\wp-settings.php(497): include('C:\\Users\\jason\\...')
+#2 C:\Users\jason\gitprojects\ardi-website\wp-config.php(94): require_once('C:\\Users\\jason\\...')
+#3 C:\Users\jason\gitprojects\ardi-website\wp-load.php(37): require_once('C:\\Users\\jason\\...')
+#4 C:\Users\jason\gitprojects\ardi-website\wp-admin\admin-ajax.php(22): require_once('C:\\Users\\jason\\...')
+#5 {main}
+  thrown in C:\Users\jason\gitprojects\ardi-website\wp-includes\plugin.php on line 108
+[18-Feb-2020 00:42:10 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function add_filter(), 1 passed in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\functions.php on line 99 and at least 2 expected in C:\Users\jason\gitprojects\ardi-website\wp-includes\plugin.php:108
+Stack trace:
+#0 C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\functions.php(99): add_filter('acf/load_value/...')
+#1 C:\Users\jason\gitprojects\ardi-website\wp-settings.php(497): include('C:\\Users\\jason\\...')
+#2 C:\Users\jason\gitprojects\ardi-website\wp-config.php(94): require_once('C:\\Users\\jason\\...')
+#3 C:\Users\jason\gitprojects\ardi-website\wp-load.php(37): require_once('C:\\Users\\jason\\...')
+#4 C:\Users\jason\gitprojects\ardi-website\wp-blog-header.php(13): require_once('C:\\Users\\jason\\...')
+#5 C:\Users\jason\gitprojects\ardi-website\index.php(17): require('C:\\Users\\jason\\...')
+#6 {main}
+  thrown in C:\Users\jason\gitprojects\ardi-website\wp-includes\plugin.php on line 108
+[18-Feb-2020 00:42:24 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function add_filter(), 1 passed in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\functions.php on line 99 and at least 2 expected in C:\Users\jason\gitprojects\ardi-website\wp-includes\plugin.php:108
+Stack trace:
+#0 C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\functions.php(99): add_filter('acf/load_value/...')
+#1 C:\Users\jason\gitprojects\ardi-website\wp-settings.php(497): include('C:\\Users\\jason\\...')
+#2 C:\Users\jason\gitprojects\ardi-website\wp-config.php(94): require_once('C:\\Users\\jason\\...')
+#3 C:\Users\jason\gitprojects\ardi-website\wp-load.php(37): require_once('C:\\Users\\jason\\...')
+#4 C:\Users\jason\gitprojects\ardi-website\wp-admin\admin-ajax.php(22): require_once('C:\\Users\\jason\\...')
+#5 {main}
+  thrown in C:\Users\jason\gitprojects\ardi-website\wp-includes\plugin.php on line 108
+[18-Feb-2020 00:42:39 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function my_acf_fallback(), 1 passed in C:\Users\jason\gitprojects\ardi-website\wp-includes\class-wp-hook.php on line 290 and exactly 3 expected in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\functions.php:91
+Stack trace:
+#0 C:\Users\jason\gitprojects\ardi-website\wp-includes\class-wp-hook.php(290): my_acf_fallback('follow adr inst...')
+#1 C:\Users\jason\gitprojects\ardi-website\wp-includes\plugin.php(249): WP_Hook->apply_filters('follow adr inst...', Array)
+#2 C:\Users\jason\gitprojects\ardi-website\wp-content\plugins\advanced-custom-fields\includes\acf-hook-functions.php(101): apply_filters_ref_array('acf/load_value/...', Array)
+#3 C:\Users\jason\gitprojects\ardi-website\wp-includes\class-wp-hook.php(288): _acf_apply_hook_variations('follow adr inst...', 36, Array)
+#4 C:\Users\jason\gitprojects\ardi-website\wp-includes\plugin.php(206): WP_Hook->apply_filters('follow adr inst...', Array)
+#5 C:\Users\jason\gitprojects\ardi-website\wp in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\functions.php on line 91
+[18-Feb-2020 00:50:56 UTC] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 262144 bytes) in C:\Users\jason\gitprojects\ardi-website\wp-includes\plugin.php on line 206
+[18-Feb-2020 00:50:56 UTC] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 262144 bytes) in C:\Users\jason\gitprojects\ardi-website\wp-includes\class-wp-fatal-error-handler.php on line 75
+[18-Feb-2020 00:51:33 UTC] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in C:\Users\jason\gitprojects\ardi-website\wp-content\plugins\advanced-custom-fields\includes\acf-meta-functions.php on line 368
+[18-Feb-2020 00:52:38 UTC] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 262144 bytes) in C:\Users\jason\gitprojects\ardi-website\wp-includes\plugin.php on line 206
+[18-Feb-2020 00:52:38 UTC] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 262144 bytes) in C:\Users\jason\gitprojects\ardi-website\wp-includes\class-wp-fatal-error-handler.php on line 75
+[18-Feb-2020 00:53:16 UTC] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 20480 bytes) in C:\Users\jason\gitprojects\ardi-website\wp-content\plugins\advanced-custom-fields\includes\acf-meta-functions.php on line 368
