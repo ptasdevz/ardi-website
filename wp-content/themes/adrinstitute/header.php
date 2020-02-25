@@ -6,7 +6,7 @@
 
 <body <?php body_class(); ?>>
     <!-- <script>0</script> -->
-    <div class="grid_container">
+    <div class="container">
         <header>
 
             <div class="header_info">
@@ -14,7 +14,7 @@
                 <div id="nav_drawer_btn" class="nav_btn"><span>&#9776;</span></div>
             </div>
             <div class="navigation">
-                <div class="navigation-content">
+                <div id="navigation_menu" class="navigation_content">
                     <!-- adding navigation menu to the header -->
                     <?php wp_nav_menu(
                         array(

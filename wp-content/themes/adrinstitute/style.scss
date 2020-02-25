@@ -26,9 +26,12 @@ $colors: (
   text-3: #707070
 );
 
-$main-card-colors-header-bg: #7f0309, #1d2089,lighten( #3a888a,10%), #eeb335;
+$main-card-colors-header-bg: #7f0309, #1d2089, lighten(#3a888a, 10%), #eeb335;
 $main-card-colors-header-bg-text: #eeb335, #fff, #1d2089, #7f0309;
+$kids-corner-card-colors-header-bg: #eeb335, #1d2089, lighten(#3a888a, 10%) ;
+$kids-corner-card-colors-header-bg-text:#7f0309, #fff, #1d2089;
 $padding: 16px;
+$logo-dims-mobile: 64px;
 $social-meida-icon-size-mobile: 1.5rem;
 $social-meida-icon-size-desktop: 1.5rem;
 $footer-text-mobile: 1rem;
@@ -73,7 +76,7 @@ html {
   background: color(base);
 }
 body {
-  .grid_container {
+  .container {
     background: color(base-1);
 
     header {
@@ -97,12 +100,11 @@ body {
           grid-area: logo;
           position: relative;
           z-index: 10;
-      
 
           img {
-            width: 64px;
-            height: 64px;
-            background: rgba(255,255,255,1);
+            width: $logo-dims-mobile;
+            height: $logo-dims-mobile;
+            background: rgba(255, 255, 255, 1);
             border-radius: 100%;
             box-shadow: 0px 4px 20px #000;
             transition: transform 1s;
@@ -118,8 +120,7 @@ body {
           color: color(text-2);
           text-align: right;
           text-decoration: none;
-          margin: 0;
-          padding: 0;
+          z-index: 10;
           span {
             font-size: 200%;
             cursor: pointer;
@@ -134,12 +135,13 @@ body {
         width: 100%;
         height: 0%;
         background: color(primary);
-        overflow-y: visible;
-        padding: 0;
-        margin: 0;
-        display: none;
+        overflow-y: hidden;
+        display: block;
+        position: fixed;
+        top: 0;
+        transition: 0.5s;
 
-        .navigation-content {
+        .navigation_content {
           padding: 0 !important;
           background: color(primary-overlay);
           width: 100%;
@@ -148,12 +150,13 @@ body {
           text-transform: uppercase;
           position: relative;
           text-align: center;
+          margin-top: $logo-dims-mobile + $padding-nav * 2;
 
           .header_nav_links {
             padding: 0 !important;
             list-style-type: none;
             position: absolute;
-            top: 18%;
+            top: 20%;
             left: 50%;
             font-size: 1.5rem;
             transform: translate(-50%, -50%);
@@ -195,7 +198,7 @@ body {
               top: 0%;
               width: 140px;
               height: 140px;
-              background: rgba(255,255,255,0.85);
+              background: rgba(255, 255, 255, 0.85);
             }
           }
         }
@@ -208,12 +211,13 @@ body {
           position: relative;
           height: 100%;
 
-          .navigation-content {
+          .navigation_content {
             display: block;
             height: auto;
             position: absolute;
             top: 50%;
             transform: translate(0, -50%);
+            margin-top:0;
 
             .header_nav_links {
               position: static;
@@ -256,329 +260,454 @@ body {
         max-width: 1100px;
       }
     }
-    section.s_img_rq_assessment_signup {
-      width: 100%;
-      height: $img-rq-assesment-height-mobile;
-      position: relative;
 
-      .img_carousel {
+    .front_page_container {
+      section.s_img_rq_assessment_signup {
         width: 100%;
-        height: 100%;
-        // background-image: url("assets/imgs/home_img.png");
-        background-size: cover;
-        background-position: center;
-      }
-      .home_page_text {
-        position: absolute;
-        top: 8%;
-        padding-left: $padding-nav;
-        text-align: center;
-        color: color(text-1);
-        h3 {
-          font-size: 16px;
-          font-weight: normal;
-        }
-        h1 {
-          font-size: 20px;
-          font-weight: bold;
-          text-shadow: 2px 2px 2px #000;
-          color: color(text-2);
-        }
-      }
-      .s_rq_assessment_signup {
-        width: 100%;
-        position: absolute;
-        bottom: 0;
-
-        .card {
-          background-color: color(secondary-transparent);
-          border: 1px solid color(accent-transparent);
-          transition: transform 1s;
-
-          &:hover {
-            transform: scale($transform-scale-factor);
-          }
-
-          .info {
-            text-align: center;
-            font-family: Candara, sans-serif;
-            text-transform: capitalize;
-            font-size: 1.2rem;
-            color: color(accent-1);
-
-            h6 {
-              margin: 0;
-              font-family: lemongrass-script, sans-serif;
-              font-style: normal;
-              font-weight: 400;
-              text-transform: uppercase;
-              padding-top: 1rem;
-              font-size: 1.1rem;
-              color: color(accent);
-            }
-          }
-        }
-      }
-      /*
-    *Desktop Layout: image carousel with signup and request assesment links
-    */
-      @include desktop {
-        height: $img-rq-assesment-height-desktop;
+        height: $img-rq-assesment-height-mobile;
+        position: relative;
 
         .img_carousel {
+          width: 100%;
+          height: 100%;
+          // background-image: url("assets/imgs/home_img.png");
           background-size: cover;
           background-position: center;
         }
         .home_page_text {
-          top: 34%;
-          left: 4%;
+          position: absolute;
+          top: 8%;
+          padding-left: $padding-nav;
+          text-align: center;
+          color: color(text-1);
           h3 {
-            font-size: 26px;
+            font-size: 16px;
+            font-weight: normal;
           }
           h1 {
-            font-size: 30px;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 2px #000;
+            color: color(text-2);
           }
         }
         .s_rq_assessment_signup {
-          display: grid;
-          grid-template-columns: 50% 50%;
-          grid-template-rows: 100%;
-          grid-template-areas: "rq_assessment signup";
+          width: 100%;
+          position: absolute;
+          bottom: 0;
 
-          #rq_assessment {
-            grid-area: rq_assessment;
-          }
-          #signup {
-            grid-area: signup;
-          }
-        }
-      }
-      /* IE 10+*/
-      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-        top: $header-height-deskop;
-      }
-      /* Edge 12+  */
-      @supports (-ms-accelerator: true) {
-        top: $header-height-deskop;
-      }
-      /* Edge 16+  */
-      @supports (-ms-ime-align: auto) {
-        top: $header-height-deskop;
-      }
-    }
+          .card {
+            background-color: color(secondary-transparent);
+            border: 1px solid color(accent-transparent);
+            transition: transform 1s;
 
-    main {
-      padding: 0 8px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-      grid-gap: $padding-main-cards;
+            &:hover {
+              transform: scale($transform-scale-factor);
+            }
 
-      margin-top: $padding-main-cards;
-      .card {
-        @for $i from 1 through 4 {
-          &:nth-of-type(#{$i}) {
-            h6 {
-              background: nth($main-card-colors-header-bg, $i);
-              color: nth($main-card-colors-header-bg-text,$i);
+            .info {
+              text-align: center;
+              font-family: Candara, sans-serif;
+              text-transform: capitalize;
+              font-size: 1.2rem;
+              color: color(accent-1);
+
+              h6 {
+                margin: 0;
+                font-family: lemongrass-script, sans-serif;
+                font-style: normal;
+                font-weight: 400;
+                text-transform: uppercase;
+                padding-top: 1rem;
+                font-size: 1.1rem;
+                color: color(accent);
+              }
             }
           }
         }
-        transition: transform 1s;
-        &:hover {
-          transform: scale($transform-scale-factor);
-        }
-        img {
-          width: 100%;
-        }
-        .info {
-          text-align: center;
-          p {
-            text-transform: capitalize;
-            padding: $padding-main-cards;
+        /*
+    *Desktop Layout: image carousel with signup and request assesment links
+    */
+        @include desktop {
+          height: $img-rq-assesment-height-desktop;
+
+          .img_carousel {
+            background-size: cover;
+            background-position: center;
           }
-          h6 {
-            text-transform: uppercase;
-            font-weight: bold;
-            font-family: "Candara";
-            margin: 0;
-            padding: $padding-main-cards;
-            font-size: 1rem;
+          .home_page_text {
+            top: 34%;
+            left: 4%;
+            h3 {
+              font-size: 26px;
+            }
+            h1 {
+              font-size: 30px;
+            }
           }
+          .s_rq_assessment_signup {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 100%;
+            grid-template-areas: "rq_assessment signup";
+
+            #rq_assessment {
+              grid-area: rq_assessment;
+            }
+            #signup {
+              grid-area: signup;
+            }
+          }
+        }
+        /* IE 10+*/
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          top: $header-height-deskop;
+        }
+        /* Edge 12+  */
+        @supports (-ms-accelerator: true) {
+          top: $header-height-deskop;
+        }
+        /* Edge 16+  */
+        @supports (-ms-ime-align: auto) {
+          top: $header-height-deskop;
         }
       }
 
-      /*
+      main {
+        padding: 0 8px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+        grid-gap: $padding-main-cards;
+
+        margin-top: $padding-main-cards;
+        .card {
+          cursor: pointer;
+          @for $i from 1 through 4 {
+            &:nth-of-type(#{$i}) {
+              h6 {
+                background: nth($main-card-colors-header-bg, $i);
+                color: nth($main-card-colors-header-bg-text, $i);
+              }
+            }
+          }
+          transition: transform 1s;
+          &:hover {
+            transform: scale($transform-scale-factor);
+          }
+          img {
+            width: 100%;
+          }
+          .info {
+            text-align: center;
+            p {
+              text-transform: capitalize;
+              padding: $padding-main-cards;
+            }
+            h6 {
+              text-transform: uppercase;
+              font-weight: bold;
+              font-family: "Candara";
+              margin: 0;
+              padding: $padding-main-cards;
+              font-size: 1rem;
+            }
+          }
+        }
+
+        /*
         *Desktop layout for main area
         */
-      @include desktop {
-        grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-        padding: 0 $padding;
-        height: $main-height-desktop;
-        .card {
-          .info {
-            p {
-              text-align: center;
-              width: 55%;
-              margin: 0 auto;
+        @include desktop {
+          grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+          padding: 0 $padding;
+          height: auto;
+          .card {
+            .info {
+              p {
+                text-align: center;
+                width: 55%;
+                margin: 0 auto;
+              }
             }
           }
         }
-      }
 
-      /*
+        /*
       *Tablet layout for main area
       */
-      @include tablet {
-        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-        padding: 0 $padding;
-        height: $main-height-desktop;
-        .card {
-          .info {
-            p {
-              text-align: center;
-              width: 55%;
-              margin: 0 auto;
+        @include tablet {
+          grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+          padding: 0 $padding;
+          height: auto;
+          .card {
+            .info {
+              p {
+                text-align: center;
+                width: 55%;
+                margin: 0 auto;
+              }
+            }
+          }
+        }
+
+        /*
+      * IE10+ CSS for main layout 
+      */
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          position: relative;
+          top: $header-height-deskop;
+          display: -ms-grid;
+          -ms-grid-columns: 1fr 1fr 1fr 1fr;
+          #kids_corner {
+            -ms-grid-row: 1;
+            -ms-grid-column: 1;
+            margin-right: $padding-main-cards;
+          }
+          #our_svc {
+            -ms-grid-row: 1;
+            -ms-grid-column: 2;
+            margin-right: $padding-main-cards;
+          }
+          #pt_resources {
+            -ms-grid-row: 1;
+            -ms-grid-column: 3;
+            margin-right: $padding-main-cards;
+          }
+          #community {
+            -ms-grid-row: 1;
+            -ms-grid-column: 4;
+          }
+        }
+        /* Edge 12+  */
+        @supports (-ms-accelerator: true) {
+          position: relative;
+          top: $header-height-deskop;
+        }
+        /* Edge 16+  */
+        @supports (-ms-ime-align: auto) {
+          position: relative;
+          top: $header-height-deskop;
+        }
+      }
+
+      .s_testimonial {
+        background: color(accent-1);
+        font-family: "PlayFair Display", "serif";
+        margin: 0;
+        height: auto;
+        h1 {
+          color: color(accent);
+          text-transform: uppercase;
+          text-align: center;
+          font-size: 1.5rem;
+          font-weight: bold;
+          font-family: Candara;
+          padding-top: 1.5rem;
+        }
+        figure {
+          background: color(accent-1);
+          display: block;
+          padding: 0.5rem;
+
+          blockquote {
+            font-size: 1rem;
+            font-style: italic;
+            padding: 0.5rem;
+            text-align: left;
+          }
+          figcaption {
+            text-align: right;
+            margin-bottom: 1rem;
+            font-size: 0.7rem;
+            font-weight: bold;
+            text-transform: uppercase;
+          }
+        }
+        .glide__track {
+          height: 14rem !important;
+        }
+        .glide__arrow--right {
+          right: -50px !important;
+          top: 50%;
+        }
+        .glide__arrow--left {
+          left: -50px !important;
+          top: 50%;
+        }
+        .glide__arrow {
+          color: color(text-3);
+        }
+        .glide__bullets {
+          bottom: 2%;
+          background: color(accent-1-darken);
+          border-radius: 1.5rem;
+          margin-bottom: 4px;
+          button {
+            height: 0.5rem !important;
+            width: 0.5rem !important;
+          }
+        }
+        .glide {
+          width: 70% !important;
+          margin: 0.5rem auto 0.5rem auto;
+        }
+        .fa {
+          display: inline-block;
+          font: normal normal normal 14px/1 FontAwesome;
+          font-size: inherit;
+          text-rendering: auto;
+        }
+        /*
+      *Desktop devices
+      */
+        @include desktop {
+          .glide__track {
+            height: auto !important;
+          }
+          .glide {
+            width: 90% !important;
+          }
+        }
+        /*
+      * IE10+ CSS for testimonial 
+      */
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          position: relative;
+          top: $header-height-deskop;
+        }
+        /* Edge 12+  */
+        @supports (-ms-accelerator: true) {
+          position: relative;
+          top: $header-height-deskop;
+        }
+        /* Edge 16+  */
+        @supports (-ms-ime-align: auto) {
+          position: relative;
+          top: $header-height-deskop;
+        }
+      }
+    }
+
+    .page_container {
+      #nav_touch {
+        // border: 2px solid red;
+        height: 100%;
+        width: 1rem;
+        position: fixed;
+        z-index: 9;
+        top: $logo-dims-mobile + $padding-nav * 2;
+        left: 0;
+        transition: 0.5s;
+
+        .side_nav {
+          height: 100%; /* 100% Full-height */
+          width: 1500%; /* initial value to open so that user are aware of drawer */
+          z-index: 9; /* Stay on top */
+          background-color: color(primary); /* Black*/
+          overflow-x: hidden; /* Disable horizontal scroll */
+          // padding-top: 60px; /* Place content 60px from the top */
+          transition: 0.5s; /* 0.5 second transition effect to slide in the side_nav */
+
+          .side_bar_1 {
+            .side_menu {
+              width: 100%;
+              font-size: 1.2rem;
+              background: color(primary);
+              color: color(text-2);
+              cursor: pointer;
+              border-color: color(primary);
+              text-align: left;
+              padding:1rem;
+              i {
+                padding:.5rem;
+              }
+            }
+            .sub_menu {
+              background: color(primary);
+              color: color(text-2);
+              cursor: pointer;
+              border-color: color(primary);
+              height: 0;
+              overflow-y: hidden;
+            }
+            a {
+              padding: 8px 8px 8px 32px;
+              text-decoration: none;
+              font-size: 1rem;
+              color: color(text-2);
+              display: block;
+              &:hover {
+                color: color(secondary);
+              }
+            }
+            .close_btn {
+              width: 100%;
+              a {
+                text-align: right;
+                font-size: 36px;
+              }
+            }
+            .open_sub_menu{
+              height:auto;
+            }
+            .rotate_arrow_icon{
+              transform: rotate(90deg);
             }
           }
         }
       }
 
-      /*
-      * IE10+ CSS for main layout 
-      */
-      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-        position: relative;
-        top: $header-height-deskop;
-        display: -ms-grid;
-        -ms-grid-columns: 1fr 1fr 1fr 1fr;
-        #kids_corner {
-          -ms-grid-row: 1;
-          -ms-grid-column: 1;
-          margin-right: $padding-main-cards;
-        }
-        #our_svc {
-          -ms-grid-row: 1;
-          -ms-grid-column: 2;
-          margin-right: $padding-main-cards;
-        }
-        #pt_resources {
-          -ms-grid-row: 1;
-          -ms-grid-column: 3;
-          margin-right: $padding-main-cards;
-        }
-        #community {
-          -ms-grid-row: 1;
-          -ms-grid-column: 4;
-        }
-      }
-      /* Edge 12+  */
-      @supports (-ms-accelerator: true) {
-        position: relative;
-        top: $header-height-deskop;
-      }
-      /* Edge 16+  */
-      @supports (-ms-ime-align: auto) {
-        position: relative;
-        top: $header-height-deskop;
-      }
-    }
-
-    .s_testimonial {
-      background: color(accent-1);
-      font-family: "PlayFair Display", "serif";
-      margin: 0;
-      height: auto;
-      h1 {
-        color: color(accent);
-        text-transform: uppercase;
-        text-align: center;
-        font-size: 1.5rem;
-        font-weight: bold;
-        font-family: Candara;
-        padding-top: 1.5rem;
-      }
-      figure {
-        background: color(accent-1);
-        display: block;
-        padding: 0.5rem;
-
-        blockquote {
-          font-size: 1rem;
-          font-style: italic;
+      main {
+        h1{
+          text-align: center;
+          background: color(accent);
+          color: color(secondary);
           padding: 0.5rem;
-          text-align: left;
         }
-        figcaption {
-          text-align: right;
-          margin-bottom: 1rem;
-          font-size: 0.7rem;
-          font-weight: bold;
-          text-transform: uppercase;
+        .content_area {
+          transition: margin-left 0.1s;
+          padding: 20px;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+          grid-gap: $padding-main-cards;
+          margin-top: $padding-main-cards;
+          .card {
+            cursor: pointer;
+            @for $i from 1 through 3 {
+              &:nth-of-type(#{$i}) {
+                h6 {
+                  background: nth($kids-corner-card-colors-header-bg, $i);
+                  color: nth($kids-corner-card-colors-header-bg-text, $i);
+                }
+              }
+            }
+            transition: transform 1s;
+            &:hover {
+              transform: scale($transform-scale-factor);
+            }
+            img {
+              width: 100%;
+            }
+            .info {
+              text-align: center;
+              p {
+                text-transform: capitalize;
+                padding: $padding-main-cards;
+              }
+              h6 {
+                text-transform: uppercase;
+                font-weight: bold;
+                font-family: "Candara";
+                margin: 0;
+                padding: $padding-main-cards;
+                font-size: 1rem;
+              }
+            }
+          }
         }
-      }
-      .glide__track {
-        height: 14rem !important;
-      }
-      .glide__arrow--right {
-        right: -50px !important;
-        top: 50%;
-      }
-      .glide__arrow--left {
-        left: -50px !important;
-        top: 50%;
-      }
-      .glide__arrow {
-        color: color(text-3);
-      }
-      .glide__bullets {
-        bottom: 2%;
-        background: color(accent-1-darken);
-        border-radius: 1.5rem;
-        margin-bottom: 4px;
-        button {
-          height: 0.5rem !important;
-          width: 0.5rem !important;
-        }
-      }
-      .glide {
-        width: 70% !important;
-        margin: 12% auto 5% auto;
-      }
-      .fa {
-        display: inline-block;
-        font: normal normal normal 14px/1 FontAwesome;
-        font-size: inherit;
-        text-rendering: auto;
-      }
-      /*
-      *Desktop devices
-      */
-      @include desktop {
-        .glide__track {
-          height: auto !important;
-        }
-        .glide {
-          width: 90% !important;
-        }
-      }
-      /*
-      * IE10+ CSS for testimonial 
-      */
-      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-        position: relative;
-        top: $header-height-deskop;
-      }
-      /* Edge 12+  */
-      @supports (-ms-accelerator: true) {
-        position: relative;
-        top: $header-height-deskop;
-      }
-      /* Edge 16+  */
-      @supports (-ms-ime-align: auto) {
-        position: relative;
-        top: $header-height-deskop;
       }
     }
+
     footer {
       background: color(primary);
       height: auto;
@@ -626,7 +755,6 @@ body {
             }
             color: color(primary) !important;
             text-decoration: none;
-          
           }
         }
       }
