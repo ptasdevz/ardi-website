@@ -46,7 +46,7 @@ $upload_dir = wp_upload_dir();
                 $desc = get_sub_field('desc');
                 $link = get_sub_field('link');
                 $pg = get_page_by_title($link); ?>
-                <div class="card" onclick="window.location='<?php echo get_permalink($pg->ID); ?>';">
+                <div id="kids_corner" class="card" onclick="window.location='<?php echo get_permalink($pg->ID); ?>';">
                     <img src="<?php echo $image['url'] ?>" alt="<?php $image['alt'] ?>">
                     <div class="info">
                         <h6><?php echo $title ?></h6>
@@ -63,7 +63,7 @@ $upload_dir = wp_upload_dir();
                 $desc = get_sub_field('desc');
                 $link = get_sub_field('link');
                 $pg = get_page_by_title($link); ?>
-                <div class="card" onclick="window.location='<?php echo get_permalink($pg->ID); ?>';">
+                <div id ="our_svc" class="card" onclick="window.location='<?php echo get_permalink($pg->ID); ?>';">
                     <img src="<?php echo $image['url'] ?>" alt="<?php $image['alt'] ?>">
                     <div class="info">
                         <h6><?php echo $title ?></h6>
@@ -80,7 +80,7 @@ $upload_dir = wp_upload_dir();
                 $desc = get_sub_field('desc');
                 $link = get_sub_field('link');
                 $pg = get_page_by_title($link); ?>
-                <div class="card" onclick="window.location='<?php echo get_permalink($pg->ID); ?>';">
+                <div id="pt_resources" class="card" onclick="window.location='<?php echo get_permalink($pg->ID); ?>';">
                     <img src="<?php echo $image['url'] ?>" alt="<?php $image['alt'] ?>">
                     <div class="info">
                         <h6><?php echo $title ?></h6>
@@ -97,7 +97,7 @@ $upload_dir = wp_upload_dir();
                 $desc = get_sub_field('desc');
                 $link = get_sub_field('link');
                 $pg = get_page_by_title($link); ?>
-                <div class="card" onclick="window.location='<?php echo get_permalink($pg->ID); ?>';">
+                <div id="community" class="card" onclick="window.location='<?php echo get_permalink($pg->ID); ?>';">
                     <img src="<?php echo $image['url'] ?>" alt="<?php $image['alt'] ?>">
                     <div class="info">
                         <h6><?php echo $title ?></h6>
