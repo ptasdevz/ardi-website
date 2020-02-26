@@ -1,4 +1,4 @@
-var isNavClicked = false;
+var isNavClicked = true;
 $(document).ready(function () {
 
   // $("body").hide();
@@ -47,27 +47,36 @@ $(document).ready(function () {
 
   //============================Side Nav============================
 
-  //initially show side navigation bar
-  setTimeout(function () {
-    $("#page_side_nav").css("width", "0");
-  }, 500);
+  //initially show an close side navigation bar for mobile devices 
+  if ($('header').width() <= 840) {
 
-  $("#close_nav").click(function () {
-    $("#page_side_nav").css("width", "0");
+    setTimeout(function () {
+      $("#page_side_nav").css("width", "0");
+    }, 500);
 
-  });
-  $(document).click(function () {
 
-    $("#page_side_nav").click(function () {
-      isNavClicked = true;
-      console.log("nav clicked " + isNavClicked);
+
+    $("#close_nav").click(function () {
+      $("#page_side_nav").css("width", "0");
 
     });
-    console.log("doc clicked " + isNavClicked);
-    if (isNavClicked === false) $("#page_side_nav").css("width", "0");
-    isNavClicked = false;
+    $(document).click(function () {
 
-  });
+      // console.log("doc clicked " + isNavClicked);
+
+
+      if (isNavClicked === false) $("#page_side_nav").css("width", "0");
+      isNavClicked = false;
+
+
+      $("#page_side_nav").click(function () {
+        isNavClicked = true;
+        // console.log("nav clicked " + isNavClicked);
+
+      });
+
+    });
+  }
 
   /*slide in and out side menu */
   slideOutNav(document.getElementById("page_side_nav"), document.getElementById("nav_touch"));

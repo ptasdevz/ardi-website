@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <div class="page_container">
-    <?php 
+    <?php
     // $pg = get_page_by_title("kids corner");
     // echo "<pre>";
     // echo print_r($pg);
@@ -9,13 +9,15 @@
     // echo "</pre>";
     // die();
     ?>
-    <section class="content_title"></section>
-    <main>
+    <!-- <img id="page_bckgrn_img"src="< echo get_template_directory_uri();  ?>/assets/imgs/kids_corner.png" alt="bckgrn_img"> -->
+    <section class="content_title">
         <h1><?php the_title() ?></h1>
+    </section>
+    <main>
         <div class="content_area">
 
             <div id="instr_videos" class="card">
-                <img  src="<?php echo get_template_directory_uri();  ?>/assets/imgs/instr_videos.png" alt="instructional_videos">
+                <img src="<?php echo get_template_directory_uri();  ?>/assets/imgs/instr_videos.png" alt="instructional_videos">
                 <div class="info">
                     <h6>Instructional Videos</h6>
                 </div>
@@ -27,7 +29,7 @@
                 </div>
             </div>
             <div id="worksheets" class="card">
-                <img  src="<?php echo get_template_directory_uri();  ?>/assets/imgs/worksheets.png" alt="worksheets">
+                <img src="<?php echo get_template_directory_uri();  ?>/assets/imgs/worksheets.png" alt="worksheets">
                 <div class="info">
                     <h6>Worksheets</h6>
                 </div>
@@ -63,8 +65,14 @@
                     <a href="#">worksheet cat 3</a>
                 </div>
             </section>
-            <section class="side_bar_2"></section>
-
+            <section class="side_bar_2">
+                <button class="side_menu"><i class="fa fa-chevron-right"></i>Other Links</button>
+                <div class="sub_menu">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </section>
 
         </div>
     </div>

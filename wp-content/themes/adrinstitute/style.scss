@@ -28,8 +28,8 @@ $colors: (
 
 $main-card-colors-header-bg: #7f0309, #1d2089, lighten(#3a888a, 10%), #eeb335;
 $main-card-colors-header-bg-text: #eeb335, #fff, #1d2089, #7f0309;
-$kids-corner-card-colors-header-bg: #eeb335, #1d2089, lighten(#3a888a, 10%) ;
-$kids-corner-card-colors-header-bg-text:#7f0309, #fff, #1d2089;
+$kids-corner-card-colors-header-bg: #eeb335, #1d2089, lighten(#3a888a, 10%);
+$kids-corner-card-colors-header-bg-text: #7f0309, #fff, #1d2089;
 $padding: 16px;
 $logo-dims-mobile: 64px;
 $social-meida-icon-size-mobile: 1.5rem;
@@ -217,7 +217,7 @@ body {
             position: absolute;
             top: 50%;
             transform: translate(0, -50%);
-            margin-top:0;
+            margin-top: 0;
 
             .header_nav_links {
               position: static;
@@ -587,8 +587,14 @@ body {
         }
       }
     }
-
+  
     .page_container {
+      .content_title h1 {
+        text-align: center;
+        background: color(accent);
+        color: color(secondary);
+        padding: 0.5rem;
+      }
       #nav_touch {
         // border: 2px solid red;
         height: 100%;
@@ -608,7 +614,8 @@ body {
           // padding-top: 60px; /* Place content 60px from the top */
           transition: 0.5s; /* 0.5 second transition effect to slide in the side_nav */
 
-          .side_bar_1 {
+          .side_bar_1,
+          .side_bar_2 {
             .side_menu {
               width: 100%;
               font-size: 1.2rem;
@@ -617,9 +624,9 @@ body {
               cursor: pointer;
               border-color: color(primary);
               text-align: left;
-              padding:1rem;
+              padding: 1rem;
               i {
-                padding:.5rem;
+                padding: 0.5rem;
               }
             }
             .sub_menu {
@@ -647,10 +654,10 @@ body {
                 font-size: 36px;
               }
             }
-            .open_sub_menu{
-              height:auto;
+            .open_sub_menu {
+              height: auto;
             }
-            .rotate_arrow_icon{
+            .rotate_arrow_icon {
               transform: rotate(90deg);
             }
           }
@@ -658,12 +665,6 @@ body {
       }
 
       main {
-        h1{
-          text-align: center;
-          background: color(accent);
-          color: color(secondary);
-          padding: 0.5rem;
-        }
         .content_area {
           transition: margin-left 0.1s;
           padding: 20px;
@@ -702,6 +703,76 @@ body {
                 padding: $padding-main-cards;
                 font-size: 1rem;
               }
+            }
+          }
+        }
+      }
+      /*
+        *Desktop layout for page container area
+        */
+      @include desktop {
+        margin: 0.5rem;
+        display: grid;
+        grid-template-columns: 25% 75%;
+        grid-template-areas:
+          "content_title_white_space content_title"
+          "side_nav      content_area";
+
+        #nav_touch {
+          grid-area: side_nav;
+          width: 100%;
+          height: auto;
+
+          position: static;
+          .close_btn {
+            display: none;
+          }
+          .side_nav {
+            width: 100%;
+            height: 100%;
+            .side_bar_1,
+            .side_bar_2 {
+              .side_menu {
+                font-size: 1rem;
+              }
+            }
+            .side_bar_2 {
+            }
+          }
+        }
+        .content_title {
+          grid-area: content_title;
+          margin: 0 0 0.5rem 0.5rem;
+          h1 {
+            height: 3rem;
+            font-size: 2rem;
+            width: auto;
+            padding: 0;
+          }
+        }
+
+        main {
+          grid-area: content_area;
+
+          .content_area {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            margin: 0 0 0 0.5rem;
+            padding: 0;
+            grid-template-areas:
+              "place_holder_1 place_holder_2"
+              "place_holder_3 place_holder_3";
+
+            #instr_videos {
+              grid-area: place_holder_1;
+            }
+            #reading_activities {
+              grid-area: place_holder_2;
+            }
+            #worksheets {
+              grid-area: place_holder_3;
+              width: 50%;
+              margin: 0 auto;
             }
           }
         }
