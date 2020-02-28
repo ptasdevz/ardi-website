@@ -1,0 +1,106 @@
+@import "../../style.scss";
+
+body {
+  .page_container {
+    main {
+      .content_area, #video_categories, #video_reproduction .video_cat_links {
+        transition: margin-left 0.1s;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+        grid-gap: $padding-main-cards;
+        .card {
+          cursor: pointer;
+          @for $i from 1 through 3 {
+            &:nth-of-type(#{$i}) {
+              h6 {
+                background: nth($kids-corner-card-colors-header-bg, $i);
+                color: nth($kids-corner-card-colors-header-bg-text, $i);
+              }
+            }
+          }
+          transition: transform 1s;
+          &:hover {
+            transform: scale($transform-scale-factor);
+          }
+          img {
+            width: 100%;
+          }
+          .info {
+            text-align: center;
+            p {
+              text-transform: capitalize;
+              padding: $padding-main-cards;
+            }
+            h6 {
+              text-transform: uppercase;
+              font-weight: bold;
+              font-family: "Candara";
+              margin: 0;
+              padding: $padding-main-cards;
+              font-size: 1rem;
+            }
+          }
+        }
+        .video_card{
+          min-height: 10rem;
+          line-height: 9;
+        }
+        #video_categories,  #video_reproduction .video_cat_links{
+         padding:0;
+         margin: 0;
+        }
+        #kids_corner_video_player{
+
+        }
+        .video_link {
+
+        }
+      }
+    }
+    /*
+    *Desktop layout for page container area
+    */
+    @include desktop {
+      main {
+        .content_area, #video_categories, #video_reproduction .video_cat_links{
+          grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+          padding: 0;
+          margin: 0 0 20rem 0.5rem;
+       
+          // display: grid;
+          // grid-template-columns: repeat(2, 1fr);
+          // padding: 0;
+          // grid-template-areas:
+          //   "place_holder_1 place_holder_2"
+          //   "place_holder_3 place_holder_3";
+
+          // #instr_videos {
+          //   grid-area: place_holder_1;
+          // }
+          // #reading_activities {
+          //   grid-area: place_holder_2;
+          // }
+          // #worksheets {
+          //   grid-area: place_holder_3;
+          //   width: 50%;
+          //   margin: 0 auto;
+          // }
+        }
+        // #video_categories{
+        //   display: grid;
+        //   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+        //   padding: 0;
+        //   margin: 0 0 20rem 0.5rem;
+        //   line-height: 10;
+        //   grid-gap: $padding-main-cards;
+
+        // }
+      }
+      #kids_corner_video_player{
+        height:24rem;
+        background: #000;
+      }
+    }
+  }
+}

@@ -54,6 +54,10 @@ function load_style_sheets()
 
     wp_register_style('scripts_style', get_template_directory_uri() . '/style.css', array(), false, 'all');
     wp_enqueue_style('scripts_style');
+
+    wp_register_style(
+        'kids-corner',get_template_directory_uri() . '/assets/css/kids-corner.css',array(),false,'all');
+    wp_enqueue_style('kids-corner');
 }
 add_action('wp_enqueue_scripts', 'load_style_sheets');
 
@@ -71,6 +75,7 @@ function load_js()
     wp_enqueue_script('glide');
 
     wp_register_script('scripts_js', get_template_directory_uri() . '/assets/js/scripts.js', '', 1, true);
+    wp_localize_script( 'scripts_js', 'ajax', array( 'ajax_url' => admin_url( 'admin-ajax.php' )));        
     wp_enqueue_script('scripts_js');
 }
 add_action('wp_enqueue_scripts', 'load_js');
@@ -117,3 +122,7 @@ register_nav_menus(array(
     "header_menu" => __('Header Menu', 'theme'),
     "footer_menu" => __('Footer Menu', 'theme'),
 ));
+
+remove_filter( 'the_content', 'wpautop' );
+remove_filter( 'the_excerpt', 'wpautop' );
+// remove_filter ('acf_the_content', 'wpautop');
