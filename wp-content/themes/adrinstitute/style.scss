@@ -587,13 +587,16 @@ body {
         }
       }
     }
-  
+
     .page_container {
-      .content_title h1 {
+      .content_title {
         text-align: center;
         background: color(accent);
         color: color(secondary);
         padding: 0.5rem;
+        #sub_title{
+          display:none;
+        }
       }
       #nav_touch {
         // border: 2px solid red;
@@ -663,53 +666,9 @@ body {
           }
         }
       }
-
-      main {
-        .content_area {
-          transition: margin-left 0.1s;
-          padding: 20px;
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-          grid-gap: $padding-main-cards;
-          margin-top: $padding-main-cards;
-          .card {
-            cursor: pointer;
-            @for $i from 1 through 3 {
-              &:nth-of-type(#{$i}) {
-                h6 {
-                  background: nth($kids-corner-card-colors-header-bg, $i);
-                  color: nth($kids-corner-card-colors-header-bg-text, $i);
-                }
-              }
-            }
-            transition: transform 1s;
-            &:hover {
-              transform: scale($transform-scale-factor);
-            }
-            img {
-              width: 100%;
-            }
-            .info {
-              text-align: center;
-              p {
-                text-transform: capitalize;
-                padding: $padding-main-cards;
-              }
-              h6 {
-                text-transform: uppercase;
-                font-weight: bold;
-                font-family: "Candara";
-                margin: 0;
-                padding: $padding-main-cards;
-                font-size: 1rem;
-              }
-            }
-          }
-        }
-      }
       /*
-        *Desktop layout for page container area
-        */
+      *Desktop layout for page container area
+      */
       @include desktop {
         margin: 0.5rem;
         display: grid;
@@ -717,6 +676,10 @@ body {
         grid-template-areas:
           "content_title_white_space content_title"
           "side_nav      content_area";
+        main {
+          grid-area: content_area;
+
+        }
 
         #nav_touch {
           grid-area: side_nav;
@@ -748,32 +711,6 @@ body {
             font-size: 2rem;
             width: auto;
             padding: 0;
-          }
-        }
-
-        main {
-          grid-area: content_area;
-
-          .content_area {
-            display: grid;
-            grid-template-columns: repeat(2,1fr);
-            margin: 0 0 0 0.5rem;
-            padding: 0;
-            grid-template-areas:
-              "place_holder_1 place_holder_2"
-              "place_holder_3 place_holder_3";
-
-            #instr_videos {
-              grid-area: place_holder_1;
-            }
-            #reading_activities {
-              grid-area: place_holder_2;
-            }
-            #worksheets {
-              grid-area: place_holder_3;
-              width: 50%;
-              margin: 0 auto;
-            }
           }
         }
       }

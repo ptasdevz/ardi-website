@@ -990,4 +990,94 @@ body .container footer .copyright .adr_acronym {
     text-align: center;
   }
 }
-/*# sourceMappingURL=style.css.map */
+
+body .page_container {
+  /*
+    *Desktop layout for page container area
+    */
+}
+
+body .page_container main .content_area, body .page_container main #video_categories, body .page_container main #video_reproduction .video_cat_links {
+  -webkit-transition: margin-left 0.1s;
+  transition: margin-left 0.1s;
+  padding: 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(14rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  grid-gap: 0.5rem;
+}
+
+body .page_container main .content_area .card, body .page_container main #video_categories .card, body .page_container main #video_reproduction .video_cat_links .card {
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+body .page_container main .content_area .card:nth-of-type(1) h6, body .page_container main #video_categories .card:nth-of-type(1) h6, body .page_container main #video_reproduction .video_cat_links .card:nth-of-type(1) h6 {
+  background: #eeb335;
+  color: #7f0309;
+}
+
+body .page_container main .content_area .card:nth-of-type(2) h6, body .page_container main #video_categories .card:nth-of-type(2) h6, body .page_container main #video_reproduction .video_cat_links .card:nth-of-type(2) h6 {
+  background: #1d2089;
+  color: #fff;
+}
+
+body .page_container main .content_area .card:nth-of-type(3) h6, body .page_container main #video_categories .card:nth-of-type(3) h6, body .page_container main #video_reproduction .video_cat_links .card:nth-of-type(3) h6 {
+  background: #49abae;
+  color: #1d2089;
+}
+
+body .page_container main .content_area .card:hover, body .page_container main #video_categories .card:hover, body .page_container main #video_reproduction .video_cat_links .card:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+body .page_container main .content_area .card img, body .page_container main #video_categories .card img, body .page_container main #video_reproduction .video_cat_links .card img {
+  width: 100%;
+}
+
+body .page_container main .content_area .card .info, body .page_container main #video_categories .card .info, body .page_container main #video_reproduction .video_cat_links .card .info {
+  text-align: center;
+}
+
+body .page_container main .content_area .card .info p, body .page_container main #video_categories .card .info p, body .page_container main #video_reproduction .video_cat_links .card .info p {
+  text-transform: capitalize;
+  padding: 0.5rem;
+}
+
+body .page_container main .content_area .card .info h6, body .page_container main #video_categories .card .info h6, body .page_container main #video_reproduction .video_cat_links .card .info h6 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Candara";
+  margin: 0;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+body .page_container main .content_area .video_card, body .page_container main #video_categories .video_card, body .page_container main #video_reproduction .video_cat_links .video_card {
+  min-height: 10rem;
+  line-height: 9;
+}
+
+body .page_container main .content_area #video_categories, body .page_container main .content_area #video_reproduction .video_cat_links, body .page_container main #video_categories #video_categories, body .page_container main #video_categories #video_reproduction .video_cat_links, body .page_container main #video_reproduction .video_cat_links #video_categories, body .page_container main #video_reproduction .video_cat_links #video_reproduction .video_cat_links {
+  padding: 0;
+  margin: 0;
+}
+
+@media (min-width: 840px) {
+  body .page_container main .content_area, body .page_container main #video_categories, body .page_container main #video_reproduction .video_cat_links {
+    -ms-grid-columns: (minmax(12rem, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    padding: 0;
+    margin: 0 0 20rem 0.5rem;
+  }
+  body .page_container #kids_corner_video_player {
+    height: 24rem;
+    background: #000;
+  }
+}
+/*# sourceMappingURL=kids-corner.css.map */

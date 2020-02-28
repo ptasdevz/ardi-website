@@ -129,5 +129,31 @@ $(document).ready(function () {
   });
   //============================EndSide Nav============================
 
+  //============================Load Page Template Pieces======================
+  $("").click( function(e) {
+    // console.log("test");
+    e.preventDefault(); 
+    nonce = $(this).attr("data-nonce")
+
+    $.ajax({
+       type : "post",
+       dataType : "json",
+       url : ajax.ajax_url,
+       data : {action: "", nonce: nonce},
+       success: function(response) {
+          if(response.type == "success") {
+             $("#page_main").html(response.vote_count)
+          }
+          else {
+            //  alert("Your vote could not be added")
+          }
+       }
+    });   
+
+ });
+  //============================End of Load Page Templates Pieces======================
+
+
+
 });
 
