@@ -117,7 +117,7 @@ body {
         main {
           padding: 0 8px;
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(1rem, 1fr));
+          grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
           grid-gap: $padding-main-cards;
   
           margin-top: $padding-main-cards;

@@ -16,10 +16,6 @@ html {
   background: #e7e7e7;
 }
 
-body .container {
-  background: #fff;
-}
-
 body .container #overlay {
   position: fixed;
   display: none;
@@ -172,8 +168,8 @@ body .container .front_page_container main {
   padding: 0 8px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(1rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(1rem, 1fr));
+  -ms-grid-columns: (minmax(14rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
   grid-gap: 0.5rem;
   margin-top: 0.5rem;
   /*
