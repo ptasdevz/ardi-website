@@ -101,7 +101,10 @@ $(document).ready(function () {
 
     function closePlayer(){
         $("#player").remove();  
-        $("#minimize_btn").show();
+        
+        //desktop media query
+        if ($('header').width() > 840) { $("#minimize_btn").show(); }
+
         $("#restore_btn").hide();
         $(".player_class").removeClass("minimize_player");
         $(".player_class").removeClass("restore_player");
