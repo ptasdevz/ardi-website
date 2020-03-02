@@ -1,22 +1,26 @@
-<div class="content_area">
-
-    <div id="instr_videos" class="card">
-        <img src="<?php echo get_template_directory_uri();  ?>/assets/imgs/instr_videos.png" alt="instructional_videos">
-        <div class="info">
-            <h6>Instructional Videos</h6>
-        </div>
-    </div>
-    <div id="reading_activities" class="card">
-        <img src="<?php echo get_template_directory_uri();  ?>/assets/imgs/reading_activities.png" alt="reading_activites">
-        <div class="info">
-            <h6>Reading Activities</h6>
-        </div>
-    </div>
-    <div id="worksheets" class="card">
-        <img src="<?php echo get_template_directory_uri();  ?>/assets/imgs/worksheets.png" alt="worksheets">
-        <div class="info">
-            <h6>Worksheets</h6>
-        </div>
+    <div class="kids_corner_tab">
+        <button class="tablinks active" name="instr_videos"><span>Instructional Videos</span></button>
+        <button class="tablinks" name="worksheets"><span>Worksheets</span></button>
+        <button class="tablinks" name="reading_activites"><span>Reading Activites</span></button>
     </div>
 
-</div>
+    <div id="instr_videos" class="tabcontent">
+
+        <div class="player_class">
+            <div id="player_controls">
+                <a id="close_btn" href="#">&times;</a>
+                <i id="restore_btn" class="fa fa-window-restore"></i>
+                <a id="minimize_btn" href="#">&#95;</a>
+            </div>
+            <div id="player"></div>
+        </div>
+        <div class="videos"></div>
+    </div>
+
+    <div id="worksheets" class="tabcontent">
+        <p>Worksheets</p>
+    </div>
+
+    <div id="reading_activites" class="tabcontent">
+        <p>Reading Activities</p>
+    </div>

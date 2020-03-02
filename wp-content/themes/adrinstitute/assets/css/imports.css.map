@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,OAAO,CAAC,+DAAI;AACZ,OAAO,CAAC,sDAAI",
+    "sources": [
+        "imports.scss"
+    ],
+    "names": [],
+    "file": "imports.css"
+}

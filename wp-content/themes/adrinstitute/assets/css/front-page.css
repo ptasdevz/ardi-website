@@ -1,0 +1,434 @@
+/* 
+Theme Name: ADR Institute
+Author: ptasdevz
+Version: 1.0
+*/
+* {
+  margin: 0px;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  color: #707070;
+  background: #e7e7e7;
+}
+
+body .container {
+  background: #fff;
+}
+
+body .container #overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 16;
+  cursor: pointer;
+}
+
+body .container .front_page_container section.s_img_rq_assessment_signup {
+  width: 100%;
+  height: 24rem;
+  position: relative;
+  /*
+      *Desktop Layout: image carousel with signup and request assesment links
+      */
+  /* IE 10+*/
+  /* Edge 12+  */
+  /* Edge 16+  */
+}
+
+body .container .front_page_container section.s_img_rq_assessment_signup .img_carousel {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+body .container .front_page_container section.s_img_rq_assessment_signup .home_page_text {
+  position: absolute;
+  top: 8%;
+  padding-left: 4px;
+  text-align: center;
+  color: #7f0309;
+}
+
+body .container .front_page_container section.s_img_rq_assessment_signup .home_page_text h3 {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+body .container .front_page_container section.s_img_rq_assessment_signup .home_page_text h1 {
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 2px 2px 2px #000;
+  color: #fff;
+}
+
+body .container .front_page_container section.s_img_rq_assessment_signup .s_rq_assessment_signup {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+body .container .front_page_container section.s_img_rq_assessment_signup .s_rq_assessment_signup .card {
+  background-color: rgba(242, 164, 57, 0.7);
+  border: 1px solid rgba(127, 3, 9, 0.4);
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+body .container .front_page_container section.s_img_rq_assessment_signup .s_rq_assessment_signup .card:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+body .container .front_page_container section.s_img_rq_assessment_signup .s_rq_assessment_signup .card .info {
+  text-align: center;
+  font-family: Candara, sans-serif;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  color: #fdf9f2;
+}
+
+body .container .front_page_container section.s_img_rq_assessment_signup .s_rq_assessment_signup .card .info h6 {
+  margin: 0;
+  font-family: lemongrass-script, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding-top: 1rem;
+  font-size: 1.1rem;
+  color: #7f0309;
+}
+
+@media (min-width: 840px) {
+  body .container .front_page_container section.s_img_rq_assessment_signup {
+    height: 25rem;
+  }
+  body .container .front_page_container section.s_img_rq_assessment_signup .img_carousel {
+    background-size: cover;
+    background-position: center;
+  }
+  body .container .front_page_container section.s_img_rq_assessment_signup .home_page_text {
+    top: 34%;
+    left: 4%;
+  }
+  body .container .front_page_container section.s_img_rq_assessment_signup .home_page_text h3 {
+    font-size: 26px;
+  }
+  body .container .front_page_container section.s_img_rq_assessment_signup .home_page_text h1 {
+    font-size: 30px;
+  }
+  body .container .front_page_container section.s_img_rq_assessment_signup .s_rq_assessment_signup {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+    -ms-grid-rows: 100%;
+        grid-template-rows: 100%;
+        grid-template-areas: "rq_assessment signup";
+  }
+  body .container .front_page_container section.s_img_rq_assessment_signup .s_rq_assessment_signup #rq_assessment {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: rq_assessment;
+  }
+  body .container .front_page_container section.s_img_rq_assessment_signup .s_rq_assessment_signup #signup {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: signup;
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  body .container .front_page_container section.s_img_rq_assessment_signup {
+    top: 6rem;
+  }
+}
+
+@supports (-ms-accelerator: true) {
+  body .container .front_page_container section.s_img_rq_assessment_signup {
+    top: 6rem;
+  }
+}
+
+@supports (-ms-ime-align: auto) {
+  body .container .front_page_container section.s_img_rq_assessment_signup {
+    top: 6rem;
+  }
+}
+
+body .container .front_page_container main {
+  padding: 0 8px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(1rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(1rem, 1fr));
+  grid-gap: 0.5rem;
+  margin-top: 0.5rem;
+  /*
+          *Desktop layout for main area
+          */
+  /*
+        *Tablet layout for main area
+        */
+  /*
+        * IE10+ CSS for main layout 
+        */
+  /* Edge 12+  */
+  /* Edge 16+  */
+}
+
+body .container .front_page_container main .card {
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+body .container .front_page_container main .card:nth-of-type(1) h6 {
+  background: #7f0309;
+  color: #eeb335;
+}
+
+body .container .front_page_container main .card:nth-of-type(2) h6 {
+  background: #1d2089;
+  color: #fff;
+}
+
+body .container .front_page_container main .card:nth-of-type(3) h6 {
+  background: #49abae;
+  color: #1d2089;
+}
+
+body .container .front_page_container main .card:nth-of-type(4) h6 {
+  background: #eeb335;
+  color: #7f0309;
+}
+
+body .container .front_page_container main .card:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+body .container .front_page_container main .card img {
+  width: 100%;
+}
+
+body .container .front_page_container main .card .info {
+  text-align: center;
+}
+
+body .container .front_page_container main .card .info p {
+  text-transform: capitalize;
+  padding: 0.5rem;
+}
+
+body .container .front_page_container main .card .info h6 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Candara";
+  margin: 0;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+@media (min-width: 840px) {
+  body .container .front_page_container main {
+    -ms-grid-columns: (minmax(12rem, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    padding: 0 16px;
+    height: auto;
+  }
+  body .container .front_page_container main .card .info p {
+    text-align: center;
+    width: 55%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 702px) {
+  body .container .front_page_container main {
+    -ms-grid-columns: (minmax(10rem, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    padding: 0 16px;
+    height: auto;
+  }
+  body .container .front_page_container main .card .info p {
+    text-align: center;
+    width: 55%;
+    margin: 0 auto;
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  body .container .front_page_container main {
+    position: relative;
+    top: 6rem;
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+  }
+  body .container .front_page_container main #kids_corner {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    margin-right: 0.5rem;
+  }
+  body .container .front_page_container main #our_svc {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    margin-right: 0.5rem;
+  }
+  body .container .front_page_container main #pt_resources {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    margin-right: 0.5rem;
+  }
+  body .container .front_page_container main #community {
+    -ms-grid-row: 1;
+    -ms-grid-column: 4;
+  }
+}
+
+@supports (-ms-accelerator: true) {
+  body .container .front_page_container main {
+    position: relative;
+    top: 6rem;
+  }
+}
+
+@supports (-ms-ime-align: auto) {
+  body .container .front_page_container main {
+    position: relative;
+    top: 6rem;
+  }
+}
+
+body .container .front_page_container .s_testimonial {
+  background: #fdf9f2;
+  font-family: "PlayFair Display", "serif";
+  margin: 0;
+  height: auto;
+  /*
+        *Desktop devices
+        */
+  /*
+        * IE10+ CSS for testimonial 
+        */
+  /* Edge 12+  */
+  /* Edge 16+  */
+}
+
+body .container .front_page_container .s_testimonial h1 {
+  color: #7f0309;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: Candara;
+  padding-top: 1.5rem;
+}
+
+body .container .front_page_container .s_testimonial figure {
+  background: #fdf9f2;
+  display: block;
+  padding: 0.5rem;
+}
+
+body .container .front_page_container .s_testimonial figure blockquote {
+  font-size: 1rem;
+  font-style: italic;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+body .container .front_page_container .s_testimonial figure figcaption {
+  text-align: right;
+  margin-bottom: 1rem;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+body .container .front_page_container .s_testimonial .glide__track {
+  height: 14rem !important;
+}
+
+body .container .front_page_container .s_testimonial .glide__arrow--right {
+  right: -50px !important;
+  top: 50%;
+}
+
+body .container .front_page_container .s_testimonial .glide__arrow--left {
+  left: -50px !important;
+  top: 50%;
+}
+
+body .container .front_page_container .s_testimonial .glide__arrow {
+  color: #707070;
+}
+
+body .container .front_page_container .s_testimonial .glide__bullets {
+  bottom: 2%;
+  background: #f3dab0;
+  border-radius: 1.5rem;
+  margin-bottom: 4px;
+}
+
+body .container .front_page_container .s_testimonial .glide__bullets button {
+  height: 0.5rem !important;
+  width: 0.5rem !important;
+}
+
+body .container .front_page_container .s_testimonial .glide {
+  width: 70% !important;
+  margin: 0.5rem auto 0.5rem auto;
+}
+
+body .container .front_page_container .s_testimonial .fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+}
+
+@media (min-width: 840px) {
+  body .container .front_page_container .s_testimonial .glide__track {
+    height: auto !important;
+  }
+  body .container .front_page_container .s_testimonial .glide {
+    width: 90% !important;
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  body .container .front_page_container .s_testimonial {
+    position: relative;
+    top: 6rem;
+  }
+}
+
+@supports (-ms-accelerator: true) {
+  body .container .front_page_container .s_testimonial {
+    position: relative;
+    top: 6rem;
+  }
+}
+
+@supports (-ms-ime-align: auto) {
+  body .container .front_page_container .s_testimonial {
+    position: relative;
+    top: 6rem;
+  }
+}
+/*# sourceMappingURL=front-page.css.map */

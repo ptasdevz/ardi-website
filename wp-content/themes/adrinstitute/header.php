@@ -1,12 +1,14 @@
 <html>
 
 <head>
-    <?php wp_head(); ?>
+    <?php wp_head();
+    global $post; ?>
 </head>
 
 <body <?php body_class(); ?>>
     <!-- <script>0</script> -->
     <div class="container">
+        <div id="overlay"></div>
         <header>
 
             <div class="header_info">

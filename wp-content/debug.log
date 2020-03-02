@@ -180,3 +180,5 @@ Stack trace:
 [25-Feb-2020 04:10:16 UTC] PHP Notice:  Trying to get property 'ID' of non-object in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 67
 [25-Feb-2020 04:10:39 UTC] PHP Notice:  Trying to get property 'ID' of non-object in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 67
 [25-Feb-2020 04:11:27 UTC] PHP Notice:  Trying to get property 'ID' of non-object in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 66
+[02-Mar-2020 06:01:11 UTC] PHP Warning:  include(./templates/kids-corner-main.php): failed to open stream: No such file or directory in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\page.php on line 31
+[02-Mar-2020 06:01:11 UTC] PHP Warning:  include(): Failed opening './templates/kids-corner-main.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\page.php on line 31

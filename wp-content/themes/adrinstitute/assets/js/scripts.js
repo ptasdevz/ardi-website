@@ -1,7 +1,6 @@
 var isNavClicked = true;
 $(document).ready(function () {
 
-  // $("body").hide();
   //=======================Mobile Navigation Drawer=====================
   var hamburgerBtn = "☰";
   var times = "×";
@@ -58,6 +57,8 @@ $(document).ready(function () {
 
     $("#close_nav").click(function () {
       $("#page_side_nav").css("width", "0");
+      $("#overlay").css("display", "none");
+      $("#overlay").css("backgroundColor", "rgba(0,0,0,0)");
 
     });
     $(document).click(function () {
@@ -65,7 +66,11 @@ $(document).ready(function () {
       // console.log("doc clicked " + isNavClicked);
 
 
-      if (isNavClicked === false) $("#page_side_nav").css("width", "0");
+      if (isNavClicked === false) {
+        $("#page_side_nav").css("width", "0");
+        $("#overlay").css("display", "none");
+        $("#overlay").css("backgroundColor", "rgba(0,0,0,0)");
+      }
       isNavClicked = false;
 
 
@@ -79,9 +84,11 @@ $(document).ready(function () {
   }
 
   /*slide in and out side menu */
-  slideOutNav(document.getElementById("page_side_nav"), document.getElementById("nav_touch"));
+  slideOutNav(document.getElementById("page_side_nav"), document.getElementById("nav_touch"), 280, 0.5);
 
-  function slideOutNav(element, element_touch) {
+  function slideOutNav(element, element_touch, max_width, opacity_max) {
+    var curr_nav_width = 0;
+    var overlay = document.getElementById("overlay");
 
     /*start move process when touch is pressed*/
     element_touch.ontouchstart = dragTouchStart;
@@ -90,16 +97,35 @@ $(document).ready(function () {
       e = e || window.event;
       document.ontouchend = closeDragElement;
       document.ontouchmove = elementDrag;
+      overlay.style.display = "block";
+
     }
 
     function elementDrag(e) {
       e = e || window.event;
       e.preventDefault();
       /*update width of drawer when touch event is moved */
-      element.style.width = e.touches[0].clientX + "px";
+      curr_nav_width = e.touches[0].clientX;
+      if (curr_nav_width < max_width) {
+
+        element.style.width = curr_nav_width + "px";
+        var val = (curr_nav_width / max_width) * opacity_max;
+        overlay.style.backgroundColor = "rgba(0,0,0," + val + ")";
+
+      }
     }
 
     function closeDragElement() {
+      if (curr_nav_width < max_width / 2) {
+        element.style.width = "0px";
+        overlay.style.backgroundColor = "rgba(0,0,0,0)";
+        overlay.style.display = "none";
+
+      }
+      else {
+        element.style.width = max_width + "px";
+        overlay.style.backgroundColor = "rgba(0,0,0," + opacity_max + ")";
+      }
       /* stop moving when touc is released:*/
       document.ontouchend = null;
       document.ontouchmove = null;
@@ -130,28 +156,29 @@ $(document).ready(function () {
   //============================EndSide Nav============================
 
   //============================Load Page Template Pieces======================
-  $("").click( function(e) {
+  $("").click(function (e) {
     // console.log("test");
-    e.preventDefault(); 
+    e.preventDefault();
     nonce = $(this).attr("data-nonce")
 
     $.ajax({
-       type : "post",
-       dataType : "json",
-       url : ajax.ajax_url,
-       data : {action: "", nonce: nonce},
-       success: function(response) {
-          if(response.type == "success") {
-             $("#page_main").html(response.vote_count)
-          }
-          else {
-            //  alert("Your vote could not be added")
-          }
-       }
-    });   
+      type: "post",
+      dataType: "json",
+      url: ajax.ajax_url,
+      data: { action: "", nonce: nonce },
+      success: function (response) {
+        if (response.type == "success") {
+          $("#page_main").html(response.vote_count)
+        }
+        else {
+          //  alert("Your vote could not be added")
+        }
+      }
+    });
 
- });
+  });
   //============================End of Load Page Templates Pieces======================
+
 
 
 
