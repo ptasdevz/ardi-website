@@ -26,9 +26,9 @@
     <div id="nav_touch">
         <div id="page_side_nav" class="side_nav">
             <section class="side_bar_1">
-                <div class="close_btn">
+                <!-- <div class="close_btn">
                     <a href="#" id="close_nav">&times;</a>
-                </div>
+                </div> -->
                 <?php
 
                 //side navigation links 
