@@ -3,103 +3,330 @@
 body {
   .page_container {
     main {
-      .content_area, #video_categories, #video_reproduction .video_cat_links {
-        transition: margin-left 0.1s;
-        padding: 20px;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-        grid-gap: $padding-main-cards;
-        .card {
+      position: relative;
+      .content_area::before {
+        position: absolute;
+        content: "";
+        background-image: url("../imgs/kids_corner.png");
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 0 0.5rem 0.5rem white inset;
+        opacity: 0.1;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .content_area {
+        position: relative;
+        .kids_corner_tab {
+          position: relative;
+          z-index: 10;
+          overflow: hidden;
+          border: 1px solid color(accent-4);
+          width: 100%;
+          margin: 0 auto;
+          box-shadow: 2px 4px 4px color(accent-4);
+          background-color: color(base-1);
+          position: sticky;
+          top: 72px;
+        }
+        .kids_corner_tab button {
           cursor: pointer;
-          @for $i from 1 through 3 {
-            &:nth-of-type(#{$i}) {
-              h6 {
-                background: nth($kids-corner-card-colors-header-bg, $i);
-                color: nth($kids-corner-card-colors-header-bg-text, $i);
+          transition: 0.3s;
+          font-size: 1rem;
+          color: color(primary);
+          padding: 0.9rem 1rem;
+          border: none;
+          outline: none;
+          width: inherit;
+          font-variant: small-caps;
+          background-color: inherit;
+          display: block;
+        }
+
+        .tabcontent {
+          position: inherit;
+          display: none;
+          padding: 6px 12px;
+          animation: fadeEffect 1s; //tab content
+          margin-top: 1rem;
+
+          .player_class {
+            position: sticky;
+            margin: 0 auto;
+            top: 33%;
+            left: 50%;
+            width: 100%;
+            height: 30%;
+            background-color: black;
+            z-index: 8;
+            animation: fadeEffect 1s;
+            display: none;
+            #player_controls {
+              height: 2rem;
+              background: color(secondary);
+              a,i {
+                height: inherit;
+                float: right;
+                font-weight: bold;
+                color: color(accent);
+                padding: 0 0.5rem;
+                text-decoration: none;
+                font-size: 2rem;
+              }
+
+              #minimize_btn {
+                line-height: 0.09;
+                display: none;
+              }
+              #restore_btn {
+                line-height: 2;
+                font-size: 1rem;
+                display: none;
+
+              }
+              #close_btn {
+                line-height: 0.85;
               }
             }
           }
-          transition: transform 1s;
-          &:hover {
-            transform: scale($transform-scale-factor);
-          }
-          img {
-            width: 100%;
-          }
-          .info {
-            text-align: center;
-            p {
-              text-transform: capitalize;
-              padding: $padding-main-cards;
-            }
-            h6 {
-              text-transform: uppercase;
-              font-weight: bold;
-              font-family: "Candara";
-              margin: 0;
-              padding: $padding-main-cards;
-              font-size: 1rem;
-            }
-          }
-        }
-        .video_card{
-          min-height: 10rem;
-          line-height: 9;
-        }
-        #video_categories,  #video_reproduction .video_cat_links{
-         padding:0;
-         margin: 0;
-        }
-        #kids_corner_video_player{
 
-        }
-        .video_link {
+          .videos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+            grid-gap: 1rem;
+            .video_links {
+              position: relative;
+              width: max-content;
+              box-shadow: 2px 2px 4px color(accent-4);
+              margin: 0 auto 1rem auto;
 
+              transition: transform 1s;
+              &:hover {
+                cursor: pointer;
+                transform: scale($transform-scale-factor);
+                animation: boxShadowZoomIn 1s;
+                animation-fill-mode: forwards;
+              }
+
+              .video_content {
+                background-color: peru;
+                width: 320px;
+                height: 180px;
+              }
+              .info {
+                position: absolute;
+                bottom: 0;
+                background-color: color(base-1);
+                width: 100%;
+                * {
+                  padding: 0.2rem;
+                  font-size: 0.7rem;
+                }
+              }
+            }
+          }
+        }
+
+        #instr_videos {
+          display: block;
+        }
+        .kids_corner_tab button.active {
+          background-color: color(accent-4);
+          font-weight: bold;
+        }
+      }
+      /* Fade in tabs */
+      @-webkit-keyframes fadeEffect {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes fadeEffect {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Box Shadow Zoom */
+      @-webkit-keyframes boxShadowZoomIn {
+        from {
+          box-shadow: 2px 2px 4px color(accent-4);
+        }
+        to {
+          box-shadow: 2px 2px 4px color(accent-3);
+        }
+      }
+      @keyframes boxShadowZoomIn {
+        from {
+          box-shadow: 2px 2px 4px color(accent-4);
+        }
+        to {
+          box-shadow: 2px 2px 4px color(accent-3);
+        }
+      }
+
+      /* video player Minimize */
+      @-webkit-keyframes videoPlayerMinimize {
+        from {
+          position: fixed;
+          margin: 0 auto;
+          top: 50%;
+          left: 65%;
+          width: 640px;
+          height: 390px;
+          transform: translate(-65%, -50%);
+        }
+        to {
+          width: auto;
+          top: 80%;
+          bottom: 5%;
+          left: 1%;
+          right: 80%;
+          height: auto;
+          transform: translate(-1%, -5%);
+        }
+      }
+
+      @keyframes videoPlayerMinimize {
+        from {
+          position: fixed;
+          margin: 0 auto;
+          top: 50%;
+          left: 65%;
+          width: 640px;
+          height: 390px;
+          transform: translate(-65%, -50%);
+        }
+        to {
+          width: auto;
+          top: 80%;
+          bottom: 5%;
+          left: 1%;
+          right: 80%;
+          height: auto;
+          transform: translate(-1%, -5%);
+        }
+      }
+
+      /* video player Maximize */
+      @-webkit-keyframes videoPlayerMaximize {
+        from {
+          width: auto;
+          top: 80%;
+          bottom: 5%;
+          left: 1%;
+          right: 80%;
+          height: auto;
+          transform: translate(-1%, -5%);
+        }
+        to {
+          position: fixed;
+          margin: 0 auto;
+          top: 50%;
+          left: 65%;
+          width: 640px;
+          height: 390px;
+          transform: translate(-65%, -50%);
+        }
+      }
+
+      @keyframes videoPlayerMaximize {
+        from {
+          width: auto;
+          top: 80%;
+          bottom: 5%;
+          left: 1%;
+          right: 80%;
+          height: auto;
+          transform: translate(-1%, -5%);
+        }
+        to {
+          position: fixed;
+          margin: 0 auto;
+          top: 50%;
+          left: 65%;
+          width: 640px;
+          height: 390px;
+          transform: translate(-65%, -50%);
         }
       }
     }
     /*
-    *Desktop layout for page container area
+    *Desktop layout for kids corner area
     */
     @include desktop {
       main {
-        .content_area, #video_categories, #video_reproduction .video_cat_links{
-          grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-          padding: 0;
-          margin: 0 0 20rem 0.5rem;
-       
-          // display: grid;
-          // grid-template-columns: repeat(2, 1fr);
-          // padding: 0;
-          // grid-template-areas:
-          //   "place_holder_1 place_holder_2"
-          //   "place_holder_3 place_holder_3";
-
-          // #instr_videos {
-          //   grid-area: place_holder_1;
-          // }
-          // #reading_activities {
-          //   grid-area: place_holder_2;
-          // }
-          // #worksheets {
-          //   grid-area: place_holder_3;
-          //   width: 50%;
-          //   margin: 0 auto;
-          // }
+        .content_area {
+          .kids_corner_tab {
+            width: max-content;
+            top: 96px;
+          }
+          .kids_corner_tab button {
+            float: left;
+            padding: 0.2rem 0.2rem;
+            margin: 0.9rem 1rem;
+            &:hover {
+              background-color: color(accent-4);
+              border-radius: 5px;
+            }
+            //underlining of tabs
+            position: relative;
+            span::after {
+              position: absolute;
+              content: "";
+              width: 100%;
+              height: 6px;
+              left: 0;
+              transition: backgound 0.25s;
+              border-radius: 6px;
+              bottom: -11px;
+            }
+          }
+          .kids_corner_tab button.active {
+            background: none;
+            span::after {
+              background-color: color(primary);
+            }
+          }
+          .tabcontent {
+            .player_class {
+              position: fixed;
+              margin: 0 auto;
+              top: 50%;
+              left: 67%;
+              width: 640px;
+              height: 390px;
+              z-index: 19;
+              transform: translate(-65%, -50%);
+              #player_controls {
+                a,i {
+                  cursor: pointer;
+                }
+                #minimize_btn {
+                  display: inline-block;
+                }
+                #close_btn {
+                  line-height: 0.85;
+                }
+              }
+            }
+            .minimize_player {
+              animation: videoPlayerMinimize 1s; //player minimize animation
+              animation-fill-mode: forwards;
+            }
+            .restore_player {
+              animation: videoPlayerMaximize 1s; //player restore animation
+              animation-fill-mode: forwards;
+            }
+          }
         }
-        // #video_categories{
-        //   display: grid;
-        //   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-        //   padding: 0;
-        //   margin: 0 0 20rem 0.5rem;
-        //   line-height: 10;
-        //   grid-gap: $padding-main-cards;
-
-        // }
-      }
-      #kids_corner_video_player{
-        height:24rem;
-        background: #000;
       }
     }
   }

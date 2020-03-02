@@ -1,0 +1,171 @@
+@import "../../style.scss";
+
+body {
+    .container {
+      footer {
+        background: color(primary);
+        height: auto;
+        
+        * {
+          padding: 0;
+          margin: 0;
+        }
+        .footer_social_media {
+          width: 100%;
+          height: auto;
+          margin-bottom: 1rem;
+          padding-top: 0.5rem;
+          p {
+            text-transform: uppercase;
+            color: color(text-2);
+            text-align: center;
+            font-weight: bold;
+            font-size: $footer-text-mobile;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+          }
+  
+          ul {
+            list-style-type: none;
+            text-align: center;
+            li {
+              display: inline-block;
+              font-size: 1.5rem;
+              height: $social-meida-icon-size-mobile;
+              width: $social-meida-icon-size-mobile;
+              // border-radius: 100%;
+              transition: transform 1s;
+              &:hover {
+                transform: scale($transform-scale-factor);
+              }
+              margin-bottom: 0.5rem;
+            }
+            li a {
+              i {
+                line-height: $social-meida-icon-size-mobile;
+                color: color(text-2);
+                &:hover {
+                  color: color(secondary) !important;
+                }
+              }
+              color: color(primary) !important;
+              text-decoration: none;
+            }
+          }
+        }
+        .footer_nav_links {
+          margin-bottom: 1rem;
+          ul {
+            list-style-type: none;
+            text-align: center;
+            text-transform: capitalize;
+            li {
+              font-size: 1rem;
+              transition: transform 1s;
+              &:hover {
+                transform: scale($transform-scale-factor);
+              }
+              margin-bottom: 0.5rem;
+            }
+            li a {
+              i {
+                line-height: 0.75rem;
+              }
+              color: color(text-2) !important;
+              text-decoration: none;
+              &:hover {
+                color: color(secondary) !important;
+              }
+            }
+          }
+        }
+        .copyright {
+          padding-bottom: 0.5rem;
+          text-decoration: none;
+          text-align: center;
+          font-size: 0.75rem;
+          text-transform: capitalize;
+          color: color(text-2);
+          p {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+          }
+          .adr_acronym {
+            text-transform: uppercase;
+          }
+        }
+        /*
+        * IE10+ CSS for footer 
+        */
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          position: relative;
+          top: $header-height-deskop;
+        }
+        /* Edge 12+  */
+        @supports (-ms-accelerator: true) {
+          position: relative;
+          top: $header-height-deskop;
+        }
+        /* Edge 16+  */
+        @supports (-ms-ime-align: auto) {
+          position: relative;
+          top: $header-height-deskop;
+        }
+        /*
+        *Desktop devices
+        */
+        @include desktop {
+          padding: 0px 1rem;
+  
+          .footer_social_media {
+            margin: 0px auto;
+            width: 50%;
+            transform: translate(25%, 0%);
+  
+            p {
+              font-size: $footer-text-desktop;
+              text-align: left;
+              float: left;
+              margin: 0px 1rem 0px 0px;
+              height: 2rem;
+              line-height: 2rem;
+            }
+            .vertical_line {
+              border-left: 1px solid color(text-3);
+              height: 2rem;
+              float: left;
+              margin: 0px 0.5rem;
+            }
+            ul {
+              text-align: center;
+              display: inline-block;
+              margin: 0px 1rem 0px 0.5rem;
+              li {
+                height: $social-meida-icon-size-desktop;
+                width: $social-meida-icon-size-desktop;
+              }
+            }
+          }
+          .horizontal_line {
+            border-bottom: 1px solid color(text-3);
+            width: 50%;
+            margin: 0 auto;
+          }
+  
+          .footer_nav_links {
+            ul {
+              text-align: center;
+              margin-top: 1rem;
+              li {
+                font-size: $footer-text-desktop;
+                display: inline-block;
+                padding-right: 1rem;
+              }
+            }
+          }
+          .copyright {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }

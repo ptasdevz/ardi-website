@@ -1,0 +1,233 @@
+/* 
+Theme Name: ADR Institute
+Author: ptasdevz
+Version: 1.0
+*/
+* {
+  margin: 0px;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  color: #707070;
+  background: #e7e7e7;
+}
+
+body .container {
+  background: #fff;
+}
+
+body .container #overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 16;
+  cursor: pointer;
+}
+
+body .container footer {
+  background: #1d2089;
+  height: auto;
+  /*
+        * IE10+ CSS for footer 
+        */
+  /* Edge 12+  */
+  /* Edge 16+  */
+  /*
+        *Desktop devices
+        */
+}
+
+body .container footer * {
+  padding: 0;
+  margin: 0;
+}
+
+body .container footer .footer_social_media {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  padding-top: 0.5rem;
+}
+
+body .container footer .footer_social_media p {
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+}
+
+body .container footer .footer_social_media ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+body .container footer .footer_social_media ul li {
+  display: inline-block;
+  font-size: 1.5rem;
+  height: 1.5rem;
+  width: 1.5rem;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+  margin-bottom: 0.5rem;
+}
+
+body .container footer .footer_social_media ul li:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+body .container footer .footer_social_media ul li a {
+  color: #1d2089 !important;
+  text-decoration: none;
+}
+
+body .container footer .footer_social_media ul li a i {
+  line-height: 1.5rem;
+  color: #fff;
+}
+
+body .container footer .footer_social_media ul li a i:hover {
+  color: #eeb335 !important;
+}
+
+body .container footer .footer_nav_links {
+  margin-bottom: 1rem;
+}
+
+body .container footer .footer_nav_links ul {
+  list-style-type: none;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+body .container footer .footer_nav_links ul li {
+  font-size: 1rem;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+  margin-bottom: 0.5rem;
+}
+
+body .container footer .footer_nav_links ul li:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+body .container footer .footer_nav_links ul li a {
+  color: #fff !important;
+  text-decoration: none;
+}
+
+body .container footer .footer_nav_links ul li a i {
+  line-height: 0.75rem;
+}
+
+body .container footer .footer_nav_links ul li a:hover {
+  color: #eeb335 !important;
+}
+
+body .container footer .copyright {
+  padding-bottom: 0.5rem;
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.75rem;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+body .container footer .copyright p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+body .container footer .copyright .adr_acronym {
+  text-transform: uppercase;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  body .container footer {
+    position: relative;
+    top: 6rem;
+  }
+}
+
+@supports (-ms-accelerator: true) {
+  body .container footer {
+    position: relative;
+    top: 6rem;
+  }
+}
+
+@supports (-ms-ime-align: auto) {
+  body .container footer {
+    position: relative;
+    top: 6rem;
+  }
+}
+
+@media (min-width: 840px) {
+  body .container footer {
+    padding: 0px 1rem;
+  }
+  body .container footer .footer_social_media {
+    margin: 0px auto;
+    width: 50%;
+    -webkit-transform: translate(25%, 0%);
+            transform: translate(25%, 0%);
+  }
+  body .container footer .footer_social_media p {
+    font-size: 0.75rem;
+    text-align: left;
+    float: left;
+    margin: 0px 1rem 0px 0px;
+    height: 2rem;
+    line-height: 2rem;
+  }
+  body .container footer .footer_social_media .vertical_line {
+    border-left: 1px solid #707070;
+    height: 2rem;
+    float: left;
+    margin: 0px 0.5rem;
+  }
+  body .container footer .footer_social_media ul {
+    text-align: center;
+    display: inline-block;
+    margin: 0px 1rem 0px 0.5rem;
+  }
+  body .container footer .footer_social_media ul li {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  body .container footer .horizontal_line {
+    border-bottom: 1px solid #707070;
+    width: 50%;
+    margin: 0 auto;
+  }
+  body .container footer .footer_nav_links ul {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  body .container footer .footer_nav_links ul li {
+    font-size: 0.75rem;
+    display: inline-block;
+    padding-right: 1rem;
+  }
+  body .container footer .copyright {
+    text-align: center;
+  }
+}
+/*# sourceMappingURL=footer.css.map */

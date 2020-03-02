@@ -1,0 +1,250 @@
+/* 
+Theme Name: ADR Institute
+Author: ptasdevz
+Version: 1.0
+*/
+* {
+  margin: 0px;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  color: #707070;
+  background: #e7e7e7;
+}
+
+body .container {
+  background: #fff;
+}
+
+body .container #overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 16;
+  cursor: pointer;
+}
+
+body .container header {
+  width: 100%;
+  height: 4rem;
+  background-color: #1d2089;
+  text-decoration: none;
+  z-index: 20;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  /*
+      *Desktop layout: Header info and navigation info. 
+      */
+  /* IE 10+ for sticky header*/
+  /* Edge 12+ CSS for sticky header */
+  /* Edge 16+ CSS for sticky header */
+}
+
+body .container header .header_info {
+  background: #1d2089;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  -ms-grid-rows: 100%;
+      grid-template-rows: 100%;
+      grid-template-areas: "logo nav-btn";
+  padding: 4px;
+}
+
+body .container header .header_info .logo {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: logo;
+  position: relative;
+  z-index: 10;
+}
+
+body .container header .header_info .logo img {
+  width: 64px;
+  height: 64px;
+  background: white;
+  border-radius: 100%;
+  -webkit-box-shadow: 2px 4px 20px #000;
+          box-shadow: 2px 4px 20px #000;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+body .container header .header_info .logo img:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+body .container header .header_info .nav_btn {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: nav-btn;
+  background: #1d2089;
+  color: #fff;
+  text-align: right;
+  text-decoration: none;
+  z-index: 10;
+}
+
+body .container header .header_info .nav_btn span {
+  font-size: 200%;
+  cursor: pointer;
+  text-align: center;
+  line-height: 2;
+  padding-right: 16px;
+}
+
+body .container header .navigation {
+  width: 100%;
+  height: 0%;
+  background: #1d2089;
+  overflow-y: hidden;
+  display: block;
+  position: fixed;
+  top: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+body .container header .navigation .navigation_content {
+  padding: 0 !important;
+  background: rgba(29, 32, 137, 0.98);
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  text-align: center;
+  margin-top: 72px;
+}
+
+body .container header .navigation .navigation_content .header_nav_links {
+  padding: 0 !important;
+  list-style-type: none;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  font-size: 1.5rem;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+body .container header .navigation .navigation_content .header_nav_links li {
+  padding: 16px 0;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+body .container header .navigation .navigation_content .header_nav_links li:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+body .container header .navigation .navigation_content .header_nav_links li a {
+  color: #fff !important;
+  text-decoration: none;
+}
+
+body .container header .navigation .navigation_content .header_nav_links li a:hover {
+  color: #eeb335 !important;
+}
+
+@media (min-width: 840px) {
+  body .container header {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 20% 80%;
+        grid-template-columns: 20% 80%;
+    -ms-grid-rows: 100%;
+        grid-template-rows: 100%;
+        grid-template-areas: "header-info nav";
+    height: 6rem;
+  }
+  body .container header .header_info {
+    -ms-grid-columns: 100% 0%;
+        grid-template-columns: 100% 0%;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: header-info;
+  }
+  body .container header .header_info .logo img {
+    position: absolute;
+    top: 0%;
+    width: 140px;
+    height: 140px;
+    background: rgba(255, 255, 255, 0.85);
+  }
+  body .container header .nav_btn {
+    display: none;
+  }
+  body .container header .navigation {
+    display: block;
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: nav;
+    position: relative;
+    height: 100%;
+  }
+  body .container header .navigation .navigation_content {
+    display: block;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+    margin-top: 0;
+  }
+  body .container header .navigation .navigation_content .header_nav_links {
+    position: static;
+    font-size: 1rem;
+    font-weight: bold;
+    -webkit-transform: none;
+            transform: none;
+    text-align: left;
+    padding: 0px;
+  }
+  body .container header .navigation .navigation_content .header_nav_links li {
+    display: inline-block;
+    padding-right: 24px;
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  body .container header {
+    position: fixed;
+    margin: 0px auto;
+    max-width: 1100px;
+  }
+}
+
+@supports (-ms-accelerator: true) {
+  body .container header {
+    position: fixed;
+    margin: 0px auto;
+    max-width: 1100px;
+  }
+}
+
+@supports (-ms-ime-align: auto) {
+  body .container header {
+    position: fixed;
+    margin: 0px auto;
+    max-width: 1100px;
+  }
+}
+/*# sourceMappingURL=header.css.map */
