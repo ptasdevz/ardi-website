@@ -16,6 +16,10 @@ html {
   background: #e7e7e7;
 }
 
+body .container {
+  background: #fff;
+}
+
 body .container #overlay {
   position: fixed;
   display: none;

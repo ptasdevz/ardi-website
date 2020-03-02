@@ -41,11 +41,9 @@ body .container .page_container {
 
 body .container .page_container .content_title {
   text-align: center;
-  background: #7f0309;
   color: #eeb335;
   padding: 0.5rem;
-  -webkit-box-shadow: 2px 4px 4px #000;
-          box-shadow: 2px 4px 4px #000;
+  font-family: Candara, sans-serif;
 }
 
 body .container .page_container .content_title #sub_title {
@@ -71,15 +69,14 @@ body .container .page_container #nav_touch .side_nav {
   overflow-x: hidden;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  -webkit-box-shadow: 2px 4px 4px #c9c9c9;
-          box-shadow: 2px 4px 4px #c9c9c9;
+  -webkit-box-shadow: 0 0 0 0 #c9c9c9;
+          box-shadow: 0 0 0 0 #c9c9c9;
   border: 1px solid #c9c9c9;
 }
 
 body .container .page_container #nav_touch .side_nav .side_bar_1,
 body .container .page_container #nav_touch .side_nav .side_bar_2 {
   color: #1d2089;
-  font-variant: small-caps;
   font-weight: bold;
 }
 
@@ -158,8 +155,8 @@ body .container .page_container #nav_touch .side_nav .side_bar_2 .rotate_arrow_i
     margin: 0.5rem;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 20% 80%;
-        grid-template-columns: 20% 80%;
+    -ms-grid-columns: 18% 82%;
+        grid-template-columns: 18% 82%;
         grid-template-areas: "content_title_white_space content_title" "side_nav      content_area";
   }
   body .container .page_container main {
@@ -179,6 +176,9 @@ body .container .page_container #nav_touch .side_nav .side_bar_2 .rotate_arrow_i
     display: none;
   }
   body .container .page_container #nav_touch .side_nav {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    border: none;
     width: 100%;
     height: 100%;
   }
@@ -190,13 +190,14 @@ body .container .page_container #nav_touch .side_nav .side_bar_2 .rotate_arrow_i
     -ms-grid-row: 1;
     -ms-grid-column: 2;
     grid-area: content_title;
-    margin: 0 0 0.5rem 0.5rem;
   }
   body .container .page_container .content_title h1 {
     height: 3rem;
-    font-size: 2rem;
+    font-size: 4rem;
     width: auto;
-    padding: 0;
+    padding: 1rem;
+    line-height: 0.9;
+    font-weight: bold;
   }
 }
 /*# sourceMappingURL=page.css.map */
