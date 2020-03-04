@@ -3,6 +3,7 @@
 body {
   .page_container {
     background: color(base-1);
+
     main {
       position: relative;
       .content_area::before {
@@ -32,19 +33,39 @@ body {
           background-color: color(base-1);
           position: sticky;
           top: 72px;
+          .tab_menu  {
+            width:100%;
+            background-color: inherit;
+            button {
+              cursor: pointer;
+              transition: 0.3s;
+              font-size: 1rem;
+              color: color(primary);
+              padding: 0.9rem 1rem;
+              border: none;
+              outline: none;
+              width: inherit;
+              background-color: inherit;
+              display: block;
+            }
+           
+            .tab_submenu {
+              display: none;
+            }
+          }
         }
-        .kids_corner_tab button {
-          cursor: pointer;
-          transition: 0.3s;
-          font-size: 1rem;
-          color: color(primary);
-          padding: 0.9rem 1rem;
-          border: none;
-          outline: none;
-          width: inherit;
-          background-color: inherit;
-          display: block;
-        }
+        // .kids_corner_tab button {
+        //   cursor: pointer;
+        //   transition: 0.3s;
+        //   font-size: 1rem;
+        //   color: color(primary);
+        //   padding: 0.9rem 1rem;
+        //   border: none;
+        //   outline: none;
+        //   width: inherit;
+        //   background-color: inherit;
+        //   display: block;
+        // }
 
         .tabcontent {
           position: inherit;
@@ -64,11 +85,12 @@ body {
             z-index: 8;
             animation: fadeEffect 1s;
             display: none;
-      
+
             #player_controls {
               height: 2rem;
               background: color(secondary);
-              a,i {
+              a,
+              i {
                 height: inherit;
                 float: right;
                 font-weight: bold;
@@ -86,7 +108,6 @@ body {
                 line-height: 2;
                 font-size: 1rem;
                 display: none;
-
               }
               #close_btn {
                 line-height: 0.85;
@@ -114,7 +135,7 @@ body {
               }
 
               .video_content {
-                background-color: peru;
+                background-color: #000;
                 width: 320px;
                 height: 180px;
                 border-radius: inherit;
@@ -268,31 +289,78 @@ body {
     *Desktop layout for kids corner area
     */
     @include desktop {
+      #nav_touch {
+        display: none;
+      }
+      grid-template-columns: 0% 100% !important;
+
       main {
         .content_area {
           .kids_corner_tab {
             width: max-content;
             top: 96px;
+            
           }
-          .kids_corner_tab button {
-            float: left;
-            padding: 0.2rem 0.2rem;
-            margin: 0.9rem 1rem;
-            &:hover {
-              background-color: color(accent-4);
-              border-radius: 2px;
-            }
-            //underlining of tabs
-            position: relative;
-            span::after {
-              position: absolute;
-              content: "";
-              width: 100%;
-              height: 6px;
-              left: 0;
-              transition: backgound 0.25s;
-              border-radius: 6px;
-              bottom: -11px;
+          .kids_corner_tab {
+            overflow: visible;
+            .tab_menu {
+              width: auto;
+              display:inline-block;
+              padding:0;
+              height:3.5rem;
+              position: relative;
+
+              button {
+                float: left;
+                padding: 0.2rem 0.2rem;
+                margin: 0.9rem 1rem;
+                &:hover {
+                  background-color: color(accent-4);
+                  border-radius: 2px;
+                }
+                //underlining of tabs
+                position: relative;
+                span::after {
+                  position: absolute;
+                  content: "";
+                  width: 100%;
+                  height: 6px;
+                  left: 0;
+                  transition: backgound 0.25s;
+                  border-radius: 6px;
+                  bottom: -11px;
+                }
+              }
+              .tab_submenu button{
+                margin:0;
+              }
+          
+              &:hover {
+               .tab_submenu{
+                 position: absolute;
+                 top:100%;
+                 left: 50%;
+                 transform:translate(-50%, 0%);
+                 display: block;
+                 border: 1px solid color(accent-4);
+                 border-top: 0;;
+                 text-align: center;
+                 width: 100%;
+                 background: rgba(255, 255, 255, .8);
+                 border-bottom-left-radius: 2px;
+                 border-bottom-right-radius: 2px;
+                 animation: fadeEffect 1s;
+                 button {
+                   display: inherit;
+                   padding:1rem 0;
+                   &:hover {
+                    background-color: color(accent-4);
+                    border-radius: 2px;
+                   }
+                 }
+               }
+              }
+           
             }
           }
           .kids_corner_tab button.active {
@@ -312,7 +380,8 @@ body {
               z-index: 19;
               transform: translate(-65%, -50%);
               #player_controls {
-                a,i {
+                a,
+                i {
                   cursor: pointer;
                 }
                 #minimize_btn {

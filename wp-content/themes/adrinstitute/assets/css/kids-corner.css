@@ -80,7 +80,12 @@ body .page_container main .content_area .kids_corner_tab {
   top: 72px;
 }
 
-body .page_container main .content_area .kids_corner_tab button {
+body .page_container main .content_area .kids_corner_tab .tab_menu {
+  width: 100%;
+  background-color: inherit;
+}
+
+body .page_container main .content_area .kids_corner_tab .tab_menu button {
   cursor: pointer;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -92,6 +97,10 @@ body .page_container main .content_area .kids_corner_tab button {
   width: inherit;
   background-color: inherit;
   display: block;
+}
+
+body .page_container main .content_area .kids_corner_tab .tab_menu .tab_submenu {
+  display: none;
 }
 
 body .page_container main .content_area .tabcontent {
@@ -120,14 +129,15 @@ body .page_container main .content_area .tabcontent .player_class {
 
 body .page_container main .content_area .tabcontent .player_class #player_controls {
   height: 2rem;
-  background: #eeb335;
+  background: #fcba04;
 }
 
-body .page_container main .content_area .tabcontent .player_class #player_controls a, body .page_container main .content_area .tabcontent .player_class #player_controls i {
+body .page_container main .content_area .tabcontent .player_class #player_controls a,
+body .page_container main .content_area .tabcontent .player_class #player_controls i {
   height: inherit;
   float: right;
   font-weight: bold;
-  color: #7f0309;
+  color: #BF211E;
   padding: 0 0.5rem;
   text-decoration: none;
   font-size: 2rem;
@@ -182,7 +192,7 @@ body .page_container main .content_area .tabcontent .videos .video_links:hover {
 }
 
 body .page_container main .content_area .tabcontent .videos .video_links .video_content {
-  background-color: peru;
+  background-color: #000;
   width: 320px;
   height: 180px;
   border-radius: inherit;
@@ -343,23 +353,40 @@ body .page_container main .content_area .kids_corner_tab button.active {
 }
 
 @media (min-width: 840px) {
+  body .page_container {
+    -ms-grid-columns: 0% 100% !important;
+        grid-template-columns: 0% 100% !important;
+  }
+  body .page_container #nav_touch {
+    display: none;
+  }
   body .page_container main .content_area .kids_corner_tab {
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
     top: 96px;
   }
-  body .page_container main .content_area .kids_corner_tab button {
+  body .page_container main .content_area .kids_corner_tab {
+    overflow: visible;
+  }
+  body .page_container main .content_area .kids_corner_tab .tab_menu {
+    width: auto;
+    display: inline-block;
+    padding: 0;
+    height: 3.5rem;
+    position: relative;
+  }
+  body .page_container main .content_area .kids_corner_tab .tab_menu button {
     float: left;
     padding: 0.2rem 0.2rem;
     margin: 0.9rem 1rem;
     position: relative;
   }
-  body .page_container main .content_area .kids_corner_tab button:hover {
+  body .page_container main .content_area .kids_corner_tab .tab_menu button:hover {
     background-color: #c9c9c9;
     border-radius: 2px;
   }
-  body .page_container main .content_area .kids_corner_tab button span::after {
+  body .page_container main .content_area .kids_corner_tab .tab_menu button span::after {
     position: absolute;
     content: "";
     width: 100%;
@@ -369,6 +396,34 @@ body .page_container main .content_area .kids_corner_tab button.active {
     transition: backgound 0.25s;
     border-radius: 6px;
     bottom: -11px;
+  }
+  body .page_container main .content_area .kids_corner_tab .tab_menu .tab_submenu button {
+    margin: 0;
+  }
+  body .page_container main .content_area .kids_corner_tab .tab_menu:hover .tab_submenu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
+    display: block;
+    border: 1px solid #c9c9c9;
+    border-top: 0;
+    text-align: center;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    -webkit-animation: fadeEffect 1s;
+            animation: fadeEffect 1s;
+  }
+  body .page_container main .content_area .kids_corner_tab .tab_menu:hover .tab_submenu button {
+    display: inherit;
+    padding: 1rem 0;
+  }
+  body .page_container main .content_area .kids_corner_tab .tab_menu:hover .tab_submenu button:hover {
+    background-color: #c9c9c9;
+    border-radius: 2px;
   }
   body .page_container main .content_area .kids_corner_tab button.active {
     background: none;
@@ -387,7 +442,8 @@ body .page_container main .content_area .kids_corner_tab button.active {
     -webkit-transform: translate(-65%, -50%);
             transform: translate(-65%, -50%);
   }
-  body .page_container main .content_area .tabcontent .player_class #player_controls a, body .page_container main .content_area .tabcontent .player_class #player_controls i {
+  body .page_container main .content_area .tabcontent .player_class #player_controls a,
+  body .page_container main .content_area .tabcontent .player_class #player_controls i {
     cursor: pointer;
   }
   body .page_container main .content_area .tabcontent .player_class #player_controls #minimize_btn {

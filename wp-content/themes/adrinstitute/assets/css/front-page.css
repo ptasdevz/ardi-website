@@ -57,7 +57,8 @@ body .container .front_page_container section.s_img_rq_assessment_signup .home_p
   top: 8%;
   padding-left: 4px;
   text-align: center;
-  color: #7f0309;
+  color: #BF211E;
+  text-shadow: 0 0 5px #fff;
 }
 
 body .container .front_page_container section.s_img_rq_assessment_signup .home_page_text h3 {
@@ -79,8 +80,8 @@ body .container .front_page_container section.s_img_rq_assessment_signup .s_rq_a
 }
 
 body .container .front_page_container section.s_img_rq_assessment_signup .s_rq_assessment_signup .card {
-  background-color: rgba(242, 164, 57, 0.7);
-  border: 1px solid rgba(127, 3, 9, 0.4);
+  background-color: rgba(252, 186, 4, 0.7);
+  border: 1px solid rgba(191, 33, 30, 0.4);
   -webkit-transition: -webkit-transform 1s;
   transition: -webkit-transform 1s;
   transition: transform 1s;
@@ -109,7 +110,7 @@ body .container .front_page_container section.s_img_rq_assessment_signup .s_rq_a
   text-transform: uppercase;
   padding-top: 1rem;
   font-size: 1.1rem;
-  color: #7f0309;
+  color: #BF211E;
 }
 
 @media (min-width: 840px) {
@@ -202,8 +203,8 @@ body .container .front_page_container main .card {
 }
 
 body .container .front_page_container main .card:nth-of-type(1) h6 {
-  background: #7f0309;
-  color: #eeb335;
+  background: #BF211E;
+  color: #fcba04;
 }
 
 body .container .front_page_container main .card:nth-of-type(2) h6 {
@@ -212,13 +213,13 @@ body .container .front_page_container main .card:nth-of-type(2) h6 {
 }
 
 body .container .front_page_container main .card:nth-of-type(3) h6 {
-  background: #49abae;
+  background: #15c3ff;
   color: #1d2089;
 }
 
 body .container .front_page_container main .card:nth-of-type(4) h6 {
-  background: #eeb335;
-  color: #7f0309;
+  background: #fcba04;
+  color: #BF211E;
 }
 
 body .container .front_page_container main .card:hover {
@@ -336,7 +337,7 @@ body .container .front_page_container .s_testimonial {
 }
 
 body .container .front_page_container .s_testimonial h1 {
-  color: #7f0309;
+  color: #BF211E;
   text-transform: uppercase;
   text-align: center;
   font-size: 1.5rem;

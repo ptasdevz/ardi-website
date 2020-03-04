@@ -67,6 +67,7 @@ function load_style_sheets()
     wp_register_style('front-page', get_template_directory_uri() . '/assets/css/front-page.css', array(), false, 'all');
     wp_enqueue_style('front-page');
 
+    
     wp_register_style('page', get_template_directory_uri() . '/assets/css/page.css', array(), false, 'all');
     wp_enqueue_style('page');
 

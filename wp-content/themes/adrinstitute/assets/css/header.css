@@ -161,7 +161,7 @@ body .container header .navigation .navigation_content .header_nav_links li a {
 }
 
 body .container header .navigation .navigation_content .header_nav_links li a:hover {
-  color: #eeb335 !important;
+  color: #fcba04 !important;
 }
 
 @media (min-width: 840px) {

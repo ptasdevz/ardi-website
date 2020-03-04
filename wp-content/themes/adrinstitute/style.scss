@@ -8,29 +8,29 @@ $colors: (
   primary-light: lighten(#1d2089,80%),
   primary-overlay: rgba(29, 32, 137, 0.98),
   primary-transparent: rgba(29, 32, 137, 0.7),
-  secondary: #eeb335,
-  secondary-transparent: rgba(242, 164, 57, 0.7),
-  accent: #7f0309,
-  accent-transparent: rgba(127, 3, 9, 0.4),
+  secondary: #fcba04,
+  secondary-transparent: rgba(252, 186, 4, 0.7),
+  accent: #BF211E,
+  accent-transparent: rgba(191, 33, 30, 0.4),
   accent-1: #fdf9f2,
   accent-1-darken: darken(#fdf9f2, 15%),
   accent-1-transparent: rgba(253, 249, 242, 0.9),
-  accent-2: #3a888a,
+  accent-2: #00a7e1,
   accent-3: #707070,
   accent-4:lighten(#707070,35%),
   base-1: #fff,
   base: #e7e7e7,
-  text-1: #7f0309,
-  text-1-transparent: rgba(127, 3, 9, 0.4),
+  text-1: #BF211E,
+  text-1-transparent: rgba(191, 33, 30, 0.4),
   text-2: #fff,
   text-3: #707070
 
 );
 
-$main-card-colors-header-bg: #7f0309, #1d2089, lighten(#3a888a, 10%), #eeb335;
-$main-card-colors-header-bg-text: #eeb335, #fff, #1d2089, #7f0309;
-$kids-corner-card-colors-header-bg: #eeb335, #1d2089, lighten(#3a888a, 10%);
-$kids-corner-card-colors-header-bg-text: #7f0309, #fff, #1d2089;
+$main-card-colors-header-bg: #BF211E, #1d2089, lighten(#00a7e1, 10%), #fcba04;
+$main-card-colors-header-bg-text: #fcba04, #fff, #1d2089, #BF211E;
+$kids-corner-card-colors-header-bg: #fcba04, #1d2089, lighten(#00a7e1, 10%);
+$kids-corner-card-colors-header-bg-text: #BF211E, #fff, #1d2089;
 $padding: 16px;
 $logo-dims-mobile: 64px;
 $social-meida-icon-size-mobile: 1.5rem;
