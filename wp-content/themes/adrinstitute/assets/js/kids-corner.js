@@ -49,12 +49,15 @@ $(document).ready(function () {
                 //5.Generate and append thumbnail cards.
                 $(".videos").append(
                     "<div id='" + id + "'class='video_links'>" +
+                    "<div class='video_link_wrapper'>" +
                     "<div class='video_content' style='background-image:url(" + url + "); width=" + width + "px; height:" + height + "px; '></div>" +
                     "<div class='info'>" +
                     "<h4 id=>" + title + "</h4>" +
                     "<p>Video</p>" +
                     "</div>" +
+                    "</div>" +
                     "</div>");
+                
             });
             bindVideoLinks();
 

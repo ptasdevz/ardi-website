@@ -13,22 +13,12 @@
         <h1><?php the_title() ?></h1>
         <h3 id="sub_title">Sub Title</h3>
     </section>
-    <main id="page_main">
-        <div class="content_area">
-            <?php
-            //main content 
-            switch ($post->post_name):
-                case "kids-corner":
-                    include "templates/kids-corner-main.php";
-            endswitch ?>
-        </div>
-    </main>
     <div id="nav_touch">
         <div id="page_side_nav" class="side_nav">
             <section class="side_bar_1">
-                <!-- <div class="close_btn">
+                <div class="close_btn">
                     <a href="#" id="close_nav">&times;</a>
-                </div> -->
+                </div>
                 <?php
 
                 //side navigation links 
@@ -46,6 +36,16 @@
                     <a href="#">Link 3</a>
                 </div>
             </section>
+        </div>
+    </div>
+    <div id="page_main">
+        <div class="content_area">
+            <?php
+            //main content 
+            switch ($post->post_name):
+                case "kids-corner":
+                    include "templates/kids-corner-main.php";
+            endswitch ?>
         </div>
     </div>
 </div>

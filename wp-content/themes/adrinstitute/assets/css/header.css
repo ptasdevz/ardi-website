@@ -228,7 +228,6 @@ body .container header .navigation .navigation_content .header_nav_links li a:ho
   body .container header {
     position: fixed;
     margin: 0px auto;
-    max-width: 1100px;
   }
 }
 
@@ -236,7 +235,6 @@ body .container header .navigation .navigation_content .header_nav_links li a:ho
   body .container header {
     position: fixed;
     margin: 0px auto;
-    max-width: 1100px;
   }
 }
 
@@ -244,7 +242,6 @@ body .container header .navigation .navigation_content .header_nav_links li a:ho
   body .container header {
     position: fixed;
     margin: 0px auto;
-    max-width: 1100px;
   }
 }
 /*# sourceMappingURL=header.css.map */

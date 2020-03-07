@@ -45,6 +45,11 @@ $header-height-deskop: 6rem;
 $img-rq-assesment-height-desktop: 25rem;
 $main-height-desktop: 20rem;
 $transform-scale-factor: 0.95;
+
+
+@import '../../../node_modules/mq-scss/mq';
+@import '../../../node_modules/gutter-grid/grid-mixin';
+
 @function color($color-name) {
   @return map-get($colors, $color-name);
 }

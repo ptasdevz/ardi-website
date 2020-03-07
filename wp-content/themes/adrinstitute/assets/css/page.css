@@ -35,8 +35,8 @@ body .container #overlay {
 
 body .container .page_container {
   /*
-        *Desktop layout for page container area
-        */
+       *Desktop layout for page container area
+       */
 }
 
 body .container .page_container .content_title {
@@ -158,8 +158,10 @@ body .container .page_container #nav_touch .side_nav .side_bar_2 .rotate_arrow_i
     -ms-grid-columns: 18% 82%;
         grid-template-columns: 18% 82%;
         grid-template-areas: "content_title_white_space content_title" "side_nav      content_area";
+    /*IE 10+*/
+    /* Edge 16+  */
   }
-  body .container .page_container main {
+  body .container .page_container #page_main {
     -ms-grid-row: 2;
     -ms-grid-column: 2;
     grid-area: content_area;
@@ -198,6 +200,52 @@ body .container .page_container #nav_touch .side_nav .side_bar_2 .rotate_arrow_i
     padding: 1rem;
     line-height: 0.9;
     font-weight: bold;
+  }
+}
+
+@media all and (min-width: 840px) and (-ms-high-contrast: none), (min-width: 840px) and (-ms-high-contrast: active) {
+  body .container .page_container {
+    position: relative;
+    top: 6rem;
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 1fr;
+  }
+  body .container .page_container .content_title {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+  body .container .page_container #nav_touch {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+  }
+  body .container .page_container #page_main {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+  }
+}
+
+@media (min-width: 840px) {
+  @supports (-ms-ime-align: auto) {
+    body .container .page_container {
+      position: relative;
+      top: 6rem;
+      display: -ms-grid;
+      -ms-grid-columns: 1fr 1fr;
+    }
+    body .container .page_container .content_title {
+      -ms-grid-row: 1;
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 2;
+    }
+    body .container .page_container #nav_touch {
+      -ms-grid-row: 2;
+      -ms-grid-column: 1;
+    }
+    body .container .page_container #page_main {
+      -ms-grid-row: 2;
+      -ms-grid-column: 2;
+    }
   }
 }
 /*# sourceMappingURL=page.css.map */

@@ -1,26 +1,28 @@
     <div class="kids_corner_tab">
-        <div class="tab_menu">
-            <button class="tablinks active" name="instr_videos"><span>Instructional Videos</span></button>
-            <div class="tab_submenu">
-                <button>video cat 1</button>
-                <button>video cat 2</button>
-                <button>video cat 3</button>
+        <div class="tab_wrapper">
+            <div id ="instr_videos1" class="tab_menu">
+                <button class="tablinks active" name="instr_videos"><span>Instructional Videos</span></button>
+                <div class="tab_submenu">
+                    <button>video cat 1</button>
+                    <button>video cat 2</button>
+                    <button>video cat 3</button>
+                </div>
             </div>
-        </div>
-        <div class="tab_menu">
-            <button class="tablinks" name="worksheets"><span>Worksheets</span></button>
-            <div class="tab_submenu">
-                <button>worksheet cat 1</button>
-                <button>worksheet cat 2</button>
-                <button>worksheet cat 3</button>
+            <div id="worksheets1" class="tab_menu">
+                <button class="tablinks" name="worksheets"><span>Worksheets</span></button>
+                <div class="tab_submenu">
+                    <button>worksheet cat 1</button>
+                    <button>worksheet cat 2</button>
+                    <button>worksheet cat 3</button>
+                </div>
             </div>
-        </div>
-        <div class="tab_menu">
-            <button class="tablinks" name="reading_activites"><span>Reading Activites</span></button>
-            <div class="tab_submenu">
-                <button>reading cat 1</button>
-                <button>reading cat 2</button>
-                <button>reading cat 3</button>
+            <div id= "reading_activites1" class="tab_menu">
+                <button class="tablinks" name="reading_activites"><span>Reading Activites</span></button>
+                <div class="tab_submenu">
+                    <button>reading cat 1</button>
+                    <button>reading cat 2</button>
+                    <button>reading cat 3</button>
+                </div>
             </div>
         </div>
     </div>

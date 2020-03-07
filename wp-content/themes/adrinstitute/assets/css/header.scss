@@ -165,21 +165,21 @@ body {
         @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
           position: fixed;
           margin: 0px auto;
-          max-width: 1100px;
+          //max-width: 1100px;
         }
   
         /* Edge 12+ CSS for sticky header */
         @supports (-ms-accelerator: true) {
           position: fixed;
           margin: 0px auto;
-          max-width: 1100px;
+          //max-width: 1100px;
         }
   
         /* Edge 16+ CSS for sticky header */
         @supports (-ms-ime-align: auto) {
           position: fixed;
           margin: 0px auto;
-          max-width: 1100px;
+          //max-width: 1100px;
         }
       }
     }

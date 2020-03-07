@@ -4,7 +4,7 @@ body {
   .page_container {
     background: color(base-1);
 
-    main {
+    #page_main {
       position: relative;
       .content_area::before {
         position: absolute;
@@ -33,39 +33,29 @@ body {
           background-color: color(base-1);
           position: sticky;
           top: 72px;
-          .tab_menu  {
-            width:100%;
-            background-color: inherit;
-            button {
-              cursor: pointer;
-              transition: 0.3s;
-              font-size: 1rem;
-              color: color(primary);
-              padding: 0.9rem 1rem;
-              border: none;
-              outline: none;
-              width: inherit;
+          .tab_wrapper {
+            .tab_menu {
+              width: 100%;
               background-color: inherit;
-              display: block;
-            }
-           
-            .tab_submenu {
-              display: none;
+              button {
+                cursor: pointer;
+                transition: 0.3s;
+                font-size: 1rem;
+                color: color(primary);
+                padding: 0.9rem 1rem;
+                border: none;
+                outline: none;
+                width: inherit;
+                background-color: inherit;
+                display: block;
+              }
+
+              .tab_submenu {
+                display: none;
+              }
             }
           }
         }
-        // .kids_corner_tab button {
-        //   cursor: pointer;
-        //   transition: 0.3s;
-        //   font-size: 1rem;
-        //   color: color(primary);
-        //   padding: 0.9rem 1rem;
-        //   border: none;
-        //   outline: none;
-        //   width: inherit;
-        //   background-color: inherit;
-        //   display: block;
-        // }
 
         .tabcontent {
           position: inherit;
@@ -133,22 +123,23 @@ body {
                 animation: boxShadowZoomIn 1s;
                 animation-fill-mode: forwards;
               }
-
-              .video_content {
-                background-color: #000;
-                width: 320px;
-                height: 180px;
-                border-radius: inherit;
-              }
-              .info {
-                position: absolute;
-                bottom: 0;
-                background-color: color(base-1);
-                width: 100%;
-                border-radius: inherit;
-                * {
-                  padding: 0.2rem;
-                  font-size: 0.7rem;
+              .video_link_wrapper {
+                .video_content {
+                  background-color: #000;
+                  width: 320px;
+                  height: 180px;
+                  border-radius: inherit;
+                }
+                .info {
+                  position: absolute;
+                  bottom: 0;
+                  background-color: color(base-1);
+                  width: 100%;
+                  border-radius: inherit;
+                  * {
+                    padding: 0.2rem;
+                    font-size: 0.7rem;
+                  }
                 }
               }
             }
@@ -290,83 +281,89 @@ body {
     */
     @include desktop {
       #nav_touch {
-        display: none;
+        display: none; //hide side nav menu
       }
-      grid-template-columns: 0% 100% !important;
+      grid-template-columns: 0% 100% !important; //allow content to cover full-width
 
-      main {
+      #page_main {
         .content_area {
           .kids_corner_tab {
-            width: max-content;
+            // width: max-content;
+            width: auto;
+            display: inline-block;
+            left: 50%;
+            transform: translate(-50%, 0);
             top: 96px;
-            
           }
           .kids_corner_tab {
             overflow: visible;
-            .tab_menu {
-              width: auto;
-              display:inline-block;
-              padding:0;
-              height:3.5rem;
-              position: relative;
-
-              button {
-                float: left;
-                padding: 0.2rem 0.2rem;
-                margin: 0.9rem 1rem;
-                &:hover {
-                  background-color: color(accent-4);
-                  border-radius: 2px;
-                }
-                //underlining of tabs
+            .tab_wrapper {
+              .tab_menu {
+                width: auto;
+                display: inline-block;
+                padding: 0;
+                height: 3.5rem;
                 position: relative;
-                span::after {
-                  position: absolute;
-                  content: "";
-                  width: 100%;
-                  height: 6px;
-                  left: 0;
-                  transition: backgound 0.25s;
-                  border-radius: 6px;
-                  bottom: -11px;
-                }
-              }
-              .tab_submenu button{
-                margin:0;
-              }
-          
-              &:hover {
-               .tab_submenu{
-                 position: absolute;
-                 top:100%;
-                 left: 50%;
-                 transform:translate(-50%, 0%);
-                 display: block;
-                 border: 1px solid color(accent-4);
-                 border-top: 0;;
-                 text-align: center;
-                 width: 100%;
-                 background: rgba(255, 255, 255, .8);
-                 border-bottom-left-radius: 2px;
-                 border-bottom-right-radius: 2px;
-                 animation: fadeEffect 1s;
-                 button {
-                   display: inherit;
-                   padding:1rem 0;
-                   &:hover {
+
+                button {
+                  float: left;
+                  padding: 0.2rem 0.2rem;
+                  margin: 0.9rem 1rem;
+                  &:hover {
                     background-color: color(accent-4);
                     border-radius: 2px;
-                   }
-                 }
-               }
+                  }
+                  //underlining of tabs
+                  position: relative;
+                  span::after {
+                    position: absolute;
+                    content: "";
+                    width: 100%;
+                    height: 6px;
+                    left: 0;
+                    transition: backgound 0.25s;
+                    border-radius: 6px;
+                    bottom: -11px;
+                  }
+                }
+                .tab_submenu button {
+                  margin: 0;
+                }
+
+                &:hover {
+                  .tab_submenu {
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    transform: translate(-50%, 0%);
+                    display: block;
+                    border: 1px solid color(accent-4);
+                    border-top: 0;
+                    text-align: center;
+                    width: 100%;
+                    background: rgba(255, 255, 255, 0.8);
+                    border-bottom-left-radius: 2px;
+                    border-bottom-right-radius: 2px;
+                    animation: fadeEffect 1s;
+                    button {
+                      display: inherit;
+                      padding: 1rem 0;
+                      &:hover {
+                        background-color: color(accent-4);
+                        border-radius: 2px;
+                      }
+                    }
+                  }
+                }
               }
-           
             }
           }
-          .kids_corner_tab button.active {
-            background: none;
-            span::after {
-              background-color: color(primary);
+          .kids_corner_tab {
+            .tab_wrapper button.active {
+              background: none;
+              span::after {
+                background-color: color(primary);
+              }
             }
           }
           .tabcontent {
@@ -399,6 +396,24 @@ body {
             .restore_player {
               animation: videoPlayerMaximize 1s; //player restore animation
               animation-fill-mode: forwards;
+            }
+          }
+        }
+      }
+      /*
+        * IE10+ CSS for main layout 
+        */
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        #page_main {
+          .content_area {
+            .kids_corner_tab {
+              top: 0;
+            }
+            .tabcontent {
+              overflow: hidden; /* Need this for the chrome bug */
+              .videos {
+                @include grid($cols: 4, $gutter: 40px);
+              }
             }
           }
         }
