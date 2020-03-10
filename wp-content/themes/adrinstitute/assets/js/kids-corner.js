@@ -10,14 +10,65 @@ $(document).ready(function () {
         $("#" + name).css("display", "block");
 
         //clean any stuff on instructional tab
-        if (name != "instr_videos"){
+        if (name != "instr_videos") {
             closePlayer();
         }
 
     });
 
-
     //=============================Get YouTube Data on Videos ======================
+
+    var all_video_ids = [];
+    var video_ids = [];
+    var video_cate = [];
+
+    //get all categories and ids from backend.
+    $(".you_tube_video_list").children().each(function () {
+        video_ids[video_ids.length] = $(this).attr('id');
+        video_cate[video_cate.length] = $(this).attr('class');
+    });
+
+    //extract unique categories
+    all_video_ids = video_ids;
+    let unique_categories = [... new Set(video_cate)];
+    var ids_str = video_ids.join();
+    unique_categories.unshift("All Videos");
+
+    unique_categories.forEach(function (cate_name, index) {
+        //Adjust disply text
+        if (cate_name) {
+            cate_name_as_id = cate_name.replace(/\s/g, '_').toLowerCase();
+            cate_name_capitalized = cate_name.charAt(0).toUpperCase() + cate_name.substr(1);
+
+            //Append categories text to markup
+            $('#instr_videos1 div').append("<button id=" + cate_name_as_id + ">" + cate_name_capitalized + "</button>");
+
+            //Setup callback on buttons for categories
+            $("#" + cate_name_as_id).click(function () {
+                e.preventDefault();
+                $buttonId = $(this).attr("id");
+                if ($buttonId == "all_videos") {
+                    ids_str = all_video_ids.join();
+
+                } else {
+                    video_ids = [];
+                    $(".you_tube_video_list").children().each(function () {
+                        category = $(this).attr('class');
+                        category = category.replace(/\s/g, '_').toLowerCase();
+                        if (category == $buttonId) {
+                            video_ids[video_ids.length] = $(this).attr('id');
+                        }
+                    });
+
+                    ids_str = video_ids.join();
+                }
+                $(".video_links").remove();
+                start();
+            });
+        }
+    });
+
+
     function start() {
         // 2. Initialize the JavaScript client library.
         gapi.client.init({
@@ -26,8 +77,9 @@ $(document).ready(function () {
             // 3. Initialize and make the API request.
             return gapi.client.request({
                 'params': {
-                    'id': 'g0F1hYzX0qc,BELlZKpi1Zs,saF3-f0XWAY,_MNETwHzwnE,36IBDpTRVNE,bp8arskkcXg,3zJJ1S6-rMc,sYmwStHMezc,mnanlcyRuuI,k-n_LHGseNk',
-                    'part': 'snippet,contentDetails,status,statistics'
+                    //'id': 'g0F1hYzX0qc,BELlZKpi1Zs,saF3-f0XWAY,_MNETwHzwnE,36IBDpTRVNE,bp8arskkcXg,3zJJ1S6-rMc,sYmwStHMezc,mnanlcyRuuI,k-n_LHGseNk',
+                    'part': 'snippet,contentDetails,status,statistics',
+                    'id': ids_str
                 },
                 'path': 'https://www.googleapis.com/youtube/v3/videos',
             })
@@ -57,7 +109,7 @@ $(document).ready(function () {
                     "</div>" +
                     "</div>" +
                     "</div>");
-                
+
             });
             bindVideoLinks();
 
@@ -65,18 +117,18 @@ $(document).ready(function () {
             console.log('Error: ' + reason.result.error.message);
         });
     };
-     
+
     //bind youtube links for call backs
-    function bindVideoLinks(){
+    function bindVideoLinks() {
         $(".video_links").on("click", function () {
-        
-            $(".player_class").css("display","inline-block");
-            var vid_id= $(this).attr('id');
+
+            $(".player_class").css("display", "inline-block");
+            var vid_id = $(this).attr('id');
             $("#player").remove();
             $(".player_class").append("<div id='player'></div>");
             onYouTubeIframeAPIReady(vid_id);
-            $("#player").css("width","100%");
-            $("#player").css("height","100%");
+            $("#player").css("width", "100%");
+            $("#player").css("height", "100%");
         });
     }
     // 1. Load the JavaScript client library.
@@ -84,34 +136,34 @@ $(document).ready(function () {
     //=============================End of Getting YouTube Data on Videos ======================
 
     //================================Create and Manage YouTube Video Player ============================
-    $("#close_btn").click(function(){
-      closePlayer();
+    $("#close_btn").click(function () {
+        closePlayer();
     });
 
-    $("#minimize_btn").click(function(){
+    $("#minimize_btn").click(function () {
         $(".player_class").addClass("minimize_player");
         $(".player_class").removeClass("restore_player");
         $(this).hide();
         $("#restore_btn").show();
 
     });
-    $("#restore_btn").click(function(){
+    $("#restore_btn").click(function () {
         $(".player_class").removeClass("minimize_player");
         $(".player_class").addClass("restore_player");
         $(this).hide();
         $("#minimize_btn").show();
     });
 
-    function closePlayer(){
-        $("#player").remove();  
-        
+    function closePlayer() {
+        $("#player").remove();
+
         //desktop media query
         if ($('header').width() > 840) { $("#minimize_btn").show(); }
 
         $("#restore_btn").hide();
         $(".player_class").removeClass("minimize_player");
         $(".player_class").removeClass("restore_player");
-        $(".player_class").css("display","none");
+        $(".player_class").css("display", "none");
     }
     var player;
     function onYouTubeIframeAPIReady(vid_id) {
@@ -146,9 +198,23 @@ $(document).ready(function () {
         player.stopVideo();
     }
 
-    //================================End of Creating YouTube Video Player ============================
+    //================================End of Creating YouTube Video Player ===========================
 
-
+    //load all videos
+    // $.ajax({
+    //     type: "post",
+    //     dataType: "json",
+    //     url: ajax.ajax_url,
+    //     data: { action: "get_youtube_videos", call_type: "internal" },
+    //     success: function (response) {
+    //         if (response.type == "success") {
+    //             console.log(response);
+    //         }
+    //         else {
+    //             //  alert("Your vote could not be added")
+    //         }
+    //     }
+    // });
 
 });
 
