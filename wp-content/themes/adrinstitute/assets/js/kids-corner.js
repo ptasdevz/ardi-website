@@ -44,7 +44,7 @@ $(document).ready(function () {
             $('#instr_videos1 div').append("<button id=" + cate_name_as_id + ">" + cate_name_capitalized + "</button>");
 
             //Setup callback on buttons for categories
-            $("#" + cate_name_as_id).click(function () {
+            $("#" + cate_name_as_id).click(function (e) {
                 e.preventDefault();
                 $buttonId = $(this).attr("id");
                 if ($buttonId == "all_videos") {
