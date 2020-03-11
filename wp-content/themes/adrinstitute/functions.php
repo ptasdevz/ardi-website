@@ -73,6 +73,9 @@ function load_style_sheets()
 
     wp_register_style('kids-corner', get_template_directory_uri() . '/assets/css/kids-corner.css', array(), false, 'all');
     wp_enqueue_style('kids-corner');
+    
+    wp_register_style('services', get_template_directory_uri() . '/assets/css/services.css', array(), false, 'all');
+    wp_enqueue_style('services');
 }
 add_action('wp_enqueue_scripts', 'load_style_sheets');
 
@@ -103,7 +106,11 @@ function load_js()
     wp_localize_script('kids_corner_js', 'ajax', array(
         'ajax_url' => admin_url('admin-ajax.php'),
     ));
-  
+
+    wp_register_script('services_js', get_template_directory_uri() . '/assets/js/services.js', '', 1, true);
+    wp_localize_script('services_js', 'ajax', array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+    ));
     wp_enqueue_script('kids_corner_js');
 
     wp_register_script('youtube_iframe_api', 'https://www.youtube.com/iframe_api', '', 1, true);

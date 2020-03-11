@@ -199,3 +199,8 @@ Stack trace:
 [10-Mar-2020 04:01:12 UTC] PHP Warning:  include(): Failed opening 'http://localhost:8086/wp-content/themes/adrinstitute/templates/kids-corner-content.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\functions.php on line 162
 [10-Mar-2020 04:58:31 UTC] PHP Notice:  Undefined variable: pg in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\page.php on line 7
 [10-Mar-2020 04:58:31 UTC] PHP Notice:  Trying to get property 'ID' of non-object in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\page.php on line 7
+[10-Mar-2020 19:10:17 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\kids-corner-main.php on line 52
+[10-Mar-2020 19:10:17 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\kids-corner-main.php on line 53
+[10-Mar-2020 19:10:55 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\kids-corner-main.php on line 52
+[10-Mar-2020 19:10:55 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\kids-corner-main.php on line 53
+[10-Mar-2020 20:01:47 UTC] PHP Parse error:  syntax error, unexpected '}', expecting end of file in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\functions.php on line 80

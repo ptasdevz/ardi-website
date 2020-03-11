@@ -6,152 +6,158 @@ body {
 
     #page_main {
       position: relative;
-      .content_area::before {
-        position: absolute;
-        content: "";
-        background-image: url("../imgs/kids_corner.png");
-        background-size: cover;
-        background-position: center;
-        // box-shadow: 0 0 0.5rem 0.5rem color(base-1) inset;
-        opacity: 0.1;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 8px;
+      .content_area {
+        position: inherit;
+        .kids_content_area::before {
+          position: absolute;
+          content: "";
+          background-image: url("../imgs/kids_corner.png");
+          background-size: cover;
+          background-position: center;
+          // box-shadow: 0 0 0.5rem 0.5rem color(base-1) inset;
+          opacity: 0.1;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 8px;
+        }
       }
       .content_area {
         position: relative;
-        .kids_corner_tab {
-          position: relative;
-          z-index: 10;
-          overflow: hidden;
-          border: 1px solid color(accent-4);
-          border-top: 0;
-          border-radius: 2px;
-          width: 100%;
-          margin: 0 auto;
-          background-color: color(base-1);
-          position: sticky;
-          top: 72px;
-          .tab_wrapper {
-            .tab_menu {
-              width: 100%;
-              background-color: inherit;
-              button {
-                cursor: pointer;
-                transition: 0.3s;
-                font-size: 1rem;
-                color: color(primary);
-                padding: 0.9rem 1rem;
-                border: none;
-                outline: none;
-                width: inherit;
-                background-color: inherit;
-                display: block;
-              }
-
-              .tab_submenu {
-                display: none;
-              }
-            }
-          }
-        }
-
-        .tabcontent {
+        .kids_content_area {
           position: inherit;
-          display: none;
-          padding: 6px 12px;
-          animation: fadeEffect 1s; //tab content
-          margin-top: 1rem;
-
-          .player_class {
-            position: sticky;
-            margin: 0 auto;
-            top: 33%;
-            left: 50%;
+          .kids_corner_tab {
+            position: relative;
+            z-index: 10;
+            overflow: hidden;
+            border: 1px solid color(accent-4);
+            border-top: 0;
+            border-radius: 2px;
             width: 100%;
-            height: 30%;
-            background-color: black;
-            z-index: 8;
-            animation: fadeEffect 1s;
-            display: none;
+            margin: 0 auto;
+            background-color: color(base-1);
+            position: sticky;
+            top: 72px;
+            .tab_wrapper {
+              .tab_menu {
+                width: 100%;
+                background-color: inherit;
+                button {
+                  cursor: pointer;
+                  transition: 0.3s;
+                  font-size: 1rem;
+                  color: color(primary);
+                  padding: 0.9rem 1rem;
+                  border: none;
+                  outline: none;
+                  width: inherit;
+                  background-color: inherit;
+                  display: block;
+                }
 
-            #player_controls {
-              height: 2rem;
-              background: color(secondary);
-              a,
-              i {
-                height: inherit;
-                float: right;
-                font-weight: bold;
-                color: color(accent);
-                padding: 0 0.5rem;
-                text-decoration: none;
-                font-size: 2rem;
-              }
-
-              #minimize_btn {
-                line-height: 0.09;
-                display: none;
-              }
-              #restore_btn {
-                line-height: 2;
-                font-size: 1rem;
-                display: none;
-              }
-              #close_btn {
-                line-height: 0.85;
+                .tab_submenu {
+                  display: none;
+                }
               }
             }
           }
 
-          .videos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-            grid-gap: 1rem;
-            .video_links {
-              position: relative;
-              width: max-content;
-              box-shadow: 2px 2px 4px color(accent-4);
-              margin: 0 auto 1rem auto;
-              border-radius: 2px;
+          .tabcontent {
+            position: inherit;
+            display: none;
+            padding: 6px 12px;
+            animation: fadeEffect 1s; //tab content
+            margin-top: 1rem;
 
-              transition: transform 1s;
-              &:hover {
-                cursor: pointer;
-                transform: scale($transform-scale-factor);
-                animation: boxShadowZoomIn 1s;
-                animation-fill-mode: forwards;
-              }
-              .video_link_wrapper {
-                .video_content {
-                  background-color: #000;
-                  width: 320px;
-                  height: 180px;
-                  border-radius: inherit;
+            .player_class {
+              position: sticky;
+              margin: 0 auto;
+              top: 33%;
+              left: 50%;
+              width: 100%;
+              height: 30%;
+              background-color: black;
+              z-index: 8;
+              animation: fadeEffect 1s;
+              display: none;
+
+              #player_controls {
+                height: 2rem;
+                background: color(secondary);
+                a,
+                i {
+                  height: inherit;
+                  float: right;
+                  font-weight: bold;
+                  color: color(accent);
+                  padding: 0 0.5rem;
+                  text-decoration: none;
+                  font-size: 2rem;
                 }
-                .info {
-                  position: absolute;
-                  bottom: 0;
-                  background-color: color(base-1);
-                  width: 100%;
-                  border-radius: inherit;
-                  * {
-                    padding: 0.2rem;
-                    font-size: 0.7rem;
+
+                #minimize_btn {
+                  line-height: 0.09;
+                  display: none;
+                }
+                #restore_btn {
+                  line-height: 2;
+                  font-size: 1rem;
+                  display: none;
+                }
+                #close_btn {
+                  line-height: 0.85;
+                }
+              }
+            }
+
+            .videos {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+              grid-gap: 1rem;
+              .video_links {
+                position: relative;
+                width: max-content;
+                box-shadow: 2px 2px 4px color(accent-4);
+                margin: 0 auto 1rem auto;
+                border-radius: 2px;
+
+                transition: transform 1s;
+                &:hover {
+                  cursor: pointer;
+                  transform: scale($transform-scale-factor);
+                  animation: boxShadowZoomIn 1s;
+                  animation-fill-mode: forwards;
+                }
+                .video_link_wrapper {
+                  .video_content {
+                    background-color: #000;
+                    width: 320px;
+                    height: 180px;
+                    border-radius: inherit;
+                  }
+                  .info {
+                    position: absolute;
+                    bottom: 0;
+                    background-color: color(base-1);
+                    width: 100%;
+                    border-radius: inherit;
+                    * {
+                      padding: 0.2rem;
+                      font-size: 0.7rem;
+                    }
                   }
                 }
               }
             }
           }
-        }
 
-        #instr_videos {
-          display: block;
-        }
-        .kids_corner_tab button.active {
-          background-color: color(accent-4);
-          font-weight: bold;
+          #instr_videos {
+            display: block;
+          }
+          .kids_corner_tab button.active {
+            background-color: color(accent-4);
+            font-weight: bold;
+          }
         }
       }
       /* Fade in tabs */
@@ -287,132 +293,136 @@ body {
 
       #page_main {
         .content_area {
-          .kids_corner_tab {
-            // width: max-content;
-            width: auto;
-            display: inline-block;
-            left: 50%;
-            transform: translate(-50%, 0);
-            top: 96px;
-          }
-          .kids_corner_tab {
-            overflow: visible;
-            .tab_wrapper {
-              .tab_menu {
-                width: auto;
-                display: inline-block;
-                padding: 0;
-                height: 3.5rem;
-                position: relative;
-
-                button {
-                  float: left;
-                  padding: 0.2rem 0.2rem;
-                  margin: 0.9rem 1rem;
-                  &:hover {
-                    background-color: color(accent-4);
-                    border-radius: 2px;
-                  }
-                  //underlining of tabs
+          .kids_content_area {
+            .kids_corner_tab {
+              // width: max-content;
+              width: auto;
+              display: inline-block;
+              left: 50%;
+              transform: translate(-50%, 0);
+              top: 96px;
+            }
+            .kids_corner_tab {
+              overflow: visible;
+              .tab_wrapper {
+                .tab_menu {
+                  width: auto;
+                  display: inline-block;
+                  padding: 0;
+                  height: 3.5rem;
                   position: relative;
-                  span::after {
-                    position: absolute;
-                    content: "";
-                    width: 100%;
-                    height: 6px;
-                    left: 0;
-                    transition: backgound 0.25s;
-                    border-radius: 6px;
-                    bottom: -11px;
-                  }
-                }
-                .tab_submenu button {
-                  margin: 0;
-                }
 
-                &:hover {
-                  .tab_submenu {
-                    position: absolute;
-                    top: 100%;
-                    left: 50%;
-                    transform: translate(-50%, 0%);
-                    display: block;
-                    border: 1px solid color(accent-4);
-                    border-top: 0;
-                    text-align: center;
-                    width: 100%;
-                    background: rgba(255, 255, 255, 0.8);
-                    border-bottom-left-radius: 2px;
-                    border-bottom-right-radius: 2px;
-                    animation: fadeEffect 1s;
-                    button {
-                      display: inherit;
-                      padding: 1rem 0;
-                      &:hover {
-                        background-color: color(accent-4);
-                        border-radius: 2px;
+                  button {
+                    float: left;
+                    padding: 0.2rem 0.2rem;
+                    margin: 0.9rem 1rem;
+                    &:hover {
+                      background-color: color(accent-4);
+                      border-radius: 2px;
+                    }
+                    //underlining of tabs
+                    position: relative;
+                    span::after {
+                      position: absolute;
+                      content: "";
+                      width: 100%;
+                      height: 6px;
+                      left: 0;
+                      transition: backgound 0.25s;
+                      border-radius: 6px;
+                      bottom: -11px;
+                    }
+                  }
+                  .tab_submenu button {
+                    margin: 0;
+                  }
+
+                  &:hover {
+                    .tab_submenu {
+                      position: absolute;
+                      top: 100%;
+                      left: 50%;
+                      transform: translate(-50%, 0%);
+                      display: block;
+                      border: 1px solid color(accent-4);
+                      border-top: 0;
+                      text-align: center;
+                      width: 100%;
+                      background: rgba(255, 255, 255, 0.8);
+                      border-bottom-left-radius: 2px;
+                      border-bottom-right-radius: 2px;
+                      animation: fadeEffect 1s;
+                      button {
+                        display: inherit;
+                        padding: 1rem 0;
+                        &:hover {
+                          background-color: color(accent-4);
+                          border-radius: 2px;
+                        }
                       }
                     }
                   }
                 }
               }
             }
-          }
-          .kids_corner_tab {
-            .tab_wrapper button.active {
-              background: none;
-              span::after {
-                background-color: color(primary);
-              }
-            }
-          }
-          .tabcontent {
-            .player_class {
-              position: fixed;
-              margin: 0 auto;
-              top: 50%;
-              left: 67%;
-              width: 640px;
-              height: 390px;
-              z-index: 19;
-              transform: translate(-65%, -50%);
-              #player_controls {
-                a,
-                i {
-                  cursor: pointer;
-                }
-                #minimize_btn {
-                  display: inline-block;
-                }
-                #close_btn {
-                  line-height: 0.85;
+            .kids_corner_tab {
+              .tab_wrapper button.active {
+                background: none;
+                span::after {
+                  background-color: color(primary);
                 }
               }
             }
-            .minimize_player {
-              animation: videoPlayerMinimize 1s; //player minimize animation
-              animation-fill-mode: forwards;
-            }
-            .restore_player {
-              animation: videoPlayerMaximize 1s; //player restore animation
-              animation-fill-mode: forwards;
+            .tabcontent {
+              .player_class {
+                position: fixed;
+                margin: 0 auto;
+                top: 50%;
+                left: 67%;
+                width: 640px;
+                height: 390px;
+                z-index: 19;
+                transform: translate(-65%, -50%);
+                #player_controls {
+                  a,
+                  i {
+                    cursor: pointer;
+                  }
+                  #minimize_btn {
+                    display: inline-block;
+                  }
+                  #close_btn {
+                    line-height: 0.85;
+                  }
+                }
+              }
+              .minimize_player {
+                animation: videoPlayerMinimize 1s; //player minimize animation
+                animation-fill-mode: forwards;
+              }
+              .restore_player {
+                animation: videoPlayerMaximize 1s; //player restore animation
+                animation-fill-mode: forwards;
+              }
             }
           }
         }
       }
-      /*
+      /*  
         * IE10+ CSS for main layout 
         */
       @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
         #page_main {
           .content_area {
-            .kids_corner_tab {
-              top: 0;
-            }
-            .tabcontent {
-              overflow: hidden; /* Need this for the chrome bug */
-              .videos {
-                @include grid($cols: 4, $gutter: 40px);
+            .kids_content_area {
+              .kids_corner_tab {
+                top: 0;
+              }
+              .tabcontent {
+                overflow: hidden; /* Need this for the chrome bug */
+                .videos {
+                  @include grid($cols: 4, $gutter: 40px);
+                }
               }
             }
           }

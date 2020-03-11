@@ -45,6 +45,10 @@
             switch ($post->post_name):
                 case "kids-corner":
                     include "templates/kids-corner-main.php";
+                break;
+                case "services":
+                    include "templates/services-main.php";
+                break;
             endswitch ?>
         </div>
     </div>

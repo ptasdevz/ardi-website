@@ -1,0 +1,121 @@
+/* 
+Theme Name: ADR Institute
+Author: ptasdevz
+Version: 1.0
+*/
+* {
+  margin: 0px;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  color: #707070;
+  background: #e7e7e7;
+}
+
+body .container {
+  background: #fff;
+}
+
+body .container #overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 16;
+  cursor: pointer;
+}
+
+body .page_container {
+  background: #fff;
+}
+
+body .page_container #page_main {
+  position: relative;
+}
+
+body .page_container #page_main .content_area {
+  position: inherit;
+}
+
+body .page_container #page_main .content_area .services_content_area::before {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 15rem;
+  position: absolute;
+  content: "";
+  background-image: url("../imgs/our_services.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+body .page_container #page_main .content_area .services_content_area {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  width: inherit;
+  -ms-grid-columns: (minmax(14rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+}
+
+body .page_container #page_main .content_area .services_content_area .service {
+  position: relative;
+  z-index: 10;
+  padding: 1rem;
+}
+
+body .page_container #page_main .content_area .services_content_area .service img {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 2px;
+  -webkit-box-shadow: 2px 2px 4px #c9c9c9;
+          box-shadow: 2px 2px 4px #c9c9c9;
+}
+
+body .page_container #page_main .content_area .services_content_area .service h1 {
+  color: #000;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+body .page_container #page_main .content_area .services_content_area .service p {
+  text-align: justify;
+  width: 80%;
+  margin: 0 auto 1rem auto;
+}
+
+body .page_container #page_main .content_area .services_content_area .service button {
+  cursor: pointer;
+  background: #1d2089;
+  color: #fff;
+  padding: .5rem;
+  outline: none;
+  border: none;
+  border-radius: 2px;
+  -webkit-transition: 1s;
+  transition: 1s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+}
+
+body .page_container #page_main .content_area .services_content_area .service button:hover {
+  color: #fcba04;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+/*# sourceMappingURL=services.css.map */
