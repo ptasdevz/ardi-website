@@ -444,16 +444,20 @@ body .page_container #page_main .content_area .kids_content_area .kids_corner_ta
   body .page_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper button.active span::after {
     background-color: #1d2089;
   }
+  body .page_container #page_main .content_area .kids_content_area .tabcontent {
+    width: 80%;
+    margin: 0 auto;
+  }
   body .page_container #page_main .content_area .kids_content_area .tabcontent .player_class {
     position: fixed;
     margin: 0 auto;
     top: 50%;
-    left: 67%;
+    left: 50%;
     width: 640px;
     height: 390px;
     z-index: 19;
-    -webkit-transform: translate(-65%, -50%);
-            transform: translate(-65%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
   }
   body .page_container #page_main .content_area .kids_content_area .tabcontent .player_class #player_controls a,
   body .page_container #page_main .content_area .kids_content_area .tabcontent .player_class #player_controls i {

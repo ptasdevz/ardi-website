@@ -10,7 +10,7 @@
     // die();
     ?>
     <section class="content_title">
-        <h1><?php the_title() ?></h1>
+        <h1><?php if (get_the_title() == "Services") echo "Our Services"; else the_title()?></h1>
         <h3 id="sub_title">Sub Title</h3>
     </section>
     <div id="nav_touch">

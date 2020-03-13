@@ -9,68 +9,120 @@ body {
       .content_area {
         position: inherit;
         .services_content_area::before {
-            position: relative;
-            box-sizing: border-box;
-            padding:15rem;
-            position: absolute;
-            content: "";
-            background-image: url("../imgs/our_services.png");
-            background-size: cover;
-            background-position: center;
-            opacity: 0.1;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 8px;
+          position: relative;
+          box-sizing: border-box;
+          // padding: 15rem;
+          position: absolute;
+          content: "";
+          background-image: url("../imgs/our_services.png");
+          background-size: cover;
+          background-position: center;
+          opacity: 0.1;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 8px;
         }
         .services_content_area {
+          position: relative;
+          width: inherit;
+
+          .service {
             position: relative;
-            display: grid;
-            width: inherit;
-            grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
-            // border:1px solid red;
-            .service {
-                position: relative;
-                z-index: 10;
-                // border:1px solid green;
-                padding:1rem;
-                // box-sizing: border-box;
-                img {
-                    width:100%;
-                    margin-bottom: 1rem;;
-                    border-radius: 2px;
-                    box-shadow: 2px 2px 4px color(accent-4);
-                }
-                h1 {
-                    color:#000;
-                    margin-bottom: 1rem;;
-                    text-align: center;
-
-                }
-                p {
-                    text-align: justify;
-                    width: 80%;
-                    margin: 0 auto 1rem auto;
-                }
-                button {
-                    cursor: pointer;
-                    background: color(primary);
-                    color:color(text-2);
-                    padding:.5rem;
-                    outline: none;
-                    border:none;
-                    border-radius: 2px;
-                    transition: 1s;
-                    &:hover{
-                        color:color(secondary);
-                        transform: scale($transform-scale-factor);
-                    }
-                    display: flex;
-                    margin: 0 auto;
-
-                }
-                
+            z-index: 10;
+            padding: 1rem;
+            img {
+              width: 100%;
+              margin-bottom: 1rem;
+              border-radius: 2px;
+              box-shadow: 2px 2px 4px color(accent-4);
             }
+            h1 {
+              color: #000;
+              margin-bottom: 1rem;
+              text-align: center;
+            }
+            p {
+              text-align: justify;
+              // width: 80%;
+              margin: 0 auto 1rem auto;
+            }
+            button {
+              cursor: pointer;
+              background: color(primary);
+              color: color(text-2);
+              padding: 0.5rem;
+              outline: none;
+              border: none;
+              border-radius: 2px;
+              transition: 1s;
+              &:hover {
+                color: color(secondary);
+                transform: scale($transform-scale-factor);
+              }
+              display: flex;
+              margin: 0 auto;
+            }
+          }
+          /*
+          *Desktop layout for kids corner area
+          */
+          @include desktop {
+            .service {
+              width: 75%;
+              margin: 0 auto;
+              h1 {
+                text-align: left;
+              }
+              button {
+                margin: 0;
+              }
+            }
+
+            .reading_assesment_svc {
+              border-bottom: 1px solid color(accent-4);
+              display: grid;
+              grid-template-columns: auto auto;
+              grid-template-rows: auto;
+              grid-template-areas: "reading_img reading_svc_content";
+
+              img {
+                grid-area: reading_img;
+              }
+              .reading_assessment_content {
+                grid-area: reading_svc_content;
+                margin-left: 1rem;
+              }
+            }
+            .remedial_classes_svc {
+              border-bottom: 1px solid color(accent-4);
+              display: grid;
+              grid-template-columns: auto auto;
+              grid-template-rows: auto;
+              grid-template-areas: "remedial_svc_content remedial_img";
+              img {
+                grid-area: remedial_img;
+              }
+              .remedial_classes_content {
+                grid-area: remedial_svc_content;
+                margin-right: 1rem;
+              }
+            }
+            .school_work_help_svc {
+              border-bottom: 1px solid color(accent-4);
+              display: grid;
+              grid-template-columns: auto auto;
+              grid-template-rows: auto;
+              grid-template-areas: "school_work_img school_work_svc_content";
+              img {
+                grid-area: school_work_img;
+              }
+              .school_work_help_svc_content {
+                grid-area: school_work_svc_content;
+                margin-left: 1rem;
+              }
+            }
+          }
         }
       }
     }

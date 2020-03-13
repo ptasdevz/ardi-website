@@ -374,15 +374,18 @@ body {
               }
             }
             .tabcontent {
+              width: 80%;
+              margin: 0 auto;
+
               .player_class {
                 position: fixed;
                 margin: 0 auto;
                 top: 50%;
-                left: 67%;
+                left: 50%;
                 width: 640px;
                 height: 390px;
                 z-index: 19;
-                transform: translate(-65%, -50%);
+                transform: translate(-50%, -50%);
                 #player_controls {
                   a,
                   i {

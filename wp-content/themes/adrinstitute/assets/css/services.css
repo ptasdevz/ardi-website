@@ -49,7 +49,6 @@ body .page_container #page_main .content_area .services_content_area::before {
   position: relative;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 15rem;
   position: absolute;
   content: "";
   background-image: url("../imgs/our_services.png");
@@ -64,11 +63,10 @@ body .page_container #page_main .content_area .services_content_area::before {
 
 body .page_container #page_main .content_area .services_content_area {
   position: relative;
-  display: -ms-grid;
-  display: grid;
   width: inherit;
-  -ms-grid-columns: (minmax(14rem, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  /*
+          *Desktop layout for kids corner area
+          */
 }
 
 body .page_container #page_main .content_area .services_content_area .service {
@@ -93,7 +91,6 @@ body .page_container #page_main .content_area .services_content_area .service h1
 
 body .page_container #page_main .content_area .services_content_area .service p {
   text-align: justify;
-  width: 80%;
   margin: 0 auto 1rem auto;
 }
 
@@ -101,7 +98,7 @@ body .page_container #page_main .content_area .services_content_area .service bu
   cursor: pointer;
   background: #1d2089;
   color: #fff;
-  padding: .5rem;
+  padding: 0.5rem;
   outline: none;
   border: none;
   border-radius: 2px;
@@ -117,5 +114,81 @@ body .page_container #page_main .content_area .services_content_area .service bu
   color: #fcba04;
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
+}
+
+@media (min-width: 840px) {
+  body .page_container #page_main .content_area .services_content_area .service {
+    width: 75%;
+    margin: 0 auto;
+  }
+  body .page_container #page_main .content_area .services_content_area .service h1 {
+    text-align: left;
+  }
+  body .page_container #page_main .content_area .services_content_area .service button {
+    margin: 0;
+  }
+  body .page_container #page_main .content_area .services_content_area .reading_assesment_svc {
+    border-bottom: 1px solid #c9c9c9;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+        grid-template-areas: "reading_img reading_svc_content";
+  }
+  body .page_container #page_main .content_area .services_content_area .reading_assesment_svc img {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: reading_img;
+  }
+  body .page_container #page_main .content_area .services_content_area .reading_assesment_svc .reading_assessment_content {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: reading_svc_content;
+    margin-left: 1rem;
+  }
+  body .page_container #page_main .content_area .services_content_area .remedial_classes_svc {
+    border-bottom: 1px solid #c9c9c9;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+        grid-template-areas: "remedial_svc_content remedial_img";
+  }
+  body .page_container #page_main .content_area .services_content_area .remedial_classes_svc img {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: remedial_img;
+  }
+  body .page_container #page_main .content_area .services_content_area .remedial_classes_svc .remedial_classes_content {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: remedial_svc_content;
+    margin-right: 1rem;
+  }
+  body .page_container #page_main .content_area .services_content_area .school_work_help_svc {
+    border-bottom: 1px solid #c9c9c9;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+        grid-template-areas: "school_work_img school_work_svc_content";
+  }
+  body .page_container #page_main .content_area .services_content_area .school_work_help_svc img {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: school_work_img;
+  }
+  body .page_container #page_main .content_area .services_content_area .school_work_help_svc .school_work_help_svc_content {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: school_work_svc_content;
+    margin-left: 1rem;
+  }
 }
 /*# sourceMappingURL=services.css.map */

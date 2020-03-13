@@ -45,6 +45,7 @@ body .container .page_container .content_title {
   padding: 0.5rem;
   font-family: Candara, sans-serif;
   text-shadow: 0 0 4px #000;
+  font-size: 2rem;
 }
 
 body .container .page_container .content_title #sub_title {
