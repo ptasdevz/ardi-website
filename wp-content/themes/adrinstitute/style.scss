@@ -47,6 +47,7 @@ $main-height-desktop: 20rem;
 $transform-scale-factor: 0.95;
 
 
+/*used for IE10+*/
 @import '../../../node_modules/mq-scss/mq';
 @import '../../../node_modules/gutter-grid/grid-mixin';
 

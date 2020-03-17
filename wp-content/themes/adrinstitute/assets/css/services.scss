@@ -24,20 +24,50 @@ body {
           border-radius: 8px;
         }
         .services_content_area {
+          .breadcrumbs_nav {
+            position: sticky;
+            top:$header-height-mobile;
+            background:white;
+            padding:1rem;
+            z-index: 11;
+            .breadcrumbs {
+              color: color(primary);
+              a {
+                text-decoration: none;
+                text-transform: capitalize;
+              }
+            }
+          }
+
           position: relative;
           width: inherit;
+          .service_text {
+            border-bottom: 1px solid color(accent-4);
+            padding-bottom: 2rem;
+          }
 
           .service {
             position: relative;
             z-index: 10;
             padding: 1rem;
+
+            hr {
+              // border-bottom: 1px solid color(accent-4);
+              border: none;
+              color: color(accent-4);
+              margin: 2rem 0;
+              height: 1px;
+              background-color: color(accent-4);
+            }
+
             img {
-              width: 100%;
+              width: auto;
               margin-bottom: 1rem;
               border-radius: 2px;
               box-shadow: 2px 2px 4px color(accent-4);
             }
-            h1 {
+            h1,
+            h2 {
               color: #000;
               margin-bottom: 1rem;
               text-align: center;
@@ -68,10 +98,21 @@ body {
           *Desktop layout for kids corner area
           */
           @include desktop {
+            .breadcrumbs_nav {
+              position: relative;
+              top: 0;
+              z-index: 10;
+              width: 75%;
+              margin: 0 auto;
+              padding: 0;
+              background: none;
+             
+            }
             .service {
               width: 75%;
               margin: 0 auto;
-              h1 {
+              h1,
+              h2 {
                 text-align: left;
               }
               button {
@@ -88,10 +129,10 @@ body {
 
               img {
                 grid-area: reading_img;
+                margin-right: 1rem;
               }
               .reading_assessment_content {
                 grid-area: reading_svc_content;
-                margin-left: 1rem;
               }
             }
             .remedial_classes_svc {
@@ -100,12 +141,13 @@ body {
               grid-template-columns: auto auto;
               grid-template-rows: auto;
               grid-template-areas: "remedial_svc_content remedial_img";
+
               img {
                 grid-area: remedial_img;
+                margin-left: 1rem;
               }
               .remedial_classes_content {
                 grid-area: remedial_svc_content;
-                margin-right: 1rem;
               }
             }
             .school_work_help_svc {
@@ -116,10 +158,10 @@ body {
               grid-template-areas: "school_work_img school_work_svc_content";
               img {
                 grid-area: school_work_img;
+                margin-right: 1rem;
               }
               .school_work_help_svc_content {
                 grid-area: school_work_svc_content;
-                margin-left: 1rem;
               }
             }
           }

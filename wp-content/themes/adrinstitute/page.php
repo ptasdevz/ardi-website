@@ -49,6 +49,15 @@
                 case "services":
                     include "templates/services-main.php";
                 break;
+                case "reading-assessment":
+                    include "templates/services-reading-assessment.php";
+                break;
+                case "remedial-classes":
+                    include "templates/services-remedial-classes.php";
+                break;
+                case "project-homework-help":
+                    include "templates/services-remedial-classes.php";
+                break;
             endswitch ?>
         </div>
     </div>

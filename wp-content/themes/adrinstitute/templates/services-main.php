@@ -7,7 +7,8 @@
                 velit aspernatur nihil tempora amet? Eius quasi quibusdam vitae, quam voluptates ducimus! Amet sequi
                 corporis explicabo sint, molestiae architecto, quia nam repudiandae vel voluptatum quas rem impedit,
                 facere ut debitis! Doloremque beatae neque nam odit quasi dignissimos?</p>
-            <button>Read More</button>
+                <?php  $pg = get_page_by_title('reading assessment'); ?>
+            <button onclick="window.location='<?php echo get_permalink($pg->ID); ?>';">Read More</button>
         </div>
     </div>
     <div class="service remedial_classes_svc">
@@ -21,7 +22,8 @@
                 velit aspernatur nihil tempora amet? Eius quasi quibusdam vitae, quam voluptates ducimus! Amet sequi
                 corporis explicabo sint, molestiae architecto, quia nam repudiandae vel voluptatum quas rem impedit,
                 facere ut debitis! Doloremque beatae neque nam odit quasi dignissimos?</p>
-            <button>Read More</button>
+                <?php  $pg = get_page_by_title('remedial classes'); ?>
+            <button onclick="window.location='<?php echo get_permalink($pg->ID); ?>';">Read More</button>
         </div>
     </div>
     <div class="service school_work_help_svc">
@@ -32,7 +34,7 @@
                 velit aspernatur nihil tempora amet? Eius quasi quibusdam vitae, quam voluptates ducimus! Amet sequi
                 corporis explicabo sint, molestiae architecto, quia nam repudiandae vel voluptatum quas rem impedit,
                 facere ut debitis! Doloremque beatae neque nam odit quasi dignissimos?</p>
-            <button>Read More</button>
-        </div>
+                <?php  $pg = get_page_by_title('project & homework help'); ?>
+            <button onclick="window.location='<?php echo get_permalink($pg->ID); ?>';">Read More</button>        </div>
     </div>
 </div>

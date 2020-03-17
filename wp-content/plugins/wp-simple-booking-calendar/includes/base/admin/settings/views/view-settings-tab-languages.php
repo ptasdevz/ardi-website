@@ -21,12 +21,10 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 			foreach( $languages as $code => $name ) {
 
-				$flag_code = ( $code == 'sv' ? 'se' : ( $code == 'sl' ? 'si' : $code ) );
-
 				echo '<div>';
 					echo '<label>';
 						echo '<input type="checkbox" name="wpsbc_settings[active_languages][]" value="' . esc_attr( $code ) . '" ' . ( ! empty( $settings['active_languages'] ) && in_array( $code, $settings['active_languages'] ) ? 'checked' : '' ) . ' />';
-						echo '<img src="' . WPSBC_PLUGIN_DIR_URL . 'assets/img/flags/' . esc_attr( $flag_code ) . '.png" />';
+						echo '<img src="' . WPSBC_PLUGIN_DIR_URL . 'assets/img/flags/' . esc_attr( $code ) . '.png" />';
 						echo esc_html( $name );
 					echo '</label>';
 				echo '</div>';
