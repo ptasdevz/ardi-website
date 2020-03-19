@@ -108,7 +108,7 @@ body .page_container #page_main .content_area .services_content_area .service hr
 }
 
 body .page_container #page_main .content_area .services_content_area .service img {
-  width: auto;
+  width: 100%;
   margin-bottom: 1rem;
   border-radius: 2px;
   -webkit-box-shadow: 2px 2px 4px #c9c9c9;
@@ -150,6 +150,9 @@ body .page_container #page_main .content_area .services_content_area .service bu
 }
 
 @media (min-width: 840px) {
+  body .page_container #page_main .content_area .services_content_area .service img {
+    width: auto;
+  }
   body .page_container #page_main .content_area .services_content_area .breadcrumbs_nav {
     position: relative;
     top: 0;

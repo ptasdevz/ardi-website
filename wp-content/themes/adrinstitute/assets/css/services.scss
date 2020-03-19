@@ -61,7 +61,7 @@ body {
             }
 
             img {
-              width: auto;
+              width: 100%;
               margin-bottom: 1rem;
               border-radius: 2px;
               box-shadow: 2px 2px 4px color(accent-4);
@@ -98,6 +98,11 @@ body {
           *Desktop layout for kids corner area
           */
           @include desktop {
+            .service{
+              img {
+                width: auto;
+              };
+            }
             .breadcrumbs_nav {
               position: relative;
               top: 0;
