@@ -122,7 +122,7 @@ body .page_container #page_main .content_area .services_content_area .service h2
   text-align: center;
 }
 
-body .page_container #page_main .content_area .services_content_area .service p {
+body .page_container #page_main .content_area .services_content_area .service p, body .page_container #page_main .content_area .services_content_area .service .content {
   text-align: justify;
   margin: 0 auto 1rem auto;
 }

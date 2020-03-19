@@ -204,3 +204,28 @@ Stack trace:
 [10-Mar-2020 19:10:55 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\kids-corner-main.php on line 52
 [10-Mar-2020 19:10:55 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\kids-corner-main.php on line 53
 [10-Mar-2020 20:01:47 UTC] PHP Parse error:  syntax error, unexpected '}', expecting end of file in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\functions.php on line 80
+[18-Mar-2020 22:06:46 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function service_content_excerpt(), 0 passed in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-reading-assessment.php on line 16 and exactly 1 expected in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\functions.php:170
+Stack trace:
+#0 C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-reading-assessment.php(16): service_content_excerpt()
+#1 C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\page.php(53): include('C:\\Users\\jason\\...')
+#2 C:\Users\jason\gitprojects\ardi-website\wp-includes\template-loader.php(98): include('C:\\Users\\jason\\...')
+#3 C:\Users\jason\gitprojects\ardi-website\wp-blog-header.php(19): require_once('C:\\Users\\jason\\...')
+#4 C:\Users\jason\gitprojects\ardi-website\index.php(17): require('C:\\Users\\jason\\...')
+#5 {main}
+  thrown in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\functions.php on line 170
+[18-Mar-2020 22:26:17 UTC] PHP Parse error:  syntax error, unexpected end of file in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-reading-assessment.php on line 39
+[18-Mar-2020 23:24:13 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function p_get_post_parent_id() in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-reading-assessment.php:16
+Stack trace:
+#0 C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\page.php(53): include()
+#1 C:\Users\jason\gitprojects\ardi-website\wp-includes\template-loader.php(98): include('C:\\Users\\jason\\...')
+#2 C:\Users\jason\gitprojects\ardi-website\wp-blog-header.php(19): require_once('C:\\Users\\jason\\...')
+#3 C:\Users\jason\gitprojects\ardi-website\index.php(17): require('C:\\Users\\jason\\...')
+#4 {main}
+  thrown in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-reading-assessment.php on line 16
+[18-Mar-2020 23:39:53 UTC] PHP Fatal error:  Cannot redeclare service_content_excerpt() (previously declared in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\functions.php:175) in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\functions.php on line 196
+[18-Mar-2020 23:39:53 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-includes\class-wp-recovery-mode-email-service.php on line 339
+[18-Mar-2020 23:39:53 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-includes\class-wp-recovery-mode-email-service.php on line 340
+[18-Mar-2020 23:40:13 UTC] PHP Fatal error:  Cannot redeclare service_content_excerpt() (previously declared in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\functions.php:175) in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\functions.php on line 196
+[18-Mar-2020 23:41:45 UTC] PHP Parse error:  syntax error, unexpected '}', expecting end of file in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\functions.php on line 195
+[18-Mar-2020 23:41:48 UTC] PHP Parse error:  syntax error, unexpected '}', expecting end of file in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\functions.php on line 195
+[18-Mar-2020 23:41:53 UTC] PHP Parse error:  syntax error, unexpected '}', expecting end of file in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\functions.php on line 195

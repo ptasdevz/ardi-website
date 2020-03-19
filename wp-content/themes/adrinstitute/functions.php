@@ -111,7 +111,7 @@ function load_js()
     wp_localize_script('services_js', 'ajax', array(
         'ajax_url' => admin_url('admin-ajax.php'),
     ));
-    wp_enqueue_script('kids_corner_js');
+    wp_enqueue_script('services_js');
 
     wp_register_script('youtube_iframe_api', 'https://www.youtube.com/iframe_api', '', 1, true);
     wp_enqueue_script('youtube_iframe_api');
@@ -167,5 +167,43 @@ remove_filter('the_excerpt', 'wpautop');
 
 include get_template_directory() . "/templates/kids-corner-content.php";
 
+// function service_content_excerpt() {
+//     // echo "<pre>";
+//     // echo print_r("fadsfasfsada");
+//     // echo "</pre>";
+//     // die();
+//         if (have_rows('service_1')){
+//         while (have_rows('service_1')) {
+//             the_row();
+//             $text = get_sub_field('content');
+//             echo "<pre>";
+//             echo print_r("fsadfa");
+//             echo "</pre>";
+//             die();
+//             if ( '' != $text ) {
+//                 $text = strip_shortcodes( $text );
+//                 $text = apply_filters('the_content', $text);
+//                 $text = str_replace(']]>', ']]>', $text);
+//                 $excerpt_length = 20; // 20 words
+//                 $excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
+//                 $text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
+//             }
+//             return apply_filters('the_excerpt', $text);
+//         }
+//     }
+	
+// }
+function service_content_excerpt($text, $excerpt_length) {
 
+    if ( '' != $text ) {
+        $text = strip_shortcodes( $text );
+        $text = apply_filters('the_content', $text);
+        $text = str_replace(']]>', ']]>', $text);
+        $excerpt_length = $excerpt_length;
+        $excerpt_more = apply_filters('excerpt_more', ' ' . '...');
+        $text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
+    }
+    return apply_filters('the_excerpt', $text);
+        
+}
 
