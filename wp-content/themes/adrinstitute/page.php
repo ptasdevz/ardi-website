@@ -56,7 +56,13 @@
                     include "templates/services-remedial-classes.php";
                 break;
                 case "project-homework-help":
-                    include "templates/services-remedial-classes.php";
+                    include "templates/services-project-homework-help.php";
+                break;
+                case "printing-laminating":
+                    include "templates/services-printing-laminating.php";
+                break;
+                case "study-buddy":
+                    include "templates/services-study-buddy.php";
                 break;
             endswitch ?>
         </div>
