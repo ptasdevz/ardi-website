@@ -10,7 +10,14 @@
     // die();
     ?>
     <section class="content_title">
-        <h1><?php if (get_the_title() == "Services") echo "Our Services"; else the_title()?></h1>
+        <h1>
+            <?php 
+            $title = strtolower(get_the_title());
+            if ($title  == "services") echo "Our Services";
+            elseif ($title == "resources") echo "Parent & Teacher Resources";
+            else the_title()
+             ?>
+        </h1>
         <h3 id="sub_title">Sub Title</h3>
     </section>
     <div id="nav_touch">
@@ -45,25 +52,28 @@
             switch ($post->post_name):
                 case "kids-corner":
                     include "templates/kids-corner-main.php";
-                break;
+                    break;
                 case "services":
                     include "templates/services-main.php";
-                break;
+                    break;
+                case "resources":
+                    include "templates/resources-main.php";
+                    break;
                 case "reading-assessment":
                     include "templates/services-reading-assessment.php";
-                break;
+                    break;
                 case "remedial-classes":
                     include "templates/services-remedial-classes.php";
-                break;
+                    break;
                 case "project-homework-help":
                     include "templates/services-project-homework-help.php";
-                break;
+                    break;
                 case "printing-laminating":
                     include "templates/services-printing-laminating.php";
-                break;
+                    break;
                 case "study-buddy":
                     include "templates/services-study-buddy.php";
-                break;
+                    break;
             endswitch ?>
         </div>
     </div>

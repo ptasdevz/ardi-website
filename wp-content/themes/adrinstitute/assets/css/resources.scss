@@ -8,9 +8,10 @@ body {
       position: relative;
       .content_area {
         position: inherit;
-        .kids_content_area::before, .resources_content_area::before {
+        .resources_content_area::before {
           position: absolute;
           content: "";
+          background-image: url("../imgs/pt_resources.png.png");
           background-size: cover;
           background-position: center;
           // box-shadow: 0 0 0.5rem 0.5rem color(base-1) inset;
@@ -20,18 +21,12 @@ body {
           height: 100%;
           border-radius: 8px;
         }
-        .kids_content_area::before {
-          background-image: url("../imgs/kids_corner.png");
-        }
-       .resources_content_area::before {
-          background-image: url("../imgs/pt_resources.png");
-        }
       }
       .content_area {
         position: relative;
-        .kids_content_area, .resources_content_area {
+        .resources_content_area {
           position: inherit;
-          .kids_corner_tab, .resources_tab {
+          .resources_tab {
             position: relative;
             z-index: 10;
             overflow: hidden;
@@ -156,10 +151,10 @@ body {
             }
           }
 
-          #instr_videos {
+          #resources_instr_videos {
             display: block;
           }
-          .kids_corner_tab button.active, .resources_tab button.active {
+          .resources_tab button.active {
             background-color: color(accent-4);
             font-weight: bold;
           }
@@ -298,8 +293,8 @@ body {
 
       #page_main {
         .content_area {
-          .kids_content_area,.resources_content_area {
-            .kids_corner_tab, .resources_tab {
+          .resources_content_area {
+            .resources_tab {
               // width: max-content;
               width: auto;
               display: inline-block;
@@ -307,7 +302,7 @@ body {
               transform: translate(-50%, 0);
               top: 96px;
             }
-            .kids_corner_tab,.resources_tab {
+            .resources_tab {
               overflow: visible;
               .tab_wrapper {
                 .tab_menu {
@@ -370,7 +365,7 @@ body {
                 }
               }
             }
-            .kids_corner_tab, .resources_tab {
+            .resources_tab {
               .tab_wrapper button.active {
                 background: none;
                 span::after {
@@ -422,8 +417,8 @@ body {
       @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
         #page_main {
           .content_area {
-            .kids_content_area, .resources_content_area {
-              .kids_corner_tab, .resources_tab {
+            .kids_content_area {
+              .kids_corner_tab {
                 top: 0;
               }
               .tabcontent {

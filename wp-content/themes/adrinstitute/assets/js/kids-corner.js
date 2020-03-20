@@ -41,7 +41,7 @@ $(document).ready(function () {
             cate_name_capitalized = cate_name.charAt(0).toUpperCase() + cate_name.substr(1);
 
             //Append categories text to markup
-            $('#instr_videos1 div').append("<button id=" + cate_name_as_id + ">" + cate_name_capitalized + "</button>");
+            $('#instr_videos_menu div').append("<button id=" + cate_name_as_id + ">" + cate_name_capitalized + "</button>");
 
             //Setup callback on buttons for categories
             $("#" + cate_name_as_id).click(function (e) {
