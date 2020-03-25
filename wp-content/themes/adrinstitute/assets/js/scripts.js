@@ -159,7 +159,7 @@ $(document).ready(function () {
   $("").click(function (e) {
     // console.log("test");
     e.preventDefault();
-    nonce = $(this).attr("data-nonce")
+    nonce = $(this).attr("data-nonce");
 
     $.ajax({
       type: "post",

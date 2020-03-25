@@ -71,8 +71,8 @@ function load_style_sheets()
     wp_register_style('page', get_template_directory_uri() . '/assets/css/page.css', array(), false, 'all');
     wp_enqueue_style('page');
 
-    wp_register_style('kids-corner', get_template_directory_uri() . '/assets/css/kids-corner.css', array(), false, 'all');
-    wp_enqueue_style('kids-corner');
+    wp_register_style('kids-corner-parents-teachers-resources', get_template_directory_uri() . '/assets/css/kids-corner-parents-teachers-resources.css', array(), false, 'all');
+    wp_enqueue_style('kids-corner-parents-teachers-resources');
     
     wp_register_style('services', get_template_directory_uri() . '/assets/css/services.css', array(), false, 'all');
     wp_enqueue_style('services');
@@ -102,11 +102,11 @@ function load_js()
     ));
     wp_enqueue_script('scripts_js');
 
-    wp_register_script('kids_corner_js', get_template_directory_uri() . '/assets/js/kids-corner.js', '', 1, true);
-    wp_localize_script('kids_corner_js', 'ajax', array(
+    wp_register_script('kids_corner_parents_teachers_resources_js', get_template_directory_uri() . '/assets/js/kids-corner-parents-teachers-resources.js', '', 1, true);
+    wp_localize_script('kids_corner_parents_teachers_resources_js', 'ajax', array(
         'ajax_url' => admin_url('admin-ajax.php'),
     ));
-    wp_enqueue_script('kids_corner_js');
+    wp_enqueue_script('kids_corner_parents_teachers_resources_js');
 
     wp_register_script('services_js', get_template_directory_uri() . '/assets/js/services.js', '', 1, true);
     wp_localize_script('services_js', 'ajax', array(

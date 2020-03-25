@@ -3,11 +3,14 @@ $(document).ready(function () {
 
     //manage tabs apperances
     $(".tablinks").click(function () {
-        $(".tabcontent").css("display", "none");
-        $(".tablinks").removeClass("active");
-        $(this).addClass("active");
+
         var name = $(this).attr("name");
-        $("#" + name).css("display", "block");
+        if (name != "other_links") {
+            $(".tabcontent").css("display", "none");
+            $(".tablinks").removeClass("active");
+            $(this).addClass("active");
+            $("#" + name).css("display", "block");
+        }
 
         //clean any stuff on instructional tab
         if (name != "instr_videos") {
@@ -15,12 +18,37 @@ $(document).ready(function () {
         }
 
     });
+    //===============================Get Data on Other Links ======================
+    //get all other-links from backend.
+    var other_links = [];
+    $(".other_links_list").children().each(function () {
+        other_links[other_links.length] = $(this).attr('id');
+    });
+    other_links.forEach(function (link_and_display_name, index) {
+        if (link_and_display_name) {
+            href = link_and_display_name.substr(0, link_and_display_name.indexOf("_"));
+            display_name = link_and_display_name.substr(link_and_display_name.indexOf("_") + 1);
+            href_lower = href.replace(/\s/g, '_').toLowerCase();
+            display_name_capitalized = display_name.charAt(0).toUpperCase() + display_name.substr(1);
+            $('#other_links_menu div').append(" <button><a href='" + href_lower + "' target='_blank'>" + display_name_capitalized + "</a></button>");
+
+        }
+    });
+    //===============================End of Get Data Other Links =============  =========
 
     //=============================Get YouTube Data on Videos ======================
+
+    // prototype function used to get unique items
+    Array.prototype.unique = function () {
+        return this.filter(function (value, index, self) {
+            return self.indexOf(value) === index;
+        });
+    }
 
     var all_video_ids = [];
     var video_ids = [];
     var video_cate = [];
+
 
     //get all categories and ids from backend.
     $(".you_tube_video_list").children().each(function () {
@@ -30,9 +58,10 @@ $(document).ready(function () {
 
     //extract unique categories
     all_video_ids = video_ids;
-    let unique_categories = [... new Set(video_cate)];
+    //let unique_categories = [... new Set(video_cate)];
+    unique_categories = video_cate.unique();
     var ids_str = video_ids.join();
-    unique_categories.unshift("All Videos");
+    unique_categories.unshift("All Videos");//add All Videos as the first item in the list
 
     unique_categories.forEach(function (cate_name, index) {
         //Adjust disply text
@@ -49,7 +78,6 @@ $(document).ready(function () {
                 $buttonId = $(this).attr("id");
                 if ($buttonId == "all_videos") {
                     ids_str = all_video_ids.join();
-
                 } else {
                     video_ids = [];
                     $(".you_tube_video_list").children().each(function () {
@@ -62,11 +90,27 @@ $(document).ready(function () {
 
                     ids_str = video_ids.join();
                 }
+
+                //allow sub-menu button to switch tab when clicked
+                var name = $("#instr_videos_tab_btn").attr("name");
+                $(".tabcontent").css("display", "none");
+                $(".tablinks").removeClass("active");
+                $("#instr_videos_tab_btn").addClass("active");
+                $("#" + name).css("display", "block");
                 $(".video_links").remove();
+
+                //add visted css properites when clicked
+                $(".tab_submenu button").removeClass("btn_visted");
+                $(this).addClass("btn_visted");
+
                 start();
             });
+
         }
     });
+
+    //submenu button defaults
+    $("#all_videos").addClass("btn_visted");
 
 
     function start() {
@@ -86,7 +130,6 @@ $(document).ready(function () {
         }).then(function (response) {
             var items = response.result.items;
 
-
             //4. Extract content from response.
             items.forEach(function (element, index) {
                 var id = element.id;
@@ -102,7 +145,7 @@ $(document).ready(function () {
                 $(".videos").append(
                     "<div id='" + id + "'class='video_links'>" +
                     "<div class='video_link_wrapper'>" +
-                    "<div class='video_content' style='background-image:url(" + url + "); width=" + width + "px; height:" + height + "px; '></div>" +
+                    "<div class='video_content' style='background-image:url(" + url + ");  height:" + height + "px; '></div>" +
                     "<div class='info'>" +
                     "<h4 id=>" + title + "</h4>" +
                     "<p>Video</p>" +
