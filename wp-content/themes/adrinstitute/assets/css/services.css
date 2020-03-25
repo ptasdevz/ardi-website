@@ -231,7 +231,7 @@ body .page_container #page_main .content_area .services_content_area .service bu
     grid-area: school_work_img;
     margin-right: 1rem;
   }
-  body .page_container #page_main .content_area .services_content_area .school_work_help_svc .school_work_help_svc_content {
+  body .page_container #page_main .content_area .services_content_area .school_work_help_svc .school_work_help_content {
     -ms-grid-row: 1;
     -ms-grid-column: 2;
     grid-area: school_work_svc_content;
@@ -252,7 +252,7 @@ body .page_container #page_main .content_area .services_content_area .service bu
     grid-area: printing_laminating_img;
     margin-left: 1rem;
   }
-  body .page_container #page_main .content_area .services_content_area .printing_laminating_svc .school_work_help_svc_content {
+  body .page_container #page_main .content_area .services_content_area .printing_laminating_svc .printing_laminating_content {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: printing_laminating_content;
@@ -273,7 +273,7 @@ body .page_container #page_main .content_area .services_content_area .service bu
     grid-area: study_buddy_img;
     margin-right: 1rem;
   }
-  body .page_container #page_main .content_area .services_content_area .study_buddy_svc .school_work_help_svc_content {
+  body .page_container #page_main .content_area .services_content_area .study_buddy_svc .study_buddy_content {
     -ms-grid-row: 1;
     -ms-grid-column: 2;
     grid-area: study_buddy_content;

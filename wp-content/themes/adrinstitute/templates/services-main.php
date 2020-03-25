@@ -51,7 +51,7 @@
                 $excert_length = get_sub_field('content_excerpt_length');
                 $pg = get_page_by_title($link); ?>
                 <img src="<?php echo $image['url'] ?>" alt="<?php $image['alt'] ?>">
-                <div class="school_work_help_svc_content">
+                <div class="school_work_help_content">
                     <h1><?php echo $title ?></h1>
                     <div id = "school_work_help_svc_content_text_excerpt" class="content"><?php echo service_content_excerpt($content,$excert_length); ?></div>
                     <button onclick="window.location='<?php echo get_permalink($pg->ID); ?>';">Read More</button>
