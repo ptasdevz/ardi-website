@@ -3,7 +3,7 @@
  * Plugin Name: WP Simple Booking Calendar
  * Plugin URI: https://www.wpsimplebookingcalendar.com/
  * Description: The availability calendar for your needs.
- * Version: 2.0.2
+ * Version: 2.0.3
  * Author: Veribo, Roland Murg
  * Author URI: https://www.wpsimplebookingcalendar.com/
  * Text Domain: wp-simple-booking-calendar
@@ -72,7 +72,7 @@ class WP_Simple_Booking_Calendar
     {
 
         // Defining constants
-        define('WPSBC_VERSION', '2.0.2');
+        define('WPSBC_VERSION', '2.0.3');
         define('WPSBC_FILE', __FILE__);
         define('WPSBC_BASENAME', plugin_basename(__FILE__));
         define('WPSBC_PLUGIN_DIR', plugin_dir_path(__FILE__));
@@ -107,6 +107,9 @@ class WP_Simple_Booking_Calendar
 
         // Remove plugin query args from the URL
         add_filter('removable_query_args', array($this, 'removable_query_args'));
+
+        // Add body class for WP versions greater than 5.3
+        add_filter( 'admin_body_class', array($this, 'admin_body_class') );
 
         // Add a 5 star review call to action to admin footer text
         add_filter('admin_footer_text', array($this, 'admin_footer_text'));
@@ -499,6 +502,19 @@ class WP_Simple_Booking_Calendar
 
         return $args;
 
+    }
+
+    /**
+     * Add custom class to the <body> tag in WP Admin
+     *
+     * @param string $text
+     *
+     */
+    public function admin_body_class($classes){
+        if ( version_compare( get_bloginfo('version'), '5.3', '>=' ) ) {
+	        $classes .= ' wpsbc-greater-5-3';
+        }
+        return $classes;
     }
 
     /**

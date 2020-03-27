@@ -3,7 +3,7 @@ Contributors: murgroland
 Tags: booking calendar, availability calendar, bookings, calendar, belegungsplan
 Requires at least: 4.7
 Tested up to: 5.4
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 Requires PHP: 5.6
 
 This booking calendar shows when something is booked or available. Use it to show when your holiday home is available for rent, for example.
@@ -92,6 +92,9 @@ Please check [wpsimplebookingcalendar.com](https://www.wpsimplebookingcalendar.c
 2. Calendar Editor
 3. Available Languages
 == Changelog ==
+
+= 2.0.3 =
+* Improved: Compatibility changes for the new WordPress 5.4
 
 = 2.0.2 =
 * Fixed: Language codes for Slovenian and Swedish

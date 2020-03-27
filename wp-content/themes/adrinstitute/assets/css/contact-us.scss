@@ -1,0 +1,93 @@
+@import "../../style.scss";
+body {
+  .page_container {
+    background: color(base-1);
+
+    #page_main {
+      position: relative;
+      .content_area {
+        position: inherit;
+        .contact_us_content_area::before {
+          position: relative;
+          box-sizing: border-box;
+          // padding: 15rem;
+          position: absolute;
+          content: "";
+          background-image: url("../imgs/email_send_receive.png");
+          background-size: cover;
+          background-position: center;
+          opacity: 0.05;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 8px;
+        }
+        .contact_us_content_area {
+          .contact_content {
+            width: 90%;
+            margin: 0 auto;
+            z-index: 10;
+            position: relative;
+            img {
+              display: none;
+            }
+          }
+        }
+        @include desktop {
+          .contact_us_content_area {
+            .contact_content {
+              width: 80%;
+              margin: 0 auto;
+              display: flex;
+              align-items: flex-start;
+              justify-content: center;
+
+              img {
+                display: block;
+                margin-right: 1rem;
+                width: 100%;
+              }
+              .contact_form {
+                width: 100%;
+                form {
+                  button {
+                    background: color(primary);
+                    color: color(text-2);
+                    padding: 0.5rem;
+                    outline: none;
+                    border: none;
+                    border-radius: 2px;
+                    transition: 1s;
+                    &:hover {
+                      color: color(secondary);
+                      transform: scale($transform-scale-factor);
+                    }
+                  }
+                  .contact_form_dynamic{
+                      display:none;
+                  }
+                  .contact_form_dynamic_active{
+                    display:block;
+                  }
+                  
+                }
+              }
+            }
+          }
+        }
+        /*  
+        * IE10+ CSS for contact layout 
+        */
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+          .contact_us_content_area {
+            .contact_content {
+              img {
+                width: auto;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

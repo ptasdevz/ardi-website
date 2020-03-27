@@ -11,12 +11,12 @@
     ?>
     <section class="content_title">
         <h1>
-            <?php 
+            <?php
             $title = strtolower(get_the_title());
             if ($title  == "services") echo "Our Services";
             elseif ($title == "resources") echo "Parent & Teacher Resources";
             else the_title()
-             ?>
+            ?>
         </h1>
         <h3 id="sub_title">Sub Title</h3>
     </section>
@@ -73,6 +73,9 @@
                     break;
                 case "study-buddy":
                     include "templates/services-study-buddy.php";
+                    break;
+                case "contact-us":
+                    include "templates/contact-us-main.php";
                     break;
             endswitch ?>
         </div>

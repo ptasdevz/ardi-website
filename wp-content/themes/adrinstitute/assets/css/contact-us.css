@@ -1,0 +1,129 @@
+/* 
+Theme Name: ADR Institute
+Author: ptasdevz
+Version: 1.0
+*/
+/*used for IE10+*/
+* {
+  margin: 0px;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  color: #707070;
+  background: #e7e7e7;
+}
+
+body .container {
+  background: #fff;
+}
+
+body .container #overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 16;
+  cursor: pointer;
+}
+
+body .page_container {
+  background: #fff;
+}
+
+body .page_container #page_main {
+  position: relative;
+}
+
+body .page_container #page_main .content_area {
+  position: inherit;
+  /*  
+        * IE10+ CSS for contact layout 
+        */
+}
+
+body .page_container #page_main .content_area .contact_us_content_area::before {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  content: "";
+  background-image: url("../imgs/email_send_receive.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.05;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+body .page_container #page_main .content_area .contact_us_content_area .contact_content {
+  width: 90%;
+  margin: 0 auto;
+  z-index: 10;
+  position: relative;
+}
+
+body .page_container #page_main .content_area .contact_us_content_area .contact_content img {
+  display: none;
+}
+
+@media (min-width: 840px) {
+  body .page_container #page_main .content_area .contact_us_content_area .contact_content {
+    width: 80%;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  body .page_container #page_main .content_area .contact_us_content_area .contact_content img {
+    display: block;
+    margin-right: 1rem;
+    width: 100%;
+  }
+  body .page_container #page_main .content_area .contact_us_content_area .contact_content .contact_form {
+    width: 100%;
+  }
+  body .page_container #page_main .content_area .contact_us_content_area .contact_content .contact_form form button {
+    background: #1d2089;
+    color: #fff;
+    padding: 0.5rem;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    -webkit-transition: 1s;
+    transition: 1s;
+  }
+  body .page_container #page_main .content_area .contact_us_content_area .contact_content .contact_form form button:hover {
+    color: #fcba04;
+    -webkit-transform: scale(0.95);
+            transform: scale(0.95);
+  }
+  body .page_container #page_main .content_area .contact_us_content_area .contact_content .contact_form form .contact_form_dynamic {
+    display: none;
+  }
+  body .page_container #page_main .content_area .contact_us_content_area .contact_content .contact_form form .contact_form_dynamic_active {
+    display: block;
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  body .page_container #page_main .content_area .contact_us_content_area .contact_content img {
+    width: auto;
+  }
+}
+/*# sourceMappingURL=contact-us.css.map */

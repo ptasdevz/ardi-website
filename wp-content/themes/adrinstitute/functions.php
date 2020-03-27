@@ -76,6 +76,9 @@ function load_style_sheets()
     
     wp_register_style('services', get_template_directory_uri() . '/assets/css/services.css', array(), false, 'all');
     wp_enqueue_style('services');
+
+    wp_register_style('contact-us', get_template_directory_uri() . '/assets/css/contact-us.css', array(), false, 'all');
+    wp_enqueue_style('contact-us');
 }
 add_action('wp_enqueue_scripts', 'load_style_sheets');
 
@@ -113,6 +116,14 @@ function load_js()
         'ajax_url' => admin_url('admin-ajax.php'),
     ));
     wp_enqueue_script('services_js');
+
+    
+    wp_register_script('contact_us_js', get_template_directory_uri() . '/assets/js/contact-us.js', '', 1, true);
+    wp_localize_script('contact_us_js', 'ajax', array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+    ));
+    wp_enqueue_script('contact_us_js');
+
 
     wp_register_script('youtube_iframe_api', 'https://www.youtube.com/iframe_api', '', 1, true);
     wp_enqueue_script('youtube_iframe_api');
