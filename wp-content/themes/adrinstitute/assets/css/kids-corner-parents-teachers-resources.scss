@@ -8,7 +8,8 @@ body {
       position: relative;
       .content_area {
         position: inherit;
-        .kids_content_area::before, .resources_content_area::before {
+        .kids_content_area::before,
+        .resources_content_area::before {
           position: absolute;
           content: "";
           background-size: cover;
@@ -21,17 +22,21 @@ body {
           border-radius: 8px;
         }
         .kids_content_area::before {
-          background-image: url("../imgs/kids_corner.png");
+          background-image: url("../../../../uploads/2020/03/kids_corner-550x550.png");
+          background-size: cover;
         }
-       .resources_content_area::before {
-          background-image: url("../imgs/pt_resources.png");
+        .resources_content_area::before {
+          background-image: url("../../../../uploads/2020/03/pt_resources-550x550.png");
+          background-size: cover;
         }
       }
       .content_area {
         position: relative;
-        .kids_content_area, .resources_content_area {
+        .kids_content_area,
+        .resources_content_area {
           position: inherit;
-          .kids_corner_tab, .resources_tab {
+          .kids_corner_tab,
+          .resources_tab {
             position: relative;
             z-index: 10;
             overflow: hidden;
@@ -44,7 +49,7 @@ body {
             .tab_wrapper {
               border: 1px solid color(accent-4);
               border-top: 0;
-              #other_links_menu{
+              #other_links_menu {
                 display: none;
               }
               .tab_menu {
@@ -61,7 +66,7 @@ body {
                   width: inherit;
                   background-color: inherit;
                   display: block;
-                  a{
+                  a {
                     text-decoration: none;
                     color: color(primary);
                   }
@@ -80,6 +85,75 @@ body {
             padding: 6px 12px;
             animation: fadeEffect 1s; //tab content
             margin-top: 1rem;
+
+            /*Tips and Tricks Content*/
+            .tips_tricks_content {
+              border: 1px solid color(accent-4);
+              background-color: color(text-2);
+              box-shadow: 2px 2px 4px color(accent-4);
+              margin-bottom: 1rem;
+              border-radius: 2px;
+              display: grid;
+              grid-template-columns: auto;
+              grid-template-rows: auto;
+              grid-template-areas:
+                "img"
+                "content";
+
+              .img_container {
+                grid-area: img;
+                width: 100%;
+                img {
+                  width: 100%;
+                }
+              }
+              .content_container {
+                grid-area: content;
+                h1,
+                h2,
+                h3 {
+                  color: #000;
+                  margin: 0 0 1rem 1rem;
+                  text-align: left;
+                }
+                h3 {
+                  margin-top: 1rem;
+                  color: color(primary);
+                  //text-shadow: 0px 0px 1px color(primary);
+                }
+
+                p {
+                  text-align: justify;
+                  margin: 0 auto 1rem auto;
+                  padding: 0 1rem;
+                }
+                .tips_trick_meta_data {
+                  font-weight: bold;
+                  color: #000;
+                  font-size: 12px;
+                  margin: 1rem auto 1rem auto;
+                  span {
+                    font-weight: bold;
+                    color: color(primary);
+                  }
+                }
+                button {
+                  cursor: pointer;
+                  background: color(primary);
+                  color: color(text-2);
+                  padding: 0.2rem;
+                  outline: none;
+                  border: none;
+                  border-radius: 2px;
+                  transition: 1s;
+                  &:hover {
+                    color: color(secondary);
+                    transform: scale($transform-scale-factor);
+                  }
+                  margin: 0 1rem 1rem 1rem;
+                }
+              }
+            }
 
             .player_class {
               position: sticky;
@@ -165,9 +239,9 @@ body {
 
           #instr_videos {
             display: block;
-            
           }
-          .kids_corner_tab button.active, .resources_tab button.active {
+          .kids_corner_tab button.active,
+          .resources_tab button.active {
             background-color: color(accent-4);
             font-weight: bold;
           }
@@ -295,8 +369,50 @@ body {
         }
       }
     }
+    /*Tablet layout for resouces*/
+    @include tablet {
+      #page_main {
+        .content_area {
+          .resources_content_area {
+            .tips_tricks_tab_content {
+              .tips_tricks_content {
+                .img_container {
+                  img {
+                    width: 50%;
+                    margin: 0 auto;
+                    display: block;
+                  }
+                }
+                .content_container {
+                  h1,
+                  h2,
+                  h3 {
+                    display: block;
+                    margin: 0 auto;
+                    width: 50%;
+                    text-align: center;
+                  }
+                  h3 {
+                    margin-top: 1rem;
+                  }
+                  button {
+                    display: flex;
+                    margin: 0 auto;
+                  }
+                  .tips_trick_meta_data {
+                    margin-left: auto;
+                    margin-right: auto;
+                    text-align: center;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
     /*
-    *Desktop layout for kids corner area
+    *Desktop layout for kids corner area and resources
     */
     @include desktop {
       #nav_touch {
@@ -306,21 +422,24 @@ body {
 
       #page_main {
         .content_area {
-          .kids_content_area,.resources_content_area {
-            .kids_corner_tab, .resources_tab {
+          .kids_content_area,
+          .resources_content_area {
+            .kids_corner_tab,
+            .resources_tab {
               // width: max-content;
               width: auto;
               display: flex;
               align-items: cneter;
               justify-content: center;
-              background: rgba(0,0,0,0);
+              background: rgba(0, 0, 0, 0);
               top: 96px;
             }
-            .kids_corner_tab,.resources_tab {
+            .kids_corner_tab,
+            .resources_tab {
               overflow: visible;
               .tab_wrapper {
-                background:color(text-2);
-                #other_links_menu{
+                background: color(text-2);
+                #other_links_menu {
                   display: inline-block;
                 }
                 .tab_menu {
@@ -341,7 +460,7 @@ body {
                       background-color: color(accent-4);
                       border-radius: 2px;
                     }
-                    
+
                     //underlining of tabs
                     position: relative;
                     span::after {
@@ -383,7 +502,8 @@ body {
                 }
               }
             }
-            .kids_corner_tab, .resources_tab {
+            .kids_corner_tab,
+            .resources_tab {
               .tab_wrapper button.active {
                 background: none;
                 span::after {
@@ -392,8 +512,42 @@ body {
               }
             }
             .tabcontent {
-              width: 80%;
               margin: 0 auto;
+
+              .tips_tricks_content {
+                grid-template-columns: auto auto;
+                grid-template-rows: auto;
+                grid-template-areas: "img content";
+
+                .img_container {
+                  img {
+                    width: 100%;
+                    margin: 0;
+                  }
+                }
+                .content_container {
+                  h1,
+                  h2,
+                  h3 {
+                    display: block;
+                    margin: 0 1rem 1rem 1rem;
+                    width: 100%;
+                    text-align: left;
+                  }
+                  h3 {
+                    margin: 1rem;
+                  }
+                  button {
+                    display: block;
+                    margin: 0 1rem 1rem 1rem;
+                  }
+                  .tips_trick_meta_data {
+                    margin-left: auto;
+                    margin-right: auto;
+                    text-align: left;
+                  }
+                }
+              }
 
               .player_class {
                 position: fixed;
@@ -426,28 +580,37 @@ body {
                 animation-fill-mode: forwards;
               }
             }
+            .instr_video_tab_content {
+              width: 80%;
+            }
+            .tips_tricks_tab_content {
+              width: 70%;
+            }
           }
         }
       }
-      /*  
+    }
+
+    /*  
         * IE10+ CSS for kids corner layout 
         */
-      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-        #page_main {
-          .content_area {
-            .kids_content_area, .resources_content_area {
-              .kids_corner_tab, .resources_tab {
-                top: 0;
-              }
-              .tabcontent {
-                overflow: hidden; /* Need this for the chrome bug */
-                .videos {
-                  @include grid($cols: 4, $gutter: 40px);
-                  .video_links{
-                    .video_link_wrapper{
-                      .video_content {
-                        width: auto;
-                      }
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      #page_main {
+        .content_area {
+          .kids_content_area,
+          .resources_content_area {
+            .kids_corner_tab,
+            .resources_tab {
+              top: 0;
+            }
+            .tabcontent {
+              overflow: hidden; /* Need this for the chrome bug */
+              .videos {
+                @include grid($cols: 4, $gutter: 40px);
+                .video_links {
+                  .video_link_wrapper {
+                    .video_content {
+                      width: auto;
                     }
                   }
                 }

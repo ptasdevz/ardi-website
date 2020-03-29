@@ -52,7 +52,7 @@ body .page_container #page_main .content_area .services_content_area::before {
           box-sizing: border-box;
   position: absolute;
   content: "";
-  background-image: url("../imgs/our_services.png");
+  background-image: url("../../../../uploads/2020/03/our_services-550x550.png");
   background-size: cover;
   background-position: center;
   opacity: 0.1;
@@ -68,6 +68,7 @@ body .page_container #page_main .content_area .services_content_area {
   /*
           *Desktop layout for services
           */
+  /*tablet layout for services*/
 }
 
 body .page_container #page_main .content_area .services_content_area .breadcrumbs_nav {
@@ -122,7 +123,8 @@ body .page_container #page_main .content_area .services_content_area .service h2
   text-align: center;
 }
 
-body .page_container #page_main .content_area .services_content_area .service p, body .page_container #page_main .content_area .services_content_area .service .content {
+body .page_container #page_main .content_area .services_content_area .service p,
+body .page_container #page_main .content_area .services_content_area .service .content {
   text-align: justify;
   margin: 0 auto 1rem auto;
 }
@@ -131,7 +133,7 @@ body .page_container #page_main .content_area .services_content_area .service bu
   cursor: pointer;
   background: #1d2089;
   color: #fff;
-  padding: 0.5rem;
+  padding: 0.2rem;
   outline: none;
   border: none;
   border-radius: 2px;
@@ -277,6 +279,14 @@ body .page_container #page_main .content_area .services_content_area .service bu
     -ms-grid-row: 1;
     -ms-grid-column: 2;
     grid-area: study_buddy_content;
+  }
+}
+
+@media (min-width: 702px) {
+  body .page_container #page_main .content_area .services_content_area .service img {
+    width: 50%;
+    margin: 0 auto;
+    display: block;
   }
 }
 /*# sourceMappingURL=services.css.map */

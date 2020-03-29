@@ -119,6 +119,11 @@ body .page_container #page_main .content_area .resources_content_area .tabconten
   -webkit-animation: fadeEffect 1s;
           animation: fadeEffect 1s;
   margin-top: 1rem;
+  /*Instructional Video Content*/
+}
+
+body .page_container #page_main .content_area .resources_content_area .tabcontent button {
+  background-color: #1d2089;
 }
 
 body .page_container #page_main .content_area .resources_content_area .tabcontent .player_class {
@@ -448,6 +453,8 @@ body .page_container #page_main .content_area .resources_content_area .resources
   body .page_container #page_main .content_area .resources_content_area .tabcontent {
     width: 80%;
     margin: 0 auto;
+    /*Tips and Tricks Content*/
+    /*Instructional Videos Content*/
   }
   body .page_container #page_main .content_area .resources_content_area .tabcontent .player_class {
     position: fixed;

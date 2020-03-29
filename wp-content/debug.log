@@ -506,3 +506,173 @@ Stack trace:
 [27-Mar-2020 05:58:24 UTC] PHP Deprecated:  Cannot use "parent" when current class scope has no parent in C:\Users\jason\gitprojects\ardi-website\wp-content\plugins\ninja-forms\includes\Abstracts\Field.php on line 210
 [27-Mar-2020 05:58:28 UTC] PHP Deprecated:  Cannot use "parent" when current class scope has no parent in C:\Users\jason\gitprojects\ardi-website\wp-content\plugins\ninja-forms\includes\Abstracts\Field.php on line 210
 [27-Mar-2020 05:58:29 UTC] PHP Deprecated:  Cannot use "parent" when current class scope has no parent in C:\Users\jason\gitprojects\ardi-website\wp-content\plugins\ninja-forms\includes\Abstracts\Field.php on line 210
+[28-Mar-2020 05:21:01 UTC] PHP Notice:  Array to string conversion in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\common-kids-corner-resources\tips-tricks-content.php on line 3
+[28-Mar-2020 05:22:25 UTC] PHP Notice:  Array to string conversion in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\common-kids-corner-resources\tips-tricks-content.php on line 3
+[28-Mar-2020 06:16:25 UTC] PHP Parse error:  syntax error, unexpected end of file in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\functions.php on line 200
+[28-Mar-2020 06:16:25 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-includes\class-wp-recovery-mode-email-service.php on line 339
+[28-Mar-2020 06:16:25 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-includes\class-wp-recovery-mode-email-service.php on line 340
+[28-Mar-2020 23:13:55 UTC] PHP Warning:  Illegal string offset 'medium_16_9' in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 51
+[28-Mar-2020 23:14:25 UTC] PHP Warning:  Illegal string offset 'medium_16_9' in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 51
+[28-Mar-2020 23:18:34 UTC] PHP Notice:  Undefined index: small16_9 in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 51
+[28-Mar-2020 23:20:51 UTC] PHP Warning:  Illegal string offset 'large_16_9' in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 85
+[28-Mar-2020 23:47:46 UTC] PHP Notice:  Undefined variable: fron_img in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 39
+[28-Mar-2020 23:47:46 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 39
+[28-Mar-2020 23:47:46 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 39
+[28-Mar-2020 23:48:42 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 39
+[28-Mar-2020 23:48:42 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 39
+[28-Mar-2020 23:49:05 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 39
+[28-Mar-2020 23:49:05 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 39
+[28-Mar-2020 23:53:07 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 42
+[28-Mar-2020 23:53:07 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 42
+[28-Mar-2020 23:53:37 UTC] PHP Notice:  Undefined variable: front_img in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 40
+[28-Mar-2020 23:53:37 UTC] PHP Notice:  Undefined variable: front_img in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 42
+[28-Mar-2020 23:53:37 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 42
+[28-Mar-2020 23:53:37 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 42
+[28-Mar-2020 23:54:07 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function get_the_field() in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php:39
+Stack trace:
+#0 C:\Users\jason\gitprojects\ardi-website\wp-includes\template-loader.php(98): include()
+#1 C:\Users\jason\gitprojects\ardi-website\wp-blog-header.php(19): require_once('C:\\Users\\jason\\...')
+#2 C:\Users\jason\gitprojects\ardi-website\index.php(17): require('C:\\Users\\jason\\...')
+#3 {main}
+  thrown in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 39
+[29-Mar-2020 00:22:27 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 41
+[29-Mar-2020 00:22:27 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 41
+[29-Mar-2020 00:22:27 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 54
+[29-Mar-2020 00:22:27 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 54
+[29-Mar-2020 00:22:27 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 54
+[29-Mar-2020 00:22:27 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 71
+[29-Mar-2020 00:22:27 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 71
+[29-Mar-2020 00:22:27 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 71
+[29-Mar-2020 00:22:27 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 88
+[29-Mar-2020 00:22:27 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 88
+[29-Mar-2020 00:22:27 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 88
+[29-Mar-2020 00:22:27 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 105
+[29-Mar-2020 00:22:27 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 105
+[29-Mar-2020 00:22:27 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 105
+[29-Mar-2020 00:22:35 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 12
+[29-Mar-2020 00:22:35 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 12
+[29-Mar-2020 00:22:35 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 12
+[29-Mar-2020 00:22:35 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 31
+[29-Mar-2020 00:22:35 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 31
+[29-Mar-2020 00:22:35 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 31
+[29-Mar-2020 00:22:35 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 53
+[29-Mar-2020 00:22:35 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 53
+[29-Mar-2020 00:22:35 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 53
+[29-Mar-2020 00:22:35 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 72
+[29-Mar-2020 00:22:35 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 72
+[29-Mar-2020 00:22:35 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 72
+[29-Mar-2020 00:22:35 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 91
+[29-Mar-2020 00:22:35 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 91
+[29-Mar-2020 00:22:36 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 91
+[29-Mar-2020 00:22:57 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 41
+[29-Mar-2020 00:22:57 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 41
+[29-Mar-2020 00:22:57 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 54
+[29-Mar-2020 00:22:57 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 54
+[29-Mar-2020 00:22:57 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 54
+[29-Mar-2020 00:22:57 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 71
+[29-Mar-2020 00:22:57 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 71
+[29-Mar-2020 00:22:57 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 71
+[29-Mar-2020 00:22:57 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 88
+[29-Mar-2020 00:22:57 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 88
+[29-Mar-2020 00:22:57 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 88
+[29-Mar-2020 00:22:57 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 105
+[29-Mar-2020 00:22:57 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 105
+[29-Mar-2020 00:22:57 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 105
+[29-Mar-2020 03:25:27 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 54
+[29-Mar-2020 03:25:27 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 54
+[29-Mar-2020 03:25:27 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 54
+[29-Mar-2020 03:25:27 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 71
+[29-Mar-2020 03:25:27 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 71
+[29-Mar-2020 03:25:27 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 71
+[29-Mar-2020 03:25:27 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 88
+[29-Mar-2020 03:25:27 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 88
+[29-Mar-2020 03:25:27 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 88
+[29-Mar-2020 03:25:35 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 54
+[29-Mar-2020 03:25:35 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 54
+[29-Mar-2020 03:25:35 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 54
+[29-Mar-2020 03:25:35 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 71
+[29-Mar-2020 03:25:35 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 71
+[29-Mar-2020 03:25:35 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 71
+[29-Mar-2020 03:25:35 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 88
+[29-Mar-2020 03:25:35 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 88
+[29-Mar-2020 03:25:35 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 88
+[29-Mar-2020 03:26:11 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 54
+[29-Mar-2020 03:26:11 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 54
+[29-Mar-2020 03:26:11 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 54
+[29-Mar-2020 03:26:11 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 71
+[29-Mar-2020 03:26:11 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 71
+[29-Mar-2020 03:26:11 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 71
+[29-Mar-2020 03:26:11 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 88
+[29-Mar-2020 03:26:11 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 88
+[29-Mar-2020 03:26:11 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 88
+[29-Mar-2020 03:28:18 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 54
+[29-Mar-2020 03:28:18 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 54
+[29-Mar-2020 03:28:18 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 54
+[29-Mar-2020 03:28:18 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 71
+[29-Mar-2020 03:28:18 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 71
+[29-Mar-2020 03:28:18 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 71
+[29-Mar-2020 03:28:18 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 88
+[29-Mar-2020 03:28:18 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 88
+[29-Mar-2020 03:28:18 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 88
+[29-Mar-2020 03:32:02 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 41
+[29-Mar-2020 03:32:02 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 41
+[29-Mar-2020 03:32:02 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 54
+[29-Mar-2020 03:32:02 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 54
+[29-Mar-2020 03:32:02 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 54
+[29-Mar-2020 03:32:02 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 71
+[29-Mar-2020 03:32:02 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 71
+[29-Mar-2020 03:32:02 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 71
+[29-Mar-2020 03:32:02 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 88
+[29-Mar-2020 03:32:03 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 88
+[29-Mar-2020 03:32:03 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\front-page.php on line 88
+[29-Mar-2020 03:52:11 UTC] PHP Notice:  Array to string conversion in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\header.php on line 15
+[29-Mar-2020 03:58:08 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\header.php on line 15
+[29-Mar-2020 03:58:40 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 12
+[29-Mar-2020 03:58:40 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 12
+[29-Mar-2020 03:58:40 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 12
+[29-Mar-2020 03:58:40 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 31
+[29-Mar-2020 03:58:40 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 31
+[29-Mar-2020 03:58:40 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 31
+[29-Mar-2020 03:58:40 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 53
+[29-Mar-2020 03:58:40 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 53
+[29-Mar-2020 03:58:40 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 53
+[29-Mar-2020 03:58:50 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 12
+[29-Mar-2020 03:58:50 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 12
+[29-Mar-2020 03:58:50 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 12
+[29-Mar-2020 03:58:50 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 31
+[29-Mar-2020 03:58:50 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 31
+[29-Mar-2020 03:58:50 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 31
+[29-Mar-2020 03:58:50 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 53
+[29-Mar-2020 03:58:50 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 53
+[29-Mar-2020 03:58:50 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 53
+[29-Mar-2020 03:58:51 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 72
+[29-Mar-2020 03:58:51 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 72
+[29-Mar-2020 03:58:51 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 72
+[29-Mar-2020 03:58:51 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 91
+[29-Mar-2020 03:58:51 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 91
+[29-Mar-2020 03:58:51 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 91
+[29-Mar-2020 04:08:51 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 12
+[29-Mar-2020 04:08:51 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 12
+[29-Mar-2020 04:08:51 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 12
+[29-Mar-2020 04:08:51 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 31
+[29-Mar-2020 04:08:51 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 31
+[29-Mar-2020 04:08:51 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 31
+[29-Mar-2020 04:08:51 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 53
+[29-Mar-2020 04:08:51 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 53
+[29-Mar-2020 04:08:51 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 53
+[29-Mar-2020 04:08:51 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 72
+[29-Mar-2020 04:08:51 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 72
+[29-Mar-2020 04:08:51 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 72
+[29-Mar-2020 04:08:51 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 91
+[29-Mar-2020 04:08:51 UTC] PHP Notice:  Trying to access array offset on value of type null in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 91
+[29-Mar-2020 04:08:51 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\services-main.php on line 91
+[29-Mar-2020 07:26:08 UTC] PHP Notice:  Trying to get property 'cat_name' of non-object in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\common-kids-corner-resources\tips-tricks-content.php on line 25
+[29-Mar-2020 07:26:08 UTC] PHP Notice:  Trying to get property 'cat_name' of non-object in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\common-kids-corner-resources\tips-tricks-content.php on line 25
+[29-Mar-2020 07:26:08 UTC] PHP Notice:  Trying to get property 'cat_name' of non-object in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\common-kids-corner-resources\tips-tricks-content.php on line 25
+[29-Mar-2020 07:26:08 UTC] PHP Notice:  Trying to get property 'cat_name' of non-object in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\common-kids-corner-resources\tips-tricks-content.php on line 25
+[29-Mar-2020 07:26:08 UTC] PHP Notice:  Trying to get property 'cat_name' of non-object in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\common-kids-corner-resources\tips-tricks-content.php on line 25
+[29-Mar-2020 07:26:50 UTC] PHP Notice:  Trying to get property 'cat_name' of non-object in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\common-kids-corner-resources\tips-tricks-content.php on line 25
+[29-Mar-2020 07:26:50 UTC] PHP Notice:  Trying to get property 'cat_name' of non-object in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\common-kids-corner-resources\tips-tricks-content.php on line 25
+[29-Mar-2020 07:26:50 UTC] PHP Notice:  Trying to get property 'cat_name' of non-object in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\common-kids-corner-resources\tips-tricks-content.php on line 25
+[29-Mar-2020 07:26:50 UTC] PHP Notice:  Trying to get property 'cat_name' of non-object in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\common-kids-corner-resources\tips-tricks-content.php on line 25
+[29-Mar-2020 07:26:50 UTC] PHP Notice:  Trying to get property 'cat_name' of non-object in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\common-kids-corner-resources\tips-tricks-content.php on line 25

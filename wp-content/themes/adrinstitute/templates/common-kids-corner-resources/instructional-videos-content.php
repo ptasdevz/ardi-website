@@ -1,4 +1,4 @@
-<div id="instr_videos" class="tabcontent">
+<div id="instr_videos" class="tabcontent instr_video_tab_content">
     <div class="player_class">
         <div id="player_controls">
             <a id="close_btn" href="#">&times;</a>

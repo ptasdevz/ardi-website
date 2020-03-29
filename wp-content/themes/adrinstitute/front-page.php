@@ -35,19 +35,23 @@ $upload_dir = wp_upload_dir();
                 <div class="card-background"></div>
             </div>
         </div>
-        <div class="img_carousel" style="background-image: url('<?php the_field('front_page_bckgrn_header_img'); ?>')"></div>
+        <?php
+         $front_img = get_field('front_page_bckgrn_header_img');
+          ?>
+        <div class="img_carousel" style="background-image: url('<?php echo $front_img['sizes']['xxlarge_16_9']?>')"></div>
     </section>
     <main>
         <?php if (have_rows('main_block_1')) : ?>
             <?php while (have_rows('main_block_1')) : the_row();
                 // Get sub field values.
                 $image = get_sub_field('img');
+                //print_r($image);
                 $title = get_sub_field('title');
                 $desc = get_sub_field('desc');
                 $link = get_sub_field('link');
                 $pg = get_page_by_title($link); ?>
                 <div id="kids_corner" class="card" onclick="window.location='<?php echo get_permalink($pg->ID); ?>';">
-                    <img src="<?php echo $image['url'] ?>" alt="<?php $image['alt'] ?>">
+                    <img src="<?php echo $image['sizes']['large_16_9_fixed'] ?>" alt="<?php $image['alt'] ?>">
                     <div class="info">
                         <h6><?php echo $title ?></h6>
                         <p><?php echo $desc ?></p>
@@ -64,7 +68,7 @@ $upload_dir = wp_upload_dir();
                 $link = get_sub_field('link');
                 $pg = get_page_by_title($link); ?>
                 <div id ="our_svc" class="card" onclick="window.location='<?php echo get_permalink($pg->ID); ?>';">
-                    <img src="<?php echo $image['url'] ?>" alt="<?php $image['alt'] ?>">
+                    <img src="<?php echo $image['sizes']['large_16_9_fixed'] ?>" alt="<?php $image['alt'] ?>">
                     <div class="info">
                         <h6><?php echo $title ?></h6>
                         <p><?php echo $desc ?></p>
@@ -81,7 +85,7 @@ $upload_dir = wp_upload_dir();
                 $link = get_sub_field('link');
                 $pg = get_page_by_title($link); ?>
                 <div id="pt_resources" class="card" onclick="window.location='<?php echo get_permalink($pg->ID); ?>';">
-                    <img src="<?php echo $image['url'] ?>" alt="<?php $image['alt'] ?>">
+                    <img src="<?php echo $image['sizes']['large_16_9_fixed'] ?>" alt="<?php $image['alt'] ?>">
                     <div class="info">
                         <h6><?php echo $title ?></h6>
                         <p><?php echo $desc ?></p>
@@ -98,7 +102,7 @@ $upload_dir = wp_upload_dir();
                 $link = get_sub_field('link');
                 $pg = get_page_by_title($link); ?>
                 <div id="community" class="card" onclick="window.location='<?php echo get_permalink($pg->ID); ?>';">
-                    <img src="<?php echo $image['url'] ?>" alt="<?php $image['alt'] ?>">
+                    <img src="<?php echo $image['sizes']['large_16_9_fixed'] ?>" alt="<?php $image['alt'] ?>">
                     <div class="info">
                         <h6><?php echo $title ?></h6>
                         <p><?php echo $desc ?></p>
@@ -114,7 +118,6 @@ $upload_dir = wp_upload_dir();
         $testimonial_data = get_field('testimonial_data');
         $body = $testimonial_data['body'];
         $count = count($body);
-
         ?>
         <div class="glide">
             <h1><?php the_field("testimonial_title"); ?></h1>

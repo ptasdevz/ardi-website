@@ -14,7 +14,7 @@ body {
           // padding: 15rem;
           position: absolute;
           content: "";
-          background-image: url("../imgs/our_services.png");
+          background-image: url("../../../../uploads/2020/03/our_services-550x550.png");
           background-size: cover;
           background-position: center;
           opacity: 0.1;
@@ -26,9 +26,9 @@ body {
         .services_content_area {
           .breadcrumbs_nav {
             position: sticky;
-            top:$header-height-mobile;
-            background:white;
-            padding:1rem;
+            top: $header-height-mobile;
+            background: white;
+            padding: 1rem;
             z-index: 11;
             .breadcrumbs {
               color: color(primary);
@@ -72,7 +72,8 @@ body {
               margin-bottom: 1rem;
               text-align: center;
             }
-            p, .content {
+            p,
+            .content {
               text-align: justify;
               // width: 80%;
               margin: 0 auto 1rem auto;
@@ -81,7 +82,7 @@ body {
               cursor: pointer;
               background: color(primary);
               color: color(text-2);
-              padding: 0.5rem;
+              padding: 0.2rem;
               outline: none;
               border: none;
               border-radius: 2px;
@@ -98,10 +99,10 @@ body {
           *Desktop layout for services
           */
           @include desktop {
-            .service{
+            .service {
               img {
                 width: auto;
-              };
+              }
             }
             .breadcrumbs_nav {
               position: relative;
@@ -111,7 +112,6 @@ body {
               margin: 0 auto;
               padding: 0;
               background: none;
-             
             }
             .service {
               width: 75%;
@@ -195,6 +195,17 @@ body {
               }
               .study_buddy_content {
                 grid-area: study_buddy_content;
+              }
+            }
+          }
+
+          /*tablet layout for services*/
+          @include tablet {
+            .service {
+              img {
+                width: 50%;
+                margin: 0 auto;
+                display: block;
               }
             }
           }

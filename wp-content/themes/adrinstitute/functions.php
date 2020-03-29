@@ -179,6 +179,7 @@ remove_filter('the_excerpt', 'wpautop');
 
 include get_template_directory() . "/templates/kids-corner-content.php";
 
+/*Filter to only view excerpt of full content on the service page */
 function service_content_excerpt($text, $excerpt_length) {
 
     if ( '' != $text ) {
@@ -192,4 +193,34 @@ function service_content_excerpt($text, $excerpt_length) {
     return apply_filters('the_excerpt', $text);
         
 }
+/*Custom length for wordpress excerpt */
+function adri_custom_excerpt_length( $length ) {
+    return 50;
+}
+add_filter( 'excerpt_length', 'adri_custom_excerpt_length', 999 );
+
+
+/*Image sizes 1:1*/
+add_image_size('small_1_1', 150, 150, false);
+add_image_size('small_1_1_fixed', 150, 150, true);
+add_image_size('medium_1_1',300, 300, false);
+add_image_size('medium_1_1_fixed',300, 300, true);
+add_image_size('large_1_1',550, 550, false);
+add_image_size('large_1_1_fixed',550, 550, true);
+add_image_size('xlarge_1_1', 800, 800, false);
+add_image_size('xlarge_1_1_fixed', 800, 800, true);
+add_image_size('xxlarge_1_1', 1540, 1540, false);
+add_image_size('xxlarge_1_1_fixed', 1540, 1540, true);
+
+/*Image sizes 16:9*/
+add_image_size('small_16_9', 150, 84.375, false);
+add_image_size('small_16_9_fixed', 150, 84.375, true);
+add_image_size('medium_16_9',300, 168.75, false);
+add_image_size('medium_16_9_fixed',300, 168.75, true);
+add_image_size('large_16_9',550, 309.375, false);
+add_image_size('large_16_9_fixed',550, 309.375, true);
+add_image_size('xlarge_16_9', 800, 450, false);
+add_image_size('xlarge_16_9_fixed', 800, 450, true);
+add_image_size('xxlarge_16_9', 1540, 866.25, false);
+add_image_size('xxlarge_16_9_fixed', 1540, 866.25, true);
 
