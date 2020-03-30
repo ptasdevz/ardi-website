@@ -95,13 +95,24 @@ body {
               margin: 0 auto;
             }
           }
+            /*tablet layout for services*/
+            @include tablet {
+              .service {
+                img {
+                  width: 50%;
+                  margin: 0 auto;
+                  display: block;
+                }
+              }
+            }
           /*
           *Desktop layout for services
           */
           @include desktop {
             .service {
               img {
-                width: auto;
+                width: unset;
+                margin:0;
               }
             }
             .breadcrumbs_nav {
@@ -199,16 +210,7 @@ body {
             }
           }
 
-          /*tablet layout for services*/
-          @include tablet {
-            .service {
-              img {
-                width: 50%;
-                margin: 0 auto;
-                display: block;
-              }
-            }
-          }
+        
         }
       }
     }

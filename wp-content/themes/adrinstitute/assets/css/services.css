@@ -65,10 +65,10 @@ body .page_container #page_main .content_area .services_content_area::before {
 body .page_container #page_main .content_area .services_content_area {
   position: relative;
   width: inherit;
+  /*tablet layout for services*/
   /*
           *Desktop layout for services
           */
-  /*tablet layout for services*/
 }
 
 body .page_container #page_main .content_area .services_content_area .breadcrumbs_nav {
@@ -151,9 +151,18 @@ body .page_container #page_main .content_area .services_content_area .service bu
           transform: scale(0.95);
 }
 
+@media (min-width: 702px) {
+  body .page_container #page_main .content_area .services_content_area .service img {
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
 @media (min-width: 840px) {
   body .page_container #page_main .content_area .services_content_area .service img {
-    width: auto;
+    width: unset;
+    margin: 0;
   }
   body .page_container #page_main .content_area .services_content_area .breadcrumbs_nav {
     position: relative;
@@ -279,14 +288,6 @@ body .page_container #page_main .content_area .services_content_area .service bu
     -ms-grid-row: 1;
     -ms-grid-column: 2;
     grid-area: study_buddy_content;
-  }
-}
-
-@media (min-width: 702px) {
-  body .page_container #page_main .content_area .services_content_area .service img {
-    width: 50%;
-    margin: 0 auto;
-    display: block;
   }
 }
 /*# sourceMappingURL=services.css.map */
