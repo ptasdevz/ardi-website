@@ -1,6 +1,6 @@
    <div id="tips_tricks" class="tabcontent tips_tricks_tab_content">
        <?php
-        //print_r(get_posts());
+        //print_r(getpost());
         $posts = get_posts();
 
         //print_r(get_the_post_thumbnail(417,"medium")) 

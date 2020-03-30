@@ -724,3 +724,21 @@ Stack trace:
 [30-Mar-2020 07:28:39 UTC] PHP Notice:  Undefined offset: 1 in C:\Users\jason\gitprojects\ardi-website\wp-includes\class-wp-query.php on line 3252
 [30-Mar-2020 07:28:39 UTC] PHP Notice:  Trying to get property 'comment_status' of non-object in C:\Users\jason\gitprojects\ardi-website\wp-includes\comment-template.php on line 1219
 [30-Mar-2020 07:31:46 UTC] PHP Parse error:  syntax error, unexpected 'var' (T_VAR), expecting end of file in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\single.php on line 14
+[30-Mar-2020 19:29:32 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getpost() in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\template-parts\common-kids-corner-resources\tips-tricks-content.php:3
+Stack trace:
+#0 C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\template-parts\resources-main.php(14): include_once()
+#1 C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\page.php(69): include('C:\\Users\\jason\\...')
+#2 C:\Users\jason\gitprojects\ardi-website\wp-includes\template-loader.php(98): include('C:\\Users\\jason\\...')
+#3 C:\Users\jason\gitprojects\ardi-website\wp-blog-header.php(19): require_once('C:\\Users\\jason\\...')
+#4 C:\Users\jason\gitprojects\ardi-website\index.php(17): require('C:\\Users\\jason\\...')
+#5 {main}
+  thrown in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\template-parts\common-kids-corner-resources\tips-tricks-content.php on line 3
+[30-Mar-2020 19:29:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function getpost() in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\template-parts\common-kids-corner-resources\tips-tricks-content.php:3
+Stack trace:
+#0 C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\template-parts\resources-main.php(14): include_once()
+#1 C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\page.php(69): include('C:\\Users\\jason\\...')
+#2 C:\Users\jason\gitprojects\ardi-website\wp-includes\template-loader.php(98): include('C:\\Users\\jason\\...')
+#3 C:\Users\jason\gitprojects\ardi-website\wp-blog-header.php(19): require_once('C:\\Users\\jason\\...')
+#4 C:\Users\jason\gitprojects\ardi-website\index.php(17): require('C:\\Users\\jason\\...')
+#5 {main}
+  thrown in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\template-parts\common-kids-corner-resources\tips-tricks-content.php on line 3

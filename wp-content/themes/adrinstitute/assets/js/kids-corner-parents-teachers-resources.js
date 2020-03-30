@@ -1,5 +1,10 @@
 $(document).ready(function () {
-
+    //var initial_kids_corner_tab = "instr_videos_tab_btn";
+    //var initial_resources_tab = "tips_tricks_tab_btn";
+    if (sessionStorage.initial_kids_corner_tab == undefined) sessionStorage.initial_kids_corner_tab = "instr_videos_tab_btn";
+    if (sessionStorage.initial_resources_tab == undefined) sessionStorage.initial_resources_tab = "tips_tricks_tab_btn";
+    if (sessionStorage.is_kids_corner_temp_change == undefined) sessionStorage.is_kids_corner_temp_change = false;
+    if (sessionStorage.is_res_temp_change == undefined) sessionStorage.is_res_temp_change = false;
 
     //manage tabs apperances
     $(".tablinks").click(function () {
@@ -18,6 +23,25 @@ $(document).ready(function () {
         }
 
     });
+
+    //default tab appearances
+     $("#"+sessionStorage.initial_kids_corner_tab).trigger("click");
+     $("#"+sessionStorage.initial_resources_tab).trigger("click");
+
+     //reset to initial values if temporarily changed
+     if (sessionStorage.is_kids_corner_temp_change){
+         sessionStorage.initial_kids_corner_tab = "instr_videos_tab_btn";
+     }
+     if (sessionStorage.is_res_temp_change){
+         sessionStorage.initial_resources_tab = "instr_videos_tab_btn";
+     }
+
+
+     $(".tips_tricks_tab_btn").click(function (){
+        sessionStorage.initial_resources_tab = $(this).attr("class");
+        sessionStorage.is_res_temp_change = true;
+        window.location = $(this).attr("id");
+     });
     //===============================Get Data on Other Links ======================
     //get all other-links from backend.
     var other_links = [];

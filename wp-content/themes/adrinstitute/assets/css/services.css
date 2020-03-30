@@ -117,7 +117,8 @@ body .page_container #page_main .content_area .services_content_area .service im
 }
 
 body .page_container #page_main .content_area .services_content_area .service h1,
-body .page_container #page_main .content_area .services_content_area .service h2 {
+body .page_container #page_main .content_area .services_content_area .service h2,
+body .page_container #page_main .content_area .services_content_area .service h3 {
   color: #000;
   margin-bottom: 1rem;
   text-align: center;

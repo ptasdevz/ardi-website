@@ -12,6 +12,7 @@ get_header();
 //print_r($var);
 // $cat = get_the_category()[0];
 // print_r($cat_name);
+$res_pg = get_page_by_title("resources");
 ?>
 <div class="post_container">
 
@@ -23,7 +24,7 @@ get_header();
             <?php endif; ?>
             <div class="bread_crumb_nav">
                 <ul class="breadcrumb">
-                    <li><a href="#">Literacy Tips & Tricks</a></li>
+                    <li><a id = "<?php echo get_permalink($res_pg->ID); ?> "class="tips_tricks_tab_btn" href="#">Literacy Tips & Tricks</a></li>
                     <li><?php the_title(); ?></li>
                 </ul>
             </div>
