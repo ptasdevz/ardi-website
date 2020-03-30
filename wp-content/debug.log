@@ -676,3 +676,51 @@ Stack trace:
 [29-Mar-2020 07:26:50 UTC] PHP Notice:  Trying to get property 'cat_name' of non-object in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\common-kids-corner-resources\tips-tricks-content.php on line 25
 [29-Mar-2020 07:26:50 UTC] PHP Notice:  Trying to get property 'cat_name' of non-object in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\common-kids-corner-resources\tips-tricks-content.php on line 25
 [29-Mar-2020 07:26:50 UTC] PHP Notice:  Trying to get property 'cat_name' of non-object in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\templates\common-kids-corner-resources\tips-tricks-content.php on line 25
+[30-Mar-2020 04:16:01 UTC] PHP Fatal error:  Uncaught Error: Class 'TwentyTwenty_Walker_Comment' not found in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\comments.php:63
+Stack trace:
+#0 C:\Users\jason\gitprojects\ardi-website\wp-includes\comment-template.php(1508): require()
+#1 C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\single.php(37): comments_template()
+#2 C:\Users\jason\gitprojects\ardi-website\wp-includes\template-loader.php(98): include('C:\\Users\\jason\\...')
+#3 C:\Users\jason\gitprojects\ardi-website\wp-blog-header.php(19): require_once('C:\\Users\\jason\\...')
+#4 C:\Users\jason\gitprojects\ardi-website\index.php(17): require('C:\\Users\\jason\\...')
+#5 {main}
+  thrown in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\comments.php on line 63
+[30-Mar-2020 04:17:31 UTC] PHP Fatal error:  Uncaught Error: Class 'Adri_Walker_Comment' not found in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\comments.php:63
+Stack trace:
+#0 C:\Users\jason\gitprojects\ardi-website\wp-includes\comment-template.php(1508): require()
+#1 C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\single.php(37): comments_template()
+#2 C:\Users\jason\gitprojects\ardi-website\wp-includes\template-loader.php(98): include('C:\\Users\\jason\\...')
+#3 C:\Users\jason\gitprojects\ardi-website\wp-blog-header.php(19): require_once('C:\\Users\\jason\\...')
+#4 C:\Users\jason\gitprojects\ardi-website\index.php(17): require('C:\\Users\\jason\\...')
+#5 {main}
+  thrown in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\comments.php on line 63
+[30-Mar-2020 04:18:40 UTC] PHP Fatal error:  Uncaught Error: Class 'Adri_Walker_Comment' not found in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\comments.php:63
+Stack trace:
+#0 C:\Users\jason\gitprojects\ardi-website\wp-includes\comment-template.php(1508): require()
+#1 C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\single.php(37): comments_template()
+#2 C:\Users\jason\gitprojects\ardi-website\wp-includes\template-loader.php(98): include('C:\\Users\\jason\\...')
+#3 C:\Users\jason\gitprojects\ardi-website\wp-blog-header.php(19): require_once('C:\\Users\\jason\\...')
+#4 C:\Users\jason\gitprojects\ardi-website\index.php(17): require('C:\\Users\\jason\\...')
+#5 {main}
+  thrown in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\comments.php on line 63
+[30-Mar-2020 04:21:00 UTC] PHP Fatal error:  Uncaught Error: Class 'Adri_Walker_Comment' not found in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\comments.php:63
+Stack trace:
+#0 C:\Users\jason\gitprojects\ardi-website\wp-includes\comment-template.php(1508): require()
+#1 C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\single.php(37): comments_template()
+#2 C:\Users\jason\gitprojects\ardi-website\wp-includes\template-loader.php(98): include('C:\\Users\\jason\\...')
+#3 C:\Users\jason\gitprojects\ardi-website\wp-blog-header.php(19): require_once('C:\\Users\\jason\\...')
+#4 C:\Users\jason\gitprojects\ardi-website\index.php(17): require('C:\\Users\\jason\\...')
+#5 {main}
+  thrown in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\comments.php on line 63
+[30-Mar-2020 06:03:02 UTC] PHP Warning:  include(C:\Users\jason\gitprojects\ardi-website/wp-content/themes/adrinstitute/templates/kids-corner-content.php): failed to open stream: No such file or directory in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\functions.php on line 169
+[30-Mar-2020 06:03:02 UTC] PHP Warning:  include(): Failed opening 'C:\Users\jason\gitprojects\ardi-website/wp-content/themes/adrinstitute/templates/kids-corner-content.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\functions.php on line 169
+[30-Mar-2020 06:03:08 UTC] PHP Warning:  include(C:\Users\jason\gitprojects\ardi-website/wp-content/themes/adrinstitute/templates/kids-corner-content.php): failed to open stream: No such file or directory in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\functions.php on line 169
+[30-Mar-2020 06:03:08 UTC] PHP Warning:  include(): Failed opening 'C:\Users\jason\gitprojects\ardi-website/wp-content/themes/adrinstitute/templates/kids-corner-content.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\functions.php on line 169
+[30-Mar-2020 07:25:31 UTC] PHP Notice:  Undefined offset: 1 in C:\Users\jason\gitprojects\ardi-website\wp-includes\class-wp-query.php on line 3252
+[30-Mar-2020 07:25:31 UTC] PHP Notice:  Trying to get property 'comment_status' of non-object in C:\Users\jason\gitprojects\ardi-website\wp-includes\comment-template.php on line 1219
+[30-Mar-2020 07:28:10 UTC] PHP Notice:  Undefined offset: 1 in C:\Users\jason\gitprojects\ardi-website\wp-includes\class-wp-query.php on line 3252
+[30-Mar-2020 07:28:10 UTC] PHP Notice:  Undefined offset: 2 in C:\Users\jason\gitprojects\ardi-website\wp-includes\class-wp-query.php on line 3252
+[30-Mar-2020 07:28:10 UTC] PHP Notice:  Trying to get property 'comment_status' of non-object in C:\Users\jason\gitprojects\ardi-website\wp-includes\comment-template.php on line 1219
+[30-Mar-2020 07:28:39 UTC] PHP Notice:  Undefined offset: 1 in C:\Users\jason\gitprojects\ardi-website\wp-includes\class-wp-query.php on line 3252
+[30-Mar-2020 07:28:39 UTC] PHP Notice:  Trying to get property 'comment_status' of non-object in C:\Users\jason\gitprojects\ardi-website\wp-includes\comment-template.php on line 1219
+[30-Mar-2020 07:31:46 UTC] PHP Parse error:  syntax error, unexpected 'var' (T_VAR), expecting end of file in C:\Users\jason\gitprojects\ardi-website\wp-content\themes\adrinstitute\single.php on line 14

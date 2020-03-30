@@ -25,11 +25,10 @@
                         $post_cat_name = $post_cat[0]->cat_name;
 
                         ?>
-                       <h3><?php echo $post_cat_name; ?></h3>
+                       <h3><a href="<?php echo get_category_link($post_cat[0]->cat_ID);?>"><?php echo $post_cat_name; ?></a></h3>
                        <h1><?php echo $post->post_title; ?></h1>
                        <p><?php the_excerpt(); ?></p>
                        <button onclick="window.location='<?php echo get_permalink(); ?>';">Read More</button>
-                       <!-- <a href="window.location='<?php echo get_permalink(); ?>';">Read More</a> -->
 
                        <p class="tips_trick_meta_data"><span class="author"><i class="fa fa-user"></i> </span><?php echo $name; ?>
                            &nbsp;&nbsp;<span class="comment_count"><i class="fa fa-comments"></i> </span><?php echo $comment_count; ?>

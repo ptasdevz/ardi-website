@@ -4,6 +4,7 @@ body {
   .page_container {
     background: color(base-1);
 
+    /*Default Mobile layout*/
     #page_main {
       position: relative;
       .content_area {
@@ -14,7 +15,6 @@ body {
           content: "";
           background-size: cover;
           background-position: center;
-          // box-shadow: 0 0 0.5rem 0.5rem color(base-1) inset;
           opacity: 0.1;
           top: 0;
           width: 100%;
@@ -109,34 +109,32 @@ body {
               }
               .content_container {
                 grid-area: content;
-                h1,
-                h2,
-                h3 {
-                  color: #000;
-                  margin: 0 0 1rem 1rem;
+                h3 a {
                   text-align: left;
-                }
-                h3 {
-                  margin-top: 1rem;
+                  padding: 1rem;
+                  text-decoration: none;
                   color: color(primary);
-                  //text-shadow: 0px 0px 1px color(primary);
+                  transition: 1s;
+                  &:hover {
+                    transform: scale(0.99);
+                  }
+                  box-sizing: border-box;
+                  font-weight: bold;
+                  display: block;
+                }
+
+                h1 {
+                  color: #000;
+                  padding: 0 1rem 1rem 1rem;
+                  text-align: left;
                 }
 
                 p {
                   text-align: justify;
-                  margin: 0 auto 1rem auto;
-                  padding: 0 1rem;
+                  margin: 0 auto;
+                  padding: 0 1rem 1rem 1rem;
                 }
-                .tips_trick_meta_data {
-                  font-weight: bold;
-                  color: #000;
-                  font-size: 12px;
-                  margin: 1rem auto 1rem auto;
-                  span {
-                    font-weight: bold;
-                    color: color(primary);
-                  }
-                }
+
                 button {
                   cursor: pointer;
                   background: color(primary);
@@ -152,9 +150,18 @@ body {
                   }
                   margin: 0 1rem 1rem 1rem;
                 }
+                .tips_trick_meta_data {
+                  font-weight: bold;
+                  color: #000;
+                  font-size: 12px;
+                  span {
+                    font-weight: bold;
+                    color: color(primary);
+                  }
+                }
               }
             }
-
+            /*Instructinonal Videos*/
             .player_class {
               position: sticky;
               margin: 0 auto;
@@ -378,26 +385,25 @@ body {
               .tips_tricks_content {
                 .img_container {
                   img {
-                    width: 50%;
+                    width: 40%;
                     margin: 0 auto;
                     display: block;
                   }
                 }
                 .content_container {
-                  h1,
-                  h2,
-                  h3 {
+                  h1 {
                     display: block;
                     margin: 0 auto;
                     width: 50%;
                     text-align: center;
                   }
-                  h3 {
-                    margin-top: 1rem;
+                  h3 a {
+                    text-align: center;
                   }
                   button {
                     display: flex;
-                    margin: 0 auto;
+                    margin-left: auto;
+                    margin-right: auto;
                   }
                   .tips_trick_meta_data {
                     margin-left: auto;
@@ -511,6 +517,12 @@ body {
                 }
               }
             }
+            .instr_video_tab_content {
+              width: 65rem;
+            }
+            .tips_tricks_tab_content {
+              width: 65rem;
+            }
             .tabcontent {
               margin: 0 auto;
 
@@ -526,17 +538,17 @@ body {
                   }
                 }
                 .content_container {
-                  h1,
-                  h2,
-                  h3 {
+                  h1 {
                     display: block;
-                    margin: 0 1rem 1rem 1rem;
+                    padding: 0 1rem 1rem 1rem;
                     width: 100%;
                     text-align: left;
+                    box-sizing: border-box;
                   }
-                  h3 {
-                    margin: 1rem;
+                  h3 a {
+                    text-align: left;
                   }
+
                   button {
                     display: block;
                     margin: 0 1rem 1rem 1rem;
@@ -580,20 +592,14 @@ body {
                 animation-fill-mode: forwards;
               }
             }
-            .instr_video_tab_content {
-              width: 80%;
-            }
-            .tips_tricks_tab_content {
-              width: 70%;
-            }
           }
         }
       }
     }
 
     /*  
-        * IE10+ CSS for kids corner layout 
-        */
+    * IE10+ CSS for kids corner and resources   layout 
+    */
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
       #page_main {
         .content_area {

@@ -36,13 +36,14 @@ body .container #overlay {
 
 body .page_container {
   background: #fff;
+  /*Default Mobile layout*/
   /*Tablet layout for resouces*/
   /*
     *Desktop layout for kids corner area and resources
     */
   /*  
-        * IE10+ CSS for kids corner layout 
-        */
+    * IE10+ CSS for kids corner and resources   layout 
+    */
 }
 
 body .page_container #page_main {
@@ -169,6 +170,7 @@ body .page_container #page_main .content_area .resources_content_area .tabconten
           animation: fadeEffect 1s;
   margin-top: 1rem;
   /*Tips and Tricks Content*/
+  /*Instructinonal Videos*/
 }
 
 body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content,
@@ -208,42 +210,38 @@ body .page_container #page_main .content_area .resources_content_area .tabconten
   grid-area: content;
 }
 
-body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container h1,
-body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container h2,
-body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container h3,
-body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container h1,
-body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container h2,
-body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container h3 {
-  color: #000;
-  margin: 0 0 1rem 1rem;
+body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container h3 a,
+body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container h3 a {
   text-align: left;
+  padding: 1rem;
+  text-decoration: none;
+  color: #1d2089;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: bold;
+  display: block;
 }
 
-body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container h3,
-body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container h3 {
-  margin-top: 1rem;
-  color: #1d2089;
+body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container h3 a:hover,
+body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container h3 a:hover {
+  -webkit-transform: scale(0.99);
+          transform: scale(0.99);
+}
+
+body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container h1,
+body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container h1 {
+  color: #000;
+  padding: 0 1rem 1rem 1rem;
+  text-align: left;
 }
 
 body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container p,
 body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container p {
   text-align: justify;
-  margin: 0 auto 1rem auto;
-  padding: 0 1rem;
-}
-
-body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container .tips_trick_meta_data,
-body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container .tips_trick_meta_data {
-  font-weight: bold;
-  color: #000;
-  font-size: 12px;
-  margin: 1rem auto 1rem auto;
-}
-
-body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container .tips_trick_meta_data span,
-body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container .tips_trick_meta_data span {
-  font-weight: bold;
-  color: #1d2089;
+  margin: 0 auto;
+  padding: 0 1rem 1rem 1rem;
 }
 
 body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container button,
@@ -265,6 +263,19 @@ body .page_container #page_main .content_area .resources_content_area .tabconten
   color: #fcba04;
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
+}
+
+body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container .tips_trick_meta_data,
+body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container .tips_trick_meta_data {
+  font-weight: bold;
+  color: #000;
+  font-size: 12px;
+}
+
+body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container .tips_trick_meta_data span,
+body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container .tips_trick_meta_data span {
+  font-weight: bold;
+  color: #1d2089;
 }
 
 body .page_container #page_main .content_area .kids_content_area .tabcontent .player_class,
@@ -526,26 +537,25 @@ body .page_container #page_main .content_area .resources_content_area .resources
 
 @media (min-width: 702px) {
   body .page_container #page_main .content_area .resources_content_area .tips_tricks_tab_content .tips_tricks_content .img_container img {
-    width: 50%;
+    width: 40%;
     margin: 0 auto;
     display: block;
   }
-  body .page_container #page_main .content_area .resources_content_area .tips_tricks_tab_content .tips_tricks_content .content_container h1,
-  body .page_container #page_main .content_area .resources_content_area .tips_tricks_tab_content .tips_tricks_content .content_container h2,
-  body .page_container #page_main .content_area .resources_content_area .tips_tricks_tab_content .tips_tricks_content .content_container h3 {
+  body .page_container #page_main .content_area .resources_content_area .tips_tricks_tab_content .tips_tricks_content .content_container h1 {
     display: block;
     margin: 0 auto;
     width: 50%;
     text-align: center;
   }
-  body .page_container #page_main .content_area .resources_content_area .tips_tricks_tab_content .tips_tricks_content .content_container h3 {
-    margin-top: 1rem;
+  body .page_container #page_main .content_area .resources_content_area .tips_tricks_tab_content .tips_tricks_content .content_container h3 a {
+    text-align: center;
   }
   body .page_container #page_main .content_area .resources_content_area .tips_tricks_tab_content .tips_tricks_content .content_container button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
   }
   body .page_container #page_main .content_area .resources_content_area .tips_tricks_tab_content .tips_tricks_content .content_container .tips_trick_meta_data {
     margin-left: auto;
@@ -688,6 +698,14 @@ body .page_container #page_main .content_area .resources_content_area .resources
   body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper button.active span::after {
     background-color: #1d2089;
   }
+  body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content,
+  body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content {
+    width: 65rem;
+  }
+  body .page_container #page_main .content_area .kids_content_area .tips_tricks_tab_content,
+  body .page_container #page_main .content_area .resources_content_area .tips_tricks_tab_content {
+    width: 65rem;
+  }
   body .page_container #page_main .content_area .kids_content_area .tabcontent,
   body .page_container #page_main .content_area .resources_content_area .tabcontent {
     margin: 0 auto;
@@ -706,19 +724,17 @@ body .page_container #page_main .content_area .resources_content_area .resources
     margin: 0;
   }
   body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container h1,
-  body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container h2,
-  body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container h3,
-  body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container h1,
-  body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container h2,
-  body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container h3 {
+  body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container h1 {
     display: block;
-    margin: 0 1rem 1rem 1rem;
+    padding: 0 1rem 1rem 1rem;
     width: 100%;
     text-align: left;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
   }
-  body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container h3,
-  body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container h3 {
-    margin: 1rem;
+  body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container h3 a,
+  body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container h3 a {
+    text-align: left;
   }
   body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container button,
   body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container button {
@@ -770,14 +786,6 @@ body .page_container #page_main .content_area .resources_content_area .resources
             animation: videoPlayerMaximize 0s;
     -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
-  }
-  body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content,
-  body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content {
-    width: 80%;
-  }
-  body .page_container #page_main .content_area .kids_content_area .tips_tricks_tab_content,
-  body .page_container #page_main .content_area .resources_content_area .tips_tricks_tab_content {
-    width: 70%;
   }
 }
 

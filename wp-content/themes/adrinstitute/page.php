@@ -1,4 +1,13 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying single pages
+ *
+ * @package PtasDevz
+ * @subpackage Adrinsitute
+ * @since 1.0.0
+ */
+
+get_header(); ?>
 <div class="page_container">
     <?php
     // $pg = get_page_by_title("kids corner");
@@ -31,7 +40,7 @@
                 //side navigation links 
                 switch ($post->post_name):
                     case "kids-corner":
-                        include "templates/kids-corner-nav.php";
+                        include "template-parts/kids-corner-nav.php";
                 endswitch ?>
 
             </section>
@@ -51,31 +60,31 @@
             //main content 
             switch ($post->post_name):
                 case "kids-corner":
-                    include "templates/kids-corner-main.php";
+                    include "template-parts/kids-corner-main.php";
                     break;
                 case "services":
-                    include "templates/services-main.php";
+                    include "template-parts/services-main.php";
                     break;
                 case "resources":
-                    include "templates/resources-main.php";
+                    include "template-parts/resources-main.php";
                     break;
                 case "reading-assessment":
-                    include "templates/services-reading-assessment.php";
+                    include "template-parts/services-reading-assessment.php";
                     break;
                 case "remedial-classes":
-                    include "templates/services-remedial-classes.php";
+                    include "template-parts/services-remedial-classes.php";
                     break;
                 case "project-homework-help":
-                    include "templates/services-project-homework-help.php";
+                    include "template-parts/services-project-homework-help.php";
                     break;
                 case "printing-laminating":
-                    include "templates/services-printing-laminating.php";
+                    include "template-parts/services-printing-laminating.php";
                     break;
                 case "study-buddy":
-                    include "templates/services-study-buddy.php";
+                    include "template-parts/services-study-buddy.php";
                     break;
                 case "contact-us":
-                    include "templates/contact-us-main.php";
+                    include "template-parts/contact-us-main.php";
                     break;
             endswitch ?>
         </div>

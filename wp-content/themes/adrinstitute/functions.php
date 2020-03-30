@@ -1,5 +1,10 @@
 <?php
 
+// Custom comment walker.
+require get_template_directory() . '/classes/class-adri-walker-comment.php';
+
+require get_template_directory() . '/inc/template-tags.php';
+
 //enqueue css style sheets
 function load_style_sheets()
 {
@@ -130,39 +135,25 @@ function load_js()
 }
 add_action('wp_enqueue_scripts', 'load_js');
 
+/*add additional meta tags */
 function load_meta_tags()
 {
     echo '<meta name="viewport" content="width=device-width, initial-scale=1.0" >';
     echo '<script src="https://kit.fontawesome.com/592fd30525.js" crossorigin="anonymous"></script>';
 }
-
 add_action('wp_head', 'load_meta_tags');
 
+/*footer scripts */
 function load_footer_scripts()
 {
 }
 add_action('wp_footer', 'load_footer_scripts');
 
-// function my_acf_fallback ($value, $post_id, $field){
-
-//     // $value = get_field('social_media_tagline');
-// echo "<pre>";
-// print_r($value);
-// // print_r($post_id);
-// // print_r($field);
-// echo "</pre>";
-// // die();
-// // return $value;
-// }
-// add_filter('acf/load_value/name=social_media_tagline','my_acf_fallback',10,3);
 
 /**
  * Enable support for post thumbnails and featured images.
  */
 add_theme_support('post-thumbnails');
-
-add_image_size('featured', 1100, 400, true);
-add_image_size('front_pg_main', 287, 177, true);
 
 // add support for wordpress navigational theme menus
 add_theme_support("menus");
@@ -177,7 +168,8 @@ remove_filter('the_content', 'wpautop');
 remove_filter('the_excerpt', 'wpautop');
 // remove_filter ('acf_the_content', 'wpautop');
 
-include get_template_directory() . "/templates/kids-corner-content.php";
+/*using ajax to get videos */
+//include get_template_directory() . "/templates/kids-corner-content.php";
 
 /*Filter to only view excerpt of full content on the service page */
 function service_content_excerpt($text, $excerpt_length) {
@@ -193,6 +185,7 @@ function service_content_excerpt($text, $excerpt_length) {
     return apply_filters('the_excerpt', $text);
         
 }
+
 /*Custom length for wordpress excerpt */
 function adri_custom_excerpt_length( $length ) {
     return 50;
