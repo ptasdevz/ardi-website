@@ -101,7 +101,8 @@ $upload_dir = wp_upload_dir();
                 $desc = get_sub_field('desc');
                 $link = get_sub_field('link');
                 $pg = get_page_by_title($link); ?>
-                <div id="community" class="card" onclick="window.location='<?php echo get_permalink($pg->ID); ?>';">
+                <!-- <div id="community" class="card community_tab_btn" onclick="window.location='<?php //echo get_permalink($pg->ID); ?>';"> -->
+                <div id="community" data-value=".resources_tab .tab_wrapper #community_menu #community_tab_btn" data-link="<?php echo get_permalink($pg->ID); ?>" class="card community_tab_btn">
                     <img src="<?php echo $image['sizes']['large_16_9_fixed'] ?>" alt="<?php $image['alt'] ?>">
                     <div class="info">
                         <h6><?php echo $title ?></h6>

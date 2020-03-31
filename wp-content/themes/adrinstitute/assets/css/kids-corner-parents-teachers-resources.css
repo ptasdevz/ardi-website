@@ -169,12 +169,12 @@ body .page_container #page_main .content_area .resources_content_area .tabconten
   -webkit-animation: fadeEffect 1s;
           animation: fadeEffect 1s;
   margin-top: 1rem;
-  /*Tips and Tricks Content*/
+  /*Blog Content*/
   /*Instructinonal Videos*/
 }
 
-body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content,
-body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content {
+body .page_container #page_main .content_area .kids_content_area .tabcontent .adri_blog_content,
+body .page_container #page_main .content_area .resources_content_area .tabcontent .adri_blog_content {
   border: 1px solid #c9c9c9;
   background-color: #fff;
   -webkit-box-shadow: 2px 2px 4px #c9c9c9;
@@ -190,28 +190,28 @@ body .page_container #page_main .content_area .resources_content_area .tabconten
       grid-template-areas: "img" "content";
 }
 
-body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .img_container,
-body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .img_container {
+body .page_container #page_main .content_area .kids_content_area .tabcontent .adri_blog_content .img_container,
+body .page_container #page_main .content_area .resources_content_area .tabcontent .adri_blog_content .img_container {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: img;
   width: 100%;
 }
 
-body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .img_container img,
-body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .img_container img {
+body .page_container #page_main .content_area .kids_content_area .tabcontent .adri_blog_content .img_container img,
+body .page_container #page_main .content_area .resources_content_area .tabcontent .adri_blog_content .img_container img {
   width: 100%;
 }
 
-body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container,
-body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container {
+body .page_container #page_main .content_area .kids_content_area .tabcontent .adri_blog_content .content_container,
+body .page_container #page_main .content_area .resources_content_area .tabcontent .adri_blog_content .content_container {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: content;
 }
 
-body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container h3 a,
-body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container h3 a {
+body .page_container #page_main .content_area .kids_content_area .tabcontent .adri_blog_content .content_container h3 a,
+body .page_container #page_main .content_area .resources_content_area .tabcontent .adri_blog_content .content_container h3 a {
   text-align: left;
   padding: 1rem;
   text-decoration: none;
@@ -224,28 +224,28 @@ body .page_container #page_main .content_area .resources_content_area .tabconten
   display: block;
 }
 
-body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container h3 a:hover,
-body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container h3 a:hover {
+body .page_container #page_main .content_area .kids_content_area .tabcontent .adri_blog_content .content_container h3 a:hover,
+body .page_container #page_main .content_area .resources_content_area .tabcontent .adri_blog_content .content_container h3 a:hover {
   -webkit-transform: scale(0.99);
           transform: scale(0.99);
 }
 
-body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container h1,
-body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container h1 {
+body .page_container #page_main .content_area .kids_content_area .tabcontent .adri_blog_content .content_container h1,
+body .page_container #page_main .content_area .resources_content_area .tabcontent .adri_blog_content .content_container h1 {
   color: #000;
   padding: 0 1rem 1rem 1rem;
   text-align: left;
 }
 
-body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container p,
-body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container p {
+body .page_container #page_main .content_area .kids_content_area .tabcontent .adri_blog_content .content_container p,
+body .page_container #page_main .content_area .resources_content_area .tabcontent .adri_blog_content .content_container p {
   text-align: justify;
   margin: 0 auto;
   padding: 0 1rem 1rem 1rem;
 }
 
-body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container button,
-body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container button {
+body .page_container #page_main .content_area .kids_content_area .tabcontent .adri_blog_content .content_container button,
+body .page_container #page_main .content_area .resources_content_area .tabcontent .adri_blog_content .content_container button {
   cursor: pointer;
   background: #1d2089;
   color: #fff;
@@ -258,22 +258,22 @@ body .page_container #page_main .content_area .resources_content_area .tabconten
   margin: 0 1rem 1rem 1rem;
 }
 
-body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container button:hover,
-body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container button:hover {
+body .page_container #page_main .content_area .kids_content_area .tabcontent .adri_blog_content .content_container button:hover,
+body .page_container #page_main .content_area .resources_content_area .tabcontent .adri_blog_content .content_container button:hover {
   color: #fcba04;
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
 }
 
-body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container .tips_trick_meta_data,
-body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container .tips_trick_meta_data {
+body .page_container #page_main .content_area .kids_content_area .tabcontent .adri_blog_content .content_container .adri_blog_meta_data,
+body .page_container #page_main .content_area .resources_content_area .tabcontent .adri_blog_content .content_container .adri_blog_meta_data {
   font-weight: bold;
   color: #000;
   font-size: 12px;
 }
 
-body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container .tips_trick_meta_data span,
-body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container .tips_trick_meta_data span {
+body .page_container #page_main .content_area .kids_content_area .tabcontent .adri_blog_content .content_container .adri_blog_meta_data span,
+body .page_container #page_main .content_area .resources_content_area .tabcontent .adri_blog_content .content_container .adri_blog_meta_data span {
   font-weight: bold;
   color: #1d2089;
 }
@@ -390,8 +390,8 @@ body .page_container #page_main .content_area .resources_content_area .tabconten
   font-size: 0.7rem;
 }
 
-body .page_container #page_main .content_area .kids_content_area #instr_videos,
-body .page_container #page_main .content_area .resources_content_area #instr_videos {
+body .page_container #page_main .content_area .kids_content_area #instr_vide os,
+body .page_container #page_main .content_area .resources_content_area #instr_vide os {
   display: block;
 }
 
@@ -536,28 +536,28 @@ body .page_container #page_main .content_area .resources_content_area .resources
 }
 
 @media (min-width: 702px) {
-  body .page_container #page_main .content_area .resources_content_area .tips_tricks_tab_content .tips_tricks_content .img_container img {
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .img_container img {
     width: 40%;
     margin: 0 auto;
     display: block;
   }
-  body .page_container #page_main .content_area .resources_content_area .tips_tricks_tab_content .tips_tricks_content .content_container h1 {
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h1 {
     display: block;
     margin: 0 auto;
     width: 50%;
     text-align: center;
   }
-  body .page_container #page_main .content_area .resources_content_area .tips_tricks_tab_content .tips_tricks_content .content_container h3 a {
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a {
     text-align: center;
   }
-  body .page_container #page_main .content_area .resources_content_area .tips_tricks_tab_content .tips_tricks_content .content_container button {
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     margin-left: auto;
     margin-right: auto;
   }
-  body .page_container #page_main .content_area .resources_content_area .tips_tricks_tab_content .tips_tricks_content .content_container .tips_trick_meta_data {
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -702,29 +702,29 @@ body .page_container #page_main .content_area .resources_content_area .resources
   body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content {
     width: 65rem;
   }
-  body .page_container #page_main .content_area .kids_content_area .tips_tricks_tab_content,
-  body .page_container #page_main .content_area .resources_content_area .tips_tricks_tab_content {
+  body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content,
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content {
     width: 65rem;
   }
   body .page_container #page_main .content_area .kids_content_area .tabcontent,
   body .page_container #page_main .content_area .resources_content_area .tabcontent {
     margin: 0 auto;
   }
-  body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content,
-  body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content {
+  body .page_container #page_main .content_area .kids_content_area .tabcontent .adri_blog_content,
+  body .page_container #page_main .content_area .resources_content_area .tabcontent .adri_blog_content {
     -ms-grid-columns: auto auto;
         grid-template-columns: auto auto;
     -ms-grid-rows: auto;
         grid-template-rows: auto;
         grid-template-areas: "img content";
   }
-  body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .img_container img,
-  body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .img_container img {
+  body .page_container #page_main .content_area .kids_content_area .tabcontent .adri_blog_content .img_container img,
+  body .page_container #page_main .content_area .resources_content_area .tabcontent .adri_blog_content .img_container img {
     width: 100%;
     margin: 0;
   }
-  body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container h1,
-  body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container h1 {
+  body .page_container #page_main .content_area .kids_content_area .tabcontent .adri_blog_content .content_container h1,
+  body .page_container #page_main .content_area .resources_content_area .tabcontent .adri_blog_content .content_container h1 {
     display: block;
     padding: 0 1rem 1rem 1rem;
     width: 100%;
@@ -732,17 +732,17 @@ body .page_container #page_main .content_area .resources_content_area .resources
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
   }
-  body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container h3 a,
-  body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container h3 a {
+  body .page_container #page_main .content_area .kids_content_area .tabcontent .adri_blog_content .content_container h3 a,
+  body .page_container #page_main .content_area .resources_content_area .tabcontent .adri_blog_content .content_container h3 a {
     text-align: left;
   }
-  body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container button,
-  body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container button {
+  body .page_container #page_main .content_area .kids_content_area .tabcontent .adri_blog_content .content_container button,
+  body .page_container #page_main .content_area .resources_content_area .tabcontent .adri_blog_content .content_container button {
     display: block;
     margin: 0 1rem 1rem 1rem;
   }
-  body .page_container #page_main .content_area .kids_content_area .tabcontent .tips_tricks_content .content_container .tips_trick_meta_data,
-  body .page_container #page_main .content_area .resources_content_area .tabcontent .tips_tricks_content .content_container .tips_trick_meta_data {
+  body .page_container #page_main .content_area .kids_content_area .tabcontent .adri_blog_content .content_container .adri_blog_meta_data,
+  body .page_container #page_main .content_area .resources_content_area .tabcontent .adri_blog_content .content_container .adri_blog_meta_data {
     margin-left: auto;
     margin-right: auto;
     text-align: left;

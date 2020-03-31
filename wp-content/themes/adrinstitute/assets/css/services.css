@@ -162,7 +162,7 @@ body .page_container #page_main .content_area .services_content_area .service bu
 
 @media (min-width: 840px) {
   body .page_container #page_main .content_area .services_content_area .service img {
-    width: unset;
+    width: 100%;
     margin: 0;
   }
   body .page_container #page_main .content_area .services_content_area .breadcrumbs_nav {
@@ -189,8 +189,8 @@ body .page_container #page_main .content_area .services_content_area .service bu
     border-bottom: 1px solid #c9c9c9;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: auto auto;
-        grid-template-columns: auto auto;
+    -ms-grid-columns: 20% 80%;
+        grid-template-columns: 20% 80%;
     -ms-grid-rows: auto;
         grid-template-rows: auto;
         grid-template-areas: "reading_img reading_svc_content";
@@ -199,19 +199,19 @@ body .page_container #page_main .content_area .services_content_area .service bu
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: reading_img;
-    margin-right: 1rem;
   }
   body .page_container #page_main .content_area .services_content_area .reading_assesment_svc .reading_assessment_content {
     -ms-grid-row: 1;
     -ms-grid-column: 2;
     grid-area: reading_svc_content;
+    padding-left: 1rem;
   }
   body .page_container #page_main .content_area .services_content_area .remedial_classes_svc {
     border-bottom: 1px solid #c9c9c9;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: auto auto;
-        grid-template-columns: auto auto;
+    -ms-grid-columns: 80% 20%;
+        grid-template-columns: 80% 20%;
     -ms-grid-rows: auto;
         grid-template-rows: auto;
         grid-template-areas: "remedial_svc_content remedial_img";
@@ -220,7 +220,7 @@ body .page_container #page_main .content_area .services_content_area .service bu
     -ms-grid-row: 1;
     -ms-grid-column: 2;
     grid-area: remedial_img;
-    margin-left: 1rem;
+    padding-left: 1rem;
   }
   body .page_container #page_main .content_area .services_content_area .remedial_classes_svc .remedial_classes_content {
     -ms-grid-row: 1;
@@ -231,8 +231,8 @@ body .page_container #page_main .content_area .services_content_area .service bu
     border-bottom: 1px solid #c9c9c9;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: auto auto;
-        grid-template-columns: auto auto;
+    -ms-grid-columns: 20% 80%;
+        grid-template-columns: 20% 80%;
     -ms-grid-rows: auto;
         grid-template-rows: auto;
         grid-template-areas: "school_work_img school_work_svc_content";
@@ -241,19 +241,19 @@ body .page_container #page_main .content_area .services_content_area .service bu
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: school_work_img;
-    margin-right: 1rem;
   }
   body .page_container #page_main .content_area .services_content_area .school_work_help_svc .school_work_help_content {
     -ms-grid-row: 1;
     -ms-grid-column: 2;
     grid-area: school_work_svc_content;
+    padding-left: 1rem;
   }
   body .page_container #page_main .content_area .services_content_area .printing_laminating_svc {
     border-bottom: 1px solid #c9c9c9;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: auto auto;
-        grid-template-columns: auto auto;
+    -ms-grid-columns: 80% 20%;
+        grid-template-columns: 80% 20%;
     -ms-grid-rows: auto;
         grid-template-rows: auto;
         grid-template-areas: "printing_laminating_content printing_laminating_img";
@@ -262,7 +262,7 @@ body .page_container #page_main .content_area .services_content_area .service bu
     -ms-grid-row: 1;
     -ms-grid-column: 2;
     grid-area: printing_laminating_img;
-    margin-left: 1rem;
+    padding-left: 1rem;
   }
   body .page_container #page_main .content_area .services_content_area .printing_laminating_svc .printing_laminating_content {
     -ms-grid-row: 1;
@@ -273,8 +273,8 @@ body .page_container #page_main .content_area .services_content_area .service bu
     border-bottom: 1px solid #c9c9c9;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: auto auto;
-        grid-template-columns: auto auto;
+    -ms-grid-columns: 20% 80%;
+        grid-template-columns: 20% 80%;
     -ms-grid-rows: auto;
         grid-template-rows: auto;
         grid-template-areas: "study_buddy_img study_buddy_content";
@@ -283,12 +283,12 @@ body .page_container #page_main .content_area .services_content_area .service bu
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: study_buddy_img;
-    margin-right: 1rem;
   }
   body .page_container #page_main .content_area .services_content_area .study_buddy_svc .study_buddy_content {
     -ms-grid-row: 1;
     -ms-grid-column: 2;
     grid-area: study_buddy_content;
+    padding-left: 1rem;
   }
 }
 /*# sourceMappingURL=services.css.map */

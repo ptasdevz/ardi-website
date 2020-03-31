@@ -171,6 +171,10 @@ remove_filter('the_excerpt', 'wpautop');
 /*using ajax to get videos */
 //include get_template_directory() . "/templates/kids-corner-content.php";
 
+/*using ajax to get blog categories */
+include get_template_directory() . "/template-parts/ajax-adri-blog-categories.php";
+
+
 /*Filter to only view excerpt of full content on the service page */
 function service_content_excerpt($text, $excerpt_length) {
 

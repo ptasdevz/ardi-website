@@ -1,12 +1,8 @@
 $(document).ready(function () {
-    //var initial_kids_corner_tab = "instr_videos_tab_btn";
-    //var initial_resources_tab = "tips_tricks_tab_btn";
-    if (sessionStorage.initial_kids_corner_tab == undefined) sessionStorage.initial_kids_corner_tab = "instr_videos_tab_btn";
-    if (sessionStorage.initial_resources_tab == undefined) sessionStorage.initial_resources_tab = "tips_tricks_tab_btn";
-    if (sessionStorage.is_kids_corner_temp_change == undefined) sessionStorage.is_kids_corner_temp_change = false;
-    if (sessionStorage.is_res_temp_change == undefined) sessionStorage.is_res_temp_change = false;
 
-    //manage tabs apperances
+
+    //=====================================Tab Management=======================================
+    //Change currently viewing tab
     $(".tablinks").click(function () {
 
         var name = $(this).attr("name");
@@ -17,32 +13,47 @@ $(document).ready(function () {
             $("#" + name).css("display", "block");
         }
 
-        //clean any stuff on instructional tab
+        //clean any left over stuff on instructional tab when not visible
         if (name != "instr_videos") {
             closePlayer();
         }
 
     });
+    var default_kids_corner = ".kids_corner_tab .tab_wrapper #instr_videos_menu #instr_videos_tab_btn";
+    var default_resources = ".resources_tab .tab_wrapper #adri_blog_menu #adri_blog_tab_btn"
 
-    //default tab appearances
-     $("#"+sessionStorage.initial_kids_corner_tab).trigger("click");
-     $("#"+sessionStorage.initial_resources_tab).trigger("click");
+    //initialize default tab
+    if (sessionStorage.kids_corner_tab == undefined) sessionStorage.kids_corner_tab = default_kids_corner;
+    if (sessionStorage.resources_tab == undefined) sessionStorage.resources_tab = default_resources;
+    if (sessionStorage.is_kids_corner_change == undefined) sessionStorage.is_kids_corner_change = false;
+    if (sessionStorage.is_resources_change == undefined) sessionStorage.is_resources_change = false;
 
-     //reset to initial values if temporarily changed
-     if (sessionStorage.is_kids_corner_temp_change){
-         sessionStorage.initial_kids_corner_tab = "instr_videos_tab_btn";
-     }
-     if (sessionStorage.is_res_temp_change){
-         sessionStorage.initial_resources_tab = "instr_videos_tab_btn";
-     }
+    // execute viewing of currently default tab
+    $(sessionStorage.kids_corner_tab).trigger("click");
+    $(sessionStorage.resources_tab).trigger("click");
+
+    //reset to initial values if temporarily changed
+    if (sessionStorage.is_kids_corner_change) {
+        sessionStorage.kids_corner_tab = default_kids_corner;
+    }
+    if (sessionStorage.is_resources_change) {
+        sessionStorage.resources_tab = default_resources;
+    }
+
+    
+    //change to the blog resource tab
+    $(".adri_blog_tab_btn").click(function () {
+        redirectToAResourcesTab(this);
+    });
+    
+    //redirect to the community resoruce tab
+    $(".community_tab_btn").click(function () {
+        redirectToAResourcesTab(this);
+    });
 
 
-     $(".tips_tricks_tab_btn").click(function (){
-        sessionStorage.initial_resources_tab = $(this).attr("class");
-        sessionStorage.is_res_temp_change = true;
-        window.location = $(this).attr("id");
-     });
-    //===============================Get Data on Other Links ======================
+    //=====================================End of Tab Management=======================================
+    //===============================Get Data on Helpful Links ======================
     //get all other-links from backend.
     var other_links = [];
     $(".other_links_list").children().each(function () {
@@ -58,7 +69,82 @@ $(document).ready(function () {
 
         }
     });
-    //===============================End of Get Data Other Links =============  =========
+    //===============================End of Get Data Helpful Links ======================
+
+    //================================= Resources============================
+
+    //submenu button defaults
+    $("#cat_all").addClass("btn_visted");
+
+    //get blog categories
+    $(".adri_blog_cat").click(function () {
+        id = $(this).attr("id");
+        if (id != "cat_all") cat_id_val = id.substr(id.indexOf("_" + 1));
+        else cat_id_val = id;
+
+        $.ajax({
+            type: "post",
+            dataType: "json",
+            url: ajax.ajax_url,
+            data: { action: "get_blog_by_category", call_type: "internal", cat_id: cat_id_val },
+            success: function (response) {
+                if (response.type == "success") {
+                    $(".adri_blog_content").remove();
+                    itemss = response;
+                    cat_url = response.category_url;
+                    cat_name = response.category_name;
+                    response.post_list.forEach(function (post, index) {
+
+                        $element = "<div class='adri_blog_content'>" +
+                            "<div class='img_container'>" +
+                            "<img src='" + post.featured_img_url + "'></div>" +
+                            "<div class='content_container'>" +
+                            "<h3><a href='" + cat_url + "'>" + cat_name + "</a></h3>" +
+                            "<h1>" + post.post_title + "</h1>" +
+                            "<p>" + post.post_excerpt + "</p>" +
+                            "<button onclick='window.location=\"" + post.guid + "\"'>Read More</button>" +
+                            "<p class='adri_blog_meta_data'><span class='author'><i class='fa fa-user' aria-hidden='true'></i>" +
+                            "</span>" + post.author_name + "&nbsp;&nbsp;<span class='comment_count'><i class='fa fa-comments' aria-hidden='true'></i>" +
+                            "</span>" + post.comment_count + "&nbsp;&nbsp;<span class='date'><i class='fa fa-calendar-alt' aria-hidden='true'></i> </span>" + post.date_formatted + "</p>" +
+                            "</div>" +
+                            "</div>";
+                        $(".adri_blog_tab_content").append($element)
+
+                    });
+                }
+                else {
+                    console.log(response);
+
+                }
+            }
+        });
+
+        //allow sub-menu button to switch tab when clicked
+        var name = $("#adri_blog_tab_btn").attr("name");
+        switchTabUsingSubMenu("adri_blog_tab_btn");
+
+        //add visted css properites when clicked
+        $("#adri_blog_menu .tab_submenu button").removeClass("btn_visted");
+        $(this).addClass("btn_visted");
+
+
+    });
+
+    //=================================Resources============================
+
+    //====================================Community=====================================
+    //intercept all anchor links request to redirect to community tab
+    $("#af-wrapper a").addClass("community_tab_btn_redirect");
+    $("#af-wrapper a").attr("data-value", ".resources_tab .tab_wrapper #community_menu #community_tab_btn");
+    $(".community_tab_btn_redirect").click(function (e) {
+        e.preventDefault();
+        $(this).attr("data-link", $(this).attr("href"));
+        redirectToAResourcesTab(this);
+
+    })
+
+
+    //====================================End of Community=====================================
 
     //=============================Get YouTube Data on Videos ======================
 
@@ -116,15 +202,11 @@ $(document).ready(function () {
                 }
 
                 //allow sub-menu button to switch tab when clicked
-                var name = $("#instr_videos_tab_btn").attr("name");
-                $(".tabcontent").css("display", "none");
-                $(".tablinks").removeClass("active");
-                $("#instr_videos_tab_btn").addClass("active");
-                $("#" + name).css("display", "block");
+                switchTabUsingSubMenu("instr_videos_tab_btn");
                 $(".video_links").remove();
 
                 //add visted css properites when clicked
-                $(".tab_submenu button").removeClass("btn_visted");
+                $("#instr_videos_menu .tab_submenu button").removeClass("btn_visted");
                 $(this).addClass("btn_visted");
 
                 start();
@@ -266,22 +348,19 @@ $(document).ready(function () {
     }
 
     //================================End of Creating YouTube Video Player ===========================
-
-    //load all videos
-    // $.ajax({
-    //     type: "post",
-    //     dataType: "json",
-    //     url: ajax.ajax_url,
-    //     data: { action: "get_youtube_videos", call_type: "internal" },
-    //     success: function (response) {
-    //         if (response.type == "success") {
-    //             console.log(response);
-    //         }
-    //         else {
-    //             //  alert("Your vote could not be added")
-    //         }
-    //     }
-    // });
-
 });
+
+function redirectToAResourcesTab($this) {
+    sessionStorage.resources_tab = $($this).attr("data-value");
+    sessionStorage.is_resources_change = true;
+    window.location = $($this).attr("data-link");
+}
+
+//====================================Helper Global functions=====================================
+function switchTabUsingSubMenu(btn_tab_id) {
+    $(".tabcontent").css("display", "none");
+    $(".tablinks").removeClass("active");
+    $("#" + btn_tab_id).addClass("active");
+    $("#" + $("#" + btn_tab_id).attr("name")).css("display", "block");
+}
 

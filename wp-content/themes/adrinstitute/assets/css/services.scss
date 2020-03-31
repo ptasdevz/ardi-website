@@ -112,7 +112,7 @@ body {
           @include desktop {
             .service {
               img {
-                width: unset;
+                width: 100%;
                 margin:0;
               }
             }
@@ -140,28 +140,29 @@ body {
             .reading_assesment_svc {
               border-bottom: 1px solid color(accent-4);
               display: grid;
-              grid-template-columns: auto auto;
+              grid-template-columns: 20% 80%;
               grid-template-rows: auto;
               grid-template-areas: "reading_img reading_svc_content";
 
               img {
                 grid-area: reading_img;
-                margin-right: 1rem;
               }
               .reading_assessment_content {
                 grid-area: reading_svc_content;
+                padding-left: 1rem;
+
               }
             }
             .remedial_classes_svc {
               border-bottom: 1px solid color(accent-4);
               display: grid;
-              grid-template-columns: auto auto;
+              grid-template-columns: 80% 20%;
               grid-template-rows: auto;
               grid-template-areas: "remedial_svc_content remedial_img";
 
               img {
                 grid-area: remedial_img;
-                margin-left: 1rem;
+                padding-left: 1rem;
               }
               .remedial_classes_content {
                 grid-area: remedial_svc_content;
@@ -170,26 +171,26 @@ body {
             .school_work_help_svc {
               border-bottom: 1px solid color(accent-4);
               display: grid;
-              grid-template-columns: auto auto;
+              grid-template-columns: 20% 80%;
               grid-template-rows: auto;
               grid-template-areas: "school_work_img school_work_svc_content";
               img {
                 grid-area: school_work_img;
-                margin-right: 1rem;
               }
               .school_work_help_content {
                 grid-area: school_work_svc_content;
+                padding-left: 1rem;
               }
             }
             .printing_laminating_svc {
               border-bottom: 1px solid color(accent-4);
               display: grid;
-              grid-template-columns: auto auto;
+              grid-template-columns: 80% 20%;
               grid-template-rows: auto;
               grid-template-areas: "printing_laminating_content printing_laminating_img";
               img {
                 grid-area: printing_laminating_img;
-                margin-left: 1rem;
+                padding-left: 1rem;
               }
               .printing_laminating_content {
                 grid-area: printing_laminating_content;
@@ -198,20 +199,19 @@ body {
             .study_buddy_svc {
               border-bottom: 1px solid color(accent-4);
               display: grid;
-              grid-template-columns: auto auto;
+              grid-template-columns: 20% 80%;
               grid-template-rows: auto;
               grid-template-areas: "study_buddy_img study_buddy_content";
               img {
                 grid-area: study_buddy_img;
-                margin-right: 1rem;
               }
               .study_buddy_content {
                 grid-area: study_buddy_content;
+                padding-left: 1rem;
+
               }
             }
           }
-
-        
         }
       }
     }
