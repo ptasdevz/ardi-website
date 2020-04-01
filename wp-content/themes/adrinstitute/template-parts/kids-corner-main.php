@@ -10,6 +10,7 @@
             <?php include_once "common-kids-corner-resources/other-links-menu.php" ?>
         </div>
     </div>
+    <?php include_once "common-kids-corner-resources/content-spinner.php" ?>
     <?php include_once "common-kids-corner-resources/instructional-videos-content.php" ?>
     <?php include_once "common-kids-corner-resources/worksheets-content.php" ?>
     <?php include_once "common-kids-corner-resources/reading-activities-content.php" ?>

@@ -75,6 +75,7 @@ body .container .front_page_container section.s_img_rq_assessment_signup .home_p
 }
 
 body .container .front_page_container section.s_img_rq_assessment_signup .s_rq_assessment_signup {
+  cursor: pointer;
   width: 100%;
   position: absolute;
   bottom: 0;

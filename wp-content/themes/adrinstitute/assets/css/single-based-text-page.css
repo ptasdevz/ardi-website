@@ -1,0 +1,114 @@
+/* 
+Theme Name: ADR Institute
+Author: ptasdevz
+Version: 1.0
+*/
+/*used for IE10+*/
+* {
+  margin: 0px;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  color: #707070;
+  background: #e7e7e7;
+}
+
+body .container {
+  background: #fff;
+}
+
+body .container #overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 16;
+  cursor: pointer;
+}
+
+body .page_container {
+  background: #fff;
+}
+
+body .page_container #page_main {
+  position: relative;
+}
+
+body .page_container #page_main .content_area {
+  position: inherit;
+}
+
+body .page_container #page_main .content_area .about_adri_content_area::before,
+body .page_container #page_main .content_area .terms_of_use_content_area::before,
+body .page_container #page_main .content_area .privacy_policy_content_area::before {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  content: "";
+  background-image: url("../../../../uploads/2020/04/children_pointing-550x550.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.05;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+body .page_container #page_main .content_area .about_adri_content_area,
+body .page_container #page_main .content_area .terms_of_use_content_area,
+body .page_container #page_main .content_area .privacy_policy_content_area {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .page_container #page_main .content_area .about_adri_content_area {
+  padding: 5rem 0 16rem 0;
+}
+
+body .page_container #page_main .content_area .about_adri_content_area .about_adri_content {
+  width: 60%;
+}
+
+body .page_container #page_main .content_area .about_adri_content_area .about_adri_content p {
+  text-align: justify;
+  border-top: 1px solid #c9c9c9;
+  padding: 1rem 0;
+  margin: 1rem;
+  font-size: large;
+}
+
+body .page_container #page_main .content_area .privacy_policy_content_area .privacy_policy_content,
+body .page_container #page_main .content_area .privacy_policy_content_area .terms_of_use_content,
+body .page_container #page_main .content_area .terms_of_use_content_area .privacy_policy_content,
+body .page_container #page_main .content_area .terms_of_use_content_area .terms_of_use_content {
+  width: 80%;
+}
+
+body .page_container #page_main .content_area .privacy_policy_content_area .privacy_policy_content p,
+body .page_container #page_main .content_area .privacy_policy_content_area .terms_of_use_content p,
+body .page_container #page_main .content_area .terms_of_use_content_area .privacy_policy_content p,
+body .page_container #page_main .content_area .terms_of_use_content_area .terms_of_use_content p {
+  text-align: justify;
+  padding: 1rem 0;
+  font-size: large;
+}
+/*# sourceMappingURL=single-based-text-page.css.map */

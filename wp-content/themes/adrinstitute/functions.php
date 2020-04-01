@@ -72,18 +72,21 @@ function load_style_sheets()
     wp_register_style('front-page', get_template_directory_uri() . '/assets/css/front-page.css', array(), false, 'all');
     wp_enqueue_style('front-page');
 
-    
+
     wp_register_style('page', get_template_directory_uri() . '/assets/css/page.css', array(), false, 'all');
     wp_enqueue_style('page');
 
     wp_register_style('kids-corner-parents-teachers-resources', get_template_directory_uri() . '/assets/css/kids-corner-parents-teachers-resources.css', array(), false, 'all');
     wp_enqueue_style('kids-corner-parents-teachers-resources');
-    
+
     wp_register_style('services', get_template_directory_uri() . '/assets/css/services.css', array(), false, 'all');
     wp_enqueue_style('services');
 
     wp_register_style('contact-us', get_template_directory_uri() . '/assets/css/contact-us.css', array(), false, 'all');
     wp_enqueue_style('contact-us');
+
+    wp_register_style('single-based-text-page', get_template_directory_uri() . '/assets/css/single-based-text-page.css', array(), false, 'all');
+    wp_enqueue_style('single-based-text-page');
 }
 add_action('wp_enqueue_scripts', 'load_style_sheets');
 
@@ -122,7 +125,7 @@ function load_js()
     ));
     wp_enqueue_script('services_js');
 
-    
+
     wp_register_script('contact_us_js', get_template_directory_uri() . '/assets/js/contact-us.js', '', 1, true);
     wp_localize_script('contact_us_js', 'ajax', array(
         'ajax_url' => admin_url('admin-ajax.php'),
@@ -148,6 +151,24 @@ function load_footer_scripts()
 {
 }
 add_action('wp_footer', 'load_footer_scripts');
+
+/*Using template to rediect to child registation form page to so that form canbe downloaded */
+add_action('template_redirect', 'adri_template_redirect');
+function adri_template_redirect() {
+    if ($_SERVER['REQUEST_URI'] == '/child-registration-form/' ||$_SERVER['REQUEST_URI'] == '/child-registration-form' ) {
+        $f = "wp-content/uploads/2020/03/child_registration_form.pdf";
+        header('Content-Disposition: attachment; filename=child_registration_form.pdf');
+        header("Content-type: application/x-msdownload", true, 200);
+        header('Content-Type: application/force-download');
+        header('Content-Type: application/octet-stream');
+        header('Content-Type: application/download');
+        header("Pragma: no-cache");
+        header("Expires: 0");
+        header('Content-Description: File Transfer');
+        header('Content-Length: ' . filesize($f));
+        echo file_get_contents($f);
+    }
+}
 
 
 /**
@@ -176,34 +197,35 @@ include get_template_directory() . "/template-parts/ajax-adri-blog-categories.ph
 
 
 /*Filter to only view excerpt of full content on the service page */
-function service_content_excerpt($text, $excerpt_length) {
+function service_content_excerpt($text, $excerpt_length)
+{
 
-    if ( '' != $text ) {
-        $text = strip_shortcodes( $text );
+    if ('' != $text) {
+        $text = strip_shortcodes($text);
         $text = apply_filters('the_content', $text);
         $text = str_replace(']]>', ']]>', $text);
         $excerpt_length = $excerpt_length;
         $excerpt_more = apply_filters('excerpt_more', ' ' . '...');
-        $text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
+        $text = wp_trim_words($text, $excerpt_length, $excerpt_more);
     }
     return apply_filters('the_excerpt', $text);
-        
 }
 
 /*Custom length for wordpress excerpt */
-function adri_custom_excerpt_length( $length ) {
+function adri_custom_excerpt_length($length)
+{
     return 50;
 }
-add_filter( 'excerpt_length', 'adri_custom_excerpt_length', 999 );
+add_filter('excerpt_length', 'adri_custom_excerpt_length', 999);
 
 
 /*Image sizes 1:1*/
 add_image_size('small_1_1', 150, 150, false);
 add_image_size('small_1_1_fixed', 150, 150, true);
-add_image_size('medium_1_1',300, 300, false);
-add_image_size('medium_1_1_fixed',300, 300, true);
-add_image_size('large_1_1',550, 550, false);
-add_image_size('large_1_1_fixed',550, 550, true);
+add_image_size('medium_1_1', 300, 300, false);
+add_image_size('medium_1_1_fixed', 300, 300, true);
+add_image_size('large_1_1', 550, 550, false);
+add_image_size('large_1_1_fixed', 550, 550, true);
 add_image_size('xlarge_1_1', 800, 800, false);
 add_image_size('xlarge_1_1_fixed', 800, 800, true);
 add_image_size('xxlarge_1_1', 1540, 1540, false);
@@ -212,12 +234,11 @@ add_image_size('xxlarge_1_1_fixed', 1540, 1540, true);
 /*Image sizes 16:9*/
 add_image_size('small_16_9', 150, 84.375, false);
 add_image_size('small_16_9_fixed', 150, 84.375, true);
-add_image_size('medium_16_9',300, 168.75, false);
-add_image_size('medium_16_9_fixed',300, 168.75, true);
-add_image_size('large_16_9',550, 309.375, false);
-add_image_size('large_16_9_fixed',550, 309.375, true);
+add_image_size('medium_16_9', 300, 168.75, false);
+add_image_size('medium_16_9_fixed', 300, 168.75, true);
+add_image_size('large_16_9', 550, 309.375, false);
+add_image_size('large_16_9_fixed', 550, 309.375, true);
 add_image_size('xlarge_16_9', 800, 450, false);
 add_image_size('xlarge_16_9_fixed', 800, 450, true);
 add_image_size('xxlarge_16_9', 1540, 866.25, false);
 add_image_size('xxlarge_16_9_fixed', 1540, 866.25, true);
-

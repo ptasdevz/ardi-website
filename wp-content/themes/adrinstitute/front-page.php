@@ -24,10 +24,13 @@ $upload_dir = wp_upload_dir();
                 </div>
                 <div class="card-background"></div>
             </div>
-            <div id="signup" class="card">
+            <?php
+              $header_link_2 = get_field('header_link_2');
+              $reg_form_link = $header_link_2["child_registration_form"];
+            ?>
+            <div onclick="window.location='<?php  echo $reg_form_link?>'" id="signup" class="card">
                 <div class="info">
-                    <?php $header_link_2 = get_field('header_link_2');
-                    if ($header_link_2) : ?>
+                    <?php if ($header_link_2) : ?>
                         <h6><?php echo $header_link_2['title'] ?></h6>
                         <p><?php echo $header_link_2['sub_title'] ?></p>
                     <?php endif ?>
@@ -36,9 +39,9 @@ $upload_dir = wp_upload_dir();
             </div>
         </div>
         <?php
-         $front_img = get_field('front_page_bckgrn_header_img');
-          ?>
-        <div class="img_carousel" style="background-image: url('<?php echo $front_img['sizes']['xxlarge_16_9']?>')"></div>
+        $front_img = get_field('front_page_bckgrn_header_img');
+        ?>
+        <div class="img_carousel" style="background-image: url('<?php echo $front_img['sizes']['xxlarge_16_9'] ?>')"></div>
     </section>
     <main>
         <?php if (have_rows('main_block_1')) : ?>
@@ -67,7 +70,7 @@ $upload_dir = wp_upload_dir();
                 $desc = get_sub_field('desc');
                 $link = get_sub_field('link');
                 $pg = get_page_by_title($link); ?>
-                <div id ="our_svc" class="card" onclick="window.location='<?php echo get_permalink($pg->ID); ?>';">
+                <div id="our_svc" class="card" onclick="window.location='<?php echo get_permalink($pg->ID); ?>';">
                     <img src="<?php echo $image['sizes']['large_16_9_fixed'] ?>" alt="<?php $image['alt'] ?>">
                     <div class="info">
                         <h6><?php echo $title ?></h6>
@@ -101,7 +104,8 @@ $upload_dir = wp_upload_dir();
                 $desc = get_sub_field('desc');
                 $link = get_sub_field('link');
                 $pg = get_page_by_title($link); ?>
-                <!-- <div id="community" class="card community_tab_btn" onclick="window.location='<?php //echo get_permalink($pg->ID); ?>';"> -->
+                <!-- <div id="community" class="card community_tab_btn" onclick="window.location='<?php //echo get_permalink($pg->ID); 
+                                                                                                    ?>';"> -->
                 <div id="community" data-value=".resources_tab .tab_wrapper #community_menu #community_tab_btn" data-link="<?php echo get_permalink($pg->ID); ?>" class="card community_tab_btn">
                     <img src="<?php echo $image['sizes']['large_16_9_fixed'] ?>" alt="<?php $image['alt'] ?>">
                     <div class="info">

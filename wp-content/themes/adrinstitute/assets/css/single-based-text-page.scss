@@ -1,0 +1,66 @@
+@import "../../style.scss";
+body {
+  .page_container {
+    background: color(base-1);
+
+    #page_main {
+      position: relative;
+      .content_area {
+        position: inherit;
+        .about_adri_content_area::before,
+        .terms_of_use_content_area::before,
+        .privacy_policy_content_area::before {
+          position: relative;
+          box-sizing: border-box;
+          position: absolute;
+          content: "";
+          background-image: url("../../../../uploads/2020/04/children_pointing-550x550.png");
+          background-size: cover;
+          background-position: center;
+          opacity: 0.05;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 8px;
+        }
+        .about_adri_content_area,
+        .terms_of_use_content_area,
+        .privacy_policy_content_area {
+          box-sizing: border-box;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .about_adri_content_area {
+          padding: 5rem 0 16rem 0;
+
+          .about_adri_content {
+            width: 60%;
+
+            p {
+              text-align: justify;
+              border-top: 1px solid color(accent-4);
+              padding: 1rem 0;
+              margin: 1rem;
+              font-size: large;
+            }
+          }
+        }
+        .privacy_policy_content_area,
+        .terms_of_use_content_area {
+          .privacy_policy_content,
+          .terms_of_use_content {
+            width: 80%;
+
+            p {
+              text-align: justify;
+              padding: 1rem 0;
+              font-size: large;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying single pages
  *
@@ -85,6 +86,15 @@ get_header(); ?>
                     break;
                 case "contact-us":
                     include "template-parts/contact-us-main.php";
+                    break;
+                case "about-adri":
+                    include "template-parts/about-adri-main.php";
+                    break;
+                case "privacy-policy":
+                    include "template-parts/privacy-policy-main.php";
+                    break;
+                case "terms-of-use":
+                    include "template-parts/terms-of-use-main.php";
                     break;
             endswitch ?>
         </div>

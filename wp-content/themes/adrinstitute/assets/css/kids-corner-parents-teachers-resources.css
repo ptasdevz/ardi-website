@@ -88,6 +88,9 @@ body .page_container #page_main .content_area {
 body .page_container #page_main .content_area .kids_content_area,
 body .page_container #page_main .content_area .resources_content_area {
   position: inherit;
+  /*spinner styling for asynchronous loading of content*/
+  /* End of spinner styling for asynchronous loading of content*/
+  /*End of Instructinonal Videos*/
 }
 
 body .page_container #page_main .content_area .kids_content_area .kids_corner_tab,
@@ -161,6 +164,30 @@ body .page_container #page_main .content_area .resources_content_area .resources
   display: none;
 }
 
+body .page_container #page_main .content_area .kids_content_area .content_spinner.active,
+body .page_container #page_main .content_area .resources_content_area .content_spinner.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .page_container #page_main .content_area .kids_content_area .content_spinner.active svg,
+body .page_container #page_main .content_area .resources_content_area .content_spinner.active svg {
+  display: block;
+  width: 5%;
+  margin: 5rem;
+}
+
+body .page_container #page_main .content_area .kids_content_area .content_spinner,
+body .page_container #page_main .content_area .resources_content_area .content_spinner {
+  display: none;
+}
+
 body .page_container #page_main .content_area .kids_content_area .tabcontent,
 body .page_container #page_main .content_area .resources_content_area .tabcontent {
   position: inherit;
@@ -169,7 +196,8 @@ body .page_container #page_main .content_area .resources_content_area .tabconten
   -webkit-animation: fadeEffect 1s;
           animation: fadeEffect 1s;
   margin-top: 1rem;
-  /*Blog Content*/
+  /*Blog Content mobile layout*/
+  /*End of Blog Content Mobile layout*/
   /*Instructinonal Videos*/
 }
 
@@ -187,7 +215,7 @@ body .page_container #page_main .content_area .resources_content_area .tabconten
       grid-template-columns: auto;
   -ms-grid-rows: auto;
       grid-template-rows: auto;
-      grid-template-areas: "img" "content";
+      grid-template-areas: "img" "content-area";
 }
 
 body .page_container #page_main .content_area .kids_content_area .tabcontent .adri_blog_content .img_container,
@@ -207,7 +235,7 @@ body .page_container #page_main .content_area .kids_content_area .tabcontent .ad
 body .page_container #page_main .content_area .resources_content_area .tabcontent .adri_blog_content .content_container {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
-  grid-area: content;
+  grid-area: content-area;
 }
 
 body .page_container #page_main .content_area .kids_content_area .tabcontent .adri_blog_content .content_container h3 a,
@@ -390,8 +418,8 @@ body .page_container #page_main .content_area .resources_content_area .tabconten
   font-size: 0.7rem;
 }
 
-body .page_container #page_main .content_area .kids_content_area #instr_vide os,
-body .page_container #page_main .content_area .resources_content_area #instr_vide os {
+body .page_container #page_main .content_area .kids_content_area #instr_videos,
+body .page_container #page_main .content_area .resources_content_area #instr_videos {
   display: block;
 }
 
@@ -716,12 +744,24 @@ body .page_container #page_main .content_area .resources_content_area .resources
         grid-template-columns: auto auto;
     -ms-grid-rows: auto;
         grid-template-rows: auto;
-        grid-template-areas: "img content";
+        grid-template-areas: "img content-area";
+  }
+  body .page_container #page_main .content_area .kids_content_area .tabcontent .adri_blog_content .img_container,
+  body .page_container #page_main .content_area .resources_content_area .tabcontent .adri_blog_content .img_container {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: img;
   }
   body .page_container #page_main .content_area .kids_content_area .tabcontent .adri_blog_content .img_container img,
   body .page_container #page_main .content_area .resources_content_area .tabcontent .adri_blog_content .img_container img {
     width: 100%;
     margin: 0;
+  }
+  body .page_container #page_main .content_area .kids_content_area .tabcontent .adri_blog_content .content_container,
+  body .page_container #page_main .content_area .resources_content_area .tabcontent .adri_blog_content .content_container {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: content-area;
   }
   body .page_container #page_main .content_area .kids_content_area .tabcontent .adri_blog_content .content_container h1,
   body .page_container #page_main .content_area .resources_content_area .tabcontent .adri_blog_content .content_container h1 {

@@ -1,59 +1,7 @@
+var is_yt_client_lib_loaded = false;
 $(document).ready(function () {
-
-
-    //=====================================Tab Management=======================================
-    //Change currently viewing tab
-    $(".tablinks").click(function () {
-
-        var name = $(this).attr("name");
-        if (name != "other_links") {
-            $(".tabcontent").css("display", "none");
-            $(".tablinks").removeClass("active");
-            $(this).addClass("active");
-            $("#" + name).css("display", "block");
-        }
-
-        //clean any left over stuff on instructional tab when not visible
-        if (name != "instr_videos") {
-            closePlayer();
-        }
-
-    });
-    var default_kids_corner = ".kids_corner_tab .tab_wrapper #instr_videos_menu #instr_videos_tab_btn";
-    var default_resources = ".resources_tab .tab_wrapper #adri_blog_menu #adri_blog_tab_btn"
-
-    //initialize default tab
-    if (sessionStorage.kids_corner_tab == undefined) sessionStorage.kids_corner_tab = default_kids_corner;
-    if (sessionStorage.resources_tab == undefined) sessionStorage.resources_tab = default_resources;
-    if (sessionStorage.is_kids_corner_change == undefined) sessionStorage.is_kids_corner_change = false;
-    if (sessionStorage.is_resources_change == undefined) sessionStorage.is_resources_change = false;
-
-    // execute viewing of currently default tab
-    $(sessionStorage.kids_corner_tab).trigger("click");
-    $(sessionStorage.resources_tab).trigger("click");
-
-    //reset to initial values if temporarily changed
-    if (sessionStorage.is_kids_corner_change) {
-        sessionStorage.kids_corner_tab = default_kids_corner;
-    }
-    if (sessionStorage.is_resources_change) {
-        sessionStorage.resources_tab = default_resources;
-    }
-
-    
-    //change to the blog resource tab
-    $(".adri_blog_tab_btn").click(function () {
-        redirectToAResourcesTab(this);
-    });
-    
-    //redirect to the community resoruce tab
-    $(".community_tab_btn").click(function () {
-        redirectToAResourcesTab(this);
-    });
-
-
-    //=====================================End of Tab Management=======================================
-    //===============================Get Data on Helpful Links ======================
+ 
+    //===============================Helpful/Learning resource Links Content======================
     //get all other-links from backend.
     var other_links = [];
     $(".other_links_list").children().each(function () {
@@ -69,18 +17,21 @@ $(document).ready(function () {
 
         }
     });
-    //===============================End of Get Data Helpful Links ======================
+    //===============================End of Helpful/Learning resource Links Content======================
 
-    //================================= Resources============================
+    //=================================Resources Content ============================
 
     //submenu button defaults
     $("#cat_all").addClass("btn_visted");
 
-    //get blog categories
+    //get blog categories data
     $(".adri_blog_cat").click(function () {
         id = $(this).attr("id");
         if (id != "cat_all") cat_id_val = id.substr(id.indexOf("_" + 1));
         else cat_id_val = id;
+        $(".adri_blog_content").remove();
+        $(".content_spinner").addClass("active");
+
 
         $.ajax({
             type: "post",
@@ -89,7 +40,7 @@ $(document).ready(function () {
             data: { action: "get_blog_by_category", call_type: "internal", cat_id: cat_id_val },
             success: function (response) {
                 if (response.type == "success") {
-                    $(".adri_blog_content").remove();
+                    $(".content_spinner").removeClass("active");
                     itemss = response;
                     cat_url = response.category_url;
                     cat_name = response.category_name;
@@ -130,9 +81,9 @@ $(document).ready(function () {
 
     });
 
-    //=================================Resources============================
+    //=================================End of Resources Content============================
 
-    //====================================Community=====================================
+    //====================================Community Content=====================================
     //intercept all anchor links request to redirect to community tab
     $("#af-wrapper a").addClass("community_tab_btn_redirect");
     $("#af-wrapper a").attr("data-value", ".resources_tab .tab_wrapper #community_menu #community_tab_btn");
@@ -144,9 +95,9 @@ $(document).ready(function () {
     })
 
 
-    //====================================End of Community=====================================
+    //====================================End of Community Content=====================================
 
-    //=============================Get YouTube Data on Videos ======================
+    //=====================================Instructional Videos Content =========================
 
     // prototype function used to get unique items
     Array.prototype.unique = function () {
@@ -168,10 +119,9 @@ $(document).ready(function () {
 
     //extract unique categories
     all_video_ids = video_ids;
-    //let unique_categories = [... new Set(video_cate)];
     unique_categories = video_cate.unique();
     var ids_str = video_ids.join();
-    unique_categories.unshift("All Videos");//add All Videos as the first item in the list
+    unique_categories.unshift("All Videos");//add "All Videos" sub-menu as the first
 
     unique_categories.forEach(function (cate_name, index) {
         //Adjust disply text
@@ -204,12 +154,17 @@ $(document).ready(function () {
                 //allow sub-menu button to switch tab when clicked
                 switchTabUsingSubMenu("instr_videos_tab_btn");
                 $(".video_links").remove();
+                $(".content_spinner").addClass("active");
 
                 //add visted css properites when clicked
                 $("#instr_videos_menu .tab_submenu button").removeClass("btn_visted");
                 $(this).addClass("btn_visted");
 
-                start();
+                if (is_yt_client_lib_loaded) load_videos();
+                else {
+                    is_yt_client_lib_loaded = true;
+                    gapi.load('client', load_videos);
+                }
             });
 
         }
@@ -218,8 +173,12 @@ $(document).ready(function () {
     //submenu button defaults
     $("#all_videos").addClass("btn_visted");
 
+    //load videos from youtube
+    function load_videos() {
+        
+        // 1. show spinner icon
+        $(".content_spinner").addClass("active");
 
-    function start() {
         // 2. Initialize the JavaScript client library.
         gapi.client.init({
             'apiKey': 'AIzaSyDzoGK07J5qwgLJMp_KppKQuxbTgUF1x28',
@@ -234,9 +193,11 @@ $(document).ready(function () {
                 'path': 'https://www.googleapis.com/youtube/v3/videos',
             })
         }).then(function (response) {
+            //4. remove spinner icon
+            $(".content_spinner").removeClass("active");
             var items = response.result.items;
-
-            //4. Extract content from response.
+    
+            //5. Extract content from response.
             items.forEach(function (element, index) {
                 var id = element.id;
                 var snippet = element.snippet;
@@ -246,8 +207,8 @@ $(document).ready(function () {
                 var url = medium_thumbnail.url;
                 var width = medium_thumbnail.width;
                 var height = medium_thumbnail.height;
-
-                //5.Generate and append thumbnail cards.
+    
+                //6.Generate and append thumbnail cards.
                 $(".videos").append(
                     "<div id='" + id + "'class='video_links'>" +
                     "<div class='video_link_wrapper'>" +
@@ -258,33 +219,21 @@ $(document).ready(function () {
                     "</div>" +
                     "</div>" +
                     "</div>");
-
+    
             });
+            //7. setup call back to play each video
             bindVideoLinks();
-
+    
         }, function (reason) {
             console.log('Error: ' + reason.result.error.message);
         });
     };
-
-    //bind youtube links for call backs
-    function bindVideoLinks() {
-        $(".video_links").on("click", function () {
-
-            $(".player_class").css("display", "inline-block");
-            var vid_id = $(this).attr('id');
-            $("#player").remove();
-            $(".player_class").append("<div id='player'></div>");
-            onYouTubeIframeAPIReady(vid_id);
-            $("#player").css("width", "100%");
-            $("#player").css("height", "100%");
-        });
-    }
+    
     // 1. Load the JavaScript client library.
-    gapi.load('client', start);
-    //=============================End of Getting YouTube Data on Videos ======================
+    //gapi.load('client', load_videos);
 
-    //================================Create and Manage YouTube Video Player ============================
+
+    //Create and Manage YouTube Video Player
     $("#close_btn").click(function () {
         closePlayer();
     });
@@ -303,52 +252,128 @@ $(document).ready(function () {
         $("#minimize_btn").show();
     });
 
-    function closePlayer() {
-        $("#player").remove();
+    //============================= End of Instructional Videos Content ======================
+  //=====================================Tab Management=======================================
+    //Change currently viewing tab
+    $(".tablinks").click(function () {
 
-        //desktop media query
-        if ($('header').width() > 840) { $("#minimize_btn").show(); }
-
-        $("#restore_btn").hide();
-        $(".player_class").removeClass("minimize_player");
-        $(".player_class").removeClass("restore_player");
-        $(".player_class").css("display", "none");
-    }
-    var player;
-    function onYouTubeIframeAPIReady(vid_id) {
-        player = new YT.Player('player', {
-            // height: 'auto',
-            // width: 'auto',
-            videoId: vid_id,
-            events: {
-                'onReady': onPlayerReady,
-                'onStateChange': onPlayerStateChange
-            }
-        });
-    }
-
-    // 4. The API will call this function when the video player is ready.
-    function onPlayerReady(event) {
-        event.target.playVideo();
-    }
-
-    // 5. The API calls this function when the player's state changes.
-    //    The function indicates that when playing a video (state=1),
-    //    the player should play for six seconds and then stop.
-    var done = false;
-    function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-            setTimeout(stopVideo, 6000);
-            done = true;
+        var name = $(this).attr("name");
+        if (name != "other_links") {
+            $(".tabcontent").css("display", "none");
+            $(".tablinks").removeClass("active");
+            $(this).addClass("active");
+            $("#" + name).css("display", "block");
         }
+
+        
+        if (name != "instr_videos") {//clean any left over stuff on instructional tab when not visible
+            //closePlayer();
+        } else if (!is_yt_client_lib_loaded) { //load video content if not already loaded
+            is_yt_client_lib_loaded = true;
+            gapi.load('client', load_videos); 
+        }
+   
+
+    });
+
+    /*Auto-redirection to specific tabs */
+
+    //initialize default menu-tab for sections
+    var default_kids_corner = ".kids_corner_tab .tab_wrapper #instr_videos_menu .tab_submenu #all_videos";
+    //var default_resources = ".resources_tab .tab_wrapper #adri_blog_menu #adri_blog_tab_btn";
+    var default_resources = ".resources_tab .tab_wrapper #adri_blog_menu .tab_submenu #cat_all";
+
+    if (sessionStorage.kids_corner_tab == undefined) sessionStorage.kids_corner_tab = default_kids_corner;
+    if (sessionStorage.resources_tab == undefined) sessionStorage.resources_tab = default_resources;
+    if (sessionStorage.is_kids_corner_change == undefined) sessionStorage.is_kids_corner_change = false;
+    if (sessionStorage.is_resources_change == undefined) sessionStorage.is_resources_change = false;
+
+    //display the current menu-tab for the sections
+    $(sessionStorage.kids_corner_tab).trigger("click");
+    $(sessionStorage.resources_tab).trigger("click");
+
+    //reset sections to initial values if temporarily changed
+    if (sessionStorage.is_kids_corner_change) {
+        sessionStorage.kids_corner_tab = default_kids_corner;
+    }
+    if (sessionStorage.is_resources_change) {
+        sessionStorage.resources_tab = default_resources;
     }
 
-    function stopVideo() {
-        player.stopVideo();
-    }
+    //redirect to the blog resource tab
+    $(".adri_blog_tab_btn").click(function () {
+        redirectToAResourcesTab(this);
+    });
 
-    //================================End of Creating YouTube Video Player ===========================
+    //redirect to the community resoruce tab
+    $(".community_tab_btn").click(function () {
+        redirectToAResourcesTab(this);
+    });
+
+    /*End of Auto-redirection to specific tabs */
+
+    //=====================================End of Tab Management=======================================
 });
+
+//====================================Helper functions=====================================
+
+//bind youtube links for call backs
+function bindVideoLinks() {
+    $(".video_links").on("click", function () {
+
+        $(".player_class").css("display", "inline-block");
+        var vid_id = $(this).attr('id');
+        $("#player").remove();
+        $(".player_class").append("<div id='player'></div>");
+        onYouTubeIframeAPIReady(vid_id);
+        $("#player").css("width", "100%");
+        $("#player").css("height", "100%");
+    });
+}
+
+function closePlayer() {
+    $("#player").remove();
+
+    //desktop media query
+    if ($('header').width() > 840) { $("#minimize_btn").show(); }
+
+    $("#restore_btn").hide();
+    $(".player_class").removeClass("minimize_player");
+    $(".player_class").removeClass("restore_player");
+    $(".player_class").css("display", "none");
+}
+var player;
+function onYouTubeIframeAPIReady(vid_id) {
+    player = new YT.Player('player', {
+        // height: 'auto',
+        // width: 'auto',
+        videoId: vid_id,
+        events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+        }
+    });
+}
+
+// 4. The API will call this function when the video player is ready.
+function onPlayerReady(event) {
+    event.target.playVideo();
+}
+
+// 5. The API calls this function when the player's state changes.
+//    The function indicates that when playing a video (state=1),
+//    the player should play for six seconds and then stop.
+var done = false;
+function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING && !done) {
+        setTimeout(stopVideo, 6000);
+        done = true;
+    }
+}
+
+function stopVideo() {
+    player.stopVideo();
+}
 
 function redirectToAResourcesTab($this) {
     sessionStorage.resources_tab = $($this).attr("data-value");
@@ -356,7 +381,6 @@ function redirectToAResourcesTab($this) {
     window.location = $($this).attr("data-link");
 }
 
-//====================================Helper Global functions=====================================
 function switchTabUsingSubMenu(btn_tab_id) {
     $(".tabcontent").css("display", "none");
     $(".tablinks").removeClass("active");
