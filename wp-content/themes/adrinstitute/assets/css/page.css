@@ -64,6 +64,10 @@ body .container .page_container #nav_touch {
   transition: 0.5s;
 }
 
+body .container .page_container #nav_touch #page_side_nav {
+  width: 0;
+}
+
 body .container .page_container #nav_touch .side_nav {
   height: 100%;
   width: 280px;
@@ -83,16 +87,26 @@ body .container .page_container #nav_touch .side_nav .side_bar_2 {
   font-weight: bold;
 }
 
-body .container .page_container #nav_touch .side_nav .side_bar_1 .side_menu,
-body .container .page_container #nav_touch .side_nav .side_bar_2 .side_menu {
+body .container .page_container #nav_touch .side_nav .side_bar_1 a,
+body .container .page_container #nav_touch .side_nav .side_bar_2 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body .container .page_container #nav_touch .side_nav .side_bar_1 button,
+body .container .page_container #nav_touch .side_nav .side_bar_2 button {
   border: none;
   outline: none;
+  padding: 1rem;
+}
+
+body .container .page_container #nav_touch .side_nav .side_bar_1 .side_menu,
+body .container .page_container #nav_touch .side_nav .side_bar_2 .side_menu {
   width: 100%;
   font-size: 1.2rem;
   cursor: pointer;
   background-color: inherit;
   text-align: left;
-  padding: 1rem;
   color: inherit;
   font-variant: inherit;
   font-weight: inherit;
@@ -108,27 +122,34 @@ body .container .page_container #nav_touch .side_nav .side_bar_2 .side_menu i {
   padding: 0.5rem;
 }
 
-body .container .page_container #nav_touch .side_nav .side_bar_1 .sub_menu,
-body .container .page_container #nav_touch .side_nav .side_bar_2 .sub_menu {
+body .container .page_container #nav_touch .side_nav .side_bar_1 .side_sub_menu,
+body .container .page_container #nav_touch .side_nav .side_bar_2 .side_sub_menu {
   color: inherit;
   cursor: pointer;
   height: 0;
   overflow-y: hidden;
 }
 
-body .container .page_container #nav_touch .side_nav .side_bar_1 a,
-body .container .page_container #nav_touch .side_nav .side_bar_2 a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
+body .container .page_container #nav_touch .side_nav .side_bar_1 .side_sub_menu button,
+body .container .page_container #nav_touch .side_nav .side_bar_2 .side_sub_menu button {
+  cursor: pointer;
+  padding: 8px;
+  margin-left: 44px;
   font-size: 1rem;
   display: block;
   color: inherit;
   font-weight: normal;
+  background: none;
 }
 
-body .container .page_container #nav_touch .side_nav .side_bar_1 a:hover,
-body .container .page_container #nav_touch .side_nav .side_bar_2 a:hover {
+body .container .page_container #nav_touch .side_nav .side_bar_1 .side_sub_menu button:hover,
+body .container .page_container #nav_touch .side_nav .side_bar_2 .side_sub_menu button:hover {
   background-color: #c9c9c9;
+}
+
+body .container .page_container #nav_touch .side_nav .side_bar_1 .side_sub_menu .btn_visited,
+body .container .page_container #nav_touch .side_nav .side_bar_2 .side_sub_menu .btn_visited {
+  font-weight: bold;
 }
 
 body .container .page_container #nav_touch .side_nav .side_bar_1 .close_btn,
@@ -140,10 +161,11 @@ body .container .page_container #nav_touch .side_nav .side_bar_1 .close_btn a,
 body .container .page_container #nav_touch .side_nav .side_bar_2 .close_btn a {
   float: right;
   font-size: 36px;
+  padding: 0 .5rem;
 }
 
-body .container .page_container #nav_touch .side_nav .side_bar_1 .open_sub_menu,
-body .container .page_container #nav_touch .side_nav .side_bar_2 .open_sub_menu {
+body .container .page_container #nav_touch .side_nav .side_bar_1 .open_side_sub_menu,
+body .container .page_container #nav_touch .side_nav .side_bar_2 .open_side_sub_menu {
   height: auto;
 }
 

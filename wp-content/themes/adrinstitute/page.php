@@ -41,18 +41,16 @@ get_header(); ?>
                 //side navigation links 
                 switch ($post->post_name):
                     case "kids-corner":
-                        include "template-parts/kids-corner-nav.php";
+                        include "template-parts/kids-corner-side-nav.php";
                 endswitch ?>
 
             </section>
-            <section class="side_bar_2">
+            <!-- <section class="side_bar_2">
                 <button class="side_menu"><i class="fa fa-chevron-right"></i>Other Links</button>
-                <div class="sub_menu">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                <div class="side_sub_menu">
+                    <button>Link 1</button>
                 </div>
-            </section>
+            </section> -->
         </div>
     </div>
     <div id="page_main">

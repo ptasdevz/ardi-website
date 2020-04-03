@@ -1,4 +1,7 @@
 var isNavClicked = true;
+var drawer_open_width = 280;
+if (sessionStorage.hasNavDrawerRunOnce == undefined) sessionStorage.hasNavDrawerRunOnce = false;
+
 $(document).ready(function () {
 
   //=======================Mobile Navigation Drawer=====================
@@ -46,30 +49,29 @@ $(document).ready(function () {
 
   //============================Side Nav============================
 
-  //initially show an close side navigation bar for mobile devices 
+  //initially show and close side navigation bar for mobile devices 
   if ($('header').width() <= 840) {
+    // console.log(sessionStorage.hasNavDrawerRunOnce);
+    if (sessionStorage.hasNavDrawerRunOnce == "false") {
 
-    setTimeout(function () {
-      $("#page_side_nav").css("width", "0");
-    }, 500);
+      $("#page_side_nav").css("width", drawer_open_width + "px");
+
+      setTimeout(function () {
+        $("#page_side_nav").css("width", "0");
+      }, 500);
+      sessionStorage.hasNavDrawerRunOnce = true;
+    }
 
 
+    $("#close_nav").click(closeSideNav);
 
-    $("#close_nav").click(function () {
-      $("#page_side_nav").css("width", "0");
-      $("#overlay").css("display", "none");
-      $("#overlay").css("backgroundColor", "rgba(0,0,0,0)");
-
-    });
     $(document).click(function () {
 
       // console.log("doc clicked " + isNavClicked);
 
 
       if (isNavClicked === false) {
-        $("#page_side_nav").css("width", "0");
-        $("#overlay").css("display", "none");
-        $("#overlay").css("backgroundColor", "rgba(0,0,0,0)");
+        closeSideNav();
       }
       isNavClicked = false;
 
@@ -81,56 +83,13 @@ $(document).ready(function () {
       });
 
     });
+
   }
 
   /*slide in and out side menu */
-  slideOutNav(document.getElementById("page_side_nav"), document.getElementById("nav_touch"), 280, 0.5);
-
-  function slideOutNav(element, element_touch, max_width, opacity_max) {
-    var curr_nav_width = 0;
-    var overlay = document.getElementById("overlay");
-
-    /*start move process when touch is pressed*/
-    element_touch.ontouchstart = dragTouchStart;
-
-    function dragTouchStart(e) {
-      e = e || window.event;
-      document.ontouchend = closeDragElement;
-      document.ontouchmove = elementDrag;
-      overlay.style.display = "block";
-
-    }
-
-    function elementDrag(e) {
-      e = e || window.event;
-      e.preventDefault();
-      /*update width of drawer when touch event is moved */
-      curr_nav_width = e.touches[0].clientX;
-      if (curr_nav_width < max_width) {
-
-        element.style.width = curr_nav_width + "px";
-        var val = (curr_nav_width / max_width) * opacity_max;
-        overlay.style.backgroundColor = "rgba(0,0,0," + val + ")";
-
-      }
-    }
-
-    function closeDragElement() {
-      if (curr_nav_width < max_width / 2) {
-        element.style.width = "0px";
-        overlay.style.backgroundColor = "rgba(0,0,0,0)";
-        overlay.style.display = "none";
-
-      }
-      else {
-        element.style.width = max_width + "px";
-        overlay.style.backgroundColor = "rgba(0,0,0," + opacity_max + ")";
-      }
-      /* stop moving when touc is released:*/
-      document.ontouchend = null;
-      document.ontouchmove = null;
-    }
-
+  var nav_bar = document.getElementById("nav_touch");
+  if (nav_bar != undefined) {
+    setUpSlideOutInNavBar(document.getElementById("page_side_nav"), nav_bar, drawer_open_width, 0.5);
   }
 
   /*Side menu accordian style - only open one menu at any given point in time   */
@@ -142,12 +101,12 @@ $(document).ready(function () {
     $(".side_menu").each(function () {
 
       if ($(this).html() === $btn_clicked.html()) {
-        $btn_clicked.next().toggleClass("open_sub_menu");
+        $btn_clicked.next().toggleClass("open_side_sub_menu");
         $menu_arrow_icon.toggleClass("rotate_arrow_icon");
 
       }
       else {
-        $(this).next().removeClass("open_sub_menu");
+        $(this).next().removeClass("open_side_sub_menu");
         $(this).children().first().removeClass("rotate_arrow_icon");
       }
     });
@@ -156,6 +115,7 @@ $(document).ready(function () {
   //============================EndSide Nav============================
 
   //============================Load Page Template Pieces======================
+  /*
   $("").click(function (e) {
     // console.log("test");
     e.preventDefault();
@@ -177,10 +137,64 @@ $(document).ready(function () {
     });
 
   });
+  */
   //============================End of Load Page Templates Pieces======================
 
 
 
 
 });
+//===========================Helper Functions=========================
+function setUpSlideOutInNavBar(element, element_touch, max_width, opacity_max) {
+  var curr_nav_width = 0;
+  var overlay = document.getElementById("overlay");
+
+  /*start move process when touch is pressed*/
+  element_touch.ontouchstart = dragTouchStart;
+
+  function dragTouchStart(e) {
+    e = e || window.event;
+    document.ontouchend = closeDragElement;
+    document.ontouchmove = elementDrag;
+    overlay.style.display = "block";
+
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    /*update width of drawer when touch event is moved */
+    curr_nav_width = e.touches[0].clientX;
+    if (curr_nav_width < max_width) {
+
+      element.style.width = curr_nav_width + "px";
+      var val = (curr_nav_width / max_width) * opacity_max;
+      overlay.style.backgroundColor = "rgba(0,0,0," + val + ")";
+
+    }
+  }
+
+  function closeDragElement() {
+    if (curr_nav_width < max_width / 2) {
+      element.style.width = "0px";
+      overlay.style.backgroundColor = "rgba(0,0,0,0)";
+      overlay.style.display = "none";
+
+    }
+    else {
+      element.style.width = max_width + "px";
+      overlay.style.backgroundColor = "rgba(0,0,0," + opacity_max + ")";
+    }
+    /* stop moving when touch is released:*/
+    document.ontouchend = null;
+    document.ontouchmove = null;
+  }
+
+}
+
+function closeSideNav() {
+  $("#page_side_nav").css("width", "0");
+  $("#overlay").css("display", "none");
+  $("#overlay").css("backgroundColor", "rgba(0,0,0,0)");
+}
 

@@ -2,7 +2,6 @@
 body {
   .container {
     .page_container {
-
       .content_title {
         text-align: center;
         color: color(secondary);
@@ -15,7 +14,6 @@ body {
         font-size: 2rem;
       }
       #nav_touch {
-        // border: 2px solid red;
         height: 100%;
         width: 1rem;
         position: fixed;
@@ -23,6 +21,10 @@ body {
         top: $logo-dims-mobile + $padding-nav * 2;
         left: 0;
         transition: 0.5s;
+
+        #page_side_nav {
+          width: 0;
+        }
 
         .side_nav {
           height: 100%;
@@ -38,15 +40,21 @@ body {
           .side_bar_2 {
             color: color(primary);
             font-weight: bold;
-            .side_menu {
+            a{
+              text-decoration: none;
+              color: inherit;
+            }
+            button {
               border: none;
               outline: none;
+              padding: 1rem;
+            }
+            .side_menu {
               width: 100%;
               font-size: 1.2rem;
               cursor: pointer;
               background-color: inherit;
               text-align: left;
-              padding: 1rem;
               color: inherit;
               font-variant: inherit;
               font-weight: inherit;
@@ -58,31 +66,38 @@ body {
                 padding: 0.5rem;
               }
             }
-            .sub_menu {
+            .side_sub_menu {
               color: inherit;
               cursor: pointer;
               height: 0;
               overflow-y: hidden;
-            }
-            a {
-              padding: 8px 8px 8px 32px;
-              text-decoration: none;
-              font-size: 1rem;
-              display: block;
-              color: inherit;
-              font-weight: normal;
-              &:hover {
-                background-color: color(accent-4);
+              button {
+                cursor: pointer;
+                padding: 8px;
+                margin-left: 44px;
+                font-size: 1rem;
+                display: block;
+                color: inherit;
+                font-weight: normal;
+                background: none;
+                &:hover {
+                  background-color: color(accent-4);
+                }
+              }
+              .btn_visited {
+                font-weight: bold;
               }
             }
+
             .close_btn {
               width: 100%;
               a {
                 float: right;
                 font-size: 36px;
+                padding:0 .5rem;
               }
             }
-            .open_sub_menu {
+            .open_side_sub_menu {
               height: auto;
             }
             .rotate_arrow_icon {
@@ -95,7 +110,6 @@ body {
        *Desktop layout for page container area
        */
       @include desktop {
-
         margin: 0.5rem;
         display: grid;
         grid-template-columns: 18% 82%;
@@ -143,23 +157,22 @@ body {
             font-weight: bold;
           }
         }
-        
+
         /*IE 10+*/
         @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-
           position: relative;
           top: $header-height-deskop;
           display: -ms-grid;
-          -ms-grid-columns:1fr 1fr;
+          -ms-grid-columns: 1fr 1fr;
 
           .content_title {
-            -ms-grid-row:1;
+            -ms-grid-row: 1;
             -ms-grid-column: 1;
             -ms-grid-column-span: 2;
           }
 
           #nav_touch {
-            -ms-grid-row:2;
+            -ms-grid-row: 2;
             -ms-grid-column: 1;
           }
 
@@ -174,16 +187,16 @@ body {
           position: relative;
           top: $header-height-deskop;
           display: -ms-grid;
-          -ms-grid-columns:1fr 1fr;
+          -ms-grid-columns: 1fr 1fr;
 
           .content_title {
-            -ms-grid-row:1;
+            -ms-grid-row: 1;
             -ms-grid-column: 1;
             -ms-grid-column-span: 2;
           }
 
           #nav_touch {
-            -ms-grid-row:2;
+            -ms-grid-row: 2;
             -ms-grid-column: 1;
           }
 

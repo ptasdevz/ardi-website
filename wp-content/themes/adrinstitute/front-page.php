@@ -13,8 +13,12 @@ $upload_dir = wp_upload_dir();
                 <h3><?php echo $front_page_title['sub_title']; ?></h3>
             <?php endif ?>
         </div>
+        <?php
+              $header_link_1 = get_field('header_link_1');
+              $link_url = $header_link_1["link_url"];
+            ?>
         <div class="s_rq_assessment_signup">
-            <div id="rq_assessment" class="card">
+            <div id="rq_assessment"  onclick="window.open('<?php  echo $link_url;?>','_blank')" class="card">
                 <div class="info">
                     <?php $header_link_1 = get_field('header_link_1');
                     if ($header_link_1) : ?>

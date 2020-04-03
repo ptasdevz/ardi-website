@@ -5,7 +5,7 @@
         $menu_content = get_sub_field('other_links_menu_content'); ?>
 
         <div id="other_links_menu" class="tab_menu">
-            <button class="tablinks" name="other_links"><span><?php echo $menu_title ?></span></button>
+            <button id="other_links_tab_btn" class="tablinks" name="other_links"><span><?php echo $menu_title ?></span></button>
             <div class="tab_submenu"></div>
         </div>
         <div class="other_links_list">

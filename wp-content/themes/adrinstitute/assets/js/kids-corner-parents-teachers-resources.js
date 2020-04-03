@@ -1,9 +1,14 @@
 var is_yt_client_lib_loaded = false;
+var is_blog_cat_loaded = false;
+var is_first_sub_menu_link_loaded = false;
+
 $(document).ready(function () {
- 
+
     //===============================Helpful/Learning resource Links Content======================
     //get all other-links from backend.
     var other_links = [];
+
+    //loading links
     $(".other_links_list").children().each(function () {
         other_links[other_links.length] = $(this).attr('id');
     });
@@ -13,16 +18,36 @@ $(document).ready(function () {
             display_name = link_and_display_name.substr(link_and_display_name.indexOf("_") + 1);
             href_lower = href.replace(/\s/g, '_').toLowerCase();
             display_name_capitalized = display_name.charAt(0).toUpperCase() + display_name.substr(1);
-            $('#other_links_menu div').append(" <button><a href='" + href_lower + "' target='_blank'>" + display_name_capitalized + "</a></button>");
-
+            display_name_joined = display_name.split(" ").join("_");
+            $('#other_links_menu div').append(" <button data-btn-loc=tab data-link=" + display_name_joined + " class='other_links_sub_menu_btn " + display_name_joined + "' data-href='" + href_lower + "'>" + display_name_capitalized + "</button>");
+            $('#other_links_side_sub_menu').append(" <button data-btn-loc=side_nav data-link=" + display_name_joined + " class='other_links_sub_menu_btn " + display_name_joined + "' data-href='" + href_lower + "'>" + display_name_capitalized + "</button>");
         }
+    });
+    $(".other_links_sub_menu_btn").click(function (e) {
+
+        //showSpinnerWhileIFrameLoads();
+
+        //close nav if btn is being accessed from side nav
+        if ($(this).attr("data-btn-loc") == "side_nav") closeSideNav();
+
+        //allow sub-menu button to switch tab when clicked
+        //switchTabUsingSubMenu("other_links_tab_btn");
+
+        //add visted css properites when category is clicked
+        $("#other_links_menu .tab_submenu button").removeClass("btn_visited");
+        $("#other_links_side_sub_menu button").removeClass("btn_visited");
+        $("." + $(this).attr("data-link")).addClass("btn_visited"); //apply btn visited to the entier class
+
+        //window.open($(this).attr("data-href"), "other_links_iframe")
+        window.open($(this).attr("data-href"),"_blank");
+
     });
     //===============================End of Helpful/Learning resource Links Content======================
 
     //=================================Resources Content ============================
 
     //submenu button defaults
-    $("#cat_all").addClass("btn_visted");
+    $("#cat_all").addClass("btn_visited");
 
     //get blog categories data
     $(".adri_blog_cat").click(function () {
@@ -30,7 +55,8 @@ $(document).ready(function () {
         if (id != "cat_all") cat_id_val = id.substr(id.indexOf("_" + 1));
         else cat_id_val = id;
         $(".adri_blog_content").remove();
-        $(".content_spinner").addClass("active");
+        $("#adri_blog_spinner").addClass("active");
+        is_blog_cat_loaded = true;
 
 
         $.ajax({
@@ -40,7 +66,7 @@ $(document).ready(function () {
             data: { action: "get_blog_by_category", call_type: "internal", cat_id: cat_id_val },
             success: function (response) {
                 if (response.type == "success") {
-                    $(".content_spinner").removeClass("active");
+                    $("#adri_blog_spinner").removeClass("active");
                     itemss = response;
                     cat_url = response.category_url;
                     cat_name = response.category_name;
@@ -75,8 +101,8 @@ $(document).ready(function () {
         switchTabUsingSubMenu("adri_blog_tab_btn");
 
         //add visted css properites when clicked
-        $("#adri_blog_menu .tab_submenu button").removeClass("btn_visted");
-        $(this).addClass("btn_visted");
+        $("#adri_blog_menu .tab_submenu button").removeClass("btn_visited");
+        $(this).addClass("btn_visited");
 
 
     });
@@ -113,8 +139,8 @@ $(document).ready(function () {
 
     //get all categories and ids from backend.
     $(".you_tube_video_list").children().each(function () {
-        video_ids[video_ids.length] = $(this).attr('id');
-        video_cate[video_cate.length] = $(this).attr('class');
+        video_ids[video_ids.length] = $(this).attr('data-vid-id');
+        video_cate[video_cate.length] = $(this).attr('data-vid-cat');
     });
 
     //extract unique categories
@@ -129,36 +155,43 @@ $(document).ready(function () {
             cate_name_as_id = cate_name.replace(/\s/g, '_').toLowerCase();
             cate_name_capitalized = cate_name.charAt(0).toUpperCase() + cate_name.substr(1);
 
-            //Append categories text to markup
-            $('#instr_videos_menu div').append("<button id=" + cate_name_as_id + ">" + cate_name_capitalized + "</button>");
+            //Append categories text to tab menu and side menu
+            $('#instr_videos_menu div').append("<button data-btn-loc=tab data-cat-id=" + cate_name_as_id + " class=" + cate_name_as_id + ">" + cate_name_capitalized + "</button>");
+            $('#instr_videos_side_sub_menu').append("<button  data-btn-loc=side_nav data-cat-id=" + cate_name_as_id + " class=" + cate_name_as_id + ">" + cate_name_capitalized + "</button>");
+
 
             //Setup callback on buttons for categories
-            $("#" + cate_name_as_id).click(function (e) {
+            $("." + cate_name_as_id).click(function (e) {
                 e.preventDefault();
-                $buttonId = $(this).attr("id");
-                if ($buttonId == "all_videos") {
+                $cat_id = $(this).attr("data-cat-id");
+                if ($cat_id == "all_videos") {
                     ids_str = all_video_ids.join();
-                } else {
+
+                } else { //extract from video list only id's that is matching to category
                     video_ids = [];
                     $(".you_tube_video_list").children().each(function () {
-                        category = $(this).attr('class');
+                        category = $(this).attr('data-vid-cat');
                         category = category.replace(/\s/g, '_').toLowerCase();
-                        if (category == $buttonId) {
-                            video_ids[video_ids.length] = $(this).attr('id');
+                        if (category == $cat_id) {
+                            video_ids[video_ids.length] = $(this).attr('data-vid-id');
                         }
                     });
 
                     ids_str = video_ids.join();
                 }
+                //close nav if btn is being accessed from side nav
+                if ($(this).attr("data-btn-loc") == "side_nav") closeSideNav();
 
                 //allow sub-menu button to switch tab when clicked
                 switchTabUsingSubMenu("instr_videos_tab_btn");
                 $(".video_links").remove();
-                $(".content_spinner").addClass("active");
+                $("#instr_videos_spinner").addClass("active");
 
-                //add visted css properites when clicked
-                $("#instr_videos_menu .tab_submenu button").removeClass("btn_visted");
-                $(this).addClass("btn_visted");
+                //add visted css properites when category is clicked
+                $("#instr_videos_menu .tab_submenu button").removeClass("btn_visited");
+                $("#instr_videos_side_sub_menu button").removeClass("btn_visited");
+
+                $("." + $(this).attr("class")).addClass("btn_visited"); //apply btn visited to the entier class
 
                 if (is_yt_client_lib_loaded) load_videos();
                 else {
@@ -170,14 +203,11 @@ $(document).ready(function () {
         }
     });
 
-    //submenu button defaults
-    $("#all_videos").addClass("btn_visted");
-
     //load videos from youtube
     function load_videos() {
-        
+
         // 1. show spinner icon
-        $(".content_spinner").addClass("active");
+        $("#instr_videos_spinner").addClass("active");
 
         // 2. Initialize the JavaScript client library.
         gapi.client.init({
@@ -194,9 +224,9 @@ $(document).ready(function () {
             })
         }).then(function (response) {
             //4. remove spinner icon
-            $(".content_spinner").removeClass("active");
+            $("#instr_videos_spinner").removeClass("active");
             var items = response.result.items;
-    
+
             //5. Extract content from response.
             items.forEach(function (element, index) {
                 var id = element.id;
@@ -207,7 +237,7 @@ $(document).ready(function () {
                 var url = medium_thumbnail.url;
                 var width = medium_thumbnail.width;
                 var height = medium_thumbnail.height;
-    
+
                 //6.Generate and append thumbnail cards.
                 $(".videos").append(
                     "<div id='" + id + "'class='video_links'>" +
@@ -219,16 +249,16 @@ $(document).ready(function () {
                     "</div>" +
                     "</div>" +
                     "</div>");
-    
+
             });
             //7. setup call back to play each video
             bindVideoLinks();
-    
+
         }, function (reason) {
             console.log('Error: ' + reason.result.error.message);
         });
     };
-    
+
     // 1. Load the JavaScript client library.
     //gapi.load('client', load_videos);
 
@@ -253,11 +283,11 @@ $(document).ready(function () {
     });
 
     //============================= End of Instructional Videos Content ======================
-  //=====================================Tab Management=======================================
+    //=====================================Tab and Side menu Management=======================================
     //Change currently viewing tab
     $(".tablinks").click(function () {
-
         var name = $(this).attr("name");
+        //console.log(name);
         if (name != "other_links") {
             $(".tabcontent").css("display", "none");
             $(".tablinks").removeClass("active");
@@ -265,21 +295,33 @@ $(document).ready(function () {
             $("#" + name).css("display", "block");
         }
 
-        
+
+        //Initial handle of tabs top menu buttons
         if (name != "instr_videos") {//clean any left over stuff on instructional tab when not visible
             //closePlayer();
-        } else if (!is_yt_client_lib_loaded) { //load video content if not already loaded
+        } else if (name == "instr_videos" && !is_yt_client_lib_loaded) { //load video content if not already loaded
+            //gapi.load('client', load_videos);
+            $("#instr_videos_menu .tab_submenu button").eq(0).trigger("click");
             is_yt_client_lib_loaded = true;
-            gapi.load('client', load_videos); 
         }
-   
+
+        // if (name == "other_links" && !is_first_sub_menu_link_loaded) {
+        //     $("#other_links_menu .tab_submenu button").eq(0).trigger("click");
+        //     is_first_sub_menu_link_loaded = true;
+        // }
+
+        if (name == "adri_blog" && !is_blog_cat_loaded) {
+            $("#cat_all").trigger("click");
+            is_blog_cat_loaded = true;
+        }
+
 
     });
 
     /*Auto-redirection to specific tabs */
 
     //initialize default menu-tab for sections
-    var default_kids_corner = ".kids_corner_tab .tab_wrapper #instr_videos_menu .tab_submenu #all_videos";
+    var default_kids_corner = ".kids_corner_tab .tab_wrapper #instr_videos_menu .tab_submenu .all_videos";
     //var default_resources = ".resources_tab .tab_wrapper #adri_blog_menu #adri_blog_tab_btn";
     var default_resources = ".resources_tab .tab_wrapper #adri_blog_menu .tab_submenu #cat_all";
 
@@ -387,4 +429,21 @@ function switchTabUsingSubMenu(btn_tab_id) {
     $("#" + btn_tab_id).addClass("active");
     $("#" + $("#" + btn_tab_id).attr("name")).css("display", "block");
 }
+
+function closeSideNav() {
+    $("#page_side_nav").css("width", "0");
+    $("#overlay").css("display", "none");
+    $("#overlay").css("backgroundColor", "rgba(0,0,0,0)");
+}
+
+function showSpinnerWhileIFrameLoads() {
+    var iframe = $('iframe');
+    if (iframe.length) {
+        $("#other_links_spinner").addClass("active");
+        $(iframe).on('load', function () {
+            $("#other_links_spinner").removeClass("active");
+        });
+    }
+}
+
 

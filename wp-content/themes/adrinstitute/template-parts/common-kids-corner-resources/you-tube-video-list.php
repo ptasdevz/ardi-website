@@ -8,7 +8,7 @@
         for ($i = 0; $i < $count; $i++) :
             $is_active = $body[$i][3]['c'];
             if ($is_active == 'yes') : ?>
-                <div id="<?php echo $body[$i][0]['c']; ?>" class="<?php echo $body[$i][1]['c']; ?>"></div>
+                <div data-vid-id="<?php echo $body[$i][0]['c']; ?>" data-vid-cat="<?php echo $body[$i][1]['c']; ?>"></div>
             <?php endif;
         endfor;
     endif;
@@ -22,7 +22,7 @@
             $is_active = $body[$i][3]['c'];
             if ($is_active == 'yes') :
             ?>
-                <div id="<?php echo $body[$i][0]['c']; ?>" class="<?php echo $body[$i][1]['c']; ?>"></div>
+                <div data-vid-id="<?php echo $body[$i][0]['c']; ?>" data-vid-cat="<?php echo $body[$i][1]['c']; ?>"></div>
     <?php endif;
         endfor;
     endif; ?>

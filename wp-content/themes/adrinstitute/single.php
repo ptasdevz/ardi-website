@@ -25,7 +25,7 @@ $res_pg = get_page_by_title("resources");
             <?php endif; ?>
             <div class="bread_crumb_nav">
                 <ul class="breadcrumb">
-                    <li><a data-value=".resources_tab .tab_wrapper #adri_blog_menu #adri_blog_tab_btn" data-link="<?php echo get_permalink($res_pg->ID); ?> " class="adri_blog_tab_btn" href="#">Adrinstitute Blog</a></li>
+                    <li><a data-value=".resources_tab .tab_wrapper #adri_blog_menu .tab_submenu #cat_all" data-link="<?php echo get_permalink($res_pg->ID); ?> " class="adri_blog_tab_btn" href="#">Adrinstitute Blog</a></li>
                     <li><?php the_title(); ?></li>
                 </ul>
             </div>
