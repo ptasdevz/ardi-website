@@ -125,7 +125,7 @@ body .page_container #page_main .content_area .services_content_area .service h3
 }
 
 body .page_container #page_main .content_area .services_content_area .service p,
-body .page_container #page_main .content_area .services_content_area .service .content {
+body .page_container #page_main .content_area .services_content_area .service .svc_content {
   text-align: justify;
   margin: 0 auto 1rem auto;
 }
@@ -143,7 +143,7 @@ body .page_container #page_main .content_area .services_content_area .service bu
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 auto;
+  margin: 0 auto 1rem auto;
 }
 
 body .page_container #page_main .content_area .services_content_area .service button:hover {
@@ -183,14 +183,15 @@ body .page_container #page_main .content_area .services_content_area .service bu
     text-align: left;
   }
   body .page_container #page_main .content_area .services_content_area .service button {
-    margin: 0;
+    margin: 0 0.2rem 0 0;
+    display: inline-block;
   }
   body .page_container #page_main .content_area .services_content_area .reading_assesment_svc {
     border-bottom: 1px solid #c9c9c9;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 20% 80%;
-        grid-template-columns: 20% 80%;
+    -ms-grid-columns: 25% 75%;
+        grid-template-columns: 25% 75%;
     -ms-grid-rows: auto;
         grid-template-rows: auto;
         grid-template-areas: "reading_img reading_svc_content";
@@ -210,8 +211,8 @@ body .page_container #page_main .content_area .services_content_area .service bu
     border-bottom: 1px solid #c9c9c9;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 80% 20%;
-        grid-template-columns: 80% 20%;
+    -ms-grid-columns: 75% 25%;
+        grid-template-columns: 75% 25%;
     -ms-grid-rows: auto;
         grid-template-rows: auto;
         grid-template-areas: "remedial_svc_content remedial_img";
@@ -231,8 +232,8 @@ body .page_container #page_main .content_area .services_content_area .service bu
     border-bottom: 1px solid #c9c9c9;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 20% 80%;
-        grid-template-columns: 20% 80%;
+    -ms-grid-columns: 25% 75%;
+        grid-template-columns: 25% 75%;
     -ms-grid-rows: auto;
         grid-template-rows: auto;
         grid-template-areas: "school_work_img school_work_svc_content";
@@ -252,8 +253,8 @@ body .page_container #page_main .content_area .services_content_area .service bu
     border-bottom: 1px solid #c9c9c9;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 80% 20%;
-        grid-template-columns: 80% 20%;
+    -ms-grid-columns: 75% 25%;
+        grid-template-columns: 75% 25%;
     -ms-grid-rows: auto;
         grid-template-rows: auto;
         grid-template-areas: "printing_laminating_content printing_laminating_img";
@@ -273,8 +274,8 @@ body .page_container #page_main .content_area .services_content_area .service bu
     border-bottom: 1px solid #c9c9c9;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 20% 80%;
-        grid-template-columns: 20% 80%;
+    -ms-grid-columns: 30% 70%;
+        grid-template-columns: 30% 70%;
     -ms-grid-rows: auto;
         grid-template-rows: auto;
         grid-template-areas: "study_buddy_img study_buddy_content";

@@ -6,13 +6,13 @@
             } ?>
         </div>
     </div>
-    <div class="service study_buddy_svc">
+    <div class="service">
         <div class="study_buddy_svc_content">
         <?php if (have_rows('service_5', wp_get_post_parent_id($post->id))) : ?>
                 <?php while (have_rows('service_5', wp_get_post_parent_id($post->id))) : the_row();
                     // Get sub field values.
                     $content = get_sub_field('content'); ?>
-                    <div id="study_buddy_svc_content_text" class="content"><?php echo $content ?></div>
+                    <div id="study_buddy_svc_content_text" class="svc_content"><?php echo $content ?></div>
                 <?php endwhile ?>
             <?php endif ?>
         </div>

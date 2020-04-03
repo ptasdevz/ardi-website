@@ -74,7 +74,7 @@ body {
               text-align: center;
             }
             p,
-            .content {
+            .svc_content {
               text-align: justify;
               // width: 80%;
               margin: 0 auto 1rem auto;
@@ -93,7 +93,7 @@ body {
                 transform: scale($transform-scale-factor);
               }
               display: flex;
-              margin: 0 auto;
+              margin: 0 auto 1rem auto;
             }
           }
             /*tablet layout for services*/
@@ -133,14 +133,15 @@ body {
                 text-align: left;
               }
               button {
-                margin: 0;
+                margin: 0 0.2rem 0 0;
+                display:inline-block;
               }
             }
 
             .reading_assesment_svc {
               border-bottom: 1px solid color(accent-4);
               display: grid;
-              grid-template-columns: 20% 80%;
+              grid-template-columns: 25% 75%;
               grid-template-rows: auto;
               grid-template-areas: "reading_img reading_svc_content";
 
@@ -156,7 +157,7 @@ body {
             .remedial_classes_svc {
               border-bottom: 1px solid color(accent-4);
               display: grid;
-              grid-template-columns: 80% 20%;
+              grid-template-columns: 75% 25%;
               grid-template-rows: auto;
               grid-template-areas: "remedial_svc_content remedial_img";
 
@@ -171,7 +172,7 @@ body {
             .school_work_help_svc {
               border-bottom: 1px solid color(accent-4);
               display: grid;
-              grid-template-columns: 20% 80%;
+              grid-template-columns: 25% 75%;
               grid-template-rows: auto;
               grid-template-areas: "school_work_img school_work_svc_content";
               img {
@@ -185,7 +186,7 @@ body {
             .printing_laminating_svc {
               border-bottom: 1px solid color(accent-4);
               display: grid;
-              grid-template-columns: 80% 20%;
+              grid-template-columns: 75% 25%;
               grid-template-rows: auto;
               grid-template-areas: "printing_laminating_content printing_laminating_img";
               img {
@@ -199,7 +200,7 @@ body {
             .study_buddy_svc {
               border-bottom: 1px solid color(accent-4);
               display: grid;
-              grid-template-columns: 20% 80%;
+              grid-template-columns: 30% 70%;
               grid-template-rows: auto;
               grid-template-areas: "study_buddy_img study_buddy_content";
               img {
