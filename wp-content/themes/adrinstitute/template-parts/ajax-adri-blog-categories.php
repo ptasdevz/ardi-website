@@ -11,21 +11,36 @@ function get_blog_by_category()
     //     exit("No naughty business please");
     // }
     $cat_id = $_REQUEST['cat_id'];
+    $offset = $_REQUEST['offset'];
+    $per_page_count = $_REQUEST['per_page_count'];
+    $post_opts= array(
+        'order'            => 'DESC',
+        'include'          => array(),
+        'exclude'          => array(),
+        'meta_key'         => '',
+        'meta_value'       => '',
+        'post_type'        => 'post',
+        'suppress_filters' => true,
+        'nonpaging'=>true,
+        'offset' => $offset,
+        'numberposts'=> $per_page_count
+    );
+
+   
 
     if ($cat_id != "cat_all") {
-        $posts = get_posts(array(
-            'category'         => $cat_id,
-            'orderby'          => 'date',
-            'order'            => 'DESC',
-            'include'          => array(),
-            'exclude'          => array(),
-            'meta_key'         => '',
-            'meta_value'       => '',
-            'post_type'        => 'post',
-            'suppress_filters' => true,
-        ));
+        $post_opts["category"] = $cat_id;
+        $posts = get_posts($post_opts);
+        $category = get_category($cat_id);
+        $post_count = $category->category_count;
+
     } else {
-        $posts = get_posts();
+        $posts = get_posts($post_opts);
+        $count = wp_count_posts()->publish;
+        if (is_numeric($count)) {
+            $post_count = (int) $count;
+        }else $post_count =0;
+       
     }
     foreach ($posts as $post) {
         $url = get_the_post_thumbnail_url($post->ID, "medium_1_1_fixed");
@@ -44,6 +59,7 @@ function get_blog_by_category()
         $date_formatted = date("F j, Y", $d);
         $post->date_formatted = $date_formatted;
     }
+    $result["post_count"] = $post_count;
     $result["category_name"] = get_cat_name($cat_id);
     $result["category_url"] = get_category_link($cat_id);
     $result['type'] = "success";

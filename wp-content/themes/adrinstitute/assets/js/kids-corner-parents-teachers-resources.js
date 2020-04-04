@@ -1,6 +1,11 @@
 var is_yt_client_lib_loaded = false;
 var is_blog_cat_loaded = false;
 var is_first_sub_menu_link_loaded = false;
+var post_list;
+var curr_post_offset = Number(0);
+var current_post_cat_id;
+var curr_per_page_count;
+var is_more_offset = false;
 
 $(document).ready(function () {
 
@@ -51,66 +56,47 @@ $(document).ready(function () {
 
     //get blog categories data
     $(".adri_blog_cat").click(function () {
-        id = $(this).attr("id");
-        if (id != "cat_all") cat_id_val = id.substr(id.indexOf("_" + 1));
-        else cat_id_val = id;
-        $(".adri_blog_content").remove();
-        $("#adri_blog_spinner").addClass("active");
+        data_cat_id = $(this).attr("data-cat-id");
+        if (data_cat_id != "cat_all") current_post_cat_id = data_cat_id.substr(data_cat_id.indexOf("_" + 1));
+        else current_post_cat_id = data_cat_id;
         is_blog_cat_loaded = true;
+        curr_per_page_count = Number($("#blogs_per_page").select().val());
+        curr_post_offset = Number(0);
 
-
-        $.ajax({
-            type: "post",
-            dataType: "json",
-            url: ajax.ajax_url,
-            data: { action: "get_blog_by_category", call_type: "internal", cat_id: cat_id_val },
-            success: function (response) {
-                if (response.type == "success") {
-                    $("#adri_blog_spinner").removeClass("active");
-                    itemss = response;
-                    cat_url = response.category_url;
-                    cat_name = response.category_name;
-                    response.post_list.forEach(function (post, index) {
-
-                        $element = "<div class='adri_blog_content'>" +
-                            "<div class='img_container'>" +
-                            "<img src='" + post.featured_img_url + "'></div>" +
-                            "<div class='content_container'>" +
-                            "<h3><a href='" + cat_url + "'>" + cat_name + "</a></h3>" +
-                            "<h1>" + post.post_title + "</h1>" +
-                            "<p>" + post.post_excerpt + "</p>" +
-                            "<button onclick='window.location=\"" + post.guid + "\"'>Read More</button>" +
-                            "<p class='adri_blog_meta_data'><span class='author'><i class='fa fa-user' aria-hidden='true'></i>" +
-                            "</span>" + post.author_name + "&nbsp;&nbsp;<span class='comment_count'><i class='fa fa-comments' aria-hidden='true'></i>" +
-                            "</span>" + post.comment_count + "&nbsp;&nbsp;<span class='date'><i class='fa fa-calendar-alt' aria-hidden='true'></i> </span>" + post.date_formatted + "</p>" +
-                            "</div>" +
-                            "</div>";
-                        $(".adri_blog_tab_content").append($element)
-
-                    });
-                }
-                else {
-                    console.log(response);
-
-                }
-            }
-        });
+        load_categories();
 
         //close nav if btn is being accessed from side nav
         close_side_navigation_bar(this);
 
         //allow sub-menu button to switch tab when clicked
-        var name = $("#adri_blog_tab_btn").attr("name");
         switchTabUsingSubMenu("adri_blog_tab_btn");
 
         //add visted css properites when clicked
         $("#adri_blog_menu .tab_submenu button").removeClass("btn_visited");
         $("#adri_blog_side_sub_menu button").removeClass("btn_visited");
-        $(this).addClass("btn_visited"); //apply btn visited to the entier class
+        $("." + data_cat_id).addClass("btn_visited"); //apply btn visited to the entier class
         // $("." + $(this).attr("class")).addClass("btn_visited"); //apply btn visited to the entier class
 
 
     });
+    $("#blogs_per_page").change(function () {
+        curr_per_page_count = Number($(this).select().val());
+        curr_post_offset = Number(0);
+        load_categories();
+
+    });
+    $("#blog_nav_right").click(function () {
+        curr_post_offset += Number(curr_per_page_count);
+        load_categories();
+
+    });
+
+    $("#blog_nav_left").click(function () {
+        curr_post_offset -= Number(curr_per_page_count);
+        load_categories();
+
+    })
+
 
     //=================================End of Resources Content============================
 
@@ -315,7 +301,7 @@ $(document).ready(function () {
         // }
 
         if (name == "adri_blog" && !is_blog_cat_loaded) {
-            $("#cat_all").trigger("click");
+            $(".cat_all").trigger("click");
             is_blog_cat_loaded = true;
         }
 
@@ -327,7 +313,7 @@ $(document).ready(function () {
     //initialize default menu-tab for sections
     var default_kids_corner = ".kids_corner_tab .tab_wrapper #instr_videos_menu .tab_submenu .all_videos";
     //var default_resources = ".resources_tab .tab_wrapper #adri_blog_menu #adri_blog_tab_btn";
-    var default_resources = ".resources_tab .tab_wrapper #adri_blog_menu .tab_submenu #cat_all";
+    var default_resources = ".resources_tab .tab_wrapper #adri_blog_menu .tab_submenu .cat_all";
 
     if (sessionStorage.kids_corner_tab == undefined) sessionStorage.kids_corner_tab = default_kids_corner;
     if (sessionStorage.resources_tab == undefined) sessionStorage.resources_tab = default_resources;
@@ -357,12 +343,134 @@ $(document).ready(function () {
     });
 
     /*End of Auto-redirection to specific tabs */
-
     //=====================================End of Tab Management=======================================
 });
 
 
+
 //====================================Helper functions=====================================
+function highlightPageLink() {
+    $(".page_links a").removeClass("active");
+    $("[data-offset-val=" + curr_post_offset + "]").addClass("active");
+    if ($("[data-offset-val=" + curr_post_offset + "]").attr("id") == "link_more"){
+        $("[data-offset-val=" + curr_post_offset + "]").trigger("click");
+    }
+    $(".page_links a").each(function (element, index) {
+        offset_val = $(this).attr("data-offset-val");
+        if (offset_val == undefined) $(this).css("visibility", "hidden");
+    })
+}
+function load_categories() {
+
+    $(".adri_blog_content").remove();
+    $("#adri_blog_spinner").addClass("active");
+    $(".page_links a").removeAttr("data-offset-val");
+
+    $.ajax({
+        type: "post",
+        dataType: "json",
+        url: ajax.ajax_url,
+        data: {
+            action: "get_blog_by_category",
+            call_type: "internal",
+            cat_id: current_post_cat_id,
+            offset: curr_post_offset,
+            per_page_count: curr_per_page_count
+        },
+        success: function (response) {
+            if (response.type == "success") {
+                post_count = response.post_count;
+                /*remove/display prev btn if necessary */
+                if ((curr_post_offset - curr_per_page_count) < 0) {
+                    $("#blog_nav_left").css("visibility", "hidden");
+                } else $("#blog_nav_left").css("visibility", "visible");
+
+                /*remove/display next btn if necessary */
+                if ((curr_post_offset + curr_per_page_count) >= post_count) {
+                    $("#blog_nav_right").css("visibility", "hidden");
+                } else $("#blog_nav_right").css("visibility", "visible");
+
+                /*append page links */
+                page_count = Math.ceil(post_count / curr_per_page_count);
+                offset = 0;
+                start_val = 0;
+
+                if (is_more_offset == true) {
+                    start_val_saved = $("#link_more").attr("data-start-val");
+                    next_offset = $("#link_more").attr("data-next-offset-val");
+                    if (start_val_saved == undefined) start_val = Number(0);
+                    else start_val = Number(start_val_saved);
+                    if (next_offset != undefined) offset = next_offset;
+                    console.log(start_val_saved);
+                    console.log(next_offset);
+                    is_more_offset = false;
+                }
+
+                for (let i = start_val; i < page_count; i++) {
+                    id = i + 1 - start_val;
+                    if (id <= 4) {
+                        $("#link_" + id).unbind();
+                        $("#link_" + id).attr("data-offset-val", offset);
+                        $("#link_" + id).html(i + 1);
+                        $("#link_" + id).css("visibility", "visible");
+                        $("#link_" + id).click(function () {
+                            curr_post_offset = Number($(this).attr("data-offset-val"));
+                            load_categories();
+                        });
+                    } else {
+                        $("#link_more").unbind();
+                        $("#link_more").attr("data-start-val", i);
+                        $("#link_more").attr("data-offset-val", offset);
+                        $("#link_more").attr("data-next-offset-val", offset);
+                        $("#link_more").css("visibility", "visible");
+                        // $("#link_more").click(function(){
+                        //     is_more_offset = true;
+                        //     curr_post_offset = Number($(this).attr("data-next-offset-val"));
+                        //     load_categories();
+
+                        // });
+                        break;
+                    }
+                    offset += curr_per_page_count;
+                }
+                highlightPageLink();
+                append_blog(response);
+            }
+            else {
+                console.log(response);
+            }
+        }
+    });
+    //append_blog(post_list, curr_per_page_count);
+}
+function append_blog(response) {
+
+    $("#adri_blog_spinner").removeClass("active");
+    $(".adri_blog_navigation").show();
+    post_list = response.post_list;
+    cat_url = response.category_url;
+    cat_name = response.category_name;
+
+    for (let i = 0; i < post_list.length; i++) {
+        post = post_list[i];
+        $element = "<div class='adri_blog_content'>" +
+            "<div class='img_container'>" +
+            "<img src='" + post.featured_img_url + "'></div>" +
+            "<div class='content_container'>" +
+            "<h3><a href='" + cat_url + "'>" + cat_name + "</a></h3>" +
+            "<h1>" + post.post_title + "</h1>" +
+            "<p>" + post.post_excerpt + "</p>" +
+            "<button onclick='window.location=\"" + post.guid + "\"'>Read More</button>" +
+            "<p class='adri_blog_meta_data'><span class='author'><i class='fa fa-user' aria-hidden='true'></i>" +
+            "</span>" + post.author_name + "&nbsp;&nbsp;<span class='comment_count'><i class='fa fa-comments' aria-hidden='true'></i>" +
+            "</span>" + post.comment_count + "&nbsp;&nbsp;<span class='date'><i class='fa fa-calendar-alt' aria-hidden='true'></i> </span>" + post.date_formatted + "</p>" +
+            "</div>" +
+            "</div>";
+        $(".adri_blog_tab_content").append($element);
+
+    }
+}
+
 function close_side_navigation_bar($this) {
     if ($($this).attr("data-btn-loc") == "side_nav")
         closeSideNav();

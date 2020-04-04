@@ -47,15 +47,16 @@ body {
             border-radius: 2px;
             width: 100%;
             margin: 0 auto;
-            background-color: color(base-1);
+            background:color(base-1);
             position: sticky;
             top: 72px;
             .tab_wrapper {
               border: 1px solid color(accent-4);
+              border-radius: 2px;
               border-top: 0;
-              
+
               #other_links_menu {
-                display: none;// hide other links tab menu in mobile layout
+                display: none; // hide other links tab menu in mobile layout
               }
               .tab_menu {
                 width: 100%;
@@ -191,6 +192,47 @@ body {
                 }
               }
             }
+
+            /*adri blog navigation*/
+            .adri_blog_navigation {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 1px solid color(accent-4);
+              border-radius: 2px;
+              background: rgba(255,255,255,0.96);
+              margin:0 auto 0.3rem auto;
+              width: 100%;
+              position:sticky;
+              top:217px;
+              i {
+                cursor: pointer;
+              }
+              .page_links a{
+                padding-right: 1rem;
+                cursor: pointer;
+                color: color(primary);
+                visibility: hidden;
+              }
+              .page_links a.active{
+                font-weight: bold;
+              }
+
+              #blog_nav_left {
+                padding-left: 0;
+              }
+              .adri_blog_navigation_content {
+                padding: 0.5rem 0.5rem;
+                #blogs_per_page {
+                  width: 3rem;
+                  border: 1px solid color(accent-4);
+                }
+              }
+              #blog_nav_right {
+                padding-right: 0;
+              }
+            }
+            /*End of adri blog navigation*/
           }
           /*End of Blog Content Mobile-Phones*/
 
@@ -471,6 +513,16 @@ body {
                   }
                 }
               }
+              /*adri blog navigation*/
+              .adri_blog_navigation {
+                .adri_blog_navigation_content {
+                  padding: 0.5rem 4.5rem;
+                }
+                .page_links a{
+                  padding-right: 1rem;
+                }
+              }
+              /*End of adri blog navigation*/
             }
             /*End of Blog Content Mobile-Tablets*/
           }
@@ -499,7 +551,7 @@ body {
               display: flex;
               align-items: center;
               justify-content: center;
-              background: rgba(0, 0, 0, 0);
+              background: rgba(0,0,0,0);
               top: 96px;
             }
             .kids_corner_tab,
@@ -579,6 +631,9 @@ body {
                   background-color: color(primary);
                 }
               }
+              .tab_wrapper{
+                background: rgba(255,255,255,0.96);
+              }
             }
             /*End of styling for tab menu for kids corner and resrouces Desktop*/
 
@@ -621,6 +676,15 @@ body {
                   }
                 }
               }
+              /*adri blog navigation*/
+              .adri_blog_navigation {
+                top:156px;
+                .adri_blog_navigation_content {
+                  padding: 0.5rem 2rem;
+                }
+                width: 50%;
+              }
+              /*End of adri blog navigation*/
             }
             /*End of Blog Content Desktop*/
 

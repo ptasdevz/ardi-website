@@ -113,7 +113,7 @@ body .page_container #page_main .content_area .resources_content_area .resources
   border-radius: 2px;
   width: 100%;
   margin: 0 auto;
-  background-color: #fff;
+  background: #fff;
   position: -webkit-sticky;
   position: sticky;
   top: 72px;
@@ -124,6 +124,7 @@ body .page_container #page_main .content_area .kids_content_area .resources_tab 
 body .page_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper,
 body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper {
   border: 1px solid #c9c9c9;
+  border-radius: 2px;
   border-top: 0;
 }
 
@@ -225,6 +226,12 @@ body .page_container #page_main .content_area .resources_content_area .tabconten
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content,
+body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content {
+  /*adri blog navigation*/
+  /*End of adri blog navigation*/
 }
 
 body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content,
@@ -330,6 +337,66 @@ body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_
 body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data span {
   font-weight: bold;
   color: #1d2089;
+}
+
+body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation,
+body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid #c9c9c9;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.96);
+  margin: 0 auto 0.3rem auto;
+  width: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 217px;
+}
+
+body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation i,
+body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation i {
+  cursor: pointer;
+}
+
+body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a,
+body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a {
+  padding-right: 1rem;
+  cursor: pointer;
+  color: #1d2089;
+  visibility: hidden;
+}
+
+body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a.active,
+body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a.active {
+  font-weight: bold;
+}
+
+body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation #blog_nav_left,
+body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation #blog_nav_left {
+  padding-left: 0;
+}
+
+body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content,
+body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content {
+  padding: 0.5rem 0.5rem;
+}
+
+body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content #blogs_per_page,
+body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content #blogs_per_page {
+  width: 3rem;
+  border: 1px solid #c9c9c9;
+}
+
+body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation #blog_nav_right,
+body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation #blog_nav_right {
+  padding-right: 0;
 }
 
 body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content,
@@ -614,6 +681,10 @@ body .page_container #page_main .content_area .resources_content_area .resources
     /*Blog Content Mobile-Tablets*/
     /*End of Blog Content Mobile-Tablets*/
   }
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content {
+    /*adri blog navigation*/
+    /*End of adri blog navigation*/
+  }
   body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .img_container img {
     width: 40%;
     margin: 0 auto;
@@ -639,6 +710,12 @@ body .page_container #page_main .content_area .resources_content_area .resources
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+  }
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content {
+    padding: 0.5rem 4.5rem;
+  }
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a {
+    padding-right: 1rem;
   }
 }
 
@@ -791,9 +868,17 @@ body .page_container #page_main .content_area .resources_content_area .resources
   body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper button.active span::after {
     background-color: #1d2089;
   }
+  body .page_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper,
+  body .page_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper,
+  body .page_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper,
+  body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper {
+    background: rgba(255, 255, 255, 0.96);
+  }
   body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content,
   body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content {
     width: 65rem;
+    /*adri blog navigation*/
+    /*End of adri blog navigation*/
   }
   body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content,
   body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content {
@@ -843,6 +928,15 @@ body .page_container #page_main .content_area .resources_content_area .resources
     margin-left: auto;
     margin-right: auto;
     text-align: left;
+  }
+  body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation,
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation {
+    top: 156px;
+    width: 50%;
+  }
+  body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content,
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content {
+    padding: 0.5rem 2rem;
   }
   body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content,
   body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content {

@@ -90,6 +90,7 @@ function load_style_sheets()
 }
 add_action('wp_enqueue_scripts', 'load_style_sheets');
 
+//enqueue javascript files
 function load_js()
 {
     wp_deregister_script('jquery');
@@ -190,12 +191,10 @@ function adri_template_redirect()
 }
 
 
-/**
- * Enable support for post thumbnails and featured images.
- */
+/* Enable support for post thumbnails and featured images.*/
 add_theme_support('post-thumbnails');
 
-// add support for wordpress navigational theme menus
+/*add support for wordpress navigational theme menus*/
 add_theme_support("menus");
 
 // register navigational menu locations
@@ -204,6 +203,7 @@ register_nav_menus(array(
     "footer_menu" => __('Footer Menu', 'theme'),
 ));
 
+/*remove <p> tags that generates from spaces in content and excerpt blocks */
 remove_filter('the_content', 'wpautop');
 remove_filter('the_excerpt', 'wpautop');
 // remove_filter ('acf_the_content', 'wpautop');
@@ -211,9 +211,8 @@ remove_filter('the_excerpt', 'wpautop');
 /*using ajax to get videos */
 //include get_template_directory() . "/templates/kids-corner-content.php";
 
-/*using ajax to get blog categories */
+/*using ajax to get blog categories data */
 include get_template_directory() . "/template-parts/ajax-adri-blog-categories.php";
-
 
 /*Filter to only view excerpt of full content on the service page */
 function service_content_excerpt($text, $excerpt_length)
