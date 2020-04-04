@@ -112,7 +112,16 @@ $(document).ready(function () {
     });
 
   });
-  //============================EndSide Nav============================
+   //enable side navigation bar on specific pages
+   page_title = $("#nav_touch").attr("data-page-title");
+   switch (page_title) {
+       case "kids-corner":
+       case "resources":
+           break;
+       default:
+           $("#nav_touch").css("display", "none");
+   }
+  //============================End Side Nav============================
 
   //============================Load Page Template Pieces======================
   /*

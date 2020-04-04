@@ -39,7 +39,7 @@ $(document).ready(function () {
         $("." + $(this).attr("data-link")).addClass("btn_visited"); //apply btn visited to the entier class
 
         //window.open($(this).attr("data-href"), "other_links_iframe")
-        window.open($(this).attr("data-href"),"_blank");
+        window.open($(this).attr("data-href"), "_blank");
 
     });
     //===============================End of Helpful/Learning resource Links Content======================
@@ -47,7 +47,7 @@ $(document).ready(function () {
     //=================================Resources Content ============================
 
     //submenu button defaults
-    $("#cat_all").addClass("btn_visited");
+    //$("#cat_all").addClass("btn_visited");
 
     //get blog categories data
     $(".adri_blog_cat").click(function () {
@@ -96,13 +96,18 @@ $(document).ready(function () {
             }
         });
 
+        //close nav if btn is being accessed from side nav
+        close_side_navigation_bar(this);
+
         //allow sub-menu button to switch tab when clicked
         var name = $("#adri_blog_tab_btn").attr("name");
         switchTabUsingSubMenu("adri_blog_tab_btn");
 
         //add visted css properites when clicked
         $("#adri_blog_menu .tab_submenu button").removeClass("btn_visited");
-        $(this).addClass("btn_visited");
+        $("#adri_blog_side_sub_menu button").removeClass("btn_visited");
+        $(this).addClass("btn_visited"); //apply btn visited to the entier class
+        // $("." + $(this).attr("class")).addClass("btn_visited"); //apply btn visited to the entier class
 
 
     });
@@ -180,7 +185,7 @@ $(document).ready(function () {
                     ids_str = video_ids.join();
                 }
                 //close nav if btn is being accessed from side nav
-                if ($(this).attr("data-btn-loc") == "side_nav") closeSideNav();
+                close_side_navigation_bar(this);
 
                 //allow sub-menu button to switch tab when clicked
                 switchTabUsingSubMenu("instr_videos_tab_btn");
@@ -190,7 +195,6 @@ $(document).ready(function () {
                 //add visted css properites when category is clicked
                 $("#instr_videos_menu .tab_submenu button").removeClass("btn_visited");
                 $("#instr_videos_side_sub_menu button").removeClass("btn_visited");
-
                 $("." + $(this).attr("class")).addClass("btn_visited"); //apply btn visited to the entier class
 
                 if (is_yt_client_lib_loaded) load_videos();
@@ -357,8 +361,12 @@ $(document).ready(function () {
     //=====================================End of Tab Management=======================================
 });
 
-//====================================Helper functions=====================================
 
+//====================================Helper functions=====================================
+function close_side_navigation_bar($this) {
+    if ($($this).attr("data-btn-loc") == "side_nav")
+        closeSideNav();
+}
 //bind youtube links for call backs
 function bindVideoLinks() {
     $(".video_links").on("click", function () {
