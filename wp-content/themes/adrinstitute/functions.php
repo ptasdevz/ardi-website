@@ -152,11 +152,29 @@ function load_footer_scripts()
 }
 add_action('wp_footer', 'load_footer_scripts');
 
+/*Custom logo*/
+function custom_loginlogo()
+{
+    echo '<style type="text/css">
+    h1 a {background-image: url(' . wp_get_attachment_image_src(429, 'xlarge_16_9')[0] . ') !important; }
+    </style>';
+}
+add_action('login_head', 'custom_loginlogo');
+
+/*Change custom logo to site url */
+function the_url( $url ) {
+    return get_bloginfo( 'url' );
+}
+add_filter( 'login_headerurl', 'the_url' );
+
 /*Using template to rediect to child registation form page to so that form canbe downloaded */
 add_action('template_redirect', 'adri_template_redirect');
-function adri_template_redirect() {
-    if ($_SERVER['REQUEST_URI'] == '/child-registration-form/' ||$_SERVER['REQUEST_URI'] == '/child-registration-form' 
-    ||$_SERVER['REQUEST_URI'] == '/dev/child-registration-form/' ||$_SERVER['REQUEST_URI'] == '/dev/child-registration-form' ) {
+function adri_template_redirect()
+{
+    if (
+        $_SERVER['REQUEST_URI'] == '/child-registration-form/' || $_SERVER['REQUEST_URI'] == '/child-registration-form'
+        || $_SERVER['REQUEST_URI'] == '/dev/child-registration-form/' || $_SERVER['REQUEST_URI'] == '/dev/child-registration-form'
+    ) {
         $f = "wp-content/uploads/2020/03/child_registration_form.pdf";
         header('Content-Disposition: attachment; filename=child_registration_form.pdf');
         header("Content-type: application/x-msdownload", true, 200);

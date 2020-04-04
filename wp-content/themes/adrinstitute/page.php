@@ -21,7 +21,9 @@ get_header(); ?>
     ?>
     <section class="content_title">
         <h1>
+            
             <?php
+            //provide custom titles for some pages
             $title = strtolower(get_the_title());
             if ($title  == "services") echo "Our Services";
             elseif ($title == "resources") echo "Parent & Teacher Resources";
@@ -30,7 +32,7 @@ get_header(); ?>
         </h1>
         <h3 id="sub_title">Sub Title</h3>
     </section>
-    <div id="nav_touch">
+    <div data-page-title="<?php echo $post->post_name; ?>" id="nav_touch">
         <div id="page_side_nav" class="side_nav">
             <section class="side_bar_1">
                 <div class="close_btn">
@@ -42,6 +44,10 @@ get_header(); ?>
                 switch ($post->post_name):
                     case "kids-corner":
                         include "template-parts/kids-corner-side-nav.php";
+                    break;
+                    case "resources":
+                        include "template-parts/resources-side-nav.php";
+                    break;
                 endswitch ?>
 
             </section>
