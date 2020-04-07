@@ -429,6 +429,7 @@ function load_categories() {
                         //     load_categories();
 
                         // });
+                        
                         break;
                     }
                     offset += curr_per_page_count;
