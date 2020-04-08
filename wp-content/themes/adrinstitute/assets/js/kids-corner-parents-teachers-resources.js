@@ -1,5 +1,6 @@
 var is_yt_client_lib_loaded = false;
 var is_blog_cat_loaded = false;
+var is_reading_cat_loaded = false;
 var is_first_sub_menu_link_loaded = false;
 var post_list;
 var curr_post_offset = Number(0);
@@ -131,20 +132,26 @@ $(document).ready(function () {
     //get all categories and ids from backend.
     $(".you_tube_video_list").children().each(function () {
         video_ids[video_ids.length] = $(this).attr('data-vid-id');
-        video_cate[video_cate.length] = $(this).attr('data-vid-cat');
+        video_cate_val = $(this).attr('data-vid-cat').toLowerCase();
+
+        if (video_cate[video_cate_val] == undefined) {
+            video_cate[video_cate_val] = video_cate_val;
+            video_cate[video_cate.length] = video_cate_val;
+        }
     });
 
     //extract unique categories
     all_video_ids = video_ids;
-    unique_categories = video_cate.unique();
+    //unique_categories = video_cate.unique();
     var ids_str = video_ids.join();
-    unique_categories.unshift("All Videos");//add "All Videos" sub-menu as the first
+    video_cate.unshift("all videos");//add "All Videos" sub-menu as the first
+    console.log(video_cate);
 
-    unique_categories.forEach(function (cate_name, index) {
+    video_cate.forEach(function (cate_name, index) {
         //Adjust disply text
         if (cate_name) {
-            cate_name_as_id = cate_name.replace(/\s/g, '_').toLowerCase();
-            cate_name_capitalized = cate_name.charAt(0).toUpperCase() + cate_name.substr(1);
+            cate_name_as_id = cate_name.replace(/\s/g, '_');// used underscore for spaced words
+            cate_name_capitalized = titleCase(cate_name);
 
             //Append categories text to tab menu and side menu
             $('#instr_videos_menu div').append("<button data-btn-loc=tab data-cat-id=" + cate_name_as_id + " class=" + cate_name_as_id + ">" + cate_name_capitalized + "</button>");
@@ -273,6 +280,61 @@ $(document).ready(function () {
     });
 
     //============================= End of Instructional Videos Content ======================
+
+    //==================================Reading Activities Content===============================
+
+    /*open card to document */
+    $(".reading_activities_card").click(function () {
+        window.open($(this).attr("data-reading-card-url"), "_blank");
+
+    });
+
+    /*generate reading activities category menu*/
+    reading_category_list = [];
+    reading_category_list[0] = "all reading activities";
+    $(".reading_activities_card").each(function (index) {
+
+        category = $(this).attr("data-reading-card-cat");
+        if (reading_category_list[category] == undefined) {
+
+            reading_category_list[category] = category;
+            reading_category_list[reading_category_list.length] = category;
+            cate_name_as_id = category.replace(/\s/g, '_');// used underscore for spaced words
+            cate_name_capitalized = titleCase(category);
+
+            //Append categories text to tab menu and side menu
+            $('#reading_activities_menu  div').append("<button data-btn-loc=tab data-cat-id=" + cate_name_as_id + " class=" + cate_name_as_id + ">" + cate_name_capitalized + "</button>");
+            $('#reading_activities_side_sub_menu').append("<button  data-btn-loc=side_nav data-cat-id=" + cate_name_as_id + " class=" + cate_name_as_id + ">" + cate_name_capitalized + "</button>");
+
+            // call backs to filter category
+            $("." + cate_name_as_id + ":button").click(function () {
+                cat_id = $(this).attr("data-cat-id");
+                if (cat_id == "all_activities") $(".reading_activities_card").removeClass("inactive");
+                else {
+                    $(".reading_activities_card").addClass("inactive");
+                    $("." + cat_id).removeClass("inactive");
+                }
+
+                //add visted css properites when category is clicked
+                $("#reading_activities_menu .tab_submenu button").removeClass("btn_visited");
+                $("#reading_activities_side_sub_menu button").removeClass("btn_visited");
+                $("." + $(this).attr("class")).addClass("btn_visited"); //apply btn visited to the entier class
+
+                //close nav if btn is being accessed from side nav
+                close_side_navigation_bar(this);
+
+                //allow sub-menu button to switch tab when clicked
+                switchTabUsingSubMenu("reading_activities_tab_btn");
+
+            });
+
+
+        }
+
+    });
+
+
+    //==================================End of Reading Activities Content===============================
     //=====================================Tab and Side menu Management=======================================
     //Change currently viewing tab
     $(".tablinks").click(function () {
@@ -301,10 +363,14 @@ $(document).ready(function () {
         // }
 
         if (name == "adri_blog" && !is_blog_cat_loaded) {
-            $(".cat_all").trigger("click");
+            $("#adri_blog_menu .tab_submenu button").eq(0).trigger("click");
             is_blog_cat_loaded = true;
         }
 
+        if (name == "reading_activities" && !is_reading_cat_loaded) {
+            $("#reading_activities_menu .tab_submenu button").eq(0).trigger("click");
+            is_reading_cat_loaded = true;
+        }
 
     });
 
@@ -349,10 +415,18 @@ $(document).ready(function () {
 
 
 //====================================Helper functions=====================================
+function titleCase(str) {
+    var splitStr = str.toLowerCase().split(' ');
+    for (var i = 0; i < splitStr.length; i++) {
+        splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+    }
+    // Directly return the joined string
+    return splitStr.join(' ');
+}
 function highlightPageLink() {
     $(".page_links a").removeClass("active");
     $("[data-offset-val=" + curr_post_offset + "]").addClass("active");
-    if ($("[data-offset-val=" + curr_post_offset + "]").attr("id") == "link_more"){
+    if ($("[data-offset-val=" + curr_post_offset + "]").attr("id") == "link_more") {
         $("[data-offset-val=" + curr_post_offset + "]").trigger("click");
     }
     $(".page_links a").each(function (element, index) {
@@ -429,7 +503,7 @@ function load_categories() {
                         //     load_categories();
 
                         // });
-                        
+
                         break;
                     }
                     offset += curr_per_page_count;

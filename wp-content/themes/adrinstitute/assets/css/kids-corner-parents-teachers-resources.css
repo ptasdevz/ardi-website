@@ -94,6 +94,8 @@ body .page_container #page_main .content_area .resources_content_area {
   position: inherit;
   /*styling for tab menu for kids corner and resrouces mobile*/
   /*End of styling for tab menu for kids corner and resrouces mobile*/
+  /*Styling for Reading Activities*/
+  /*End Styling Reading Activities*/
   /*Blog Content Mobile-Phones*/
   /*End of Blog Content Mobile-Phones*/
   /*Instructinonal videos content mobile*/
@@ -226,6 +228,60 @@ body .page_container #page_main .content_area .resources_content_area .tabconten
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards,
+body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(20rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-gap: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
+body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card,
+body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card {
+  border: 1px solid #c9c9c9;
+  -webkit-box-shadow: 1px 1px 4px #c9c9c9;
+          box-shadow: 1px 1px 4px #c9c9c9;
+  border-radius: 2px;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card .card_img,
+body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card .card_img {
+  width: 250px;
+  height: 250px;
+  background-color: cornflowerblue;
+}
+
+body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card .card_data,
+body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card .card_data {
+  padding: 0.5rem;
+  background: #fff;
+}
+
+body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card:hover,
+body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card:hover {
+  cursor: pointer;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  -webkit-animation: boxShadowZoomIn 1s;
+          animation: boxShadowZoomIn 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_card.inactive,
+body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_card.inactive {
+  display: none;
 }
 
 body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content,
@@ -739,6 +795,8 @@ body .page_container #page_main .content_area .resources_content_area .resources
     /*End of Blog Content Desktop*/
     /*Instructinonal Videos Desktop*/
     /*End of Instructinonal Videos Desktop*/
+    /*Styling for Reading Activities Desktop*/
+    /*End Styling Reading Activities Desktop*/
     /*General styling for all tabs Desktop*/
     /*End of General styling for all tabs Desktop*/
   }
@@ -941,7 +999,6 @@ body .page_container #page_main .content_area .resources_content_area .resources
   body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content,
   body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content {
     width: 65rem;
-    /*End of Instructinonal Videos Desktop*/
   }
   body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content .player_class,
   body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class {
@@ -982,6 +1039,10 @@ body .page_container #page_main .content_area .resources_content_area .resources
             animation: videoPlayerMaximize 0s;
     -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
+  }
+  body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content,
+  body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content {
+    width: 80%;
   }
   body .page_container #page_main .content_area .kids_content_area .tabcontent,
   body .page_container #page_main .content_area .resources_content_area .tabcontent {

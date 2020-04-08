@@ -6,7 +6,7 @@
         $body = $video_list['body'];
         $count = count($body);
         for ($i = 0; $i < $count; $i++) :
-            $is_active = $body[$i][3]['c'];
+            $is_active = strtolower($body[$i][3]['c']);
             if ($is_active == 'yes') : ?>
                 <div data-vid-id="<?php echo $body[$i][0]['c']; ?>" data-vid-cat="<?php echo $body[$i][1]['c']; ?>"></div>
             <?php endif;
@@ -19,10 +19,10 @@
         $body = $video_list['body'];
         $count = count($body);
         for ($i = 0; $i < $count; $i++) :
-            $is_active = $body[$i][3]['c'];
+            $is_active = strtolower($body[$i][3]['c']);
             if ($is_active == 'yes') :
             ?>
-                <div data-vid-id="<?php echo $body[$i][0]['c']; ?>" data-vid-cat="<?php echo $body[$i][1]['c']; ?>"></div>
+            <div data-vid-id="<?php echo $body[$i][0]['c']; ?>" data-vid-cat="<?php echo $body[$i][1]['c']; ?>"></div>
     <?php endif;
         endfor;
     endif; ?>

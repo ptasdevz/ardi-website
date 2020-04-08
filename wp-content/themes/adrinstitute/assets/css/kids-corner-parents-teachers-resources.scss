@@ -47,7 +47,7 @@ body {
             border-radius: 2px;
             width: 100%;
             margin: 0 auto;
-            background:color(base-1);
+            background: color(base-1);
             position: sticky;
             top: 72px;
             .tab_wrapper {
@@ -115,6 +115,44 @@ body {
             }
             /* End of spinner styling for asynchronous loading of content*/
           }
+          /*Styling for Reading Activities*/
+          .reading_activities_tab_content {
+     
+            .reading_activities_cards {
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+              grid-gap: 1rem;
+              align-items: center;
+              justify-items: center;
+
+              .reading_activities_card {
+                border: 1px solid color(accent-4);
+                box-shadow: 1px 1px 4px color(accent-4);
+                border-radius: 2px;
+                transition: transform 1s;
+                .card_img {
+                  width: 250px;
+                  height: 250px;
+                  background-color: cornflowerblue;
+                }
+                .card_data{
+                  padding: 0.5rem;
+                  background:color(base-1);
+
+                }
+                &:hover {
+                  cursor: pointer;
+                  transform: scale($transform-scale-factor);
+                  animation: boxShadowZoomIn 1s;
+                  animation-fill-mode: forwards;
+                }
+              }
+            }
+            .reading_activities_card.inactive{
+              display:none;
+            }
+          }
+          /*End Styling Reading Activities*/
 
           /*Blog Content Mobile-Phones*/
           .adri_blog_tab_content {
@@ -200,21 +238,21 @@ body {
               justify-content: center;
               border: 1px solid color(accent-4);
               border-radius: 2px;
-              background: rgba(255,255,255,0.96);
-              margin:0 auto 0.3rem auto;
+              background: rgba(255, 255, 255, 0.96);
+              margin: 0 auto 0.3rem auto;
               width: 100%;
-              position:sticky;
-              top:217px;
+              position: sticky;
+              top: 217px;
               i {
                 cursor: pointer;
               }
-              .page_links a{
+              .page_links a {
                 padding-right: 1rem;
                 cursor: pointer;
                 color: color(primary);
                 visibility: hidden;
               }
-              .page_links a.active{
+              .page_links a.active {
                 font-weight: bold;
               }
 
@@ -518,7 +556,7 @@ body {
                 .adri_blog_navigation_content {
                   padding: 0.5rem 4.5rem;
                 }
-                .page_links a{
+                .page_links a {
                   padding-right: 1rem;
                 }
               }
@@ -551,7 +589,7 @@ body {
               display: flex;
               align-items: center;
               justify-content: center;
-              background: rgba(0,0,0,0);
+              background: rgba(0, 0, 0, 0);
               top: 96px;
             }
             .kids_corner_tab,
@@ -631,8 +669,8 @@ body {
                   background-color: color(primary);
                 }
               }
-              .tab_wrapper{
-                background: rgba(255,255,255,0.96);
+              .tab_wrapper {
+                background: rgba(255, 255, 255, 0.96);
               }
             }
             /*End of styling for tab menu for kids corner and resrouces Desktop*/
@@ -678,7 +716,7 @@ body {
               }
               /*adri blog navigation*/
               .adri_blog_navigation {
-                top:156px;
+                top: 156px;
                 .adri_blog_navigation_content {
                   padding: 0.5rem 2rem;
                 }
@@ -721,9 +759,19 @@ body {
                 animation: videoPlayerMaximize 0s; //player restore animation
                 animation-fill-mode: forwards;
               }
-              /*End of Instructinonal Videos Desktop*/
             }
             /*End of Instructinonal Videos Desktop*/
+
+            /*Styling for Reading Activities Desktop*/
+            .reading_activities_tab_content {
+              width: 80%;
+             
+              .reading_activities_cards {
+               
+              }
+             
+            }
+            /*End Styling Reading Activities Desktop*/
 
             /*General styling for all tabs Desktop*/
             .tabcontent {
