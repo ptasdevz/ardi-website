@@ -115,31 +115,38 @@ body {
             }
             /* End of spinner styling for asynchronous loading of content*/
           }
-          /*Styling for Reading Activities*/
-          .reading_activities_tab_content {
+          /*Styling for Reading and Worksheets Activities*/
+          .reading_activities_tab_content, 
+          .worksheets_tab_content {
      
-            .reading_activities_cards {
+            .reading_activities_cards, 
+            .worksheets_cards {
               display: grid;
               grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
               grid-gap: 1rem;
               align-items: center;
               justify-items: center;
 
-              .reading_activities_card {
+              .reading_activities_card, 
+              .worksheets_card {
+                
                 border: 1px solid color(accent-4);
                 box-shadow: 1px 1px 4px color(accent-4);
                 border-radius: 2px;
                 transition: transform 1s;
+
                 .card_img {
-                  width: 250px;
-                  height: 250px;
-                  background-color: cornflowerblue;
+                  width: 200px;
+                  height: 200px;
+                  background-color:color(accent-1);
                 }
-                .card_data{
+
+                .card_data{ 
                   padding: 0.5rem;
                   background:color(base-1);
-
+                  border-top: 1px solid color(accent-4);
                 }
+
                 &:hover {
                   cursor: pointer;
                   transform: scale($transform-scale-factor);
@@ -148,11 +155,12 @@ body {
                 }
               }
             }
-            .reading_activities_card.inactive{
+            .reading_activities_card.inactive,
+            .worksheets_card.inactive{
               display:none;
             }
           }
-          /*End Styling Reading Activities*/
+          /*End Styling Reading Activities  and Worksheets */
 
           /*Blog Content Mobile-Phones*/
           .adri_blog_tab_content {
@@ -762,16 +770,12 @@ body {
             }
             /*End of Instructinonal Videos Desktop*/
 
-            /*Styling for Reading Activities Desktop*/
-            .reading_activities_tab_content {
+            /*Styling for Reading Activities and Worksheets Desktop*/
+            .reading_activities_tab_content,.worksheets_tab_content {
               width: 80%;
              
-              .reading_activities_cards {
-               
-              }
-             
             }
-            /*End Styling Reading Activities Desktop*/
+            /*End Styling Reading Activities and Worksheets  Desktop*/
 
             /*General styling for all tabs Desktop*/
             .tabcontent {

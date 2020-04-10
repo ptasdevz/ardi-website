@@ -1,6 +1,9 @@
 <?php
 
 // Custom comment walker.
+
+use function YoastSEO_Vendor\GuzzleHttp\Psr7\str;
+
 require get_template_directory() . '/classes/class-adri-walker-comment.php';
 
 require get_template_directory() . '/inc/template-tags.php';
@@ -153,6 +156,8 @@ function load_footer_scripts()
 }
 add_action('wp_footer', 'load_footer_scripts');
 
+
+
 /*Custom logo*/
 function custom_loginlogo()
 {
@@ -188,6 +193,25 @@ function adri_template_redirect()
         header('Content-Length: ' . filesize($f));
         echo file_get_contents($f);
     }
+}
+
+//retrieves the attachment ID from the file URL
+function adri_get_image_id($image_url) {
+    global $wpdb;
+    $attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE guid='%s';", $image_url )); 
+        return $attachment[0]; 
+}
+//capitalize each word in a string
+function adri_capitalize_each_word($str_complete){
+    $str_arr = explode(" ",strtolower($str_complete));
+    $length = count($str_arr);
+    $str_captitalize_complete="";
+    for($i =0; $i<$length; $i++){
+        $str = $str_arr[$i];
+        if ($i + 1 < $length) $str_captitalize_complete .= ucfirst($str). " ";
+        else $str_captitalize_complete .= ucfirst($str);
+    }
+    return $str_captitalize_complete;
 }
 
 

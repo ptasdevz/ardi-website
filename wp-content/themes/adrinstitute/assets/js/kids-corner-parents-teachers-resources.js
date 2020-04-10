@@ -1,6 +1,7 @@
 var is_yt_client_lib_loaded = false;
 var is_blog_cat_loaded = false;
 var is_reading_cat_loaded = false;
+var is_worksheet_cat_loaded = false;
 var is_first_sub_menu_link_loaded = false;
 var post_list;
 var curr_post_offset = Number(0);
@@ -154,12 +155,12 @@ $(document).ready(function () {
             cate_name_capitalized = titleCase(cate_name);
 
             //Append categories text to tab menu and side menu
-            $('#instr_videos_menu div').append("<button data-btn-loc=tab data-cat-id=" + cate_name_as_id + " class=" + cate_name_as_id + ">" + cate_name_capitalized + "</button>");
-            $('#instr_videos_side_sub_menu').append("<button  data-btn-loc=side_nav data-cat-id=" + cate_name_as_id + " class=" + cate_name_as_id + ">" + cate_name_capitalized + "</button>");
+            $('#instr_videos_menu div').append("<button data-btn-loc=tab data-cat-id=" + cate_name_as_id + " class=instr_video_" + cate_name_as_id + ">" + cate_name_capitalized + "</button>");
+            $('#instr_videos_side_sub_menu').append("<button  data-btn-loc=side_nav data-cat-id=" + cate_name_as_id + " class=instr_video_" + cate_name_as_id + ">" + cate_name_capitalized + "</button>");
 
 
             //Setup callback on buttons for categories
-            $("." + cate_name_as_id).click(function (e) {
+            $(".instr_video_" + cate_name_as_id).click(function (e) {
                 e.preventDefault();
                 $cat_id = $(this).attr("data-cat-id");
                 if ($cat_id == "all_videos") {
@@ -303,11 +304,11 @@ $(document).ready(function () {
             cate_name_capitalized = titleCase(category);
 
             //Append categories text to tab menu and side menu
-            $('#reading_activities_menu  div').append("<button data-btn-loc=tab data-cat-id=" + cate_name_as_id + " class=" + cate_name_as_id + ">" + cate_name_capitalized + "</button>");
-            $('#reading_activities_side_sub_menu').append("<button  data-btn-loc=side_nav data-cat-id=" + cate_name_as_id + " class=" + cate_name_as_id + ">" + cate_name_capitalized + "</button>");
+            $('#reading_activities_menu  div').append("<button data-btn-loc=tab data-cat-id=" + cate_name_as_id + " class=reading_activity_" + cate_name_as_id + ">" + cate_name_capitalized + "</button>");
+            $('#reading_activities_side_sub_menu').append("<button  data-btn-loc=side_nav data-cat-id=" + cate_name_as_id + " class=reading_activity_" + cate_name_as_id + ">" + cate_name_capitalized + "</button>");
 
             // call backs to filter category
-            $("." + cate_name_as_id + ":button").click(function () {
+            $(".reading_activity_" + cate_name_as_id + ":button").click(function () {
                 cat_id = $(this).attr("data-cat-id");
                 if (cat_id == "all_activities") $(".reading_activities_card").removeClass("inactive");
                 else {
@@ -325,15 +326,58 @@ $(document).ready(function () {
 
                 //allow sub-menu button to switch tab when clicked
                 switchTabUsingSubMenu("reading_activities_tab_btn");
-
             });
-
-
         }
+    });
+    //==================================End of Reading Activities Content===============================
+
+     //==================================Worksheets Content===============================
+
+    /*open card to document */
+    $(".worksheets_card").click(function () {
+        window.open($(this).attr("data-worksheet-card-url"), "_blank");
 
     });
 
+    /*generate worksheet category menu*/
+    worksheet_category_list = [];
+    worksheet_category_list[0] = "all worksheets";
+    $(".worksheets_card").each(function (index) {
 
+        category = $(this).attr("data-worksheet-card-cat");
+        if (worksheet_category_list[category] == undefined) {
+
+            worksheet_category_list[category] = category;
+            worksheet_category_list[reading_category_list.length] = category;
+            cate_name_as_id = category.replace(/\s/g, '_');// used underscore for spaced words
+            cate_name_capitalized = titleCase(category);
+
+            //Append categories text to tab menu and side menu
+            $('#worksheets_menu  div').append("<button data-btn-loc=tab data-cat-id=" + cate_name_as_id + " class=worksheet_" + cate_name_as_id + ">" + cate_name_capitalized + "</button>");
+            $('#worksheets_side_sub_menu').append("<button  data-btn-loc=side_nav data-cat-id=" + cate_name_as_id + " class=worksheet_" + cate_name_as_id + ">" + cate_name_capitalized + "</button>");
+
+            // call backs to filter category
+            $(".worksheet_" + cate_name_as_id + ":button").click(function () {
+                cat_id = $(this).attr("data-cat-id");
+                if (cat_id == "all_worksheets") $(".worksheets_card").removeClass("inactive");
+                else {
+                    $(".worksheets_card").addClass("inactive");
+                    $("." + cat_id).removeClass("inactive");
+                }
+
+                //add visted css properites when category is clicked
+                $("#worksheets_menu .tab_submenu button").removeClass("btn_visited");
+                $("#worksheets_side_sub_menu button").removeClass("btn_visited");
+                $("." + $(this).attr("class")).addClass("btn_visited"); //apply btn visited to the entier class
+
+                //close nav if btn is being accessed from side nav
+                close_side_navigation_bar(this);
+
+                //allow sub-menu button to switch tab when clicked
+                switchTabUsingSubMenu("worksheets_tab_btn");
+            });
+        }
+    });
     //==================================End of Reading Activities Content===============================
     //=====================================Tab and Side menu Management=======================================
     //Change currently viewing tab
@@ -372,12 +416,17 @@ $(document).ready(function () {
             is_reading_cat_loaded = true;
         }
 
+        if (name == "worksheets" && !is_reading_cat_loaded) {
+            $("#worksheets_menu .tab_submenu button").eq(0).trigger("click");
+            is_worksheet_cat_loaded = true;
+        }
+
     });
 
     /*Auto-redirection to specific tabs */
 
     //initialize default menu-tab for sections
-    var default_kids_corner = ".kids_corner_tab .tab_wrapper #instr_videos_menu .tab_submenu .all_videos";
+    var default_kids_corner = ".kids_corner_tab .tab_wrapper #instr_videos_menu .tab_submenu .instr_video_all_videos";
     //var default_resources = ".resources_tab .tab_wrapper #adri_blog_menu #adri_blog_tab_btn";
     var default_resources = ".resources_tab .tab_wrapper #adri_blog_menu .tab_submenu .cat_all";
 

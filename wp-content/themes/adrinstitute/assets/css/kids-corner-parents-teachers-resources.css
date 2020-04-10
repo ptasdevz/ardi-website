@@ -94,8 +94,8 @@ body .page_container #page_main .content_area .resources_content_area {
   position: inherit;
   /*styling for tab menu for kids corner and resrouces mobile*/
   /*End of styling for tab menu for kids corner and resrouces mobile*/
-  /*Styling for Reading Activities*/
-  /*End Styling Reading Activities*/
+  /*Styling for Reading and Worksheets Activities*/
+  /*End Styling Reading Activities  and Worksheets */
   /*Blog Content Mobile-Phones*/
   /*End of Blog Content Mobile-Phones*/
   /*Instructinonal videos content mobile*/
@@ -231,7 +231,13 @@ body .page_container #page_main .content_area .resources_content_area .tabconten
 }
 
 body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards,
-body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards {
+body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards,
+body .page_container #page_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards,
+body .page_container #page_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards,
+body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards,
+body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards,
+body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards,
+body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(20rem, 1fr))[auto-fit];
@@ -244,7 +250,21 @@ body .page_container #page_main .content_area .resources_content_area .reading_a
 }
 
 body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card,
-body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card {
+body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card,
+body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card,
+body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card,
+body .page_container #page_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card,
+body .page_container #page_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card,
+body .page_container #page_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card,
+body .page_container #page_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .worksheets_card,
+body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card,
+body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card,
+body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card,
+body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card,
+body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card,
+body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card,
+body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card,
+body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .worksheets_card {
   border: 1px solid #c9c9c9;
   -webkit-box-shadow: 1px 1px 4px #c9c9c9;
           box-shadow: 1px 1px 4px #c9c9c9;
@@ -256,20 +276,63 @@ body .page_container #page_main .content_area .resources_content_area .reading_a
 }
 
 body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card .card_img,
-body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card .card_img {
-  width: 250px;
-  height: 250px;
-  background-color: cornflowerblue;
+body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card .card_img,
+body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card .card_img,
+body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card .card_img,
+body .page_container #page_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card .card_img,
+body .page_container #page_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card .card_img,
+body .page_container #page_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card .card_img,
+body .page_container #page_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .worksheets_card .card_img,
+body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card .card_img,
+body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card .card_img,
+body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card .card_img,
+body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card .card_img,
+body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card .card_img,
+body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card .card_img,
+body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card .card_img,
+body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .worksheets_card .card_img {
+  width: 200px;
+  height: 200px;
+  background-color: #fdf9f2;
 }
 
 body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card .card_data,
-body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card .card_data {
+body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card .card_data,
+body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card .card_data,
+body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card .card_data,
+body .page_container #page_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card .card_data,
+body .page_container #page_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card .card_data,
+body .page_container #page_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card .card_data,
+body .page_container #page_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .worksheets_card .card_data,
+body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card .card_data,
+body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card .card_data,
+body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card .card_data,
+body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card .card_data,
+body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card .card_data,
+body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card .card_data,
+body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card .card_data,
+body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .worksheets_card .card_data {
   padding: 0.5rem;
   background: #fff;
+  border-top: 1px solid #c9c9c9;
 }
 
 body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card:hover,
-body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card:hover {
+body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card:hover,
+body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card:hover,
+body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card:hover,
+body .page_container #page_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card:hover,
+body .page_container #page_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card:hover,
+body .page_container #page_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card:hover,
+body .page_container #page_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .worksheets_card:hover,
+body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card:hover,
+body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card:hover,
+body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card:hover,
+body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card:hover,
+body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card:hover,
+body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card:hover,
+body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card:hover,
+body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .worksheets_card:hover {
   cursor: pointer;
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
@@ -280,7 +343,13 @@ body .page_container #page_main .content_area .resources_content_area .reading_a
 }
 
 body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_card.inactive,
-body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_card.inactive {
+body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_card.inactive,
+body .page_container #page_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_card.inactive,
+body .page_container #page_main .content_area .kids_content_area .worksheets_tab_content .worksheets_card.inactive,
+body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_card.inactive,
+body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_card.inactive,
+body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_card.inactive,
+body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_card.inactive {
   display: none;
 }
 
@@ -795,8 +864,8 @@ body .page_container #page_main .content_area .resources_content_area .resources
     /*End of Blog Content Desktop*/
     /*Instructinonal Videos Desktop*/
     /*End of Instructinonal Videos Desktop*/
-    /*Styling for Reading Activities Desktop*/
-    /*End Styling Reading Activities Desktop*/
+    /*Styling for Reading Activities and Worksheets Desktop*/
+    /*End Styling Reading Activities and Worksheets  Desktop*/
     /*General styling for all tabs Desktop*/
     /*End of General styling for all tabs Desktop*/
   }
@@ -1040,8 +1109,9 @@ body .page_container #page_main .content_area .resources_content_area .resources
     -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
   }
-  body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content,
-  body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content {
+  body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content, body .page_container #page_main .content_area .kids_content_area .worksheets_tab_content,
+  body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content,
+  body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content {
     width: 80%;
   }
   body .page_container #page_main .content_area .kids_content_area .tabcontent,
