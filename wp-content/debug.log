@@ -1963,3 +1963,4 @@ Stack trace:
 [10-Apr-2020 21:22:38 UTC] PHP Notice:  Undefined variable: str_captitalize_complete in C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\functions.php on line 211
 [10-Apr-2020 21:22:38 UTC] PHP Notice:  Undefined variable: str_captitalize_complete in C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\functions.php on line 210
 [10-Apr-2020 21:22:38 UTC] PHP Notice:  Undefined variable: str_captitalize_complete in C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\functions.php on line 210
+[11-Apr-2020 19:11:51 UTC] PHP Notice:  Undefined variable: cat_name in C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\single.php on line 14

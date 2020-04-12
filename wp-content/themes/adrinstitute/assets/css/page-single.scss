@@ -1,8 +1,10 @@
 @import "../../style.scss";
 body {
   .container {
-    .page_container {
+    .page_container,
+    .post_container {
       .content_title {
+      
         text-align: center;
         color: color(secondary);
         padding: 0.5rem;
@@ -117,7 +119,7 @@ body {
           "content_title_white_space content_title"
           "side_nav      content_area";
 
-        #page_main {
+        #page_main,#post_main {
           grid-area: content_area;
         }
 

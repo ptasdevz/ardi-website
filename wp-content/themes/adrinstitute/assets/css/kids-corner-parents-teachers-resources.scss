@@ -1,18 +1,21 @@
 @import "../../style.scss";
 
 body {
-  .page_container {
+  .page_container,
+  .post_container {
     background: color(base-1);
 
     /*Default layout - mobile first*/
-    #page_main {
+    #page_main,
+    #post_main {
       position: relative;
 
       /*styling for tab menu and content for kids corner and resrouces- default layout*/
       .content_area {
         position: inherit;
         .kids_content_area::before,
-        .resources_content_area::before {
+        .resources_content_area::before,
+        .post_content_area:before {
           position: absolute;
           content: "";
           background-size: cover;
@@ -27,7 +30,8 @@ body {
           background-image: url("../../../../uploads/2020/03/kids_corner-550x550.png");
           background-size: cover;
         }
-        .resources_content_area::before {
+        .resources_content_area::before,
+        .post_content_area::before {
           background-image: url("../../../../uploads/2020/03/pt_resources-550x550.png");
           background-size: cover;
         }
@@ -116,10 +120,9 @@ body {
             /* End of spinner styling for asynchronous loading of content*/
           }
           /*Styling for Reading and Worksheets Activities*/
-          .reading_activities_tab_content, 
+          .reading_activities_tab_content,
           .worksheets_tab_content {
-     
-            .reading_activities_cards, 
+            .reading_activities_cards,
             .worksheets_cards {
               display: grid;
               grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
@@ -127,9 +130,8 @@ body {
               align-items: center;
               justify-items: center;
 
-              .reading_activities_card, 
+              .reading_activities_card,
               .worksheets_card {
-                
                 border: 1px solid color(accent-4);
                 box-shadow: 1px 1px 4px color(accent-4);
                 border-radius: 2px;
@@ -138,12 +140,12 @@ body {
                 .card_img {
                   width: 200px;
                   height: 200px;
-                  background-color:color(accent-1);
+                  background-color: color(accent-1);
                 }
 
-                .card_data{ 
+                .card_data {
                   padding: 0.5rem;
-                  background:color(base-1);
+                  background: color(base-1);
                   border-top: 1px solid color(accent-4);
                 }
 
@@ -156,8 +158,8 @@ body {
               }
             }
             .reading_activities_card.inactive,
-            .worksheets_card.inactive{
-              display:none;
+            .worksheets_card.inactive {
+              display: none;
             }
           }
           /*End Styling Reading Activities  and Worksheets */
@@ -280,6 +282,7 @@ body {
             }
             /*End of adri blog navigation*/
           }
+
           /*End of Blog Content Mobile-Phones*/
 
           /*Instructinonal videos content mobile*/
@@ -394,6 +397,130 @@ body {
             font-weight: bold;
           }
         }
+
+        /*blog page styling default styling*/
+        .post_content_area {
+          .post_content_area_data{
+           
+            position: inherit;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: 100%;
+            grid-gap: 0.5rem;
+            grid-template-areas:
+              "breadcrumb_nav"
+              "post_content"
+              "post_meta_content";
+  
+            .bread_crumb_nav {
+              grid-area: breadcrumb_nav;
+              z-index: 19;
+              position: sticky;
+              top: $header-height-mobile;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background-color: #eee;
+              padding: 0.5rem 0;
+              margin-bottom: 1rem;
+              .breadcrumb {
+                list-style: none;
+                padding: 0;
+                li {
+                  display: inline;
+                  a {
+                    color: color(primary);
+                    text-decoration: none;
+                  }
+                }
+                li + li:before {
+                  padding: 8px;
+                  color: #000;
+                  content: "\003E";
+                }
+              }
+            }
+            .post_wrapper {
+              grid-area: post_content;
+              z-index: 10;
+              //border: 1px solid green;
+              .post_header {
+                //blog title
+                h1 {
+                  padding-bottom: 1rem;
+                  color: #000;
+                  text-align: center;
+                }
+                //blog meta data
+                p {
+                  padding-bottom: 1rem;
+                  color: color(primary);
+                  text-align: center;
+                }
+              }
+              .img_container {
+                border-radius: 2px;
+                img {
+                  width: 100%;
+                }
+              }
+              .post_content {
+              }
+              .post_nav_container {
+                margin: 1rem 0;
+                .pagination_single {
+                  .pagination_single_inner {
+                    a {
+                      padding: 0.25rem;
+                      text-decoration: none;
+                      .title {
+                        position: relative;
+                        display: inline-block;
+                        border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+                      }
+                      &:hover .title .title_inner {
+                        visibility: visible;
+                      }
+                      .title .title_inner {
+                        visibility: hidden;
+                        width: auto;
+                        background-color:rgba(0,0,0,0.75);
+                        color: #fff;
+                        text-align: center;
+                        border-radius: 2px;
+  
+                        /* Position the tooltip text at top*/
+                        position: absolute;
+                        width: 120px;
+                        bottom: 2rem;
+                        left: 50%;
+                        margin-left: -5.5rem;
+                      }
+  
+                      .arrow {
+                        background: color(primary);
+                        padding: 0.5rem 1.5rem;
+                        color: white;
+                        border-radius: 2px;
+                      }
+                    }
+                    .previous_post {
+                    }
+                    .next_post {
+                      float: right;
+                    }
+                  }
+                }
+              }
+            }
+            .post_meta_content {
+              grid-area: post_meta_content;
+              z-index: 10;
+              //border: 1px solid red;
+            }
+          }
+        }
+        /*End of blog page styling default styling*/
       }
       /*End of styling for tab menu and content for kids corner and resrouces- default layout*/
 
@@ -585,7 +712,8 @@ body {
       }
       grid-template-columns: 0% 100% !important; //allow content to cover full-width
 
-      #page_main {
+      #page_main,
+      #post_main {
         /*styling for tab menu and content for kids corner and resrouces Desktop*/
         .content_area {
           .kids_content_area,
@@ -771,9 +899,9 @@ body {
             /*End of Instructinonal Videos Desktop*/
 
             /*Styling for Reading Activities and Worksheets Desktop*/
-            .reading_activities_tab_content,.worksheets_tab_content {
+            .reading_activities_tab_content,
+            .worksheets_tab_content {
               width: 80%;
-             
             }
             /*End Styling Reading Activities and Worksheets  Desktop*/
 
@@ -782,6 +910,34 @@ body {
               margin: 0 auto;
             }
             /*End of General styling for all tabs Desktop*/
+          }
+          .post_content_area {
+            .post_content_area_data{
+              width:80%;
+              margin: 0 auto;
+              grid-template-columns: 70% 30%;
+              grid-template-areas:
+                "breadcrumb_nav post_meta_content"
+                "post_content post_meta_content";
+  
+              .bread_crumb_nav {
+                justify-content: left;
+                align-items: left;
+              }
+              .post_wrapper {
+                .post_header {
+                  h1 {
+                    text-align: left;
+                  }
+                  p {
+                    text-align: left;
+                  }
+                }
+                .post_content {
+                  //padding: 1rem;
+                }
+              }
+            }
           }
         }
         /*End of styling for tab menu and content for kids corner and resrouces Desktop*/

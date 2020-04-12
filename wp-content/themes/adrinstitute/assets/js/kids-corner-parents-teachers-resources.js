@@ -630,9 +630,11 @@ function onYouTubeIframeAPIReady(vid_id) {
         // height: 'auto',
         // width: 'auto',
         videoId: vid_id,
+        playerVars: {
+            end: 0, autoplay: 1, loop: 0, controls: 1, showinfo: 0, modestbranding: 1, fs: 0, cc_load_policty: 0, iv_load_policy: 3, autohide: 0
+          },
         events: {
             'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
         }
     });
 }
