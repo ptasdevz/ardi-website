@@ -1430,22 +1430,11 @@ body .post_container #post_main .content_area .post_content_area .post_content_a
   text-align: center;
 }
 
-<<<<<<< HEAD
-=======
-body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .img_container,
-body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .img_container,
-body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .img_container,
-body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .img_container {
-  border-radius: 2px;
-}
-
->>>>>>> bff18dff1bac8b408697d5c89fa6194f7b817afe
 body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .img_container img,
 body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .img_container img,
 body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .img_container img,
 body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .img_container img {
   width: 100%;
-<<<<<<< HEAD
   border-radius: 2px;
 }
 
@@ -1456,8 +1445,14 @@ body .post_container #post_main .content_area .post_content_area .post_content_a
   background: #fff;
   border-radius: 2px;
   padding: .5rem;
-=======
->>>>>>> bff18dff1bac8b408697d5c89fa6194f7b817afe
+  border-radius: 2px;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_content img,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_content img,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_content img,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_content img {
+  width: 100%;
 }
 
 body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container,
