@@ -631,11 +631,7 @@ function onYouTubeIframeAPIReady(vid_id) {
         // width: 'auto',
         videoId: vid_id,
         playerVars: {
-<<<<<<< HEAD
             end: 0, autoplay: 1, loop: 0, controls: 1, showinfo: 0, modestbranding: 1, fs: 1, cc_load_policty: 0, iv_load_policy: 3, autohide: 0
-=======
-            end: 0, autoplay: 1, loop: 0, controls: 1, showinfo: 0, modestbranding: 1, fs: 0, cc_load_policty: 0, iv_load_policy: 3, autohide: 0
->>>>>>> bff18dff1bac8b408697d5c89fa6194f7b817afe
           },
         events: {
             'onReady': onPlayerReady,
