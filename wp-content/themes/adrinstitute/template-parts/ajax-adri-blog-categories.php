@@ -58,6 +58,7 @@ function get_blog_by_category()
         $d = strtotime($post->post_date);
         $date_formatted = date("F j, Y", $d);
         $post->date_formatted = $date_formatted;
+
     }
     $result["post_count"] = $post_count;
     $result["category_name"] = get_cat_name($cat_id);

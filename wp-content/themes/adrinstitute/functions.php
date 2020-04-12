@@ -8,6 +8,9 @@ require get_template_directory() . '/classes/class-adri-walker-comment.php';
 
 require get_template_directory() . '/inc/template-tags.php';
 
+/*using ajax to get blog categories data */
+include get_template_directory() . "/template-parts/ajax-adri-blog-categories.php";
+
 //enqueue css style sheets
 function load_style_sheets()
 {
@@ -76,8 +79,8 @@ function load_style_sheets()
     wp_enqueue_style('front-page');
 
 
-    wp_register_style('page', get_template_directory_uri() . '/assets/css/page.css', array(), false, 'all');
-    wp_enqueue_style('page');
+    wp_register_style('page-single', get_template_directory_uri() . '/assets/css/page-single.css', array(), false, 'all');
+    wp_enqueue_style('page-single');
 
     wp_register_style('kids-corner-parents-teachers-resources', get_template_directory_uri() . '/assets/css/kids-corner-parents-teachers-resources.css', array(), false, 'all');
     wp_enqueue_style('kids-corner-parents-teachers-resources');
@@ -235,8 +238,7 @@ remove_filter('the_excerpt', 'wpautop');
 /*using ajax to get videos */
 //include get_template_directory() . "/templates/kids-corner-content.php";
 
-/*using ajax to get blog categories data */
-include get_template_directory() . "/template-parts/ajax-adri-blog-categories.php";
+
 
 /*Filter to only view excerpt of full content on the service page */
 function service_content_excerpt($text, $excerpt_length)

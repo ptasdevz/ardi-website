@@ -34,7 +34,8 @@ body .container #overlay {
   cursor: pointer;
 }
 
-body .page_container {
+body .page_container,
+body .post_container {
   background: #fff;
   /*Default layout - mobile first*/
   /*Tablet layout*/
@@ -46,7 +47,10 @@ body .page_container {
     */
 }
 
-body .page_container #page_main {
+body .page_container #page_main,
+body .page_container #post_main,
+body .post_container #page_main,
+body .post_container #post_main {
   position: relative;
   /*styling for tab menu and content for kids corner and resrouces- default layout*/
   /*End of styling for tab menu and content for kids corner and resrouces- default layout*/
@@ -58,12 +62,25 @@ body .page_container #page_main {
   /*End of animaniton effects used on differnt tab sections*/
 }
 
-body .page_container #page_main .content_area {
+body .page_container #page_main .content_area,
+body .page_container #post_main .content_area,
+body .post_container #page_main .content_area,
+body .post_container #post_main .content_area {
   position: inherit;
 }
 
 body .page_container #page_main .content_area .kids_content_area::before,
-body .page_container #page_main .content_area .resources_content_area::before {
+body .page_container #page_main .content_area .resources_content_area::before,
+body .page_container #page_main .content_area .post_content_area:before,
+body .page_container #post_main .content_area .kids_content_area::before,
+body .page_container #post_main .content_area .resources_content_area::before,
+body .page_container #post_main .content_area .post_content_area:before,
+body .post_container #page_main .content_area .kids_content_area::before,
+body .post_container #page_main .content_area .resources_content_area::before,
+body .post_container #page_main .content_area .post_content_area:before,
+body .post_container #post_main .content_area .kids_content_area::before,
+body .post_container #post_main .content_area .resources_content_area::before,
+body .post_container #post_main .content_area .post_content_area:before {
   position: absolute;
   content: "";
   background-size: cover;
@@ -75,22 +92,43 @@ body .page_container #page_main .content_area .resources_content_area::before {
   border-radius: 8px;
 }
 
-body .page_container #page_main .content_area .kids_content_area::before {
+body .page_container #page_main .content_area .kids_content_area::before,
+body .page_container #post_main .content_area .kids_content_area::before,
+body .post_container #page_main .content_area .kids_content_area::before,
+body .post_container #post_main .content_area .kids_content_area::before {
   background-image: url("../../../../uploads/2020/03/kids_corner-550x550.png");
   background-size: cover;
 }
 
-body .page_container #page_main .content_area .resources_content_area::before {
+body .page_container #page_main .content_area .resources_content_area::before,
+body .page_container #page_main .content_area .post_content_area::before,
+body .page_container #post_main .content_area .resources_content_area::before,
+body .page_container #post_main .content_area .post_content_area::before,
+body .post_container #page_main .content_area .resources_content_area::before,
+body .post_container #page_main .content_area .post_content_area::before,
+body .post_container #post_main .content_area .resources_content_area::before,
+body .post_container #post_main .content_area .post_content_area::before {
   background-image: url("../../../../uploads/2020/03/pt_resources-550x550.png");
   background-size: cover;
 }
 
-body .page_container #page_main .content_area {
+body .page_container #page_main .content_area,
+body .page_container #post_main .content_area,
+body .post_container #page_main .content_area,
+body .post_container #post_main .content_area {
   position: relative;
+  /*blog page styling default styling*/
+  /*End of blog page styling default styling*/
 }
 
 body .page_container #page_main .content_area .kids_content_area,
-body .page_container #page_main .content_area .resources_content_area {
+body .page_container #page_main .content_area .resources_content_area,
+body .page_container #post_main .content_area .kids_content_area,
+body .page_container #post_main .content_area .resources_content_area,
+body .post_container #page_main .content_area .kids_content_area,
+body .post_container #page_main .content_area .resources_content_area,
+body .post_container #post_main .content_area .kids_content_area,
+body .post_container #post_main .content_area .resources_content_area {
   position: inherit;
   /*styling for tab menu for kids corner and resrouces mobile*/
   /*End of styling for tab menu for kids corner and resrouces mobile*/
@@ -108,7 +146,19 @@ body .page_container #page_main .content_area .resources_content_area {
 body .page_container #page_main .content_area .kids_content_area .kids_corner_tab,
 body .page_container #page_main .content_area .kids_content_area .resources_tab,
 body .page_container #page_main .content_area .resources_content_area .kids_corner_tab,
-body .page_container #page_main .content_area .resources_content_area .resources_tab {
+body .page_container #page_main .content_area .resources_content_area .resources_tab,
+body .page_container #post_main .content_area .kids_content_area .kids_corner_tab,
+body .page_container #post_main .content_area .kids_content_area .resources_tab,
+body .page_container #post_main .content_area .resources_content_area .kids_corner_tab,
+body .page_container #post_main .content_area .resources_content_area .resources_tab,
+body .post_container #page_main .content_area .kids_content_area .kids_corner_tab,
+body .post_container #page_main .content_area .kids_content_area .resources_tab,
+body .post_container #page_main .content_area .resources_content_area .kids_corner_tab,
+body .post_container #page_main .content_area .resources_content_area .resources_tab,
+body .post_container #post_main .content_area .kids_content_area .kids_corner_tab,
+body .post_container #post_main .content_area .kids_content_area .resources_tab,
+body .post_container #post_main .content_area .resources_content_area .kids_corner_tab,
+body .post_container #post_main .content_area .resources_content_area .resources_tab {
   position: relative;
   z-index: 10;
   overflow: hidden;
@@ -124,7 +174,19 @@ body .page_container #page_main .content_area .resources_content_area .resources
 body .page_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper,
 body .page_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper,
 body .page_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper,
-body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper {
+body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper,
+body .page_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper,
+body .page_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper,
+body .page_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper,
+body .page_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper,
+body .post_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper,
+body .post_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper,
+body .post_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper,
+body .post_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper,
+body .post_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper,
+body .post_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper,
+body .post_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper,
+body .post_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper {
   border: 1px solid #c9c9c9;
   border-radius: 2px;
   border-top: 0;
@@ -133,14 +195,38 @@ body .page_container #page_main .content_area .resources_content_area .resources
 body .page_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper #other_links_menu,
 body .page_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper #other_links_menu,
 body .page_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper #other_links_menu,
-body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper #other_links_menu {
+body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper #other_links_menu,
+body .page_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper #other_links_menu,
+body .page_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper #other_links_menu,
+body .page_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper #other_links_menu,
+body .page_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper #other_links_menu,
+body .post_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper #other_links_menu,
+body .post_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper #other_links_menu,
+body .post_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper #other_links_menu,
+body .post_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper #other_links_menu,
+body .post_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper #other_links_menu,
+body .post_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper #other_links_menu,
+body .post_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper #other_links_menu,
+body .post_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper #other_links_menu {
   display: none;
 }
 
 body .page_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu,
 body .page_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu,
 body .page_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu,
-body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu {
+body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu,
+body .page_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu,
+body .page_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu,
+body .page_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu,
+body .page_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu,
+body .post_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu,
+body .post_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu,
+body .post_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu,
+body .post_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu,
+body .post_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu,
+body .post_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu,
+body .post_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu,
+body .post_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu {
   width: 100%;
   background-color: inherit;
 }
@@ -148,7 +234,19 @@ body .page_container #page_main .content_area .resources_content_area .resources
 body .page_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu button,
 body .page_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu button,
 body .page_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu button,
-body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu button {
+body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu button,
+body .page_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu button,
+body .page_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu button,
+body .page_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu button,
+body .page_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu button,
+body .post_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu button,
+body .post_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu button,
+body .post_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu button,
+body .post_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu button,
+body .post_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu button,
+body .post_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu button,
+body .post_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu button,
+body .post_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu button {
   cursor: pointer;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -165,7 +263,19 @@ body .page_container #page_main .content_area .resources_content_area .resources
 body .page_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu button a,
 body .page_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu button a,
 body .page_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu button a,
-body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu button a {
+body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu button a,
+body .page_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu button a,
+body .page_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu button a,
+body .page_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu button a,
+body .page_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu button a,
+body .post_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu button a,
+body .post_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu button a,
+body .post_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu button a,
+body .post_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu button a,
+body .post_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu button a,
+body .post_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu button a,
+body .post_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu button a,
+body .post_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu button a {
   text-decoration: none;
   color: #1d2089;
 }
@@ -173,12 +283,30 @@ body .page_container #page_main .content_area .resources_content_area .resources
 body .page_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu .tab_submenu,
 body .page_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu .tab_submenu,
 body .page_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu .tab_submenu,
-body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu .tab_submenu {
+body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu .tab_submenu,
+body .page_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu .tab_submenu,
+body .page_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu .tab_submenu,
+body .page_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu .tab_submenu,
+body .page_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu .tab_submenu,
+body .post_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu .tab_submenu,
+body .post_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu .tab_submenu,
+body .post_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu .tab_submenu,
+body .post_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu .tab_submenu,
+body .post_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu .tab_submenu,
+body .post_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu .tab_submenu,
+body .post_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu .tab_submenu,
+body .post_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu .tab_submenu {
   display: none;
 }
 
 body .page_container #page_main .content_area .kids_content_area .tabcontent,
-body .page_container #page_main .content_area .resources_content_area .tabcontent {
+body .page_container #page_main .content_area .resources_content_area .tabcontent,
+body .page_container #post_main .content_area .kids_content_area .tabcontent,
+body .page_container #post_main .content_area .resources_content_area .tabcontent,
+body .post_container #page_main .content_area .kids_content_area .tabcontent,
+body .post_container #page_main .content_area .resources_content_area .tabcontent,
+body .post_container #post_main .content_area .kids_content_area .tabcontent,
+body .post_container #post_main .content_area .resources_content_area .tabcontent {
   position: relative;
   /*spinner styling for asynchronous loading of content*/
   /* End of spinner styling for asynchronous loading of content*/
@@ -189,7 +317,25 @@ body .page_container #page_main .content_area .kids_content_area .tabcontent #ad
 body .page_container #page_main .content_area .kids_content_area .tabcontent #other_links_spinner.active,
 body .page_container #page_main .content_area .resources_content_area .tabcontent #instr_videos_spinner.active,
 body .page_container #page_main .content_area .resources_content_area .tabcontent #adri_blog_spinner.active,
-body .page_container #page_main .content_area .resources_content_area .tabcontent #other_links_spinner.active {
+body .page_container #page_main .content_area .resources_content_area .tabcontent #other_links_spinner.active,
+body .page_container #post_main .content_area .kids_content_area .tabcontent #instr_videos_spinner.active,
+body .page_container #post_main .content_area .kids_content_area .tabcontent #adri_blog_spinner.active,
+body .page_container #post_main .content_area .kids_content_area .tabcontent #other_links_spinner.active,
+body .page_container #post_main .content_area .resources_content_area .tabcontent #instr_videos_spinner.active,
+body .page_container #post_main .content_area .resources_content_area .tabcontent #adri_blog_spinner.active,
+body .page_container #post_main .content_area .resources_content_area .tabcontent #other_links_spinner.active,
+body .post_container #page_main .content_area .kids_content_area .tabcontent #instr_videos_spinner.active,
+body .post_container #page_main .content_area .kids_content_area .tabcontent #adri_blog_spinner.active,
+body .post_container #page_main .content_area .kids_content_area .tabcontent #other_links_spinner.active,
+body .post_container #page_main .content_area .resources_content_area .tabcontent #instr_videos_spinner.active,
+body .post_container #page_main .content_area .resources_content_area .tabcontent #adri_blog_spinner.active,
+body .post_container #page_main .content_area .resources_content_area .tabcontent #other_links_spinner.active,
+body .post_container #post_main .content_area .kids_content_area .tabcontent #instr_videos_spinner.active,
+body .post_container #post_main .content_area .kids_content_area .tabcontent #adri_blog_spinner.active,
+body .post_container #post_main .content_area .kids_content_area .tabcontent #other_links_spinner.active,
+body .post_container #post_main .content_area .resources_content_area .tabcontent #instr_videos_spinner.active,
+body .post_container #post_main .content_area .resources_content_area .tabcontent #adri_blog_spinner.active,
+body .post_container #post_main .content_area .resources_content_area .tabcontent #other_links_spinner.active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -205,7 +351,25 @@ body .page_container #page_main .content_area .kids_content_area .tabcontent #ad
 body .page_container #page_main .content_area .kids_content_area .tabcontent #other_links_spinner.active i,
 body .page_container #page_main .content_area .resources_content_area .tabcontent #instr_videos_spinner.active i,
 body .page_container #page_main .content_area .resources_content_area .tabcontent #adri_blog_spinner.active i,
-body .page_container #page_main .content_area .resources_content_area .tabcontent #other_links_spinner.active i {
+body .page_container #page_main .content_area .resources_content_area .tabcontent #other_links_spinner.active i,
+body .page_container #post_main .content_area .kids_content_area .tabcontent #instr_videos_spinner.active i,
+body .page_container #post_main .content_area .kids_content_area .tabcontent #adri_blog_spinner.active i,
+body .page_container #post_main .content_area .kids_content_area .tabcontent #other_links_spinner.active i,
+body .page_container #post_main .content_area .resources_content_area .tabcontent #instr_videos_spinner.active i,
+body .page_container #post_main .content_area .resources_content_area .tabcontent #adri_blog_spinner.active i,
+body .page_container #post_main .content_area .resources_content_area .tabcontent #other_links_spinner.active i,
+body .post_container #page_main .content_area .kids_content_area .tabcontent #instr_videos_spinner.active i,
+body .post_container #page_main .content_area .kids_content_area .tabcontent #adri_blog_spinner.active i,
+body .post_container #page_main .content_area .kids_content_area .tabcontent #other_links_spinner.active i,
+body .post_container #page_main .content_area .resources_content_area .tabcontent #instr_videos_spinner.active i,
+body .post_container #page_main .content_area .resources_content_area .tabcontent #adri_blog_spinner.active i,
+body .post_container #page_main .content_area .resources_content_area .tabcontent #other_links_spinner.active i,
+body .post_container #post_main .content_area .kids_content_area .tabcontent #instr_videos_spinner.active i,
+body .post_container #post_main .content_area .kids_content_area .tabcontent #adri_blog_spinner.active i,
+body .post_container #post_main .content_area .kids_content_area .tabcontent #other_links_spinner.active i,
+body .post_container #post_main .content_area .resources_content_area .tabcontent #instr_videos_spinner.active i,
+body .post_container #post_main .content_area .resources_content_area .tabcontent #adri_blog_spinner.active i,
+body .post_container #post_main .content_area .resources_content_area .tabcontent #other_links_spinner.active i {
   display: block;
   width: 5%;
   margin: 5rem;
@@ -216,12 +380,36 @@ body .page_container #page_main .content_area .kids_content_area .tabcontent #ad
 body .page_container #page_main .content_area .kids_content_area .tabcontent #other_links_spinner,
 body .page_container #page_main .content_area .resources_content_area .tabcontent #instr_videos_spinner,
 body .page_container #page_main .content_area .resources_content_area .tabcontent #adri_blog_spinner,
-body .page_container #page_main .content_area .resources_content_area .tabcontent #other_links_spinner {
+body .page_container #page_main .content_area .resources_content_area .tabcontent #other_links_spinner,
+body .page_container #post_main .content_area .kids_content_area .tabcontent #instr_videos_spinner,
+body .page_container #post_main .content_area .kids_content_area .tabcontent #adri_blog_spinner,
+body .page_container #post_main .content_area .kids_content_area .tabcontent #other_links_spinner,
+body .page_container #post_main .content_area .resources_content_area .tabcontent #instr_videos_spinner,
+body .page_container #post_main .content_area .resources_content_area .tabcontent #adri_blog_spinner,
+body .page_container #post_main .content_area .resources_content_area .tabcontent #other_links_spinner,
+body .post_container #page_main .content_area .kids_content_area .tabcontent #instr_videos_spinner,
+body .post_container #page_main .content_area .kids_content_area .tabcontent #adri_blog_spinner,
+body .post_container #page_main .content_area .kids_content_area .tabcontent #other_links_spinner,
+body .post_container #page_main .content_area .resources_content_area .tabcontent #instr_videos_spinner,
+body .post_container #page_main .content_area .resources_content_area .tabcontent #adri_blog_spinner,
+body .post_container #page_main .content_area .resources_content_area .tabcontent #other_links_spinner,
+body .post_container #post_main .content_area .kids_content_area .tabcontent #instr_videos_spinner,
+body .post_container #post_main .content_area .kids_content_area .tabcontent #adri_blog_spinner,
+body .post_container #post_main .content_area .kids_content_area .tabcontent #other_links_spinner,
+body .post_container #post_main .content_area .resources_content_area .tabcontent #instr_videos_spinner,
+body .post_container #post_main .content_area .resources_content_area .tabcontent #adri_blog_spinner,
+body .post_container #post_main .content_area .resources_content_area .tabcontent #other_links_spinner {
   display: none;
 }
 
 body .page_container #page_main .content_area .kids_content_area .tabcontent #other_links_spinner,
-body .page_container #page_main .content_area .resources_content_area .tabcontent #other_links_spinner {
+body .page_container #page_main .content_area .resources_content_area .tabcontent #other_links_spinner,
+body .page_container #post_main .content_area .kids_content_area .tabcontent #other_links_spinner,
+body .page_container #post_main .content_area .resources_content_area .tabcontent #other_links_spinner,
+body .post_container #page_main .content_area .kids_content_area .tabcontent #other_links_spinner,
+body .post_container #page_main .content_area .resources_content_area .tabcontent #other_links_spinner,
+body .post_container #post_main .content_area .kids_content_area .tabcontent #other_links_spinner,
+body .post_container #post_main .content_area .resources_content_area .tabcontent #other_links_spinner {
   position: absolute;
   position: absolute;
   top: 50%;
@@ -237,7 +425,31 @@ body .page_container #page_main .content_area .kids_content_area .worksheets_tab
 body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards,
 body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards,
 body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards,
-body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards {
+body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards,
+body .page_container #post_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards,
+body .page_container #post_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards,
+body .page_container #post_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards,
+body .page_container #post_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards,
+body .page_container #post_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards,
+body .page_container #post_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards,
+body .page_container #post_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards,
+body .page_container #post_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards,
+body .post_container #page_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards,
+body .post_container #page_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards,
+body .post_container #page_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards,
+body .post_container #page_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards,
+body .post_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards,
+body .post_container #page_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards,
+body .post_container #page_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards,
+body .post_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards,
+body .post_container #post_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards,
+body .post_container #post_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards,
+body .post_container #post_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards,
+body .post_container #post_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards,
+body .post_container #post_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards,
+body .post_container #post_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards,
+body .post_container #post_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards,
+body .post_container #post_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(20rem, 1fr))[auto-fit];
@@ -264,7 +476,55 @@ body .page_container #page_main .content_area .resources_content_area .reading_a
 body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card,
 body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card,
 body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card,
-body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .worksheets_card {
+body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .worksheets_card,
+body .page_container #post_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card,
+body .page_container #post_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card,
+body .page_container #post_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card,
+body .page_container #post_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card,
+body .page_container #post_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card,
+body .page_container #post_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card,
+body .page_container #post_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card,
+body .page_container #post_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .worksheets_card,
+body .page_container #post_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card,
+body .page_container #post_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card,
+body .page_container #post_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card,
+body .page_container #post_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card,
+body .page_container #post_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card,
+body .page_container #post_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card,
+body .page_container #post_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card,
+body .page_container #post_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .worksheets_card,
+body .post_container #page_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card,
+body .post_container #page_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card,
+body .post_container #page_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card,
+body .post_container #page_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card,
+body .post_container #page_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card,
+body .post_container #page_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card,
+body .post_container #page_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card,
+body .post_container #page_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .worksheets_card,
+body .post_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card,
+body .post_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card,
+body .post_container #page_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card,
+body .post_container #page_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card,
+body .post_container #page_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card,
+body .post_container #page_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card,
+body .post_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card,
+body .post_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .worksheets_card,
+body .post_container #post_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card,
+body .post_container #post_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card,
+body .post_container #post_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card,
+body .post_container #post_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card,
+body .post_container #post_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card,
+body .post_container #post_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card,
+body .post_container #post_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card,
+body .post_container #post_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .worksheets_card,
+body .post_container #post_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card,
+body .post_container #post_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card,
+body .post_container #post_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card,
+body .post_container #post_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card,
+body .post_container #post_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card,
+body .post_container #post_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card,
+body .post_container #post_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card,
+body .post_container #post_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .worksheets_card {
   border: 1px solid #c9c9c9;
   -webkit-box-shadow: 1px 1px 4px #c9c9c9;
           box-shadow: 1px 1px 4px #c9c9c9;
@@ -290,7 +550,55 @@ body .page_container #page_main .content_area .resources_content_area .reading_a
 body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card .card_img,
 body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card .card_img,
 body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card .card_img,
-body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .worksheets_card .card_img {
+body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .worksheets_card .card_img,
+body .page_container #post_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card .card_img,
+body .page_container #post_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card .card_img,
+body .page_container #post_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card .card_img,
+body .page_container #post_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card .card_img,
+body .page_container #post_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card .card_img,
+body .page_container #post_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card .card_img,
+body .page_container #post_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card .card_img,
+body .page_container #post_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .worksheets_card .card_img,
+body .page_container #post_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card .card_img,
+body .page_container #post_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card .card_img,
+body .page_container #post_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card .card_img,
+body .page_container #post_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card .card_img,
+body .page_container #post_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card .card_img,
+body .page_container #post_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card .card_img,
+body .page_container #post_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card .card_img,
+body .page_container #post_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .worksheets_card .card_img,
+body .post_container #page_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card .card_img,
+body .post_container #page_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card .card_img,
+body .post_container #page_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card .card_img,
+body .post_container #page_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card .card_img,
+body .post_container #page_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card .card_img,
+body .post_container #page_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card .card_img,
+body .post_container #page_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card .card_img,
+body .post_container #page_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .worksheets_card .card_img,
+body .post_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card .card_img,
+body .post_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card .card_img,
+body .post_container #page_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card .card_img,
+body .post_container #page_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card .card_img,
+body .post_container #page_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card .card_img,
+body .post_container #page_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card .card_img,
+body .post_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card .card_img,
+body .post_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .worksheets_card .card_img,
+body .post_container #post_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card .card_img,
+body .post_container #post_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card .card_img,
+body .post_container #post_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card .card_img,
+body .post_container #post_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card .card_img,
+body .post_container #post_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card .card_img,
+body .post_container #post_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card .card_img,
+body .post_container #post_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card .card_img,
+body .post_container #post_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .worksheets_card .card_img,
+body .post_container #post_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card .card_img,
+body .post_container #post_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card .card_img,
+body .post_container #post_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card .card_img,
+body .post_container #post_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card .card_img,
+body .post_container #post_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card .card_img,
+body .post_container #post_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card .card_img,
+body .post_container #post_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card .card_img,
+body .post_container #post_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .worksheets_card .card_img {
   width: 200px;
   height: 200px;
   background-color: #fdf9f2;
@@ -311,7 +619,55 @@ body .page_container #page_main .content_area .resources_content_area .reading_a
 body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card .card_data,
 body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card .card_data,
 body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card .card_data,
-body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .worksheets_card .card_data {
+body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .worksheets_card .card_data,
+body .page_container #post_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card .card_data,
+body .page_container #post_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card .card_data,
+body .page_container #post_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card .card_data,
+body .page_container #post_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card .card_data,
+body .page_container #post_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card .card_data,
+body .page_container #post_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card .card_data,
+body .page_container #post_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card .card_data,
+body .page_container #post_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .worksheets_card .card_data,
+body .page_container #post_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card .card_data,
+body .page_container #post_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card .card_data,
+body .page_container #post_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card .card_data,
+body .page_container #post_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card .card_data,
+body .page_container #post_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card .card_data,
+body .page_container #post_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card .card_data,
+body .page_container #post_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card .card_data,
+body .page_container #post_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .worksheets_card .card_data,
+body .post_container #page_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card .card_data,
+body .post_container #page_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card .card_data,
+body .post_container #page_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card .card_data,
+body .post_container #page_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card .card_data,
+body .post_container #page_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card .card_data,
+body .post_container #page_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card .card_data,
+body .post_container #page_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card .card_data,
+body .post_container #page_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .worksheets_card .card_data,
+body .post_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card .card_data,
+body .post_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card .card_data,
+body .post_container #page_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card .card_data,
+body .post_container #page_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card .card_data,
+body .post_container #page_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card .card_data,
+body .post_container #page_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card .card_data,
+body .post_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card .card_data,
+body .post_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .worksheets_card .card_data,
+body .post_container #post_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card .card_data,
+body .post_container #post_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card .card_data,
+body .post_container #post_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card .card_data,
+body .post_container #post_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card .card_data,
+body .post_container #post_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card .card_data,
+body .post_container #post_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card .card_data,
+body .post_container #post_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card .card_data,
+body .post_container #post_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .worksheets_card .card_data,
+body .post_container #post_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card .card_data,
+body .post_container #post_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card .card_data,
+body .post_container #post_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card .card_data,
+body .post_container #post_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card .card_data,
+body .post_container #post_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card .card_data,
+body .post_container #post_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card .card_data,
+body .post_container #post_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card .card_data,
+body .post_container #post_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .worksheets_card .card_data {
   padding: 0.5rem;
   background: #fff;
   border-top: 1px solid #c9c9c9;
@@ -332,7 +688,55 @@ body .page_container #page_main .content_area .resources_content_area .reading_a
 body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card:hover,
 body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card:hover,
 body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card:hover,
-body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .worksheets_card:hover {
+body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .worksheets_card:hover,
+body .page_container #post_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card:hover,
+body .page_container #post_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card:hover,
+body .page_container #post_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card:hover,
+body .page_container #post_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card:hover,
+body .page_container #post_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card:hover,
+body .page_container #post_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card:hover,
+body .page_container #post_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card:hover,
+body .page_container #post_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .worksheets_card:hover,
+body .page_container #post_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card:hover,
+body .page_container #post_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card:hover,
+body .page_container #post_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card:hover,
+body .page_container #post_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card:hover,
+body .page_container #post_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card:hover,
+body .page_container #post_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card:hover,
+body .page_container #post_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card:hover,
+body .page_container #post_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .worksheets_card:hover,
+body .post_container #page_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card:hover,
+body .post_container #page_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card:hover,
+body .post_container #page_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card:hover,
+body .post_container #page_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card:hover,
+body .post_container #page_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card:hover,
+body .post_container #page_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card:hover,
+body .post_container #page_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card:hover,
+body .post_container #page_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .worksheets_card:hover,
+body .post_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card:hover,
+body .post_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card:hover,
+body .post_container #page_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card:hover,
+body .post_container #page_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card:hover,
+body .post_container #page_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card:hover,
+body .post_container #page_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card:hover,
+body .post_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card:hover,
+body .post_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .worksheets_card:hover,
+body .post_container #post_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card:hover,
+body .post_container #post_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card:hover,
+body .post_container #post_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card:hover,
+body .post_container #post_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card:hover,
+body .post_container #post_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card:hover,
+body .post_container #post_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card:hover,
+body .post_container #post_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card:hover,
+body .post_container #post_main .content_area .kids_content_area .worksheets_tab_content .worksheets_cards .worksheets_card:hover,
+body .post_container #post_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card:hover,
+body .post_container #post_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_cards .worksheets_card:hover,
+body .post_container #post_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .reading_activities_card:hover,
+body .post_container #post_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_cards .worksheets_card:hover,
+body .post_container #post_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .reading_activities_card:hover,
+body .post_container #post_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_cards .worksheets_card:hover,
+body .post_container #post_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .reading_activities_card:hover,
+body .post_container #post_main .content_area .resources_content_area .worksheets_tab_content .worksheets_cards .worksheets_card:hover {
   cursor: pointer;
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
@@ -349,18 +753,54 @@ body .page_container #page_main .content_area .kids_content_area .worksheets_tab
 body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_card.inactive,
 body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_card.inactive,
 body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_card.inactive,
-body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_card.inactive {
+body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_card.inactive,
+body .page_container #post_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_card.inactive,
+body .page_container #post_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_card.inactive,
+body .page_container #post_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_card.inactive,
+body .page_container #post_main .content_area .kids_content_area .worksheets_tab_content .worksheets_card.inactive,
+body .page_container #post_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_card.inactive,
+body .page_container #post_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_card.inactive,
+body .page_container #post_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_card.inactive,
+body .page_container #post_main .content_area .resources_content_area .worksheets_tab_content .worksheets_card.inactive,
+body .post_container #page_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_card.inactive,
+body .post_container #page_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_card.inactive,
+body .post_container #page_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_card.inactive,
+body .post_container #page_main .content_area .kids_content_area .worksheets_tab_content .worksheets_card.inactive,
+body .post_container #page_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_card.inactive,
+body .post_container #page_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_card.inactive,
+body .post_container #page_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_card.inactive,
+body .post_container #page_main .content_area .resources_content_area .worksheets_tab_content .worksheets_card.inactive,
+body .post_container #post_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_card.inactive,
+body .post_container #post_main .content_area .kids_content_area .reading_activities_tab_content .worksheets_card.inactive,
+body .post_container #post_main .content_area .kids_content_area .worksheets_tab_content .reading_activities_card.inactive,
+body .post_container #post_main .content_area .kids_content_area .worksheets_tab_content .worksheets_card.inactive,
+body .post_container #post_main .content_area .resources_content_area .reading_activities_tab_content .reading_activities_card.inactive,
+body .post_container #post_main .content_area .resources_content_area .reading_activities_tab_content .worksheets_card.inactive,
+body .post_container #post_main .content_area .resources_content_area .worksheets_tab_content .reading_activities_card.inactive,
+body .post_container #post_main .content_area .resources_content_area .worksheets_tab_content .worksheets_card.inactive {
   display: none;
 }
 
 body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content,
-body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content {
+body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content,
+body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content,
+body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content,
+body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content,
+body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content,
+body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content,
+body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content {
   /*adri blog navigation*/
   /*End of adri blog navigation*/
 }
 
 body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content,
-body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content {
+body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content,
+body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content,
+body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content,
+body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content,
+body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content,
+body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content,
+body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content {
   border: 1px solid #c9c9c9;
   background-color: #fff;
   -webkit-box-shadow: 2px 2px 4px #c9c9c9;
@@ -377,7 +817,13 @@ body .page_container #page_main .content_area .resources_content_area .adri_blog
 }
 
 body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .img_container,
-body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .img_container {
+body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .img_container,
+body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .img_container,
+body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .img_container,
+body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .img_container,
+body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .img_container,
+body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .img_container,
+body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .img_container {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: img;
@@ -385,19 +831,37 @@ body .page_container #page_main .content_area .resources_content_area .adri_blog
 }
 
 body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .img_container img,
-body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .img_container img {
+body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .img_container img,
+body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .img_container img,
+body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .img_container img,
+body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .img_container img,
+body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .img_container img,
+body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .img_container img,
+body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .img_container img {
   width: 100%;
 }
 
 body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container,
-body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container {
+body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container,
+body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container,
+body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container,
+body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container,
+body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container,
+body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container,
+body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: content-area;
 }
 
 body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a,
-body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a {
+body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a,
+body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a,
+body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a,
+body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a,
+body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a,
+body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a,
+body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a {
   text-align: left;
   padding: 1rem;
   text-decoration: none;
@@ -411,27 +875,51 @@ body .page_container #page_main .content_area .resources_content_area .adri_blog
 }
 
 body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a:hover,
-body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a:hover {
+body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a:hover,
+body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a:hover,
+body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a:hover,
+body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a:hover,
+body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a:hover,
+body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a:hover,
+body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a:hover {
   -webkit-transform: scale(0.99);
           transform: scale(0.99);
 }
 
 body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container h1,
-body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h1 {
+body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h1,
+body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container h1,
+body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h1,
+body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container h1,
+body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h1,
+body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container h1,
+body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h1 {
   color: #000;
   padding: 0 1rem 1rem 1rem;
   text-align: left;
 }
 
 body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container p,
-body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container p {
+body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container p,
+body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container p,
+body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container p,
+body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container p,
+body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container p,
+body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container p,
+body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container p {
   text-align: justify;
   margin: 0 auto;
   padding: 0 1rem 1rem 1rem;
 }
 
 body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container button,
-body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container button {
+body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container button,
+body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container button,
+body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container button,
+body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container button,
+body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container button,
+body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container button,
+body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container button {
   cursor: pointer;
   background: #1d2089;
   color: #fff;
@@ -445,27 +933,51 @@ body .page_container #page_main .content_area .resources_content_area .adri_blog
 }
 
 body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container button:hover,
-body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container button:hover {
+body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container button:hover,
+body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container button:hover,
+body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container button:hover,
+body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container button:hover,
+body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container button:hover,
+body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container button:hover,
+body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container button:hover {
   color: #fcba04;
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
 }
 
 body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data,
-body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data {
+body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data,
+body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data,
+body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data,
+body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data,
+body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data,
+body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data,
+body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data {
   font-weight: bold;
   color: #000;
   font-size: 12px;
 }
 
 body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data span,
-body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data span {
+body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data span,
+body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data span,
+body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data span,
+body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data span,
+body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data span,
+body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data span,
+body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data span {
   font-weight: bold;
   color: #1d2089;
 }
 
 body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation,
-body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation {
+body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation,
+body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation,
+body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation,
+body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation,
+body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation,
+body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation,
+body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -486,12 +998,24 @@ body .page_container #page_main .content_area .resources_content_area .adri_blog
 }
 
 body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation i,
-body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation i {
+body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation i,
+body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation i,
+body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation i,
+body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation i,
+body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation i,
+body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation i,
+body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation i {
   cursor: pointer;
 }
 
 body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a,
-body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a {
+body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a,
+body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a,
+body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a,
+body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a,
+body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a,
+body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a,
+body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a {
   padding-right: 1rem;
   cursor: pointer;
   color: #1d2089;
@@ -499,38 +1023,80 @@ body .page_container #page_main .content_area .resources_content_area .adri_blog
 }
 
 body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a.active,
-body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a.active {
+body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a.active,
+body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a.active,
+body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a.active,
+body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a.active,
+body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a.active,
+body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a.active,
+body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a.active {
   font-weight: bold;
 }
 
 body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation #blog_nav_left,
-body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation #blog_nav_left {
+body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation #blog_nav_left,
+body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation #blog_nav_left,
+body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation #blog_nav_left,
+body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation #blog_nav_left,
+body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation #blog_nav_left,
+body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation #blog_nav_left,
+body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation #blog_nav_left {
   padding-left: 0;
 }
 
 body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content,
-body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content {
+body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content,
+body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content,
+body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content,
+body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content,
+body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content,
+body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content,
+body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content {
   padding: 0.5rem 0.5rem;
 }
 
 body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content #blogs_per_page,
-body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content #blogs_per_page {
+body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content #blogs_per_page,
+body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content #blogs_per_page,
+body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content #blogs_per_page,
+body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content #blogs_per_page,
+body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content #blogs_per_page,
+body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content #blogs_per_page,
+body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content #blogs_per_page {
   width: 3rem;
   border: 1px solid #c9c9c9;
 }
 
 body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation #blog_nav_right,
-body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation #blog_nav_right {
+body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation #blog_nav_right,
+body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation #blog_nav_right,
+body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation #blog_nav_right,
+body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation #blog_nav_right,
+body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation #blog_nav_right,
+body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation #blog_nav_right,
+body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation #blog_nav_right {
   padding-right: 0;
 }
 
 body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content,
-body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content {
+body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content,
+body .page_container #post_main .content_area .kids_content_area .instr_video_tab_content,
+body .page_container #post_main .content_area .resources_content_area .instr_video_tab_content,
+body .post_container #page_main .content_area .kids_content_area .instr_video_tab_content,
+body .post_container #page_main .content_area .resources_content_area .instr_video_tab_content,
+body .post_container #post_main .content_area .kids_content_area .instr_video_tab_content,
+body .post_container #post_main .content_area .resources_content_area .instr_video_tab_content {
   display: block;
 }
 
 body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content .player_class,
-body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class {
+body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class,
+body .page_container #post_main .content_area .kids_content_area .instr_video_tab_content .player_class,
+body .page_container #post_main .content_area .resources_content_area .instr_video_tab_content .player_class,
+body .post_container #page_main .content_area .kids_content_area .instr_video_tab_content .player_class,
+body .post_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class,
+body .post_container #post_main .content_area .kids_content_area .instr_video_tab_content .player_class,
+body .post_container #post_main .content_area .resources_content_area .instr_video_tab_content .player_class {
   position: -webkit-sticky;
   position: sticky;
   margin: 0 auto;
@@ -546,7 +1112,13 @@ body .page_container #page_main .content_area .resources_content_area .instr_vid
 }
 
 body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls,
-body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls {
+body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls,
+body .page_container #post_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls,
+body .page_container #post_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls,
+body .post_container #page_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls,
+body .post_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls,
+body .post_container #post_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls,
+body .post_container #post_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls {
   height: 2rem;
   background: #fcba04;
 }
@@ -554,7 +1126,19 @@ body .page_container #page_main .content_area .resources_content_area .instr_vid
 body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls a,
 body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls i,
 body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls a,
-body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls i {
+body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls i,
+body .page_container #post_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls a,
+body .page_container #post_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls i,
+body .page_container #post_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls a,
+body .page_container #post_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls i,
+body .post_container #page_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls a,
+body .post_container #page_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls i,
+body .post_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls a,
+body .post_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls i,
+body .post_container #post_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls a,
+body .post_container #post_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls i,
+body .post_container #post_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls a,
+body .post_container #post_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls i {
   height: inherit;
   float: right;
   font-weight: bold;
@@ -565,25 +1149,49 @@ body .page_container #page_main .content_area .resources_content_area .instr_vid
 }
 
 body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls #minimize_btn,
-body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls #minimize_btn {
+body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls #minimize_btn,
+body .page_container #post_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls #minimize_btn,
+body .page_container #post_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls #minimize_btn,
+body .post_container #page_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls #minimize_btn,
+body .post_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls #minimize_btn,
+body .post_container #post_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls #minimize_btn,
+body .post_container #post_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls #minimize_btn {
   line-height: 0.09;
   display: none;
 }
 
 body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls #restore_btn,
-body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls #restore_btn {
+body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls #restore_btn,
+body .page_container #post_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls #restore_btn,
+body .page_container #post_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls #restore_btn,
+body .post_container #page_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls #restore_btn,
+body .post_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls #restore_btn,
+body .post_container #post_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls #restore_btn,
+body .post_container #post_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls #restore_btn {
   line-height: 2;
   font-size: 1rem;
   display: none;
 }
 
 body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls #close_btn,
-body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls #close_btn {
+body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls #close_btn,
+body .page_container #post_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls #close_btn,
+body .page_container #post_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls #close_btn,
+body .post_container #page_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls #close_btn,
+body .post_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls #close_btn,
+body .post_container #post_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls #close_btn,
+body .post_container #post_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls #close_btn {
   line-height: 0.85;
 }
 
 body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content .videos,
-body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos {
+body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos,
+body .page_container #post_main .content_area .kids_content_area .instr_video_tab_content .videos,
+body .page_container #post_main .content_area .resources_content_area .instr_video_tab_content .videos,
+body .post_container #page_main .content_area .kids_content_area .instr_video_tab_content .videos,
+body .post_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos,
+body .post_container #post_main .content_area .kids_content_area .instr_video_tab_content .videos,
+body .post_container #post_main .content_area .resources_content_area .instr_video_tab_content .videos {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(20rem, 1fr))[auto-fit];
@@ -592,7 +1200,13 @@ body .page_container #page_main .content_area .resources_content_area .instr_vid
 }
 
 body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content .videos .video_links,
-body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos .video_links {
+body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos .video_links,
+body .page_container #post_main .content_area .kids_content_area .instr_video_tab_content .videos .video_links,
+body .page_container #post_main .content_area .resources_content_area .instr_video_tab_content .videos .video_links,
+body .post_container #page_main .content_area .kids_content_area .instr_video_tab_content .videos .video_links,
+body .post_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos .video_links,
+body .post_container #post_main .content_area .kids_content_area .instr_video_tab_content .videos .video_links,
+body .post_container #post_main .content_area .resources_content_area .instr_video_tab_content .videos .video_links {
   position: relative;
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -608,7 +1222,13 @@ body .page_container #page_main .content_area .resources_content_area .instr_vid
 }
 
 body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content .videos .video_links:hover,
-body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos .video_links:hover {
+body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos .video_links:hover,
+body .page_container #post_main .content_area .kids_content_area .instr_video_tab_content .videos .video_links:hover,
+body .page_container #post_main .content_area .resources_content_area .instr_video_tab_content .videos .video_links:hover,
+body .post_container #page_main .content_area .kids_content_area .instr_video_tab_content .videos .video_links:hover,
+body .post_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos .video_links:hover,
+body .post_container #post_main .content_area .kids_content_area .instr_video_tab_content .videos .video_links:hover,
+body .post_container #post_main .content_area .resources_content_area .instr_video_tab_content .videos .video_links:hover {
   cursor: pointer;
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
@@ -619,7 +1239,13 @@ body .page_container #page_main .content_area .resources_content_area .instr_vid
 }
 
 body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .video_content,
-body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .video_content {
+body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .video_content,
+body .page_container #post_main .content_area .kids_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .video_content,
+body .page_container #post_main .content_area .resources_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .video_content,
+body .post_container #page_main .content_area .kids_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .video_content,
+body .post_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .video_content,
+body .post_container #post_main .content_area .kids_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .video_content,
+body .post_container #post_main .content_area .resources_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .video_content {
   background-color: #000;
   width: 320px;
   height: 180px;
@@ -627,7 +1253,13 @@ body .page_container #page_main .content_area .resources_content_area .instr_vid
 }
 
 body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .info,
-body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .info {
+body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .info,
+body .page_container #post_main .content_area .kids_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .info,
+body .page_container #post_main .content_area .resources_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .info,
+body .post_container #page_main .content_area .kids_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .info,
+body .post_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .info,
+body .post_container #post_main .content_area .kids_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .info,
+body .post_container #post_main .content_area .resources_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .info {
   position: absolute;
   bottom: 0;
   background-color: #fff;
@@ -636,13 +1268,25 @@ body .page_container #page_main .content_area .resources_content_area .instr_vid
 }
 
 body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .info *,
-body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .info * {
+body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .info *,
+body .page_container #post_main .content_area .kids_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .info *,
+body .page_container #post_main .content_area .resources_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .info *,
+body .post_container #page_main .content_area .kids_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .info *,
+body .post_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .info *,
+body .post_container #post_main .content_area .kids_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .info *,
+body .post_container #post_main .content_area .resources_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .info * {
   padding: 0.2rem;
   font-size: 0.7rem;
 }
 
 body .page_container #page_main .content_area .kids_content_area .other_links_tab_content #other_links_iframe,
-body .page_container #page_main .content_area .resources_content_area .other_links_tab_content #other_links_iframe {
+body .page_container #page_main .content_area .resources_content_area .other_links_tab_content #other_links_iframe,
+body .page_container #post_main .content_area .kids_content_area .other_links_tab_content #other_links_iframe,
+body .page_container #post_main .content_area .resources_content_area .other_links_tab_content #other_links_iframe,
+body .post_container #page_main .content_area .kids_content_area .other_links_tab_content #other_links_iframe,
+body .post_container #page_main .content_area .resources_content_area .other_links_tab_content #other_links_iframe,
+body .post_container #post_main .content_area .kids_content_area .other_links_tab_content #other_links_iframe,
+body .post_container #post_main .content_area .resources_content_area .other_links_tab_content #other_links_iframe {
   width: 100%;
   height: 50rem;
   border: 1px solid #c9c9c9;
@@ -652,7 +1296,13 @@ body .page_container #page_main .content_area .resources_content_area .other_lin
 }
 
 body .page_container #page_main .content_area .kids_content_area .tabcontent,
-body .page_container #page_main .content_area .resources_content_area .tabcontent {
+body .page_container #page_main .content_area .resources_content_area .tabcontent,
+body .page_container #post_main .content_area .kids_content_area .tabcontent,
+body .page_container #post_main .content_area .resources_content_area .tabcontent,
+body .post_container #page_main .content_area .kids_content_area .tabcontent,
+body .post_container #page_main .content_area .resources_content_area .tabcontent,
+body .post_container #post_main .content_area .kids_content_area .tabcontent,
+body .post_container #post_main .content_area .resources_content_area .tabcontent {
   position: inherit;
   display: none;
   padding: 6px 12px;
@@ -664,9 +1314,214 @@ body .page_container #page_main .content_area .resources_content_area .tabconten
 body .page_container #page_main .content_area .kids_content_area .kids_corner_tab button.active,
 body .page_container #page_main .content_area .kids_content_area .resources_tab button.active,
 body .page_container #page_main .content_area .resources_content_area .kids_corner_tab button.active,
-body .page_container #page_main .content_area .resources_content_area .resources_tab button.active {
+body .page_container #page_main .content_area .resources_content_area .resources_tab button.active,
+body .page_container #post_main .content_area .kids_content_area .kids_corner_tab button.active,
+body .page_container #post_main .content_area .kids_content_area .resources_tab button.active,
+body .page_container #post_main .content_area .resources_content_area .kids_corner_tab button.active,
+body .page_container #post_main .content_area .resources_content_area .resources_tab button.active,
+body .post_container #page_main .content_area .kids_content_area .kids_corner_tab button.active,
+body .post_container #page_main .content_area .kids_content_area .resources_tab button.active,
+body .post_container #page_main .content_area .resources_content_area .kids_corner_tab button.active,
+body .post_container #page_main .content_area .resources_content_area .resources_tab button.active,
+body .post_container #post_main .content_area .kids_content_area .kids_corner_tab button.active,
+body .post_container #post_main .content_area .kids_content_area .resources_tab button.active,
+body .post_container #post_main .content_area .resources_content_area .kids_corner_tab button.active,
+body .post_container #post_main .content_area .resources_content_area .resources_tab button.active {
   background-color: #c9c9c9;
   font-weight: bold;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data {
+  position: inherit;
+  padding: 0 1rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  grid-gap: 0.5rem;
+      grid-template-areas: "breadcrumb_nav" "post_content" "post_meta_content";
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: breadcrumb_nav;
+  z-index: 19;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #eee;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav .breadcrumb,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav .breadcrumb,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav .breadcrumb,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav .breadcrumb {
+  list-style: none;
+  padding: 0;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav .breadcrumb li,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav .breadcrumb li,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav .breadcrumb li,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav .breadcrumb li {
+  display: inline;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav .breadcrumb li a,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav .breadcrumb li a,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav .breadcrumb li a,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav .breadcrumb li a {
+  color: #1d2089;
+  text-decoration: none;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav .breadcrumb li + li:before,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav .breadcrumb li + li:before,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav .breadcrumb li + li:before,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav .breadcrumb li + li:before {
+  padding: 8px;
+  color: #000;
+  content: "\003E";
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: post_content;
+  z-index: 10;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_header h1,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_header h1,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_header h1,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_header h1 {
+  padding-bottom: 1rem;
+  color: #000;
+  text-align: center;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_header p,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_header p,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_header p,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_header p {
+  padding-bottom: 1rem;
+  color: #1d2089;
+  text-align: center;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .img_container img,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .img_container img,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .img_container img,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .img_container img {
+  width: 100%;
+  border-radius: 2px;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_content,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_content,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_content,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_content {
+  background: #fff;
+  border-radius: 2px;
+  padding: .5rem;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container {
+  margin: 1rem 0;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a {
+  padding: 0.25rem;
+  text-decoration: none;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a .title,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a .title,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a .title,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a .title {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  /* If you want dots under the hoverable text */
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a:hover .title .title_inner,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a:hover .title .title_inner,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a:hover .title .title_inner,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a:hover .title .title_inner {
+  visibility: visible;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a .title .title_inner,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a .title .title_inner,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a .title .title_inner,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a .title .title_inner {
+  visibility: hidden;
+  width: auto;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  /* Position the tooltip text at top*/
+  position: absolute;
+  width: 120px;
+  bottom: 2rem;
+  left: 50%;
+  margin-left: -5.5rem;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a .arrow,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a .arrow,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a .arrow,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a .arrow {
+  background: #1d2089;
+  padding: 0.5rem 1.5rem;
+  color: white;
+  border-radius: 2px;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner .next_post,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner .next_post,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner .next_post,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner .next_post {
+  float: right;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_meta_content,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_meta_content,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_meta_content,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_meta_content {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: post_meta_content;
+  z-index: 10;
 }
 
 @-webkit-keyframes fadeEffect {
@@ -802,62 +1657,82 @@ body .page_container #page_main .content_area .resources_content_area .resources
 }
 
 @media (min-width: 702px) {
-  body .page_container #page_main .content_area .resources_content_area {
+  body .page_container #page_main .content_area .resources_content_area,
+  body .post_container #page_main .content_area .resources_content_area {
     /*Blog Content Mobile-Tablets*/
     /*End of Blog Content Mobile-Tablets*/
   }
-  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content {
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content,
+  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content {
     /*adri blog navigation*/
     /*End of adri blog navigation*/
   }
-  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .img_container img {
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .img_container img,
+  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .img_container img {
     width: 40%;
     margin: 0 auto;
     display: block;
   }
-  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h1 {
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h1,
+  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h1 {
     display: block;
     margin: 0 auto;
     width: 50%;
     text-align: center;
   }
-  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a {
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a,
+  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a {
     text-align: center;
   }
-  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container button {
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container button,
+  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     margin-left: auto;
     margin-right: auto;
   }
-  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data {
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data,
+  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
   }
-  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content {
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content,
+  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content {
     padding: 0.5rem 4.5rem;
   }
-  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a {
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a,
+  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a {
     padding-right: 1rem;
   }
 }
 
 @media (min-width: 840px) {
-  body .page_container {
+  body .page_container,
+  body .post_container {
     -ms-grid-columns: 0% 100% !important;
         grid-template-columns: 0% 100% !important;
   }
-  body .page_container #nav_touch {
+  body .page_container #nav_touch,
+  body .post_container #nav_touch {
     display: none;
   }
-  body .page_container #page_main {
+  body .page_container #page_main,
+  body .page_container #post_main,
+  body .post_container #page_main,
+  body .post_container #post_main {
     /*styling for tab menu and content for kids corner and resrouces Desktop*/
     /*End of styling for tab menu and content for kids corner and resrouces Desktop*/
   }
   body .page_container #page_main .content_area .kids_content_area,
-  body .page_container #page_main .content_area .resources_content_area {
+  body .page_container #page_main .content_area .resources_content_area,
+  body .page_container #post_main .content_area .kids_content_area,
+  body .page_container #post_main .content_area .resources_content_area,
+  body .post_container #page_main .content_area .kids_content_area,
+  body .post_container #page_main .content_area .resources_content_area,
+  body .post_container #post_main .content_area .kids_content_area,
+  body .post_container #post_main .content_area .resources_content_area {
     /*styling for tab menu for kids corner and resrouces Desktop*/
     /*End of styling for tab menu for kids corner and resrouces Desktop*/
     /*Blog Content Desktop*/
@@ -872,7 +1747,19 @@ body .page_container #page_main .content_area .resources_content_area .resources
   body .page_container #page_main .content_area .kids_content_area .kids_corner_tab,
   body .page_container #page_main .content_area .kids_content_area .resources_tab,
   body .page_container #page_main .content_area .resources_content_area .kids_corner_tab,
-  body .page_container #page_main .content_area .resources_content_area .resources_tab {
+  body .page_container #page_main .content_area .resources_content_area .resources_tab,
+  body .page_container #post_main .content_area .kids_content_area .kids_corner_tab,
+  body .page_container #post_main .content_area .kids_content_area .resources_tab,
+  body .page_container #post_main .content_area .resources_content_area .kids_corner_tab,
+  body .page_container #post_main .content_area .resources_content_area .resources_tab,
+  body .post_container #page_main .content_area .kids_content_area .kids_corner_tab,
+  body .post_container #page_main .content_area .kids_content_area .resources_tab,
+  body .post_container #page_main .content_area .resources_content_area .kids_corner_tab,
+  body .post_container #page_main .content_area .resources_content_area .resources_tab,
+  body .post_container #post_main .content_area .kids_content_area .kids_corner_tab,
+  body .post_container #post_main .content_area .kids_content_area .resources_tab,
+  body .post_container #post_main .content_area .resources_content_area .kids_corner_tab,
+  body .post_container #post_main .content_area .resources_content_area .resources_tab {
     width: auto;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -889,25 +1776,73 @@ body .page_container #page_main .content_area .resources_content_area .resources
   body .page_container #page_main .content_area .kids_content_area .kids_corner_tab,
   body .page_container #page_main .content_area .kids_content_area .resources_tab,
   body .page_container #page_main .content_area .resources_content_area .kids_corner_tab,
-  body .page_container #page_main .content_area .resources_content_area .resources_tab {
+  body .page_container #page_main .content_area .resources_content_area .resources_tab,
+  body .page_container #post_main .content_area .kids_content_area .kids_corner_tab,
+  body .page_container #post_main .content_area .kids_content_area .resources_tab,
+  body .page_container #post_main .content_area .resources_content_area .kids_corner_tab,
+  body .page_container #post_main .content_area .resources_content_area .resources_tab,
+  body .post_container #page_main .content_area .kids_content_area .kids_corner_tab,
+  body .post_container #page_main .content_area .kids_content_area .resources_tab,
+  body .post_container #page_main .content_area .resources_content_area .kids_corner_tab,
+  body .post_container #page_main .content_area .resources_content_area .resources_tab,
+  body .post_container #post_main .content_area .kids_content_area .kids_corner_tab,
+  body .post_container #post_main .content_area .kids_content_area .resources_tab,
+  body .post_container #post_main .content_area .resources_content_area .kids_corner_tab,
+  body .post_container #post_main .content_area .resources_content_area .resources_tab {
     overflow: visible;
   }
   body .page_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper,
   body .page_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper,
   body .page_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper,
-  body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper {
+  body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper,
+  body .page_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper,
+  body .page_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper,
+  body .page_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper,
+  body .page_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper,
+  body .post_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper,
+  body .post_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper,
+  body .post_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper,
+  body .post_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper,
+  body .post_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper,
+  body .post_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper,
+  body .post_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper,
+  body .post_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper {
     background: #fff;
   }
   body .page_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper #other_links_menu,
   body .page_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper #other_links_menu,
   body .page_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper #other_links_menu,
-  body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper #other_links_menu {
+  body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper #other_links_menu,
+  body .page_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper #other_links_menu,
+  body .page_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper #other_links_menu,
+  body .page_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper #other_links_menu,
+  body .page_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper #other_links_menu,
+  body .post_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper #other_links_menu,
+  body .post_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper #other_links_menu,
+  body .post_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper #other_links_menu,
+  body .post_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper #other_links_menu,
+  body .post_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper #other_links_menu,
+  body .post_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper #other_links_menu,
+  body .post_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper #other_links_menu,
+  body .post_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper #other_links_menu {
     display: inline-block;
   }
   body .page_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu,
   body .page_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu,
   body .page_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu,
-  body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu {
+  body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu,
+  body .page_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu,
+  body .page_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu,
+  body .page_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu,
+  body .page_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu,
+  body .post_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu,
+  body .post_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu,
+  body .post_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu,
+  body .post_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu,
+  body .post_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu,
+  body .post_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu,
+  body .post_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu,
+  body .post_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu {
     width: auto;
     display: inline-block;
     padding: 0;
@@ -917,13 +1852,37 @@ body .page_container #page_main .content_area .resources_content_area .resources
   body .page_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu .btn_visited,
   body .page_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu .btn_visited,
   body .page_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu .btn_visited,
-  body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu .btn_visited {
+  body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu .btn_visited,
+  body .page_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu .btn_visited,
+  body .page_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu .btn_visited,
+  body .page_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu .btn_visited,
+  body .page_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu .btn_visited,
+  body .post_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu .btn_visited,
+  body .post_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu .btn_visited,
+  body .post_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu .btn_visited,
+  body .post_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu .btn_visited,
+  body .post_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu .btn_visited,
+  body .post_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu .btn_visited,
+  body .post_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu .btn_visited,
+  body .post_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu .btn_visited {
     font-weight: bold;
   }
   body .page_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu button,
   body .page_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu button,
   body .page_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu button,
-  body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu button {
+  body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu button,
+  body .page_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu button,
+  body .page_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu button,
+  body .page_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu button,
+  body .page_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu button,
+  body .post_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu button,
+  body .post_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu button,
+  body .post_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu button,
+  body .post_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu button,
+  body .post_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu button,
+  body .post_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu button,
+  body .post_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu button,
+  body .post_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu button {
     float: left;
     padding: 0.2rem 0.2rem;
     margin: 0.9rem 1rem;
@@ -932,14 +1891,38 @@ body .page_container #page_main .content_area .resources_content_area .resources
   body .page_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu button:hover,
   body .page_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu button:hover,
   body .page_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu button:hover,
-  body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu button:hover {
+  body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu button:hover,
+  body .page_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu button:hover,
+  body .page_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu button:hover,
+  body .page_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu button:hover,
+  body .page_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu button:hover,
+  body .post_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu button:hover,
+  body .post_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu button:hover,
+  body .post_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu button:hover,
+  body .post_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu button:hover,
+  body .post_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu button:hover,
+  body .post_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu button:hover,
+  body .post_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu button:hover,
+  body .post_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu button:hover {
     background-color: #c9c9c9;
     border-radius: 2px;
   }
   body .page_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu button span::after,
   body .page_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu button span::after,
   body .page_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu button span::after,
-  body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu button span::after {
+  body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu button span::after,
+  body .page_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu button span::after,
+  body .page_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu button span::after,
+  body .page_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu button span::after,
+  body .page_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu button span::after,
+  body .post_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu button span::after,
+  body .post_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu button span::after,
+  body .post_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu button span::after,
+  body .post_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu button span::after,
+  body .post_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu button span::after,
+  body .post_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu button span::after,
+  body .post_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu button span::after,
+  body .post_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu button span::after {
     position: absolute;
     content: "";
     width: 100%;
@@ -953,13 +1936,37 @@ body .page_container #page_main .content_area .resources_content_area .resources
   body .page_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu .tab_submenu button,
   body .page_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu .tab_submenu button,
   body .page_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu .tab_submenu button,
-  body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu .tab_submenu button {
+  body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu .tab_submenu button,
+  body .page_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu .tab_submenu button,
+  body .page_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu .tab_submenu button,
+  body .page_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu .tab_submenu button,
+  body .page_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu .tab_submenu button,
+  body .post_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu .tab_submenu button,
+  body .post_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu .tab_submenu button,
+  body .post_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu .tab_submenu button,
+  body .post_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu .tab_submenu button,
+  body .post_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu .tab_submenu button,
+  body .post_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu .tab_submenu button,
+  body .post_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu .tab_submenu button,
+  body .post_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu .tab_submenu button {
     margin: 0;
   }
   body .page_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu:hover .tab_submenu,
   body .page_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu:hover .tab_submenu,
   body .page_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu:hover .tab_submenu,
-  body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu:hover .tab_submenu {
+  body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu:hover .tab_submenu,
+  body .page_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu:hover .tab_submenu,
+  body .page_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu:hover .tab_submenu,
+  body .page_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu:hover .tab_submenu,
+  body .page_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu:hover .tab_submenu,
+  body .post_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu:hover .tab_submenu,
+  body .post_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu:hover .tab_submenu,
+  body .post_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu:hover .tab_submenu,
+  body .post_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu:hover .tab_submenu,
+  body .post_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu:hover .tab_submenu,
+  body .post_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu:hover .tab_submenu,
+  body .post_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu:hover .tab_submenu,
+  body .post_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu:hover .tab_submenu {
     position: absolute;
     top: 100%;
     left: 50%;
@@ -979,36 +1986,96 @@ body .page_container #page_main .content_area .resources_content_area .resources
   body .page_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu:hover .tab_submenu button,
   body .page_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu:hover .tab_submenu button,
   body .page_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu:hover .tab_submenu button,
-  body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu:hover .tab_submenu button {
+  body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu:hover .tab_submenu button,
+  body .page_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu:hover .tab_submenu button,
+  body .page_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu:hover .tab_submenu button,
+  body .page_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu:hover .tab_submenu button,
+  body .page_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu:hover .tab_submenu button,
+  body .post_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu:hover .tab_submenu button,
+  body .post_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu:hover .tab_submenu button,
+  body .post_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu:hover .tab_submenu button,
+  body .post_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu:hover .tab_submenu button,
+  body .post_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper .tab_menu:hover .tab_submenu button,
+  body .post_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper .tab_menu:hover .tab_submenu button,
+  body .post_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper .tab_menu:hover .tab_submenu button,
+  body .post_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper .tab_menu:hover .tab_submenu button {
     display: inherit;
     padding: 1rem 0;
   }
   body .page_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper button.active,
   body .page_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper button.active,
   body .page_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper button.active,
-  body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper button.active {
+  body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper button.active,
+  body .page_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper button.active,
+  body .page_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper button.active,
+  body .page_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper button.active,
+  body .page_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper button.active,
+  body .post_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper button.active,
+  body .post_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper button.active,
+  body .post_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper button.active,
+  body .post_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper button.active,
+  body .post_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper button.active,
+  body .post_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper button.active,
+  body .post_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper button.active,
+  body .post_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper button.active {
     background: none;
   }
   body .page_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper button.active span::after,
   body .page_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper button.active span::after,
   body .page_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper button.active span::after,
-  body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper button.active span::after {
+  body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper button.active span::after,
+  body .page_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper button.active span::after,
+  body .page_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper button.active span::after,
+  body .page_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper button.active span::after,
+  body .page_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper button.active span::after,
+  body .post_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper button.active span::after,
+  body .post_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper button.active span::after,
+  body .post_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper button.active span::after,
+  body .post_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper button.active span::after,
+  body .post_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper button.active span::after,
+  body .post_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper button.active span::after,
+  body .post_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper button.active span::after,
+  body .post_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper button.active span::after {
     background-color: #1d2089;
   }
   body .page_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper,
   body .page_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper,
   body .page_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper,
-  body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper {
+  body .page_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper,
+  body .page_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper,
+  body .page_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper,
+  body .page_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper,
+  body .page_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper,
+  body .post_container #page_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper,
+  body .post_container #page_main .content_area .kids_content_area .resources_tab .tab_wrapper,
+  body .post_container #page_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper,
+  body .post_container #page_main .content_area .resources_content_area .resources_tab .tab_wrapper,
+  body .post_container #post_main .content_area .kids_content_area .kids_corner_tab .tab_wrapper,
+  body .post_container #post_main .content_area .kids_content_area .resources_tab .tab_wrapper,
+  body .post_container #post_main .content_area .resources_content_area .kids_corner_tab .tab_wrapper,
+  body .post_container #post_main .content_area .resources_content_area .resources_tab .tab_wrapper {
     background: rgba(255, 255, 255, 0.96);
   }
   body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content,
-  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content {
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content,
+  body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content,
+  body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content,
+  body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content,
+  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content,
+  body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content,
+  body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content {
     width: 65rem;
     /*adri blog navigation*/
     /*End of adri blog navigation*/
   }
   body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content,
-  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content {
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content,
+  body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content,
+  body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content,
+  body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content,
+  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content,
+  body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content,
+  body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content {
     -ms-grid-columns: auto auto;
         grid-template-columns: auto auto;
     -ms-grid-rows: auto;
@@ -1016,24 +2083,48 @@ body .page_container #page_main .content_area .resources_content_area .resources
         grid-template-areas: "img content-area";
   }
   body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .img_container,
-  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .img_container {
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .img_container,
+  body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .img_container,
+  body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .img_container,
+  body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .img_container,
+  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .img_container,
+  body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .img_container,
+  body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .img_container {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
     grid-area: img;
   }
   body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .img_container img,
-  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .img_container img {
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .img_container img,
+  body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .img_container img,
+  body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .img_container img,
+  body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .img_container img,
+  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .img_container img,
+  body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .img_container img,
+  body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .img_container img {
     width: 100%;
     margin: 0;
   }
   body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container,
-  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container {
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container,
+  body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container,
+  body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container,
+  body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container,
+  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container,
+  body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container,
+  body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container {
     -ms-grid-row: 1;
     -ms-grid-column: 2;
     grid-area: content-area;
   }
   body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container h1,
-  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h1 {
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h1,
+  body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container h1,
+  body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h1,
+  body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container h1,
+  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h1,
+  body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container h1,
+  body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h1 {
     display: block;
     padding: 0 1rem 1rem 1rem;
     width: 100%;
@@ -1042,35 +2133,77 @@ body .page_container #page_main .content_area .resources_content_area .resources
             box-sizing: border-box;
   }
   body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a,
-  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a {
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a,
+  body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a,
+  body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a,
+  body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a,
+  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a,
+  body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a,
+  body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a {
     text-align: left;
   }
   body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container button,
-  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container button {
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container button,
+  body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container button,
+  body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container button,
+  body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container button,
+  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container button,
+  body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container button,
+  body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container button {
     display: block;
     margin: 0 1rem 1rem 1rem;
   }
   body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data,
-  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data {
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data,
+  body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data,
+  body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data,
+  body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data,
+  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data,
+  body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data,
+  body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data {
     margin-left: auto;
     margin-right: auto;
     text-align: left;
   }
   body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation,
-  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation {
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation,
+  body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation,
+  body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation,
+  body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation,
+  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation,
+  body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation,
+  body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation {
     top: 156px;
     width: 50%;
   }
   body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content,
-  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content {
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content,
+  body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content,
+  body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content,
+  body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content,
+  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content,
+  body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content,
+  body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content {
     padding: 0.5rem 2rem;
   }
   body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content,
-  body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content {
+  body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content,
+  body .page_container #post_main .content_area .kids_content_area .instr_video_tab_content,
+  body .page_container #post_main .content_area .resources_content_area .instr_video_tab_content,
+  body .post_container #page_main .content_area .kids_content_area .instr_video_tab_content,
+  body .post_container #page_main .content_area .resources_content_area .instr_video_tab_content,
+  body .post_container #post_main .content_area .kids_content_area .instr_video_tab_content,
+  body .post_container #post_main .content_area .resources_content_area .instr_video_tab_content {
     width: 65rem;
   }
   body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content .player_class,
-  body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class {
+  body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class,
+  body .page_container #post_main .content_area .kids_content_area .instr_video_tab_content .player_class,
+  body .page_container #post_main .content_area .resources_content_area .instr_video_tab_content .player_class,
+  body .post_container #page_main .content_area .kids_content_area .instr_video_tab_content .player_class,
+  body .post_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class,
+  body .post_container #post_main .content_area .kids_content_area .instr_video_tab_content .player_class,
+  body .post_container #post_main .content_area .resources_content_area .instr_video_tab_content .player_class {
     position: fixed;
     margin: 0 auto;
     top: 50%;
@@ -1084,61 +2217,159 @@ body .page_container #page_main .content_area .resources_content_area .resources
   body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls a,
   body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls i,
   body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls a,
-  body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls i {
+  body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls i,
+  body .page_container #post_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls a,
+  body .page_container #post_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls i,
+  body .page_container #post_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls a,
+  body .page_container #post_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls i,
+  body .post_container #page_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls a,
+  body .post_container #page_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls i,
+  body .post_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls a,
+  body .post_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls i,
+  body .post_container #post_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls a,
+  body .post_container #post_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls i,
+  body .post_container #post_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls a,
+  body .post_container #post_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls i {
     cursor: pointer;
   }
   body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls #minimize_btn,
-  body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls #minimize_btn {
+  body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls #minimize_btn,
+  body .page_container #post_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls #minimize_btn,
+  body .page_container #post_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls #minimize_btn,
+  body .post_container #page_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls #minimize_btn,
+  body .post_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls #minimize_btn,
+  body .post_container #post_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls #minimize_btn,
+  body .post_container #post_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls #minimize_btn {
     display: inline-block;
   }
   body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls #close_btn,
-  body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls #close_btn {
+  body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls #close_btn,
+  body .page_container #post_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls #close_btn,
+  body .page_container #post_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls #close_btn,
+  body .post_container #page_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls #close_btn,
+  body .post_container #page_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls #close_btn,
+  body .post_container #post_main .content_area .kids_content_area .instr_video_tab_content .player_class #player_controls #close_btn,
+  body .post_container #post_main .content_area .resources_content_area .instr_video_tab_content .player_class #player_controls #close_btn {
     line-height: 0.85;
   }
   body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content .minimize_player,
-  body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .minimize_player {
+  body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .minimize_player,
+  body .page_container #post_main .content_area .kids_content_area .instr_video_tab_content .minimize_player,
+  body .page_container #post_main .content_area .resources_content_area .instr_video_tab_content .minimize_player,
+  body .post_container #page_main .content_area .kids_content_area .instr_video_tab_content .minimize_player,
+  body .post_container #page_main .content_area .resources_content_area .instr_video_tab_content .minimize_player,
+  body .post_container #post_main .content_area .kids_content_area .instr_video_tab_content .minimize_player,
+  body .post_container #post_main .content_area .resources_content_area .instr_video_tab_content .minimize_player {
     -webkit-animation: videoPlayerMinimize 0s;
             animation: videoPlayerMinimize 0s;
     -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
   }
   body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content .restore_player,
-  body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .restore_player {
+  body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .restore_player,
+  body .page_container #post_main .content_area .kids_content_area .instr_video_tab_content .restore_player,
+  body .page_container #post_main .content_area .resources_content_area .instr_video_tab_content .restore_player,
+  body .post_container #page_main .content_area .kids_content_area .instr_video_tab_content .restore_player,
+  body .post_container #page_main .content_area .resources_content_area .instr_video_tab_content .restore_player,
+  body .post_container #post_main .content_area .kids_content_area .instr_video_tab_content .restore_player,
+  body .post_container #post_main .content_area .resources_content_area .instr_video_tab_content .restore_player {
     -webkit-animation: videoPlayerMaximize 0s;
             animation: videoPlayerMaximize 0s;
     -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
   }
-  body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content, body .page_container #page_main .content_area .kids_content_area .worksheets_tab_content,
+  body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content,
+  body .page_container #page_main .content_area .kids_content_area .worksheets_tab_content,
   body .page_container #page_main .content_area .resources_content_area .reading_activities_tab_content,
-  body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content {
+  body .page_container #page_main .content_area .resources_content_area .worksheets_tab_content,
+  body .page_container #post_main .content_area .kids_content_area .reading_activities_tab_content,
+  body .page_container #post_main .content_area .kids_content_area .worksheets_tab_content,
+  body .page_container #post_main .content_area .resources_content_area .reading_activities_tab_content,
+  body .page_container #post_main .content_area .resources_content_area .worksheets_tab_content,
+  body .post_container #page_main .content_area .kids_content_area .reading_activities_tab_content,
+  body .post_container #page_main .content_area .kids_content_area .worksheets_tab_content,
+  body .post_container #page_main .content_area .resources_content_area .reading_activities_tab_content,
+  body .post_container #page_main .content_area .resources_content_area .worksheets_tab_content,
+  body .post_container #post_main .content_area .kids_content_area .reading_activities_tab_content,
+  body .post_container #post_main .content_area .kids_content_area .worksheets_tab_content,
+  body .post_container #post_main .content_area .resources_content_area .reading_activities_tab_content,
+  body .post_container #post_main .content_area .resources_content_area .worksheets_tab_content {
     width: 80%;
   }
   body .page_container #page_main .content_area .kids_content_area .tabcontent,
-  body .page_container #page_main .content_area .resources_content_area .tabcontent {
+  body .page_container #page_main .content_area .resources_content_area .tabcontent,
+  body .page_container #post_main .content_area .kids_content_area .tabcontent,
+  body .page_container #post_main .content_area .resources_content_area .tabcontent,
+  body .post_container #page_main .content_area .kids_content_area .tabcontent,
+  body .post_container #page_main .content_area .resources_content_area .tabcontent,
+  body .post_container #post_main .content_area .kids_content_area .tabcontent,
+  body .post_container #post_main .content_area .resources_content_area .tabcontent {
     margin: 0 auto;
+  }
+  body .page_container #page_main .content_area .post_content_area .post_content_area_data,
+  body .page_container #post_main .content_area .post_content_area .post_content_area_data,
+  body .post_container #page_main .content_area .post_content_area .post_content_area_data,
+  body .post_container #post_main .content_area .post_content_area .post_content_area_data {
+    width: 80%;
+    margin: 0 auto;
+    -ms-grid-columns: 70% 30%;
+        grid-template-columns: 70% 30%;
+        grid-template-areas: "breadcrumb_nav post_meta_content" "post_content post_meta_content";
+  }
+  body .page_container #page_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav,
+  body .page_container #post_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav,
+  body .post_container #page_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav,
+  body .post_container #post_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav {
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+    -webkit-box-align: left;
+        -ms-flex-align: left;
+            align-items: left;
+  }
+  body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_header h1,
+  body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_header h1,
+  body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_header h1,
+  body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_header h1 {
+    text-align: left;
+  }
+  body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_header p,
+  body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_header p,
+  body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_header p,
+  body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_header p {
+    text-align: left;
   }
 }
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   body .page_container #page_main .content_area .kids_content_area,
-  body .page_container #page_main .content_area .resources_content_area {
+  body .page_container #page_main .content_area .resources_content_area,
+  body .post_container #page_main .content_area .kids_content_area,
+  body .post_container #page_main .content_area .resources_content_area {
     /*Use of a third-party grid plugin for instrucitonal videos layout IE10+*/
     /*End of Use of a third-party grid plugin for instrucitonal videos layout IE10+*/
   }
   body .page_container #page_main .content_area .kids_content_area .kids_corner_tab,
   body .page_container #page_main .content_area .kids_content_area .resources_tab,
   body .page_container #page_main .content_area .resources_content_area .kids_corner_tab,
-  body .page_container #page_main .content_area .resources_content_area .resources_tab {
+  body .page_container #page_main .content_area .resources_content_area .resources_tab,
+  body .post_container #page_main .content_area .kids_content_area .kids_corner_tab,
+  body .post_container #page_main .content_area .kids_content_area .resources_tab,
+  body .post_container #page_main .content_area .resources_content_area .kids_corner_tab,
+  body .post_container #page_main .content_area .resources_content_area .resources_tab {
     top: 0;
   }
   body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content,
-  body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content {
+  body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content,
+  body .post_container #page_main .content_area .kids_content_area .instr_video_tab_content,
+  body .post_container #page_main .content_area .resources_content_area .instr_video_tab_content {
     overflow: hidden;
     /* Need this for the chrome bug */
   }
   body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content .videos,
-  body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos {
+  body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos,
+  body .post_container #page_main .content_area .kids_content_area .instr_video_tab_content .videos,
+  body .post_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos {
     -gutter-grid-: grid;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -1159,7 +2390,9 @@ body .page_container #page_main .content_area .resources_content_area .resources
     border-width: 0 40px 0 0;
   }
   body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content .videos > *,
-  body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos > * {
+  body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos > *,
+  body .post_container #page_main .content_area .kids_content_area .instr_video_tab_content .videos > *,
+  body .post_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos > * {
     -gutter-grid-: cell;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -1181,25 +2414,33 @@ body .page_container #page_main .content_area .resources_content_area .resources
 
 @media all and (-ms-high-contrast: none) and (max-width: 960px), (-ms-high-contrast: active) and (max-width: 960px) {
   body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content .videos > *,
-  body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos > * {
+  body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos > *,
+  body .post_container #page_main .content_area .kids_content_area .instr_video_tab_content .videos > *,
+  body .post_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos > * {
     width: calc(99.9999% / 2);
   }
 }
 
 @media all and (-ms-high-contrast: none) and (max-width: 480px), (-ms-high-contrast: active) and (max-width: 480px) {
   body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content .videos > *,
-  body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos > * {
+  body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos > *,
+  body .post_container #page_main .content_area .kids_content_area .instr_video_tab_content .videos > *,
+  body .post_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos > * {
     width: calc(99.9999% / 1);
   }
 }
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content .videos > *,
-  body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos > * {
+  body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos > *,
+  body .post_container #page_main .content_area .kids_content_area .instr_video_tab_content .videos > *,
+  body .post_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos > * {
     border-width: 0 0 40px 40px;
   }
   body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .video_content,
-  body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .video_content {
+  body .page_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .video_content,
+  body .post_container #page_main .content_area .kids_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .video_content,
+  body .post_container #page_main .content_area .resources_content_area .instr_video_tab_content .videos .video_links .video_link_wrapper .video_content {
     width: auto;
   }
 }
