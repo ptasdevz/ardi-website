@@ -1964,3 +1964,72 @@ Stack trace:
 [10-Apr-2020 21:22:38 UTC] PHP Notice:  Undefined variable: str_captitalize_complete in C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\functions.php on line 210
 [10-Apr-2020 21:22:38 UTC] PHP Notice:  Undefined variable: str_captitalize_complete in C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\functions.php on line 210
 [11-Apr-2020 19:11:51 UTC] PHP Notice:  Undefined variable: cat_name in C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\single.php on line 14
+[12-Apr-2020 20:49:52 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\Users\jason\gitprojects\ardi-website\dev\wp-admin\includes\class-wp-site-health.php on line 2303
+[12-Apr-2020 20:49:52 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\Users\jason\gitprojects\ardi-website\dev\wp-admin\includes\class-wp-site-health.php on line 2305
+[12-Apr-2020 20:49:52 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\Users\jason\gitprojects\ardi-website\dev\wp-admin\includes\class-wp-site-health.php on line 2303
+[12-Apr-2020 20:49:52 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\Users\jason\gitprojects\ardi-website\dev\wp-admin\includes\class-wp-site-health.php on line 2305
+[12-Apr-2020 20:49:52 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\Users\jason\gitprojects\ardi-website\dev\wp-admin\includes\class-wp-site-health.php on line 2303
+[12-Apr-2020 20:49:52 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\Users\jason\gitprojects\ardi-website\dev\wp-admin\includes\class-wp-site-health.php on line 2305
+[13-Apr-2020 20:38:34 UTC] PHP Fatal error:  Uncaught Error: Class 'Adrii_Walker_Comment' not found in C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\comments.php:71
+Stack trace:
+#0 C:\Users\jason\gitprojects\ardi-website\dev\wp-includes\comment-template.php(1527): require()
+#1 C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\single.php(77): comments_template()
+#2 C:\Users\jason\gitprojects\ardi-website\dev\wp-includes\template-loader.php(106): include('C:\\Users\\jason\\...')
+#3 C:\Users\jason\gitprojects\ardi-website\dev\wp-blog-header.php(19): require_once('C:\\Users\\jason\\...')
+#4 C:\Users\jason\gitprojects\ardi-website\dev\index.php(17): require('C:\\Users\\jason\\...')
+#5 {main}
+  thrown in C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\comments.php on line 71
+[13-Apr-2020 21:47:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function twentytwenty_is_comment_by_post_author() in C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\classes\class-twentytwenty-walker-comment.php:126
+Stack trace:
+#0 C:\Users\jason\gitprojects\ardi-website\dev\wp-includes\class-walker-comment.php(190): TwentyTwenty_Walker_Comment->html5_comment(Object(WP_Comment), 1, Array)
+#1 C:\Users\jason\gitprojects\ardi-website\dev\wp-includes\class-wp-walker.php(144): Walker_Comment->start_el('', Object(WP_Comment), 1, Array)
+#2 C:\Users\jason\gitprojects\ardi-website\dev\wp-includes\class-walker-comment.php(139): Walker->display_element(Object(WP_Comment), Array, '5', 0, Array, '')
+#3 C:\Users\jason\gitprojects\ardi-website\dev\wp-includes\class-wp-walker.php(387): Walker_Comment->display_element(Object(WP_Comment), Array, '5', 0, Array, '')
+#4 C:\Users\jason\gitprojects\ardi-website\dev\wp-includes\comment-template.php(2198): Walker->paged_walk(Array, '5', 0, 0, Array)
+#5 C:\Users\jason\gitprojects\ardi-web in C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\classes\class-twentytwenty-walker-comment.php on line 126
+[13-Apr-2020 21:50:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function twentytwenty_is_comment_by_post_author() in C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\classes\class-twentytwenty-walker-comment.php:126
+Stack trace:
+#0 C:\Users\jason\gitprojects\ardi-website\dev\wp-includes\class-walker-comment.php(190): TwentyTwenty_Walker_Comment->html5_comment(Object(WP_Comment), 1, Array)
+#1 C:\Users\jason\gitprojects\ardi-website\dev\wp-includes\class-wp-walker.php(144): Walker_Comment->start_el('', Object(WP_Comment), 1, Array)
+#2 C:\Users\jason\gitprojects\ardi-website\dev\wp-includes\class-walker-comment.php(139): Walker->display_element(Object(WP_Comment), Array, '5', 0, Array, '')
+#3 C:\Users\jason\gitprojects\ardi-website\dev\wp-includes\class-wp-walker.php(387): Walker_Comment->display_element(Object(WP_Comment), Array, '5', 0, Array, '')
+#4 C:\Users\jason\gitprojects\ardi-website\dev\wp-includes\comment-template.php(2198): Walker->paged_walk(Array, '5', 0, 0, Array)
+#5 C:\Users\jason\gitprojects\ardi-web in C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\classes\class-twentytwenty-walker-comment.php on line 126
+[13-Apr-2020 21:50:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function twentytwenty_is_comment_by_post_author() in C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\classes\class-twentytwenty-walker-comment.php:126
+Stack trace:
+#0 C:\Users\jason\gitprojects\ardi-website\dev\wp-includes\class-walker-comment.php(190): TwentyTwenty_Walker_Comment->html5_comment(Object(WP_Comment), 1, Array)
+#1 C:\Users\jason\gitprojects\ardi-website\dev\wp-includes\class-wp-walker.php(144): Walker_Comment->start_el('', Object(WP_Comment), 1, Array)
+#2 C:\Users\jason\gitprojects\ardi-website\dev\wp-includes\class-walker-comment.php(139): Walker->display_element(Object(WP_Comment), Array, '5', 0, Array, '')
+#3 C:\Users\jason\gitprojects\ardi-website\dev\wp-includes\class-wp-walker.php(387): Walker_Comment->display_element(Object(WP_Comment), Array, '5', 0, Array, '')
+#4 C:\Users\jason\gitprojects\ardi-website\dev\wp-includes\comment-template.php(2198): Walker->paged_walk(Array, '5', 0, 0, Array)
+#5 C:\Users\jason\gitprojects\ardi-web in C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\classes\class-twentytwenty-walker-comment.php on line 126
+[13-Apr-2020 21:51:38 UTC] PHP Fatal error:  Uncaught Error: Class 'TwentyTwenty_Walker_Comment' not found in C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\comments.php:71
+Stack trace:
+#0 C:\Users\jason\gitprojects\ardi-website\dev\wp-includes\comment-template.php(1527): require()
+#1 C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\single.php(77): comments_template()
+#2 C:\Users\jason\gitprojects\ardi-website\dev\wp-includes\template-loader.php(106): include('C:\\Users\\jason\\...')
+#3 C:\Users\jason\gitprojects\ardi-website\dev\wp-blog-header.php(19): require_once('C:\\Users\\jason\\...')
+#4 C:\Users\jason\gitprojects\ardi-website\dev\index.php(17): require('C:\\Users\\jason\\...')
+#5 {main}
+  thrown in C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\comments.php on line 71
+[13-Apr-2020 21:52:53 UTC] PHP Fatal error:  Uncaught Error: Class 'TwentyTwenty_Walker_Comment' not found in C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\comments.php:71
+Stack trace:
+#0 C:\Users\jason\gitprojects\ardi-website\dev\wp-includes\comment-template.php(1527): require()
+#1 C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\single.php(77): comments_template()
+#2 C:\Users\jason\gitprojects\ardi-website\dev\wp-includes\template-loader.php(106): include('C:\\Users\\jason\\...')
+#3 C:\Users\jason\gitprojects\ardi-website\dev\wp-blog-header.php(19): require_once('C:\\Users\\jason\\...')
+#4 C:\Users\jason\gitprojects\ardi-website\dev\index.php(17): require('C:\\Users\\jason\\...')
+#5 {main}
+  thrown in C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\comments.php on line 71
+[13-Apr-2020 22:57:43 UTC] PHP Warning:  printf(): Too few arguments in C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\classes\class-adri-walker-comment.php on line 79
+[13-Apr-2020 22:57:43 UTC] PHP Warning:  printf(): Too few arguments in C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\classes\class-adri-walker-comment.php on line 79
+[13-Apr-2020 22:57:43 UTC] PHP Warning:  printf(): Too few arguments in C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\classes\class-adri-walker-comment.php on line 79
+[13-Apr-2020 22:58:00 UTC] PHP Warning:  printf(): Too few arguments in C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\classes\class-adri-walker-comment.php on line 79
+[13-Apr-2020 22:58:00 UTC] PHP Warning:  printf(): Too few arguments in C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\classes\class-adri-walker-comment.php on line 79
+[13-Apr-2020 22:58:00 UTC] PHP Warning:  printf(): Too few arguments in C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\classes\class-adri-walker-comment.php on line 79
+[13-Apr-2020 22:58:12 UTC] PHP Warning:  printf(): Too few arguments in C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\classes\class-adri-walker-comment.php on line 79
+[13-Apr-2020 22:58:12 UTC] PHP Warning:  printf(): Too few arguments in C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\classes\class-adri-walker-comment.php on line 79
+[13-Apr-2020 22:58:12 UTC] PHP Warning:  printf(): Too few arguments in C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\classes\class-adri-walker-comment.php on line 79
+[13-Apr-2020 23:12:26 UTC] PHP Parse error:  syntax error, unexpected 'fa' (T_STRING), expecting ';' or ',' in C:\Users\jason\gitprojects\ardi-website\dev\wp-content\themes\adrinstitute\classes\class-adri-walker-comment.php on line 100
+[13-Apr-2020 23:12:31 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\dev\wp-includes\class-wp-recovery-mode-email-service.php on line 339
+[13-Apr-2020 23:12:32 UTC] PHP Notice:  Trying to access array offset on value of type bool in C:\Users\jason\gitprojects\ardi-website\dev\wp-includes\class-wp-recovery-mode-email-service.php on line 340

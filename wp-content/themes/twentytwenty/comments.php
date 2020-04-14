@@ -61,7 +61,7 @@ if ( $comments ) {
 			wp_list_comments(
 				array(
 					'walker'      => new TwentyTwenty_Walker_Comment(),
-					'avatar_size' => 120,
+					'avatar_size' => 40,
 					'style'       => 'div',
 				)
 			);

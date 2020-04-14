@@ -1,4 +1,4 @@
-<footer>
+<footer class="theme_layout">
     <div class="footer_social_media">
         <p><?php the_field('social_media_tagline'); ?></p>
         <div class="vertical_line"></div>

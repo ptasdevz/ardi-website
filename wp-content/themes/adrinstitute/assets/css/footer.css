@@ -34,7 +34,7 @@ body .container #overlay {
   cursor: pointer;
 }
 
-body .container footer {
+body .container footer.theme_layout {
   background: #1d2089;
   height: auto;
   /*
@@ -47,19 +47,19 @@ body .container footer {
         */
 }
 
-body .container footer * {
+body .container footer.theme_layout * {
   padding: 0;
   margin: 0;
 }
 
-body .container footer .footer_social_media {
+body .container footer.theme_layout .footer_social_media {
   width: 100%;
   height: auto;
   margin-bottom: 1rem;
   padding-top: 0.5rem;
 }
 
-body .container footer .footer_social_media p {
+body .container footer.theme_layout .footer_social_media p {
   text-transform: uppercase;
   color: #fff;
   text-align: center;
@@ -69,12 +69,12 @@ body .container footer .footer_social_media p {
   margin-bottom: 0.5rem;
 }
 
-body .container footer .footer_social_media ul {
+body .container footer.theme_layout .footer_social_media ul {
   list-style-type: none;
   text-align: center;
 }
 
-body .container footer .footer_social_media ul li {
+body .container footer.theme_layout .footer_social_media ul li {
   display: inline-block;
   font-size: 1.5rem;
   height: 1.5rem;
@@ -86,36 +86,36 @@ body .container footer .footer_social_media ul li {
   margin-bottom: 0.5rem;
 }
 
-body .container footer .footer_social_media ul li:hover {
+body .container footer.theme_layout .footer_social_media ul li:hover {
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
 }
 
-body .container footer .footer_social_media ul li a {
+body .container footer.theme_layout .footer_social_media ul li a {
   color: #1d2089 !important;
   text-decoration: none;
 }
 
-body .container footer .footer_social_media ul li a i {
+body .container footer.theme_layout .footer_social_media ul li a i {
   line-height: 1.5rem;
   color: #fff;
 }
 
-body .container footer .footer_social_media ul li a i:hover {
+body .container footer.theme_layout .footer_social_media ul li a i:hover {
   color: #fcba04 !important;
 }
 
-body .container footer .footer_nav_links {
+body .container footer.theme_layout .footer_nav_links {
   margin-bottom: 1rem;
 }
 
-body .container footer .footer_nav_links ul {
+body .container footer.theme_layout .footer_nav_links ul {
   list-style-type: none;
   text-align: center;
   text-transform: capitalize;
 }
 
-body .container footer .footer_nav_links ul li {
+body .container footer.theme_layout .footer_nav_links ul li {
   font-size: 1rem;
   -webkit-transition: -webkit-transform 1s;
   transition: -webkit-transform 1s;
@@ -124,25 +124,25 @@ body .container footer .footer_nav_links ul li {
   margin-bottom: 0.5rem;
 }
 
-body .container footer .footer_nav_links ul li:hover {
+body .container footer.theme_layout .footer_nav_links ul li:hover {
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
 }
 
-body .container footer .footer_nav_links ul li a {
+body .container footer.theme_layout .footer_nav_links ul li a {
   color: #fff !important;
   text-decoration: none;
 }
 
-body .container footer .footer_nav_links ul li a i {
+body .container footer.theme_layout .footer_nav_links ul li a i {
   line-height: 0.75rem;
 }
 
-body .container footer .footer_nav_links ul li a:hover {
+body .container footer.theme_layout .footer_nav_links ul li a:hover {
   color: #fcba04 !important;
 }
 
-body .container footer .copyright {
+body .container footer.theme_layout .copyright {
   padding-bottom: 0.5rem;
   text-decoration: none;
   text-align: center;
@@ -151,46 +151,46 @@ body .container footer .copyright {
   color: #fff;
 }
 
-body .container footer .copyright p {
+body .container footer.theme_layout .copyright p {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
 }
 
-body .container footer .copyright .adr_acronym {
+body .container footer.theme_layout .copyright .adr_acronym {
   text-transform: uppercase;
 }
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  body .container footer {
+  body .container footer.theme_layout {
     position: relative;
     top: 6rem;
   }
 }
 
 @supports (-ms-accelerator: true) {
-  body .container footer {
+  body .container footer.theme_layout {
     position: relative;
     top: 6rem;
   }
 }
 
 @supports (-ms-ime-align: auto) {
-  body .container footer {
+  body .container footer.theme_layout {
     position: relative;
     top: 6rem;
   }
 }
 
 @media (min-width: 840px) {
-  body .container footer {
+  body .container footer.theme_layout {
     padding: 0px 1rem;
   }
-  body .container footer .footer_social_media {
+  body .container footer.theme_layout .footer_social_media {
     margin: 0px auto;
     width: 50%;
     -webkit-transform: translate(25%, 0%);
             transform: translate(25%, 0%);
   }
-  body .container footer .footer_social_media p {
+  body .container footer.theme_layout .footer_social_media p {
     font-size: 0.75rem;
     text-align: left;
     float: left;
@@ -198,36 +198,36 @@ body .container footer .copyright .adr_acronym {
     height: 2rem;
     line-height: 2rem;
   }
-  body .container footer .footer_social_media .vertical_line {
+  body .container footer.theme_layout .footer_social_media .vertical_line {
     border-left: 1px solid #707070;
     height: 2rem;
     float: left;
     margin: 0px 0.5rem;
   }
-  body .container footer .footer_social_media ul {
+  body .container footer.theme_layout .footer_social_media ul {
     text-align: center;
     display: inline-block;
     margin: 0px 1rem 0px 0.5rem;
   }
-  body .container footer .footer_social_media ul li {
+  body .container footer.theme_layout .footer_social_media ul li {
     height: 1.5rem;
     width: 1.5rem;
   }
-  body .container footer .horizontal_line {
+  body .container footer.theme_layout .horizontal_line {
     border-bottom: 1px solid #707070;
     width: 50%;
     margin: 0 auto;
   }
-  body .container footer .footer_nav_links ul {
+  body .container footer.theme_layout .footer_nav_links ul {
     text-align: center;
     margin-top: 1rem;
   }
-  body .container footer .footer_nav_links ul li {
+  body .container footer.theme_layout .footer_nav_links ul li {
     font-size: 0.75rem;
     display: inline-block;
     padding-right: 1rem;
   }
-  body .container footer .copyright {
+  body .container footer.theme_layout .copyright {
     text-align: center;
   }
 }

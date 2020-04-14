@@ -41,11 +41,11 @@ if ($next_post || $prev_post) {
 
 			if ($next_post) {
 			?>
-
 				<a class="next_post" href="<?php echo esc_url(get_permalink($next_post->ID)); ?>">
 					<span class="arrow">Next&nbsp;<i class="fa fa-chevron-right"></i></span>
 					<span class="title"><span class="title_inner"><?php echo wp_kses_post(get_the_title($next_post->ID)); ?></span></span>
 				</a>
+
 			<?php
 			}
 			?>

@@ -99,6 +99,29 @@ $(document).ready(function () {
 
     })
 
+    /*blog comments replies */
+
+    //indent replies
+    $(".comment").each(function ($idx, $ele) {
+
+        classes = $(this).attr("class");
+        if (classes.includes("depth-1") == false) {
+            margin_left = $(this).prev().css("margin-left");
+            margin_left = Number(margin_left.replace(/\D/g, ''));
+            $(this).css("margin-left", margin_left + Number(3) + "rem");
+            $(this).css("margin-top", Number(0.6) + "rem");
+        }
+
+    });
+
+    //open and close comments
+    $(".comments_header").click(function (){
+
+        $(".comments_inner").toggleClass("active");
+        $(".close_open_arrow").toggleClass("open");
+    })
+    /*end blog comments replies */
+
 
     //=================================End of Resources Content============================
 
@@ -331,7 +354,7 @@ $(document).ready(function () {
     });
     //==================================End of Reading Activities Content===============================
 
-     //==================================Worksheets Content===============================
+    //==================================Worksheets Content===============================
 
     /*open card to document */
     $(".worksheets_card").click(function () {
@@ -632,7 +655,7 @@ function onYouTubeIframeAPIReady(vid_id) {
         videoId: vid_id,
         playerVars: {
             end: 0, autoplay: 1, loop: 0, controls: 1, showinfo: 0, modestbranding: 1, fs: 1, cc_load_policty: 0, iv_load_policy: 3, autohide: 0
-          },
+        },
         events: {
             'onReady': onPlayerReady,
         }

@@ -1335,7 +1335,8 @@ body .page_container #page_main .content_area .post_content_area .post_content_a
 body .page_container #post_main .content_area .post_content_area .post_content_area_data,
 body .post_container #page_main .content_area .post_content_area .post_content_area_data,
 body .post_container #post_main .content_area .post_content_area .post_content_area_data {
-  position: inherit;
+  position: relative;
+  z-index: 10;
   padding: 0 1rem;
   display: -ms-grid;
   display: grid;
@@ -1409,7 +1410,8 @@ body .post_container #post_main .content_area .post_content_area .post_content_a
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: post_content;
-  z-index: 10;
+  /*comment section styling*/
+  /*end of comment section styling*/
 }
 
 body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_header h1,
@@ -1444,7 +1446,7 @@ body .post_container #page_main .content_area .post_content_area .post_content_a
 body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_content {
   background: #fff;
   border-radius: 2px;
-  padding: .5rem;
+  padding: 0.5rem;
   border-radius: 2px;
 }
 
@@ -1460,6 +1462,21 @@ body .page_container #post_main .content_area .post_content_area .post_content_a
 body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container,
 body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container {
   margin: 1rem 0;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a,
@@ -1485,6 +1502,10 @@ body .page_container #post_main .content_area .post_content_area .post_content_a
 body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a:hover .title .title_inner,
 body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a:hover .title .title_inner {
   visibility: visible;
+  -webkit-animation: fadeEffect 1s;
+          animation: fadeEffect 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a .title .title_inner,
@@ -1492,17 +1513,19 @@ body .page_container #post_main .content_area .post_content_area .post_content_a
 body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a .title .title_inner,
 body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a .title .title_inner {
   visibility: hidden;
+  opacity: 0;
+  font-size: 0.8rem;
   width: auto;
+  padding: 0 2rem;
   background-color: rgba(0, 0, 0, 0.75);
   color: #fff;
   text-align: center;
   border-radius: 2px;
   /* Position the tooltip text at top*/
   position: absolute;
-  width: 120px;
+  width: auto;
   bottom: 2rem;
-  left: 50%;
-  margin-left: -5.5rem;
+  left: 1rem;
 }
 
 body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a .arrow,
@@ -1515,11 +1538,167 @@ body .post_container #post_main .content_area .post_content_area .post_content_a
   border-radius: 2px;
 }
 
-body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner .next_post,
-body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner .next_post,
-body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner .next_post,
-body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner .next_post {
-  float: right;
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner .previous_post .title .title_inner,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner .previous_post .title .title_inner,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner .previous_post .title .title_inner,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner .previous_post .title .title_inner {
+  left: -7.2rem;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner .next_post .title .title_inner,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner .next_post .title .title_inner,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner .next_post .title .title_inner,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner .next_post .title .title_inner {
+  left: -6.3rem;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_header,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_header,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_header,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_header {
+  padding-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  cursor: pointer;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_header i,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_header i,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_header i,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_header i {
+  font-size: 1.5rem;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_header i.open,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_header i.open,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_header i.open,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_header i.open {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner.active,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner.active,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner.active,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner.active {
+  display: block;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner {
+  display: none;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment {
+  padding-bottom: 1.5rem;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10% 90%;
+      grid-template-columns: 10% 90%;
+      grid-template-areas: "author_img content";
+  font-size: medium;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_author_img,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_author_img,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_author_img,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_author_img {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: author_img;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: content;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata {
+  padding-bottom: 0.5rem;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .fn,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .fn,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .fn,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .fn {
+  color: #000;
+  font-weight: bold;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .date_time_reply_link,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .date_time_reply_link,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .date_time_reply_link,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .date_time_reply_link {
+  display: inline;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .date_time_reply_link time,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .date_time_reply_link time,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .date_time_reply_link time,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .date_time_reply_link time {
+  font-size: small;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .date_time_reply_link a,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .date_time_reply_link a,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .date_time_reply_link a,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .date_time_reply_link a {
+  text-decoration: none;
+  color: #1d2089;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_content,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_content,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_content,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_content {
+  padding-bottom: 0.5rem;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_footer_meta,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_footer_meta,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_footer_meta,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_footer_meta {
+  font-size: small;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_footer_meta .comment_reply a,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_footer_meta .comment_reply a,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_footer_meta .comment_reply a,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_footer_meta .comment_reply a {
+  text-decoration: none;
+  color: #1d2089;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_footer_meta .comment_reply a:hover,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_footer_meta .comment_reply a:hover,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_footer_meta .comment_reply a:hover,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_footer_meta .comment_reply a:hover {
+  color: #fcba04;
 }
 
 body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_meta_content,
