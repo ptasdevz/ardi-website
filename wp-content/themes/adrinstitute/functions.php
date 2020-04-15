@@ -14,6 +14,9 @@ require get_template_directory() . '/inc/template-tags.php';
 /*using ajax to get blog categories data */
 include get_template_directory() . "/template-parts/ajax-adri-blog-categories.php";
 
+/*using ajax to get post data */
+include get_template_directory() . "/template-parts/ajax-adri-post.php";
+
 //enqueue css style sheets
 function load_style_sheets()
 {
@@ -100,8 +103,12 @@ function load_style_sheets()
 add_action('wp_enqueue_scripts', 'load_style_sheets');
 
 //enqueue javascript files
-function load_js()
+function load_scripts()
 {
+    if ( ( ! is_admin() ) && is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+    }
+    
     wp_deregister_script('jquery');
     wp_register_script('jquery', get_template_directory_uri() . '/assets/js/jquery/jquery.js', '', null, false);
     wp_enqueue_script('jquery');
@@ -146,7 +153,7 @@ function load_js()
     wp_register_script('youtube_iframe_api', 'https://www.youtube.com/iframe_api', '', 1, true);
     wp_enqueue_script('youtube_iframe_api');
 }
-add_action('wp_enqueue_scripts', 'load_js');
+add_action('wp_enqueue_scripts', 'load_scripts');
 
 /*add additional meta tags */
 function load_meta_tags()
@@ -223,6 +230,27 @@ function adri_capitalize_each_word($str_complete)
     return $str_captitalize_complete;
 }
 
+//get time elapse
+function time_elapsed($secs, $time_unit = null){
+
+
+    $bit = array(
+        'y' => $secs / 31556926 % 12,
+        'w' => $secs / 604800 % 52,
+        'd' => $secs / 86400 % 7,
+        'h' => $secs / 3600 % 24,
+        'm' => $secs / 60 % 60,
+        's' => $secs % 60
+    );
+
+    foreach ($bit as $k => $v)
+        if ($v > 0 && $time_unit == null) $ret[] = $v . $k;
+        else if ($v > 0 && $time_unit == $k) $ret[] = $v . $k;
+
+
+    return join(' ', $ret);
+}
+
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -243,18 +271,18 @@ function adri_theme_support()
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
 	 */
-	add_theme_support(
-		'html5',
-		array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-			'script',
-			'style',
-		)
-	);
+    add_theme_support(
+        'html5',
+        array(
+            'search-form',
+            'comment-form',
+            'comment-list',
+            'gallery',
+            'caption',
+            'script',
+            'style',
+        )
+    );
 
     /*Image sizes 1:1*/
     add_image_size('small_1_1', 150, 150, false);

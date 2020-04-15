@@ -30,7 +30,7 @@ if ( ! class_exists( 'TwentyTwenty_Walker_Comment' ) ) {
 		 */
 		protected function html5_comment( $comment, $depth, $args ) {
 
-			print_r($comment);
+			print_r($args);
 
 			$tag = ( 'div' === $args['style'] ) ? 'div' : 'li';
 

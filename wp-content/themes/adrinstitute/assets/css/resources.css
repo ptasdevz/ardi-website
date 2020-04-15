@@ -189,10 +189,8 @@ body .page_container #page_main .content_area .resources_content_area .tabconten
           box-shadow: 2px 2px 4px #c9c9c9;
   margin: 0 auto 1rem auto;
   border-radius: 2px;
-  -webkit-transition: -webkit-transform 1s;
-  transition: -webkit-transform 1s;
-  transition: transform 1s;
-  transition: transform 1s, -webkit-transform 1s;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 body .page_container #page_main .content_area .resources_content_area .tabcontent .videos .video_links:hover {

@@ -79,16 +79,7 @@ body .container footer.theme_layout .footer_social_media ul li {
   font-size: 1.5rem;
   height: 1.5rem;
   width: 1.5rem;
-  -webkit-transition: -webkit-transform 1s;
-  transition: -webkit-transform 1s;
-  transition: transform 1s;
-  transition: transform 1s, -webkit-transform 1s;
   margin-bottom: 0.5rem;
-}
-
-body .container footer.theme_layout .footer_social_media ul li:hover {
-  -webkit-transform: scale(0.95);
-          transform: scale(0.95);
 }
 
 body .container footer.theme_layout .footer_social_media ul li a {
@@ -99,10 +90,14 @@ body .container footer.theme_layout .footer_social_media ul li a {
 body .container footer.theme_layout .footer_social_media ul li a i {
   line-height: 1.5rem;
   color: #fff;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 body .container footer.theme_layout .footer_social_media ul li a i:hover {
   color: #fcba04 !important;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
 }
 
 body .container footer.theme_layout .footer_nav_links {
@@ -117,29 +112,25 @@ body .container footer.theme_layout .footer_nav_links ul {
 
 body .container footer.theme_layout .footer_nav_links ul li {
   font-size: 1rem;
-  -webkit-transition: -webkit-transform 1s;
-  transition: -webkit-transform 1s;
-  transition: transform 1s;
-  transition: transform 1s, -webkit-transform 1s;
   margin-bottom: 0.5rem;
-}
-
-body .container footer.theme_layout .footer_nav_links ul li:hover {
-  -webkit-transform: scale(0.95);
-          transform: scale(0.95);
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 body .container footer.theme_layout .footer_nav_links ul li a {
   color: #fff !important;
   text-decoration: none;
-}
-
-body .container footer.theme_layout .footer_nav_links ul li a i {
-  line-height: 0.75rem;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 body .container footer.theme_layout .footer_nav_links ul li a:hover {
   color: #fcba04 !important;
+}
+
+body .container footer.theme_layout .footer_nav_links ul li:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
 }
 
 body .container footer.theme_layout .copyright {

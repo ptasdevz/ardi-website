@@ -29,7 +29,7 @@ body {
               background: rgba(255, 255, 255, 1);
               border-radius: 100%;
               box-shadow: 2px 4px 20px #000;
-              transition: transform 1s;
+              transition: 1s;
               &:hover {
                 transform: scale($transform-scale-factor);
               }
@@ -84,17 +84,17 @@ body {
               transform: translate(-50%, -50%);
               li {
                 padding: $padding-nav * 4 0;
-                transition: transform 1s;
+                transition: 1s;
+                a {
+                  color: color(text-2) !important;
+                  text-decoration: none;
+                  transition: 1s;
+                  &:hover {
+                    color: color(secondary) !important;
+                  }
+                }
                 &:hover {
                   transform: scale($transform-scale-factor);
-                }
-              }
-  
-              li a {
-                color: color(text-2) !important;
-                text-decoration: none;
-                &:hover {
-                  color: color(secondary) !important;
                 }
               }
             }

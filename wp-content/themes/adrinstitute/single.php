@@ -19,7 +19,7 @@ $name = ucfirst($author->first_name) . ' ' . ucfirst($author->last_name);
 $d = strtotime($post->post_date);
 $date_formatted = date("F j, Y", $d);
 
-// print_r();
+//print_r($post);
 
 $res_pg = get_page_by_title("resources");
 // print_r($res_pg);
@@ -44,7 +44,7 @@ $res_pg = get_page_by_title("resources");
                             <h1><?php the_title(); ?></h1>
                             <p class='adri_blog_meta_data'><span class='author'><i class='fa fa-user' aria-hidden='true'></i>
                                 </span><?php echo $name ?> &nbsp;&nbsp;<span class='comment_count'><i class='fa fa-comments' aria-hidden='true'></i>
-                                </span><?php $post->comment_count; ?> &nbsp;&nbsp;<span class='date'><i class='fa fa-calendar-alt' aria-hidden='true'></i> </span><?php echo $date_formatted ?></p>
+                                </span><?php echo $post->comment_count; ?> &nbsp;&nbsp;<span class='date'><i class='fa fa-calendar-alt' aria-hidden='true'></i> </span><?php echo $date_formatted ?></p>
                         </div>
                         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                                 <?php if (has_post_thumbnail()) : ?>
@@ -52,12 +52,12 @@ $res_pg = get_page_by_title("resources");
                                         <img src="<?php the_post_thumbnail_url('xlarge_1_1') ?>" />
                                     </div>
                                 <?php endif; ?>
-    
+
                                 <div class="post_content">
                                     <?php the_content(); ?>
                                 </div>
                                 <?php
-    
+
                                 /**Display navigation buttons to next and previous posts */
                                 if (is_single()) : ?>
                                     <div class="post_nav_container">
@@ -71,29 +71,26 @@ $res_pg = get_page_by_title("resources");
                                  * */
                                 if ((is_single() || is_page()) && (comments_open() || get_comments_number()) && !post_password_required()) :
                                 ?>
-    
+
                                     <div class="comments_container">
-    
+
                                         <?php comments_template(); ?>
-    
+
                                     </div>
-    
+
                                 <?php endif; ?>
                         <?php endwhile;
                         endif; ?>
                     </div>
-    
+
                     <div class="post_meta_content">
+                        <div style="display:none; " class="popular_posts">
+                            <?php
+                            wpp_get_mostpopular();
+                            ?>
+                        </div>
+                        <h2>Popular Posts</h2>
                         <div class="popular_post_content">
-                            <h2>Popular Posts</h2>
-                            <div class="popular_post">
-                                <img src="" alt="" width="100px" height="100px">
-                                <h5>title 1</h5>
-                            </div>
-                            <div class="popular_post">
-                                <img src="" alt="" width="100px" height="100px">
-                                <h5>title 2</h5>
-                            </div>
                         </div>
                     </div>
 

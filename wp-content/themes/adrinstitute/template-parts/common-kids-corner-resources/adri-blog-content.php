@@ -11,9 +11,8 @@
          <div class=" adri_blog_navigation_content per_page_content">
             <label for="blogs_per_page">Per Page:</label>
             <select id="blogs_per_page">
-               <option selected="selected" value="1">1</option>
-               <option value="2">2</option>
-               <option value="5">5</option>
+               <option value="1">1</option>
+               <option selected="selected" value="5">5</option>
                <option value="10">10</option>
                <option value="20">20</option>
             </select>

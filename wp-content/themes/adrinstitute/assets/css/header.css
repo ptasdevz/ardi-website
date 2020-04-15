@@ -78,10 +78,8 @@ body .container header .header_info .logo img {
   border-radius: 100%;
   -webkit-box-shadow: 2px 4px 20px #000;
           box-shadow: 2px 4px 20px #000;
-  -webkit-transition: -webkit-transform 1s;
-  transition: -webkit-transform 1s;
-  transition: transform 1s;
-  transition: transform 1s, -webkit-transform 1s;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 body .container header .header_info .logo img:hover {
@@ -145,24 +143,24 @@ body .container header .navigation .navigation_content .header_nav_links {
 
 body .container header .navigation .navigation_content .header_nav_links li {
   padding: 16px 0;
-  -webkit-transition: -webkit-transform 1s;
-  transition: -webkit-transform 1s;
-  transition: transform 1s;
-  transition: transform 1s, -webkit-transform 1s;
-}
-
-body .container header .navigation .navigation_content .header_nav_links li:hover {
-  -webkit-transform: scale(0.95);
-          transform: scale(0.95);
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 body .container header .navigation .navigation_content .header_nav_links li a {
   color: #fff !important;
   text-decoration: none;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 body .container header .navigation .navigation_content .header_nav_links li a:hover {
   color: #fcba04 !important;
+}
+
+body .container header .navigation .navigation_content .header_nav_links li:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
 }
 
 @media (min-width: 840px) {

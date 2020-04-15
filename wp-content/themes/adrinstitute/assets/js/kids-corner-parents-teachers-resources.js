@@ -122,6 +122,78 @@ $(document).ready(function () {
     })
     /*end blog comments replies */
 
+    /*handle errors when submitting  comments on posts*/
+    $("#commentform").submit(function(e){
+        is_error_detected = false;
+        vals = $(this).serializeArray();
+        $(".error-label").remove();
+        vals.forEach(element => {
+
+            $form_ele= $("[name="+element.name+"]");
+            required_val = $form_ele.attr("required");
+            if (required_val != undefined){
+                value = $form_ele.val();
+                if (value == ""){
+                    e.preventDefault();
+                    $form_ele.css("border","1px");
+                    $form_ele.css("border-style","solid");
+                    $form_ele.css("border-color","red");
+                    $form_ele.parent().append("<p class='error-label' style='color:red;'>Required*</p>");
+                    is_error_detected = true;
+                } else {
+                    $form_ele.css("border-color","#c9c9c9");
+                }
+            }
+        });
+    })
+    /*end of handling errors when submitting  comments on posts*/
+
+    /*load popular posts */
+    post_titles = [];
+    $(".popular_posts ul li a").each(function(){
+        post_titles[post_titles.length] = $(this).html();
+    });
+    console.log(post_titles);
+    if(post_titles.length >0){
+
+        //get posts
+        $.ajax({
+            type: "post",
+            dataType: "json",
+            url: ajax.ajax_url,
+            data: {
+                action: "get_post_by_titles",
+                call_type: "internal",
+                post_titles: post_titles,
+            },
+            success: function (response) {
+                //console.log(response);
+                if (response.type == "success") {
+                    console.log(response);
+                    response.post_list.forEach(function (post, index){
+                        
+                        if (post.featured_img_url != ""){
+                            $element = "<div class='popular_post'>" +
+                            "<div class='popular_post_img_container'><img src='"+post.featured_img_url+"' alt='post_img'/></div>" +
+                                "<div class='popular_post_text' ><h3><a href='"+post.guid+"'>"+post.post_title+" </a></h3></div>" +
+                            "</div>";
+                        }else {
+                            $element = "<div class='popular_post'>" +
+                            "<div class='popular_post_text' ><h3><a href='"+post.guid+"'>"+post.post_title+" </a></h3></div>" +
+                            "</div>";
+                        }
+                        
+
+                        $(".popular_post_content").append($element)
+                    });
+                       
+                }
+            }
+        });
+    }
+    /*load popular posts */
+
+
 
     //=================================End of Resources Content============================
 

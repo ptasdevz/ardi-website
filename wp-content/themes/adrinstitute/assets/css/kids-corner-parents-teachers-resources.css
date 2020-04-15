@@ -529,10 +529,8 @@ body .post_container #post_main .content_area .resources_content_area .worksheet
   -webkit-box-shadow: 1px 1px 4px #c9c9c9;
           box-shadow: 1px 1px 4px #c9c9c9;
   border-radius: 2px;
-  -webkit-transition: -webkit-transform 1s;
-  transition: -webkit-transform 1s;
-  transition: transform 1s;
-  transition: transform 1s, -webkit-transform 1s;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 body .page_container #page_main .content_area .kids_content_area .reading_activities_tab_content .reading_activities_cards .reading_activities_card .card_img,
@@ -1215,10 +1213,8 @@ body .post_container #post_main .content_area .resources_content_area .instr_vid
           box-shadow: 2px 2px 4px #c9c9c9;
   margin: 0 auto 1rem auto;
   border-radius: 2px;
-  -webkit-transition: -webkit-transform 1s;
-  transition: -webkit-transform 1s;
-  transition: transform 1s;
-  transition: transform 1s, -webkit-transform 1s;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 body .page_container #page_main .content_area .kids_content_area .instr_video_tab_content .videos .video_links:hover,
@@ -1344,6 +1340,29 @@ body .post_container #post_main .content_area .post_content_area .post_content_a
       grid-template-columns: 100%;
   grid-gap: 0.5rem;
       grid-template-areas: "breadcrumb_nav" "post_content" "post_meta_content";
+  /*Stylying for popular post area*/
+  /*End ofStylying for popular post area*/
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data a,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data a,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data a,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data a {
+  text-decoration: none;
+  color: #1d2089;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data a:hover,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data a:hover,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data a:hover,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data a:hover {
+  color: #1d2089;
+  text-shadow: 0 0 3px #fcba04;
+  border-radius: 2px;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
 }
 
 body .page_container #page_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav,
@@ -1384,6 +1403,7 @@ body .page_container #post_main .content_area .post_content_area .post_content_a
 body .post_container #page_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav .breadcrumb li,
 body .post_container #post_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav .breadcrumb li {
   display: inline;
+  font-weight: bold;
 }
 
 body .page_container #page_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav .breadcrumb li a,
@@ -1410,7 +1430,7 @@ body .post_container #post_main .content_area .post_content_area .post_content_a
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: post_content;
-  /*comment section styling*/
+  /*blog comment section styling*/
   /*end of comment section styling*/
 }
 
@@ -1485,6 +1505,8 @@ body .post_container #page_main .content_area .post_content_area .post_content_a
 body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a {
   padding: 0.25rem;
   text-decoration: none;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a .title,
@@ -1536,6 +1558,23 @@ body .post_container #post_main .content_area .post_content_area .post_content_a
   padding: 0.5rem 1.5rem;
   color: white;
   border-radius: 2px;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a .arrow:hover,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a .arrow:hover,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a .arrow:hover,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a .arrow:hover {
+  color: #fcba04;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a:hover,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a:hover,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a:hover,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner a:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
 }
 
 body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_nav_container .pagination_single .pagination_single_inner .previous_post .title .title_inner,
@@ -1556,6 +1595,7 @@ body .page_container #page_main .content_area .post_content_area .post_content_a
 body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_header,
 body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_header,
 body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_header {
+  color: #000;
   padding-bottom: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1611,8 +1651,8 @@ body .post_container #page_main .content_area .post_content_area .post_content_a
 body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 10% 90%;
-      grid-template-columns: 10% 90%;
+  -ms-grid-columns: 3rem 86%;
+      grid-template-columns: 3rem 86%;
       grid-template-areas: "author_img content";
   font-size: medium;
 }
@@ -1626,20 +1666,27 @@ body .post_container #post_main .content_area .post_content_area .post_content_a
   grid-area: author_img;
 }
 
-body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info,
-body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info,
-body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info,
-body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
-  grid-area: content;
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_author_img img,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_author_img img,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_author_img img,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_author_img img {
+  border-radius: 100%;
 }
 
 body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata,
 body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata,
 body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata,
 body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: content;
+  background: #80808017;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding-bottom: 0.5rem;
+  display: inline-block;
 }
 
 body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .fn,
@@ -1650,33 +1697,41 @@ body .post_container #post_main .content_area .post_content_area .post_content_a
   font-weight: bold;
 }
 
-body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .date_time_reply_link,
-body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .date_time_reply_link,
-body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .date_time_reply_link,
-body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .date_time_reply_link {
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .comment_content,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .comment_content,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .comment_content,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .comment_content {
   display: inline;
 }
 
-body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .date_time_reply_link time,
-body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .date_time_reply_link time,
-body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .date_time_reply_link time,
-body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .date_time_reply_link time {
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .comment_content p,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .comment_content p,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .comment_content p,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .comment_content p {
+  display: inline;
+  color: #000;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .date_time_edit_link,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .date_time_edit_link,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .date_time_edit_link,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .date_time_edit_link {
+  display: inline;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .date_time_edit_link time,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .date_time_edit_link time,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .date_time_edit_link time,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .date_time_edit_link time {
   font-size: small;
 }
 
-body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .date_time_reply_link a,
-body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .date_time_reply_link a,
-body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .date_time_reply_link a,
-body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata .date_time_reply_link a {
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .date_time_edit_link a,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .date_time_edit_link a,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .date_time_edit_link a,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .date_time_edit_link a {
   text-decoration: none;
   color: #1d2089;
-}
-
-body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_content,
-body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_content,
-body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_content,
-body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_content {
-  padding-bottom: 0.5rem;
 }
 
 body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_footer_meta,
@@ -1686,19 +1741,94 @@ body .post_container #post_main .content_area .post_content_area .post_content_a
   font-size: small;
 }
 
-body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_footer_meta .comment_reply a,
-body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_footer_meta .comment_reply a,
-body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_footer_meta .comment_reply a,
-body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_footer_meta .comment_reply a {
-  text-decoration: none;
-  color: #1d2089;
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond {
+  margin-top: 1rem;
 }
 
-body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_footer_meta .comment_reply a:hover,
-body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_footer_meta .comment_reply a:hover,
-body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_footer_meta .comment_reply a:hover,
-body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_footer_meta .comment_reply a:hover {
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #reply_title,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #reply_title,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #reply_title,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #reply_title {
+  color: #000;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond .comment_reply_title,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond .comment_reply_title,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond .comment_reply_title,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond .comment_reply_title {
+  margin-bottom: 0.5rem;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond .comment_reply_title a,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond .comment_reply_title a,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond .comment_reply_title a,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond .comment_reply_title a {
+  margin-left: 1rem;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p {
+  margin-bottom: 0.5rem;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p label,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p label,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p label,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p label {
+  display: block;
+  color: #000;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p textarea,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p textarea,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p textarea,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p textarea {
+  border: 1px solid #c9c9c9;
+  border-radius: 2px;
+  width: 100%;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p input,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p input,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p input,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p input {
+  border: 1px solid #c9c9c9;
+  border-radius: 2px;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p .submit,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p .submit,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p .submit,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p .submit {
+  border: none;
+  background: #1d2089;
+  border-radius: 2px;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p .submit:hover,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p .submit:hover,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p .submit:hover,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p .submit:hover {
   color: #fcba04;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform .logged-in-as,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform .logged-in-as,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform .logged-in-as,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform .logged-in-as {
+  font-weight: bold;
 }
 
 body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_meta_content,
@@ -1709,6 +1839,56 @@ body .post_container #post_main .content_area .post_content_area .post_content_a
   -ms-grid-column: 1;
   grid-area: post_meta_content;
   z-index: 10;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_meta_content h2,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_meta_content h2,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_meta_content h2,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_meta_content h2 {
+  color: #000;
+  margin-bottom: 1.5rem;
+  border-top: 1.5px solid #707070;
+  padding-top: 1rem;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_meta_content .popular_post,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_meta_content .popular_post,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_meta_content .popular_post,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_meta_content .popular_post {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #c9c9c9;
+  padding-bottom: 1rem;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_meta_content .popular_post .popular_post_img_container,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_meta_content .popular_post .popular_post_img_container,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_meta_content .popular_post .popular_post_img_container,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_meta_content .popular_post .popular_post_img_container {
+  width: 15%;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_meta_content .popular_post .popular_post_img_container img,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_meta_content .popular_post .popular_post_img_container img,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_meta_content .popular_post .popular_post_img_container img,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_meta_content .popular_post .popular_post_img_container img {
+  width: 100%;
+  border-radius: 2px;
+}
+
+body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_meta_content .popular_post .popular_post_text,
+body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_meta_content .popular_post .popular_post_text,
+body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_meta_content .popular_post .popular_post_text,
+body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_meta_content .popular_post .popular_post_text {
+  padding-left: 0.5rem;
 }
 
 @-webkit-keyframes fadeEffect {
@@ -1844,35 +2024,54 @@ body .post_container #post_main .content_area .post_content_area .post_content_a
 }
 
 @media (min-width: 702px) {
+  body .page_container #page_main .content_area,
+  body .page_container #post_main .content_area,
+  body .post_container #page_main .content_area,
+  body .post_container #post_main .content_area {
+    /*blog page styling desktop styling*/
+    /*end blog page styling desktop styling*/
+  }
   body .page_container #page_main .content_area .resources_content_area,
-  body .post_container #page_main .content_area .resources_content_area {
-    /*Blog Content Mobile-Tablets*/
+  body .page_container #post_main .content_area .resources_content_area,
+  body .post_container #page_main .content_area .resources_content_area,
+  body .post_container #post_main .content_area .resources_content_area {
+    /*Blog Content resources page Mobile-Tablets*/
     /*End of Blog Content Mobile-Tablets*/
   }
   body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content,
-  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content {
+  body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content,
+  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content,
+  body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content {
     /*adri blog navigation*/
     /*End of adri blog navigation*/
   }
   body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .img_container img,
-  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .img_container img {
+  body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .img_container img,
+  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .img_container img,
+  body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .img_container img {
     width: 40%;
     margin: 0 auto;
     display: block;
   }
   body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h1,
-  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h1 {
+  body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h1,
+  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h1,
+  body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h1 {
     display: block;
     margin: 0 auto;
     width: 50%;
     text-align: center;
   }
   body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a,
-  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a {
+  body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a,
+  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a,
+  body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container h3 a {
     text-align: center;
   }
   body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container button,
-  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container button {
+  body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container button,
+  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container button,
+  body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1880,18 +2079,37 @@ body .post_container #post_main .content_area .post_content_area .post_content_a
     margin-right: auto;
   }
   body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data,
-  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data {
+  body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data,
+  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data,
+  body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content .content_container .adri_blog_meta_data {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
   }
   body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content,
-  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content {
+  body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content,
+  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content,
+  body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .adri_blog_navigation_content {
     padding: 0.5rem 4.5rem;
   }
   body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a,
-  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a {
+  body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a,
+  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a,
+  body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a {
     padding-right: 1rem;
+  }
+  body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body,
+  body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body,
+  body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body,
+  body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body {
+    -ms-grid-columns: 3rem 90%;
+        grid-template-columns: 3rem 90%;
+  }
+  body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p textarea,
+  body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p textarea,
+  body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p textarea,
+  body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p textarea {
+    width: 60%;
   }
 }
 
@@ -1912,6 +2130,13 @@ body .post_container #post_main .content_area .post_content_area .post_content_a
     /*styling for tab menu and content for kids corner and resrouces Desktop*/
     /*End of styling for tab menu and content for kids corner and resrouces Desktop*/
   }
+  body .page_container #page_main .content_area,
+  body .page_container #post_main .content_area,
+  body .post_container #page_main .content_area,
+  body .post_container #post_main .content_area {
+    /*blog individual page styling desktop styling*/
+    /*end blog page styling desktop styling*/
+  }
   body .page_container #page_main .content_area .kids_content_area,
   body .page_container #page_main .content_area .resources_content_area,
   body .page_container #post_main .content_area .kids_content_area,
@@ -1922,8 +2147,8 @@ body .post_container #post_main .content_area .post_content_area .post_content_a
   body .post_container #post_main .content_area .resources_content_area {
     /*styling for tab menu for kids corner and resrouces Desktop*/
     /*End of styling for tab menu for kids corner and resrouces Desktop*/
-    /*Blog Content Desktop*/
-    /*End of Blog Content Desktop*/
+    /*Blog Content resources page Desktop*/
+    /*End of Blog Content resources pagesDesktop*/
     /*Instructinonal Videos Desktop*/
     /*End of Instructinonal Videos Desktop*/
     /*Styling for Reading Activities and Worksheets Desktop*/
@@ -2115,8 +2340,8 @@ body .post_container #post_main .content_area .post_content_area .post_content_a
     width: 100%;
     height: 6px;
     left: 0;
-    -webkit-transition: backgound 0.25s;
-    transition: backgound 0.25s;
+    -webkit-transition: background 0.25s;
+    transition: background 0.25s;
     border-radius: 6px;
     bottom: -11px;
   }
@@ -2497,11 +2722,16 @@ body .post_container #post_main .content_area .post_content_area .post_content_a
   body .page_container #post_main .content_area .post_content_area .post_content_area_data,
   body .post_container #page_main .content_area .post_content_area .post_content_area_data,
   body .post_container #post_main .content_area .post_content_area .post_content_area_data {
-    width: 80%;
+    width: 75%;
     margin: 0 auto;
-    -ms-grid-columns: 70% 30%;
-        grid-template-columns: 70% 30%;
-        grid-template-areas: "breadcrumb_nav post_meta_content" "post_content post_meta_content";
+    -ms-grid-columns: 65% 35%;
+        grid-template-columns: 65% 35%;
+        grid-template-areas: "breadcrumb_nav blank_space" "post_content post_meta_content";
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    /*Stylying for popular post area desktop */
+    /*End ofStylying for popular post area desktop*/
   }
   body .page_container #page_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav,
   body .page_container #post_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav,
@@ -2514,6 +2744,13 @@ body .post_container #post_main .content_area .post_content_area .post_content_a
         -ms-flex-align: left;
             align-items: left;
   }
+  body .page_container #page_main .content_area .post_content_area .post_content_area_data .img_container,
+  body .page_container #post_main .content_area .post_content_area .post_content_area_data .img_container,
+  body .post_container #page_main .content_area .post_content_area .post_content_area_data .img_container,
+  body .post_container #post_main .content_area .post_content_area .post_content_area_data .img_container {
+    width: 100%;
+    margin: 0 auto;
+  }
   body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_header h1,
   body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_header h1,
   body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_header h1,
@@ -2525,6 +2762,50 @@ body .post_container #post_main .content_area .post_content_area .post_content_a
   body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_header p,
   body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .post_header p {
     text-align: left;
+  }
+  body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body,
+  body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body,
+  body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body,
+  body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body {
+    -ms-grid-columns: 3rem 90%;
+        grid-template-columns: 3rem 90%;
+  }
+  body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p textarea,
+  body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p textarea,
+  body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p textarea,
+  body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comment-respond #commentform p textarea {
+    width: 60%;
+  }
+  body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_meta_content,
+  body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_meta_content,
+  body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_meta_content,
+  body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_meta_content {
+    margin-left: 1rem;
+  }
+  body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_meta_content h2,
+  body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_meta_content h2,
+  body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_meta_content h2,
+  body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_meta_content h2 {
+    border: none;
+  }
+  body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_meta_content .popular_post .popular_post_img_container,
+  body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_meta_content .popular_post .popular_post_img_container,
+  body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_meta_content .popular_post .popular_post_img_container,
+  body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_meta_content .popular_post .popular_post_img_container {
+    width: 25%;
+  }
+  body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_meta_content .popular_post .popular_post_img_container img,
+  body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_meta_content .popular_post .popular_post_img_container img,
+  body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_meta_content .popular_post .popular_post_img_container img,
+  body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_meta_content .popular_post .popular_post_img_container img {
+    width: 100%;
+    border-radius: 2px;
+  }
+  body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_meta_content .popular_post .popular_post_text,
+  body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_meta_content .popular_post .popular_post_text,
+  body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_meta_content .popular_post .popular_post_text,
+  body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_meta_content .popular_post .popular_post_text {
+    padding-left: 0.5rem;
   }
 }
 
