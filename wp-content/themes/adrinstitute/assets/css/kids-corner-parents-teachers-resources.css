@@ -1386,8 +1386,9 @@ body .post_container #post_main .content_area .post_content_area .post_content_a
       -ms-flex-pack: center;
           justify-content: center;
   background-color: #eee;
-  padding: 0.5rem 0;
+  padding: 0.5rem 1rem;
   margin-bottom: 1rem;
+  border-radius: 2px;
 }
 
 body .page_container #page_main .content_area .post_content_area .post_content_area_data .bread_crumb_nav .breadcrumb,
