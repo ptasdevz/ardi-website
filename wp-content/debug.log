@@ -3191,3 +3191,4 @@ Stack trace:
 #5 C:\Users\jason\gitprojects\ardi-website\dev\wp-includes\class-wp-customize-manager.php(551): WP_Customize_Manager->wp_die(0, 'Non-existent ch...')
 #6 C:\Users\jason\gitprojects\ardi-website\dev\wp-includes\class-wp-hook.php(287): WP_Customize_Manager->setup_theme('')
 #7 C:\Users\jason\gitproj in C:\Users\jason\gitprojects\ardi-website\dev\wp-includes\script-loader.php on line 1979
+[16-Apr-2020 01:34:46 UTC] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\Users\jason\gitprojects\ardi-website\dev\wp-content\plugins\wp-simple-booking-calendar\includes\base\class-shortcodes.php on line 4

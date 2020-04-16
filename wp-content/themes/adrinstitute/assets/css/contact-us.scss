@@ -28,8 +28,37 @@ body {
             margin: 0 auto;
             z-index: 10;
             position: relative;
+            border: 1px solid color(accent-4);
+            border-radius: 2px;
+            padding: 1rem;
+            background: #80808012;
+            box-shadow: 1px 1px 2px #80808057;
             img {
               display: none;
+            }
+            .contact_form {
+              width: 100%;
+              form {
+                button {
+                  background: color(primary);
+                  color: color(text-2);
+                  padding: 0.5rem;
+                  outline: none;
+                  border: none;
+                  border-radius: 2px;
+                  transition: 1s;
+                  &:hover {
+                    color: color(secondary);
+                    transform: scale($transform-scale-factor);
+                  }
+                }
+                .contact_form_dynamic {
+                  display: none;
+                }
+                .contact_form_dynamic_active {
+                  display: block;
+                }
+              }
             }
           }
         }
@@ -47,31 +76,7 @@ body {
                 margin-right: 1rem;
                 width: 100%;
               }
-              .contact_form {
-                width: 100%;
-                form {
-                  button {
-                    background: color(primary);
-                    color: color(text-2);
-                    padding: 0.5rem;
-                    outline: none;
-                    border: none;
-                    border-radius: 2px;
-                    transition: 1s;
-                    &:hover {
-                      color: color(secondary);
-                      transform: scale($transform-scale-factor);
-                    }
-                  }
-                  .contact_form_dynamic{
-                      display:none;
-                  }
-                  .contact_form_dynamic_active{
-                    display:block;
-                  }
-                  
-                }
-              }
+           
             }
           }
         }

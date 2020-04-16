@@ -115,7 +115,7 @@ $(document).ready(function () {
     });
 
     //open and close comments
-    $(".comments_header").click(function (){
+    $(".comments_header").click(function () {
 
         $(".comments_inner").toggleClass("active");
         $(".close_open_arrow").toggleClass("open");
@@ -123,25 +123,25 @@ $(document).ready(function () {
     /*end blog comments replies */
 
     /*handle errors when submitting  comments on posts*/
-    $("#commentform").submit(function(e){
+    $("#commentform").submit(function (e) {
         is_error_detected = false;
         vals = $(this).serializeArray();
         $(".error-label").remove();
         vals.forEach(element => {
 
-            $form_ele= $("[name="+element.name+"]");
+            $form_ele = $("[name=" + element.name + "]");
             required_val = $form_ele.attr("required");
-            if (required_val != undefined){
+            if (required_val != undefined) {
                 value = $form_ele.val();
-                if (value == ""){
+                if (value == "") {
                     e.preventDefault();
-                    $form_ele.css("border","1px");
-                    $form_ele.css("border-style","solid");
-                    $form_ele.css("border-color","red");
+                    $form_ele.css("border", "1px");
+                    $form_ele.css("border-style", "solid");
+                    $form_ele.css("border-color", "red");
                     $form_ele.parent().append("<p class='error-label' style='color:red;'>Required*</p>");
                     is_error_detected = true;
                 } else {
-                    $form_ele.css("border-color","#c9c9c9");
+                    $form_ele.css("border-color", "#c9c9c9");
                 }
             }
         });
@@ -150,11 +150,11 @@ $(document).ready(function () {
 
     /*load popular posts */
     post_titles = [];
-    $(".popular_posts ul li a").each(function(){
+    $(".popular_posts ul li a").each(function () {
         post_titles[post_titles.length] = $(this).html();
     });
     console.log(post_titles);
-    if(post_titles.length >0){
+    if (post_titles.length > 0) {
 
         //get posts
         $.ajax({
@@ -170,23 +170,23 @@ $(document).ready(function () {
                 //console.log(response);
                 if (response.type == "success") {
                     console.log(response);
-                    response.post_list.forEach(function (post, index){
-                        
-                        if (post.featured_img_url != ""){
+                    response.post_list.forEach(function (post, index) {
+
+                        if (post.featured_img_url != "") {
                             $element = "<div class='popular_post'>" +
-                            "<div class='popular_post_img_container'><img src='"+post.featured_img_url+"' alt='post_img'/></div>" +
-                                "<div class='popular_post_text' ><h3><a href='"+post.guid+"'>"+post.post_title+" </a></h3></div>" +
-                            "</div>";
-                        }else {
+                                "<div class='popular_post_img_container'><img src='" + post.featured_img_url + "' alt='post_img'/></div>" +
+                                "<div class='popular_post_text' ><h3><a href='" + post.guid + "'>" + post.post_title + " </a></h3></div>" +
+                                "</div>";
+                        } else {
                             $element = "<div class='popular_post'>" +
-                            "<div class='popular_post_text' ><h3><a href='"+post.guid+"'>"+post.post_title+" </a></h3></div>" +
-                            "</div>";
+                                "<div class='popular_post_text' ><h3><a href='" + post.guid + "'>" + post.post_title + " </a></h3></div>" +
+                                "</div>";
                         }
-                        
+
 
                         $(".popular_post_content").append($element)
                     });
-                       
+
                 }
             }
         });
@@ -199,14 +199,15 @@ $(document).ready(function () {
 
     //====================================Community Content=====================================
     //intercept all anchor links request to redirect to community tab
-    $("#af-wrapper a").addClass("community_tab_btn_redirect");
-    $("#af-wrapper a").attr("data-value", ".resources_tab .tab_wrapper #community_menu #community_tab_btn");
-    $(".community_tab_btn_redirect").click(function (e) {
-        e.preventDefault();
-        $(this).attr("data-link", $(this).attr("href"));
-        redirectToAResourcesTab(this);
+    // $("#af-wrapper a").addClass("community_tab_btn_redirect");
+    // $("#af-wrapper a").attr("data-value", ".resources_tab .tab_wrapper #community_menu #community_tab_btn");
+    // $(".community_tab_btn_redirect").click(function (e) {
+    //     e.preventDefault();
+    //     $(this).attr("data-link", $(this).attr("href"));
+    //     redirectToAResourcesTab(this);
 
-    })
+
+    // })
 
 
     //====================================End of Community Content=====================================
@@ -477,43 +478,61 @@ $(document).ready(function () {
     //=====================================Tab and Side menu Management=======================================
     //Change currently viewing tab
     $(".tablinks").click(function () {
+        tab_name = $(this).parent().parent().parent().attr("name");
         var name = $(this).attr("name");
-        //console.log(name);
         if (name != "other_links") {
             $(".tabcontent").css("display", "none");
             $(".tablinks").removeClass("active");
             $(this).addClass("active");
             $("#" + name).css("display", "block");
         }
-
-
+        
         //Initial handle of tabs top menu buttons
         if (name != "instr_videos") {//clean any left over stuff on instructional tab when not visible
             //closePlayer();
-        } else if (name == "instr_videos" && !is_yt_client_lib_loaded) { //load video content if not already loaded
-            //gapi.load('client', load_videos);
-            $("#instr_videos_menu .tab_submenu button").eq(0).trigger("click");
-            is_yt_client_lib_loaded = true;
-        }
+        } else if (name == "instr_videos") { //load video content if not already loaded
+            if (!is_yt_client_lib_loaded) {
+                //gapi.load('client', load_videos);
+                $("#instr_videos_menu .tab_submenu button").eq(0).trigger("click");
+                is_yt_client_lib_loaded = true;
 
+            }
+            setDefaultTabForSession(tab_name, ".tab_wrapper #instr_videos_menu .tab_submenu .instr_video_all_videos");
+        }
         // if (name == "other_links" && !is_first_sub_menu_link_loaded) {
         //     $("#other_links_menu .tab_submenu button").eq(0).trigger("click");
         //     is_first_sub_menu_link_loaded = true;
         // }
 
-        if (name == "adri_blog" && !is_blog_cat_loaded) {
-            $("#adri_blog_menu .tab_submenu button").eq(0).trigger("click");
-            is_blog_cat_loaded = true;
+        if (name == "adri_blog") {
+
+            if (!is_blog_cat_loaded) {
+                $("#adri_blog_menu .tab_submenu button").eq(0).trigger("click");
+                is_blog_cat_loaded = true;
+            }
+            setDefaultTabForSession(tab_name, ".tab_wrapper #adri_blog_menu .tab_submenu .cat_all");
         }
 
-        if (name == "reading_activities" && !is_reading_cat_loaded) {
-            $("#reading_activities_menu .tab_submenu button").eq(0).trigger("click");
-            is_reading_cat_loaded = true;
+        if (name == "reading_activities") {
+            if (!is_reading_cat_loaded) {
+                $("#reading_activities_menu .tab_submenu button").eq(0).trigger("click");
+                is_reading_cat_loaded = true;
+            }
+            setDefaultTabForSession(tab_name, ".tab_wrapper #reading_activities_menu .tab_submenu .reading_activity_all_activities")
+
         }
 
-        if (name == "worksheets" && !is_reading_cat_loaded) {
-            $("#worksheets_menu .tab_submenu button").eq(0).trigger("click");
-            is_worksheet_cat_loaded = true;
+        if (name == "worksheets") {
+            if (!is_worksheet_cat_loaded) {
+                $("#worksheets_menu .tab_submenu button").eq(0).trigger("click");
+                is_worksheet_cat_loaded = true;
+            }
+            setDefaultTabForSession(tab_name, ".tab_wrapper #worksheets_menu .tab_submenu .worksheet_all_worksheets")
+
+        }
+
+        if (name == "community") {
+            setDefaultTabForSession(tab_name, ".tab_wrapper #community_menu #community_tab_btn");
         }
 
     });
@@ -535,12 +554,12 @@ $(document).ready(function () {
     $(sessionStorage.resources_tab).trigger("click");
 
     //reset sections to initial values if temporarily changed
-    if (sessionStorage.is_kids_corner_change) {
-        sessionStorage.kids_corner_tab = default_kids_corner;
-    }
-    if (sessionStorage.is_resources_change) {
-        sessionStorage.resources_tab = default_resources;
-    }
+    // if (sessionStorage.is_kids_corner_change) {
+    //     sessionStorage.kids_corner_tab = default_kids_corner;
+    // }
+    // if (sessionStorage.is_resources_change) {
+    //     sessionStorage.resources_tab = default_resources;
+    // }
 
     //redirect to the blog resource tab
     $(".adri_blog_tab_btn").click(function () {
@@ -557,6 +576,14 @@ $(document).ready(function () {
 });
 
 
+function setDefaultTabForSession(tab_name, tab_btn) {
+    if (tab_name == "resources_tab") {
+        sessionStorage.resources_tab = ".resources_tab " + tab_btn;
+    }
+    else {
+        sessionStorage.kids_corner_tab = ".kids_corner_tab " + tab_btn;
+    }
+}
 
 //====================================Helper functions=====================================
 function titleCase(str) {
@@ -567,6 +594,7 @@ function titleCase(str) {
     // Directly return the joined string
     return splitStr.join(' ');
 }
+
 function highlightPageLink() {
     $(".page_links a").removeClass("active");
     $("[data-offset-val=" + curr_post_offset + "]").addClass("active");

@@ -141,6 +141,8 @@ body .post_container #post_main .content_area .resources_content_area {
   /*Other links content mobile*/
   /*General styling for all tabs mobile*/
   /*End of General styling for all tabs mobile*/
+  /*community forum default*/
+  /*community forum default*/
 }
 
 body .page_container #page_main .content_area .kids_content_area .kids_corner_tab,
@@ -1305,6 +1307,8 @@ body .post_container #post_main .content_area .resources_content_area .tabconten
   -webkit-animation: fadeEffect 1s;
           animation: fadeEffect 1s;
   margin-top: 1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body .page_container #page_main .content_area .kids_content_area .kids_corner_tab button.active,
@@ -1325,6 +1329,17 @@ body .post_container #post_main .content_area .resources_content_area .kids_corn
 body .post_container #post_main .content_area .resources_content_area .resources_tab button.active {
   background-color: #c9c9c9;
   font-weight: bold;
+}
+
+body .page_container #page_main .content_area .kids_content_area .community_tab_content,
+body .page_container #page_main .content_area .resources_content_area .community_tab_content,
+body .page_container #post_main .content_area .kids_content_area .community_tab_content,
+body .page_container #post_main .content_area .resources_content_area .community_tab_content,
+body .post_container #page_main .content_area .kids_content_area .community_tab_content,
+body .post_container #page_main .content_area .resources_content_area .community_tab_content,
+body .post_container #post_main .content_area .kids_content_area .community_tab_content,
+body .post_container #post_main .content_area .resources_content_area .community_tab_content {
+  width: 100%;
 }
 
 body .page_container #page_main .content_area .post_content_area .post_content_area_data,
@@ -2156,6 +2171,8 @@ body .post_container #post_main .content_area .post_content_area .post_content_a
     /*End Styling Reading Activities and Worksheets  Desktop*/
     /*General styling for all tabs Desktop*/
     /*End of General styling for all tabs Desktop*/
+    /*community forum default*/
+    /*community forum default*/
   }
   body .page_container #page_main .content_area .kids_content_area .kids_corner_tab,
   body .page_container #page_main .content_area .kids_content_area .resources_tab,
@@ -2718,6 +2735,16 @@ body .post_container #post_main .content_area .post_content_area .post_content_a
   body .post_container #post_main .content_area .kids_content_area .tabcontent,
   body .post_container #post_main .content_area .resources_content_area .tabcontent {
     margin: 0 auto;
+  }
+  body .page_container #page_main .content_area .kids_content_area .community_tab_content,
+  body .page_container #page_main .content_area .resources_content_area .community_tab_content,
+  body .page_container #post_main .content_area .kids_content_area .community_tab_content,
+  body .page_container #post_main .content_area .resources_content_area .community_tab_content,
+  body .post_container #page_main .content_area .kids_content_area .community_tab_content,
+  body .post_container #page_main .content_area .resources_content_area .community_tab_content,
+  body .post_container #post_main .content_area .kids_content_area .community_tab_content,
+  body .post_container #post_main .content_area .resources_content_area .community_tab_content {
+    width: 80%;
   }
   body .page_container #page_main .content_area .post_content_area .post_content_area_data,
   body .page_container #post_main .content_area .post_content_area .post_content_area_data,

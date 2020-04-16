@@ -1,5 +1,5 @@
 <div class="resources_content_area">
-    <div class="resources_tab">
+    <div name="resources_tab" class="resources_tab">
         <div class="tab_wrapper">
             <?php
             //include_once "common-kids-corner-resources/worksheets-menu.php";

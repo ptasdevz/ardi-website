@@ -388,6 +388,7 @@ body {
             padding: 6px 12px;
             animation: fadeEffect 1s; //tab content
             margin-top: 1rem;
+            box-sizing: border-box;
           }
           /*End of General styling for all tabs mobile*/
 
@@ -396,6 +397,12 @@ body {
             background-color: color(accent-4);
             font-weight: bold;
           }
+
+          /*community forum default*/
+          .community_tab_content {
+            width: 100%;
+          }
+          /*community forum default*/
         }
 
         /*blog page styling default styling*/
@@ -1138,6 +1145,12 @@ body {
               margin: 0 auto;
             }
             /*End of General styling for all tabs Desktop*/
+
+            /*community forum default*/
+            .community_tab_content {
+              width: 80%;
+            }
+            /*community forum default*/
           }
 
           /*blog individual page styling desktop styling*/
@@ -1193,8 +1206,8 @@ body {
               /*Stylying for popular post area desktop */
               .post_meta_content {
                 margin-left: 1rem;
-                h2{
-                  border:none;
+                h2 {
+                  border: none;
                 }
                 .popular_post {
                   .popular_post_img_container {

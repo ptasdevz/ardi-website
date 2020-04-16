@@ -2,7 +2,7 @@
 //$nav_nonce = wp_create_nonce("kids_corner_video_nounce");
 ?>
 <div class="kids_content_area">
-    <div class="kids_corner_tab">
+    <div name="kids_corner_tab" class="kids_corner_tab">
         <div class="tab_wrapper">
             <?php
             include_once "common-kids-corner-resources/instructional-videos-menu.php";

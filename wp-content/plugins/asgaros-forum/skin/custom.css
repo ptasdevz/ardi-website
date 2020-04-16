@@ -32,3 +32,10 @@ color: #707070 !important;
 #af-wrapper {
 font-family: Segoe UI,Verdana, Tahoma, sans-serif !important;
 }
+#af-wrapper {
+font-size: 17px !important;
+}
+#af-wrapper .main-title{
+	font-weight:bold;
+	color: #1d2089 !important;
+}

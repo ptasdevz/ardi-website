@@ -70,10 +70,45 @@ body .page_container #page_main .content_area .contact_us_content_area .contact_
   margin: 0 auto;
   z-index: 10;
   position: relative;
+  border: 1px solid #c9c9c9;
+  border-radius: 2px;
+  padding: 1rem;
+  background: #80808012;
+  -webkit-box-shadow: 1px 1px 2px #80808057;
+          box-shadow: 1px 1px 2px #80808057;
 }
 
 body .page_container #page_main .content_area .contact_us_content_area .contact_content img {
   display: none;
+}
+
+body .page_container #page_main .content_area .contact_us_content_area .contact_content .contact_form {
+  width: 100%;
+}
+
+body .page_container #page_main .content_area .contact_us_content_area .contact_content .contact_form form button {
+  background: #1d2089;
+  color: #fff;
+  padding: 0.5rem;
+  outline: none;
+  border: none;
+  border-radius: 2px;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+body .page_container #page_main .content_area .contact_us_content_area .contact_content .contact_form form button:hover {
+  color: #fcba04;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+body .page_container #page_main .content_area .contact_us_content_area .contact_content .contact_form form .contact_form_dynamic {
+  display: none;
+}
+
+body .page_container #page_main .content_area .contact_us_content_area .contact_content .contact_form form .contact_form_dynamic_active {
+  display: block;
 }
 
 @media (min-width: 840px) {
@@ -94,30 +129,6 @@ body .page_container #page_main .content_area .contact_us_content_area .contact_
     display: block;
     margin-right: 1rem;
     width: 100%;
-  }
-  body .page_container #page_main .content_area .contact_us_content_area .contact_content .contact_form {
-    width: 100%;
-  }
-  body .page_container #page_main .content_area .contact_us_content_area .contact_content .contact_form form button {
-    background: #1d2089;
-    color: #fff;
-    padding: 0.5rem;
-    outline: none;
-    border: none;
-    border-radius: 2px;
-    -webkit-transition: 1s;
-    transition: 1s;
-  }
-  body .page_container #page_main .content_area .contact_us_content_area .contact_content .contact_form form button:hover {
-    color: #fcba04;
-    -webkit-transform: scale(0.95);
-            transform: scale(0.95);
-  }
-  body .page_container #page_main .content_area .contact_us_content_area .contact_content .contact_form form .contact_form_dynamic {
-    display: none;
-  }
-  body .page_container #page_main .content_area .contact_us_content_area .contact_content .contact_form form .contact_form_dynamic_active {
-    display: block;
   }
 }
 
