@@ -74,8 +74,8 @@ body .page_container #page_main .content_area .contact_us_content_area .contact_
   border-radius: 2px;
   padding: 1rem;
   background: #80808012;
-  -webkit-box-shadow: 1px 1px 2px #80808057;
-          box-shadow: 1px 1px 2px #80808057;
+  -webkit-box-shadow: 1px 1px 2px #c9c9c9;
+          box-shadow: 1px 1px 2px #c9c9c9;
 }
 
 body .page_container #page_main .content_area .contact_us_content_area .contact_content img {

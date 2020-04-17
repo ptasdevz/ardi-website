@@ -99,5 +99,129 @@ body {
       cursor: pointer; 
     
     }
+    
+    /*mobile navigation drawer*/
+    #nav_touch {
+      height: 100%;
+      width: 1rem;
+      position: fixed;
+      z-index: 18;
+      // top: $logo-dims-mobile + $padding-nav * 2;
+      top:0;
+      left: 0;
+      transition: 0.5s;
+      display:flex;
+      flex-flow:column;
+
+      #page_side_nav {
+        flex:1;
+        width: 0;
+        padding-top:$logo-dims-mobile + $padding-nav * 2;
+        .main_nav {
+          border-bottom: 1px solid color(accent-4);
+          margin: 0 1rem;
+          * {
+            padding: 0;
+          }
+          a {
+            text-decoration: none !important;
+            color: color(primary);
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: 1s;
+            &:hover{
+              color: color(secondary);
+              transform: scale($transform-scale-factor);
+            }
+          }
+          li {
+            list-style-type: none;
+            margin: 1rem 0;
+          }
+        }
+      }
+
+      .side_nav {
+        height: 100%;
+        width: 280px;
+        z-index: 9;
+        background-color: color(base-1);
+        overflow-x: hidden;
+        transition: 0.5s;
+        box-shadow: 0 0 0 0 color(accent-4);
+        border: 1px solid color(accent-4);
+
+        .side_bar_1,
+        .side_bar_2 {
+          color: color(primary);
+          font-weight: bold;
+          a {
+            text-decoration: none;
+            color: inherit;
+          }
+          button {
+            border: none;
+            outline: none;
+            padding: 1rem;
+          }
+          .side_menu {
+            width: 100%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            background-color: inherit;
+            text-align: left;
+            color: inherit;
+            font-variant: inherit;
+            font-weight: inherit;
+            &:hover {
+              background-color: color(accent-4);
+            }
+
+            i {
+              padding: 0.5rem;
+            }
+          }
+          .side_sub_menu {
+            color: inherit;
+            cursor: pointer;
+            height: 0;
+            overflow-y: hidden;
+            button {
+              cursor: pointer;
+              padding: 8px;
+              margin-left: 44px;
+              font-size: 1rem;
+              display: block;
+              color: inherit;
+              font-weight: normal;
+              background: none;
+              &:hover {
+                background-color: color(accent-4);
+              }
+            }
+            .btn_visited {
+              font-weight: bold;
+            }
+          }
+
+          .close_btn {
+            width: 100%;
+            a {
+              float: right;
+              font-size: 36px;
+              padding: 0 0.5rem;
+            }
+          }
+          .open_side_sub_menu {
+            height: auto;
+          }
+          .rotate_arrow_icon {
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+    /*end of mobile navigation drawer*/
+
   }
 }

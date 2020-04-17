@@ -1,30 +1,18 @@
 var isNavClicked = true;
+var isNavBtnClicked = true;
 var drawer_open_width = 280;
+var curr_nav_width = 0;
 if (sessionStorage.hasNavDrawerRunOnce == undefined) sessionStorage.hasNavDrawerRunOnce = false;
 
 $(document).ready(function () {
 
   //=======================Mobile Navigation Drawer=====================
-  var hamburgerBtn = "☰";
-  var times = "×";
 
   $("#nav_drawer_btn span").click(function () {
 
     var currVal = $("#nav_drawer_btn span").html();
-
-    if (currVal == hamburgerBtn) {
-      $("#nav_drawer_btn span").html(times);
-      $("#nav_drawer_btn span").css("line-height", "1.1");
-      $("#nav_drawer_btn span").css("font-size", "300%");
-      $(".navigation").css("height", "100%");
-    }
-    else {
-      $("#nav_drawer_btn span").html(hamburgerBtn);
-      $("#nav_drawer_btn span").css("line-height", "2");
-      $("#nav_drawer_btn span").css("font-size", "200%");
-      $(".navigation").css("height", "0");
-
-    }
+    if (currVal === "☰") openSideNav();
+    else closeSideNav();
 
   });
 
@@ -62,28 +50,42 @@ $(document).ready(function () {
       sessionStorage.hasNavDrawerRunOnce = true;
     }
 
-
-    $("#close_nav").click(closeSideNav);
-
-    $(document).click(function () {
-
-      // console.log("doc clicked " + isNavClicked);
-
-
-      if (isNavClicked === false) {
+    $(".main_nav a").click(function(){
         closeSideNav();
-      }
-      isNavClicked = false;
-
-
-      $("#page_side_nav").click(function () {
-        isNavClicked = true;
-        // console.log("nav clicked " + isNavClicked);
-
-      });
-
     });
 
+    //$("#close_nav").click(closeSideNav);
+
+    // $(document).click(function (event) {
+
+    //   var text = $(event.target).attr("data-ele-name");
+    //   console.log(text);
+
+    //   // console.log("doc clicked " + isNavClicked);
+
+
+    //   if (isNavClicked === true || isNavBtnClicked === true) {
+    //     //do nothing
+    //   }else closeSideNav();
+    //   isNavClicked = false;
+    //   isNavBtnClicked = false;
+
+    //   //$("#page_side_nav").unbind();
+    //   $("#page_side_nav").click(function () {
+    //     isNavClicked = true;
+
+    //   });
+    //   //$("#nav_drawer_btn").unbind();
+    //   $("#nav_drawer_btn").click(function () {
+    //     isNavBtnClicked = true;
+
+    //   });
+
+    // });
+
+    $("#overlay").click(function(){
+      closeSideNav();
+    });
   }
 
   /*slide in and out side menu */
@@ -112,15 +114,15 @@ $(document).ready(function () {
     });
 
   });
-   //enable side navigation bar on specific pages
-   page_title = $("#nav_touch").attr("data-page-title");
-   switch (page_title) {
-       case "kids-corner":
-       case "resources":
-           break;
-       default:
-           $("#nav_touch").css("display", "none");
-   }
+  //enable side navigation bar on specific pages
+  //  page_title = $("#nav_touch").attr("data-page-title");
+  //  switch (page_title) {
+  //      case "kids-corner":
+  //      case "resources":
+  //          break;
+  //      default:
+  //          $("#nav_touch").css("display", "none");
+  //  }
   //============================End Side Nav============================
 
   //============================Load Page Template Pieces======================
@@ -155,27 +157,30 @@ $(document).ready(function () {
 });
 //===========================Helper Functions=========================
 function setUpSlideOutInNavBar(element, element_touch, max_width, opacity_max) {
-  var curr_nav_width = 0;
+  var isDragging = false;
   var overlay = document.getElementById("overlay");
+  var nav_drawer_btn = document.getElementById("nav_drawer_btn");
 
   /*start move process when touch is pressed*/
   element_touch.ontouchstart = dragTouchStart;
 
   function dragTouchStart(e) {
     e = e || window.event;
+    isDragging = true;
     document.ontouchend = closeDragElement;
     document.ontouchmove = elementDrag;
     overlay.style.display = "block";
-
   }
 
   function elementDrag(e) {
     e = e || window.event;
     e.preventDefault();
+
     /*update width of drawer when touch event is moved */
     curr_nav_width = e.touches[0].clientX;
-    if (curr_nav_width < max_width) {
 
+    /*control manual dragging of drawer */
+    if (curr_nav_width < max_width) {
       element.style.width = curr_nav_width + "px";
       var val = (curr_nav_width / max_width) * opacity_max;
       overlay.style.backgroundColor = "rgba(0,0,0," + val + ")";
@@ -184,26 +189,45 @@ function setUpSlideOutInNavBar(element, element_touch, max_width, opacity_max) {
   }
 
   function closeDragElement() {
-    if (curr_nav_width < max_width / 2) {
-      element.style.width = "0px";
-      overlay.style.backgroundColor = "rgba(0,0,0,0)";
-      overlay.style.display = "none";
-
+    if (curr_nav_width < (max_width / 2) && isDragging) {
+      closeSideNav();
     }
     else {
-      element.style.width = max_width + "px";
-      overlay.style.backgroundColor = "rgba(0,0,0," + opacity_max + ")";
+      openSideNav();
     }
     /* stop moving when touch is released:*/
     document.ontouchend = null;
     document.ontouchmove = null;
+    isDragging = false;
   }
 
 }
 
 function closeSideNav() {
+  setMobileNavBtnToOpenIcon();
   $("#page_side_nav").css("width", "0");
   $("#overlay").css("display", "none");
   $("#overlay").css("backgroundColor", "rgba(0,0,0,0)");
+  curr_nav_width = 0;
 }
 
+function openSideNav() {
+  $("#page_side_nav").css("width", drawer_open_width + "px");
+  $("#overlay").css("backgroundColor", "rgba(0,0,0,0.5)");
+  $("#overlay").css("display", "block");
+  setMobileNavBtnToCloseIcon();
+  curr_nav_width = drawer_open_width;
+}
+
+function setMobileNavBtnToOpenIcon() {
+
+  $("#nav_drawer_btn span").html("☰");
+  $("#nav_drawer_btn span").css("line-height", "2");
+  $("#nav_drawer_btn span").css("font-size", "200%");
+}
+function setMobileNavBtnToCloseIcon() {
+
+  $("#nav_drawer_btn span").html("×");
+  $("#nav_drawer_btn span").css("line-height", "1.1");
+  $("#nav_drawer_btn span").css("font-size", "300%");
+}

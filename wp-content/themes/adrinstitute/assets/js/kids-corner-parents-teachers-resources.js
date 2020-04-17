@@ -195,7 +195,7 @@ $(document).ready(function () {
 
 
 
-    //=================================End of Resources Content============================
+    //=================================End of Resources Content=================================
 
     //====================================Community Content=====================================
     //intercept all anchor links request to redirect to community tab
@@ -205,12 +205,8 @@ $(document).ready(function () {
     //     e.preventDefault();
     //     $(this).attr("data-link", $(this).attr("href"));
     //     redirectToAResourcesTab(this);
-
-
     // })
-
-
-    //====================================End of Community Content=====================================
+    //====================================End of Community Content===============================
 
     //=====================================Instructional Videos Content =========================
 
@@ -704,7 +700,7 @@ function append_blog(response) {
             "<div class='img_container'>" +
             "<img src='" + post.featured_img_url + "'></div>" +
             "<div class='content_container'>" +
-            "<h3><a href='" + cat_url + "'>" + cat_name + "</a></h3>" +
+            "<h3>"+ cat_name + "</h3>" +
             "<h1>" + post.post_title + "</h1>" +
             "<p>" + post.post_excerpt + "</p>" +
             "<button onclick='window.location=\"" + post.guid + "\"'>Read More</button>" +
@@ -719,7 +715,7 @@ function append_blog(response) {
 }
 
 function close_side_navigation_bar($this) {
-    if ($($this).attr("data-btn-loc") == "side_nav")
+    if ($($this).attr("data-btn-loc") == "side_nav");
         closeSideNav();
 }
 //bind youtube links for call backs
@@ -795,11 +791,7 @@ function switchTabUsingSubMenu(btn_tab_id) {
     $("#" + $("#" + btn_tab_id).attr("name")).css("display", "block");
 }
 
-function closeSideNav() {
-    $("#page_side_nav").css("width", "0");
-    $("#overlay").css("display", "none");
-    $("#overlay").css("backgroundColor", "rgba(0,0,0,0)");
-}
+
 
 function showSpinnerWhileIFrameLoads() {
     var iframe = $('iframe');

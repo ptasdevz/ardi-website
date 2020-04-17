@@ -36,14 +36,15 @@ body {
           padding: 5rem 0 16rem 0;
 
           .about_adri_content {
-            width: 60%;
-
             p {
-              text-align: justify;
+              text-align: center;
               border-top: 1px solid color(accent-4);
               padding: 1rem 0;
               margin: 1rem;
               font-size: large;
+            }
+            @include desktop {
+              width: 60%;
             }
           }
         }

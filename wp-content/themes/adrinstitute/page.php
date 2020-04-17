@@ -32,15 +32,16 @@ get_header(); ?>
         </h1>
         <h3 id="sub_title">Sub Title</h3>
     </section>
-    <div data-page-title="<?php echo $post->post_name; ?>" id="nav_touch">
+    <!--
+    <div data-page-title="<?php //echo $post->post_name; ?>" id="nav_touch">
         <div id="page_side_nav" class="side_nav">
             <section class="side_bar_1">
                 <div class="close_btn">
                     <a href="#" id="close_nav">&times;</a>
                 </div>
                 <?php
-
                 //side navigation links 
+                /*
                 switch ($post->post_name):
                     case "kids-corner":
                         include "template-parts/kids-corner-side-nav.php";
@@ -48,17 +49,17 @@ get_header(); ?>
                     case "resources":
                         include "template-parts/resources-side-nav.php";
                     break;
-                endswitch ?>
+                endswitch */?>
 
             </section>
-            <!-- <section class="side_bar_2">
+            <section class="side_bar_2">
                 <button class="side_menu"><i class="fa fa-chevron-right"></i>Other Links</button>
                 <div class="side_sub_menu">
                     <button>Link 1</button>
                 </div>
-            </section> -->
+            </section> 
         </div>
-    </div>
+    </div>-->
     <div id="page_main">
         <div class="content_area">
             <?php

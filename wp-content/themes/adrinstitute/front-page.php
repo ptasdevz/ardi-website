@@ -14,8 +14,8 @@ $upload_dir = wp_upload_dir();
             <?php endif ?>
         </div>
         <?php
-              $header_link_1 = get_field('header_link_1');
-              $link_url = $header_link_1["link_url"];
+            $header_link_1 = get_field('header_link_1');
+            $link_url = $header_link_1["link_url"];
             ?>
         <div class="s_rq_assessment_signup">
             <div id="rq_assessment"  onclick="window.open('<?php  echo $link_url;?>','_blank')" class="card">
