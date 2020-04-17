@@ -704,8 +704,8 @@ function append_blog(response) {
             "<h1>" + post.post_title + "</h1>" +
             "<p>" + post.post_excerpt + "</p>" +
             "<button onclick='window.location=\"" + post.guid + "\"'>Read More</button>" +
-            "<p class='adri_blog_meta_data'><span class='author'><i class='fa fa-user' aria-hidden='true'></i>" +
-            "</span>" + post.author_name + "&nbsp;&nbsp;<span class='comment_count'><i class='fa fa-comments' aria-hidden='true'></i>" +
+            "<p class='adri_blog_meta_data'><span class='author'><i class='fa fa-user' aria-hidden='true'></i>&nbsp" +
+            "</span>" + post.author_name + "&nbsp;&nbsp;<span class='comment_count'><i class='fa fa-comments' aria-hidden='true'></i>&nbsp" +
             "</span>" + post.comment_count + "&nbsp;&nbsp;<span class='date'><i class='fa fa-calendar-alt' aria-hidden='true'></i> </span>" + post.date_formatted + "</p>" +
             "</div>" +
             "</div>";

@@ -91,7 +91,7 @@ $(document).ready(function () {
   /*slide in and out side menu */
   var nav_bar = document.getElementById("nav_touch");
   if (nav_bar != undefined) {
-    setUpSlideOutInNavBar(document.getElementById("page_side_nav"), nav_bar, drawer_open_width, 0.5);
+    // setUpSlideOutInNavBar(document.getElementById("page_side_nav"), nav_bar, drawer_open_width, 0.5);
   }
 
   /*Side menu accordian style - only open one menu at any given point in time   */
