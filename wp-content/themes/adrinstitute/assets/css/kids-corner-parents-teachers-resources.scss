@@ -693,6 +693,8 @@ body {
             }
             /*Stylying for popular post area*/
             .post_meta_content {
+              -ms-grid-column: 2;
+                -ms-grid-row: 2;
               grid-area: post_meta_content;
               z-index: 10;
               h2 {
@@ -1205,6 +1207,7 @@ body {
 
               /*Stylying for popular post area desktop */
               .post_meta_content {
+               
                 margin-left: 1rem;
                 h2 {
                   border: none;
@@ -1237,6 +1240,7 @@ body {
     * IE10+ CSS for kids corner and resources   layout 
     */
     @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      #post_main,
       #page_main {
         .content_area {
           .kids_content_area,
@@ -1296,6 +1300,16 @@ body {
               }
             }
             /*End of Use of gutter grid plugin for instrucitonal videos, , Worksheet and reading activities layout IE10+*/
+          }
+
+          .post_content_area{
+            .post_content_area_data{
+              .post_meta_content{
+                -ms-grid-column: 2;
+                -ms-grid-row: 2;
+
+              }
+            }
           }
         }
       }
