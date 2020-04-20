@@ -2,6 +2,11 @@
       <div class="adri_blog_navigation">
          <i id="blog_nav_left" class="adri_blog_navigation_content fa fa-chevron-left"></i>
          <div class="page_links adri_blog_navigation_content">
+            <a id="link_1">1</a>
+            <a id="link_2">2</a>
+            <a id="link_3">3</a>
+            <a id="link_4">4</a>
+            <a id="link_more">...</a>
          </div>
          <div class=" adri_blog_navigation_content per_page_content">
             <label for="blogs_per_page">Per Page:</label>

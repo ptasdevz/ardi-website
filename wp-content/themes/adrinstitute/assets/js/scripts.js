@@ -39,7 +39,6 @@ $(document).ready(function () {
 
   //initially show and close side navigation bar for mobile devices 
   if ($('header').width() <= 840) {
-    // console.log(sessionStorage.hasNavDrawerRunOnce);
     if (sessionStorage.hasNavDrawerRunOnce == "false") {
 
       $("#page_side_nav").css("width", drawer_open_width + "px");

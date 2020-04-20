@@ -1169,7 +1169,6 @@ body .post_container #post_main .content_area .resources_content_area .adri_blog
   padding-right: 1rem;
   cursor: pointer;
   color: #1d2089;
-  visibility: hidden;
 }
 
 body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation .page_links a.active,

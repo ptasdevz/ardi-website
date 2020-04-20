@@ -5,9 +5,13 @@ var is_worksheet_cat_loaded = false;
 var is_first_sub_menu_link_loaded = false;
 var post_list;
 var curr_post_offset = Number(0);
+var curr_page_offset = Number(0);
+var curr_page_section = Number(-1);
 var current_post_cat_id;
 var curr_per_page_count;
 var is_more_offset = false;
+var num_of_link_displayed = 4;
+
 
 $(document).ready(function () {
 
@@ -64,6 +68,7 @@ $(document).ready(function () {
         is_blog_cat_loaded = true;
         curr_per_page_count = Number($("#blogs_per_page").select().val());
         curr_post_offset = Number(0);
+        curr_page_offset = Number(0);
 
         load_categories();
 
@@ -84,18 +89,22 @@ $(document).ready(function () {
     $("#blogs_per_page").change(function () {
         curr_per_page_count = Number($(this).select().val());
         curr_post_offset = Number(0);
+        curr_page_offset = Number(0);
+        curr_page_section = Number(-1);
         load_categories();
 
     });
-    $("#blog_nav_right").click(function () {
+    $("#blog_nav_right").click(function (e, param) {
         curr_post_offset += Number(curr_per_page_count);
-        load_categories();
+        curr_page_offset++;
+        if (param != "ignore") load_categories();
 
     });
 
-    $("#blog_nav_left").click(function () {
+    $("#blog_nav_left").click(function (e, param) {
         curr_post_offset -= Number(curr_per_page_count);
-        load_categories();
+        curr_page_offset--;
+        if (param != "ignore") load_categories();
 
     })
 
@@ -482,7 +491,7 @@ $(document).ready(function () {
             $(this).addClass("active");
             $("#" + name).css("display", "block");
         }
-        
+
         //Initial handle of tabs top menu buttons
         if (name != "instr_videos") {//clean any left over stuff on instructional tab when not visible
             //closePlayer();
@@ -594,15 +603,16 @@ function titleCase(str) {
 function highlightPageLink() {
     $(".page_links a").removeClass("active");
     $("[data-offset-val=" + curr_post_offset + "]").addClass("active");
-    if ($("[data-offset-val=" + curr_post_offset + "]").attr("id") == "link_more") {
-        $("[data-offset-val=" + curr_post_offset + "]").trigger("click");
-    }
-    $(".page_links a").each(function (element, index) {
-        offset_val = $(this).attr("data-offset-val");
-        if (offset_val == undefined) $(this).css("visibility", "hidden");
-    })
+    // if ($("[data-offset-val=" + curr_post_offset + "]").attr("id") == "link_more") {
+    //     $("[data-offset-val=" + curr_post_offset + "]").trigger("click");
+    // }
+    // $(".page_links a").each(function (element, index) {
+    //     offset_val = $(this).attr("data-offset-val");
+    //     if (offset_val == undefined) $(this).css("visibility", "hidden");
+    // })
 }
-function load_categories() {
+
+function load_categories_backup() {
 
     $(".adri_blog_content").remove();
     $("#adri_blog_spinner").addClass("active");
@@ -686,6 +696,129 @@ function load_categories() {
     });
     //append_blog(post_list, curr_per_page_count);
 }
+
+function load_categories() {
+
+    $(".adri_blog_content").remove();
+    $("#adri_blog_spinner").addClass("active");
+    //$(".page_links a").removeAttr("data-offset-val");
+
+    $.ajax({
+        type: "post",
+        dataType: "json",
+        url: ajax.ajax_url,
+        data: {
+            action: "get_blog_by_category",
+            call_type: "internal",
+            cat_id: current_post_cat_id,
+            offset: curr_post_offset,
+            per_page_count: curr_per_page_count
+        },
+        success: function (response) {
+            if (response.type == "success") {
+                post_count = response.post_count;
+                /*remove/display prev btn if necessary */
+                if ((curr_post_offset - curr_per_page_count) < 0) {
+                    $("#blog_nav_left").css("visibility", "hidden");
+                } else $("#blog_nav_left").css("visibility", "visible");
+
+                /*remove/display next btn if necessary */
+                if ((curr_post_offset + curr_per_page_count) >= post_count) {
+                    $("#blog_nav_right").css("visibility", "hidden");
+                } else $("#blog_nav_right").css("visibility", "visible");
+
+                /*append page links */
+                // offset = 0;
+                // $("#more_blog_page_link").attr("data-offset-val");
+
+                page_count = Math.ceil(post_count / curr_per_page_count);
+                page_section = Math.floor(curr_page_offset / num_of_link_displayed);
+                start_idx = page_section * num_of_link_displayed;
+                offset = start_idx;
+                length = (page_section + Number(1)) * num_of_link_displayed;
+                if (length > page_count) length = page_count;
+
+                if (page_section != curr_page_section) {
+
+                    curr_page_section = page_section;
+                    $(".blog_page_links").remove();
+
+                    //add "more" links indication to left if neccessary
+                    if (start_idx > 0) {
+                        $(".page_links").append("<a id='more_blog_page_link_left' class='blog_page_links'>...</a>");
+
+                    }
+                    //add dispay links
+                    for (let i = start_idx; i < length; i++) {
+                        $(".page_links").append("<a class='blog_page_links' data-offset-val='" + offset + "' >" + Number(i + 1) + "</a>");
+                        offset += curr_per_page_count;
+                    }
+
+
+                    //determine if "more" links indication should be dispayed.
+                    has_more_links = false;
+                    if (page_count > (Number(start_idx) + Number(num_of_link_displayed))) has_more_links = true;
+
+                    //add "more" links indication to right if neccessary
+                    if (has_more_links) {
+                        $(".page_links").append("<a id='more_blog_page_link_right' class='blog_page_links'>...</a>");
+
+                    }
+                    //setup callback on "numbered" links
+                    $(".blog_page_links").click(function () {
+
+
+                        //go to page
+                        id = $(this).attr("id");
+                        if (id == "more_blog_page_link_right") {
+                            this_page_offset = Number($(this).prev().html());
+                            diff_to_page_offset = this_page_offset - curr_page_offset;
+                            $("#foo").trigger("custom", ["Custom", "Event"]);
+                            for (let i = 0; i < diff_to_page_offset; i++) {
+                                if (Number(i + 1) == diff_to_page_offset) $("#blog_nav_right").trigger("click");
+                                else $("#blog_nav_right").trigger("click", ["ignore"]);
+
+                            }
+
+                        } else if (id == "more_blog_page_link_left") {
+
+                            this_page_offset = Number($(this).next().html()) - 2;
+                            diff_to_page_offset = this_page_offset - curr_page_offset;
+                            for (let i = diff_to_page_offset; i < 0; i++) {
+                                if (Number(i + 1) == 0) $("#blog_nav_left").trigger("click");
+                                else $("#blog_nav_left").trigger("click", ["ignore"]);
+                            }
+                        }
+                        else {
+                            this_page_offset = Number($(this).html()) - 1;
+                            diff_to_page_offset = this_page_offset - curr_page_offset;
+                            if (diff_to_page_offset > 0) {// go to right
+                                for (let i = 0; i < diff_to_page_offset; i++) {
+                                    if (Number(i + 1) == diff_to_page_offset) $("#blog_nav_right").trigger("click");
+                                    else $("#blog_nav_right").trigger("click", ["ignore"]);
+                                }
+                            } else {//go left
+                                for (let i = diff_to_page_offset; i < 0; i++) {
+                                    if (Number(i + 1) == 0) $("#blog_nav_left").trigger("click");
+                                    else $("#blog_nav_left").trigger("click", ["ignore"]);
+                                }
+                            }
+                        }
+
+                    });
+
+                }
+                highlightPageLink();
+                append_blog(response);
+            }
+            else {
+                console.log(response);
+            }
+        }
+    });
+    //append_blog(post_list, curr_per_page_count);
+}
+
 function append_blog(response) {
 
     $("#adri_blog_spinner").removeClass("active");
@@ -700,7 +833,7 @@ function append_blog(response) {
             "<div class='img_container'>" +
             "<img src='" + post.featured_img_url + "'></div>" +
             "<div class='content_container'>" +
-            "<h3>"+ cat_name + "</h3>" +
+            "<h3>" + cat_name + "</h3>" +
             "<h1>" + post.post_title + "</h1>" +
             "<p>" + post.post_excerpt + "</p>" +
             "<button onclick='window.location=\"" + post.guid + "\"'>Read More</button>" +
@@ -716,7 +849,7 @@ function append_blog(response) {
 
 function close_side_navigation_bar($this) {
     if ($($this).attr("data-btn-loc") == "side_nav");
-        closeSideNav();
+    closeSideNav();
 }
 //bind youtube links for call backs
 function bindVideoLinks() {

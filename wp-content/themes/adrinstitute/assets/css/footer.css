@@ -19,6 +19,8 @@ html {
 
 body .container {
   background: #fff;
+  /*mobile navigation drawer*/
+  /*end of mobile navigation drawer*/
 }
 
 body .container #overlay {
@@ -32,6 +34,168 @@ body .container #overlay {
   bottom: 0;
   z-index: 16;
   cursor: pointer;
+}
+
+body .container #nav_touch {
+  height: 100%;
+  width: 1rem;
+  position: fixed;
+  z-index: 18;
+  top: 0;
+  left: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+body .container #nav_touch #page_side_nav {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 0;
+  padding-top: 72px;
+}
+
+body .container #nav_touch #page_side_nav .main_nav {
+  border-bottom: 1px solid #c9c9c9;
+  margin: 0 1rem;
+}
+
+body .container #nav_touch #page_side_nav .main_nav * {
+  padding: 0;
+}
+
+body .container #nav_touch #page_side_nav .main_nav a {
+  text-decoration: none !important;
+  color: #1d2089;
+  font-size: 1.2rem;
+  font-weight: bold;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+body .container #nav_touch #page_side_nav .main_nav a:hover {
+  color: #fcba04;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+body .container #nav_touch #page_side_nav .main_nav li {
+  list-style-type: none;
+  margin: 1rem 0;
+}
+
+body .container #nav_touch .side_nav {
+  height: 100%;
+  width: 280px;
+  z-index: 9;
+  background-color: #fff;
+  overflow-x: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-box-shadow: 0 0 0 0 #c9c9c9;
+          box-shadow: 0 0 0 0 #c9c9c9;
+  border: 1px solid #c9c9c9;
+}
+
+body .container #nav_touch .side_nav .side_bar_1,
+body .container #nav_touch .side_nav .side_bar_2 {
+  color: #1d2089;
+  font-weight: bold;
+}
+
+body .container #nav_touch .side_nav .side_bar_1 a,
+body .container #nav_touch .side_nav .side_bar_2 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body .container #nav_touch .side_nav .side_bar_1 button,
+body .container #nav_touch .side_nav .side_bar_2 button {
+  border: none;
+  outline: none;
+  padding: 1rem;
+}
+
+body .container #nav_touch .side_nav .side_bar_1 .side_menu,
+body .container #nav_touch .side_nav .side_bar_2 .side_menu {
+  width: 100%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background-color: inherit;
+  text-align: left;
+  color: inherit;
+  font-variant: inherit;
+  font-weight: inherit;
+}
+
+body .container #nav_touch .side_nav .side_bar_1 .side_menu:hover,
+body .container #nav_touch .side_nav .side_bar_2 .side_menu:hover {
+  background-color: #c9c9c9;
+}
+
+body .container #nav_touch .side_nav .side_bar_1 .side_menu i,
+body .container #nav_touch .side_nav .side_bar_2 .side_menu i {
+  padding: 0.5rem;
+}
+
+body .container #nav_touch .side_nav .side_bar_1 .side_sub_menu,
+body .container #nav_touch .side_nav .side_bar_2 .side_sub_menu {
+  color: inherit;
+  cursor: pointer;
+  height: 0;
+  overflow-y: hidden;
+}
+
+body .container #nav_touch .side_nav .side_bar_1 .side_sub_menu button,
+body .container #nav_touch .side_nav .side_bar_2 .side_sub_menu button {
+  cursor: pointer;
+  padding: 8px;
+  margin-left: 44px;
+  font-size: 1rem;
+  display: block;
+  color: inherit;
+  font-weight: normal;
+  background: none;
+}
+
+body .container #nav_touch .side_nav .side_bar_1 .side_sub_menu button:hover,
+body .container #nav_touch .side_nav .side_bar_2 .side_sub_menu button:hover {
+  background-color: #c9c9c9;
+}
+
+body .container #nav_touch .side_nav .side_bar_1 .side_sub_menu .btn_visited,
+body .container #nav_touch .side_nav .side_bar_2 .side_sub_menu .btn_visited {
+  font-weight: bold;
+}
+
+body .container #nav_touch .side_nav .side_bar_1 .close_btn,
+body .container #nav_touch .side_nav .side_bar_2 .close_btn {
+  width: 100%;
+}
+
+body .container #nav_touch .side_nav .side_bar_1 .close_btn a,
+body .container #nav_touch .side_nav .side_bar_2 .close_btn a {
+  float: right;
+  font-size: 36px;
+  padding: 0 0.5rem;
+}
+
+body .container #nav_touch .side_nav .side_bar_1 .open_side_sub_menu,
+body .container #nav_touch .side_nav .side_bar_2 .open_side_sub_menu {
+  height: auto;
+}
+
+body .container #nav_touch .side_nav .side_bar_1 .rotate_arrow_icon,
+body .container #nav_touch .side_nav .side_bar_2 .rotate_arrow_icon {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 body .container footer.theme_layout {
