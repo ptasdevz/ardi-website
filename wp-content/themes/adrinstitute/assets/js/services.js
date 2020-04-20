@@ -17,7 +17,6 @@ $(document).ready(function () {
         excerpt_type = $(this).attr("data-excerpt-type");
         content_length = excerpt_content.split(" ").length;
         if (content_length < content_max_len && excerpt_type == "default") $(this).next().css("display", "none");
-        //console.log(this);
 
     });
 

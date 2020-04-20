@@ -53,45 +53,16 @@ $(document).ready(function () {
         closeSideNav();
     });
 
-    //$("#close_nav").click(closeSideNav);
-
-    // $(document).click(function (event) {
-
-    //   var text = $(event.target).attr("data-ele-name");
-    //   console.log(text);
-
-    //   // console.log("doc clicked " + isNavClicked);
-
-
-    //   if (isNavClicked === true || isNavBtnClicked === true) {
-    //     //do nothing
-    //   }else closeSideNav();
-    //   isNavClicked = false;
-    //   isNavBtnClicked = false;
-
-    //   //$("#page_side_nav").unbind();
-    //   $("#page_side_nav").click(function () {
-    //     isNavClicked = true;
-
-    //   });
-    //   //$("#nav_drawer_btn").unbind();
-    //   $("#nav_drawer_btn").click(function () {
-    //     isNavBtnClicked = true;
-
-    //   });
-
-    // });
-
     $("#overlay").click(function(){
       closeSideNav();
     });
   }
 
   /*slide in and out side menu */
-  var nav_bar = document.getElementById("nav_touch");
-  if (nav_bar != undefined) {
+  //var nav_bar = document.getElementById("nav_touch");
+  //if (nav_bar != undefined) {
     // setUpSlideOutInNavBar(document.getElementById("page_side_nav"), nav_bar, drawer_open_width, 0.5);
-  }
+  //}
 
   /*Side menu accordian style - only open one menu at any given point in time   */
   $(".side_menu").click(function () {

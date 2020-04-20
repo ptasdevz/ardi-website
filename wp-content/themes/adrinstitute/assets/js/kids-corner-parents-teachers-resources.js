@@ -136,8 +136,8 @@ $(document).ready(function () {
         is_error_detected = false;
         vals = $(this).serializeArray();
         $(".error-label").remove();
-        vals.forEach(element => {
-
+        for (let i=0; i<vals.length; i++){
+            element = vals[i];
             $form_ele = $("[name=" + element.name + "]");
             required_val = $form_ele.attr("required");
             if (required_val != undefined) {
@@ -153,7 +153,8 @@ $(document).ready(function () {
                     $form_ele.css("border-color", "#c9c9c9");
                 }
             }
-        });
+
+        }
     })
     /*end of handling errors when submitting  comments on posts*/
 
@@ -162,7 +163,6 @@ $(document).ready(function () {
     $(".popular_posts ul li a").each(function () {
         post_titles[post_titles.length] = $(this).html();
     });
-    console.log(post_titles);
     if (post_titles.length > 0) {
 
         //get posts
@@ -176,9 +176,7 @@ $(document).ready(function () {
                 post_titles: post_titles,
             },
             success: function (response) {
-                //console.log(response);
                 if (response.type == "success") {
-                    console.log(response);
                     response.post_list.forEach(function (post, index) {
 
                         if (post.featured_img_url != "") {
@@ -247,7 +245,6 @@ $(document).ready(function () {
     //unique_categories = video_cate.unique();
     var ids_str = video_ids.join();
     video_cate.unshift("all videos");//add "All Videos" sub-menu as the first
-    console.log(video_cate);
 
     video_cate.forEach(function (cate_name, index) {
         //Adjust disply text
@@ -360,7 +357,6 @@ $(document).ready(function () {
 
     // 1. Load the JavaScript client library.
     //gapi.load('client', load_videos);
-
 
     //Create and Manage YouTube Video Player
     $("#close_btn").click(function () {
@@ -612,91 +608,6 @@ function highlightPageLink() {
     // })
 }
 
-function load_categories_backup() {
-
-    $(".adri_blog_content").remove();
-    $("#adri_blog_spinner").addClass("active");
-    $(".page_links a").removeAttr("data-offset-val");
-
-    $.ajax({
-        type: "post",
-        dataType: "json",
-        url: ajax.ajax_url,
-        data: {
-            action: "get_blog_by_category",
-            call_type: "internal",
-            cat_id: current_post_cat_id,
-            offset: curr_post_offset,
-            per_page_count: curr_per_page_count
-        },
-        success: function (response) {
-            if (response.type == "success") {
-                post_count = response.post_count;
-                /*remove/display prev btn if necessary */
-                if ((curr_post_offset - curr_per_page_count) < 0) {
-                    $("#blog_nav_left").css("visibility", "hidden");
-                } else $("#blog_nav_left").css("visibility", "visible");
-
-                /*remove/display next btn if necessary */
-                if ((curr_post_offset + curr_per_page_count) >= post_count) {
-                    $("#blog_nav_right").css("visibility", "hidden");
-                } else $("#blog_nav_right").css("visibility", "visible");
-
-                /*append page links */
-                page_count = Math.ceil(post_count / curr_per_page_count);
-                offset = 0;
-                start_val = 0;
-
-                if (is_more_offset == true) {
-                    start_val_saved = $("#link_more").attr("data-start-val");
-                    next_offset = $("#link_more").attr("data-next-offset-val");
-                    if (start_val_saved == undefined) start_val = Number(0);
-                    else start_val = Number(start_val_saved);
-                    if (next_offset != undefined) offset = next_offset;
-                    console.log(start_val_saved);
-                    console.log(next_offset);
-                    is_more_offset = false;
-                }
-
-                for (let i = start_val; i < page_count; i++) {
-                    id = i + 1 - start_val;
-                    if (id <= 4) {
-                        $("#link_" + id).unbind();
-                        $("#link_" + id).attr("data-offset-val", offset);
-                        $("#link_" + id).html(i + 1);
-                        $("#link_" + id).css("visibility", "visible");
-                        $("#link_" + id).click(function () {
-                            curr_post_offset = Number($(this).attr("data-offset-val"));
-                            load_categories();
-                        });
-                    } else {
-                        $("#link_more").unbind();
-                        $("#link_more").attr("data-start-val", i);
-                        $("#link_more").attr("data-offset-val", offset);
-                        $("#link_more").attr("data-next-offset-val", offset);
-                        $("#link_more").css("visibility", "visible");
-                        // $("#link_more").click(function(){
-                        //     is_more_offset = true;
-                        //     curr_post_offset = Number($(this).attr("data-next-offset-val"));
-                        //     load_categories();
-
-                        // });
-
-                        break;
-                    }
-                    offset += curr_per_page_count;
-                }
-                highlightPageLink();
-                append_blog(response);
-            }
-            else {
-                console.log(response);
-            }
-        }
-    });
-    //append_blog(post_list, curr_per_page_count);
-}
-
 function load_categories() {
 
     $(".adri_blog_content").remove();
@@ -923,8 +834,6 @@ function switchTabUsingSubMenu(btn_tab_id) {
     $("#" + btn_tab_id).addClass("active");
     $("#" + $("#" + btn_tab_id).attr("name")).css("display", "block");
 }
-
-
 
 function showSpinnerWhileIFrameLoads() {
     var iframe = $('iframe');

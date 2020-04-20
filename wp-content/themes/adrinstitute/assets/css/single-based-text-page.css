@@ -210,6 +210,7 @@ body .page_container #page_main .content_area {
   position: inherit;
 }
 
+body .page_container #page_main .content_area .faq_content_area::before,
 body .page_container #page_main .content_area .about_adri_content_area::before,
 body .page_container #page_main .content_area .terms_of_use_content_area::before,
 body .page_container #page_main .content_area .privacy_policy_content_area::before {
@@ -276,5 +277,46 @@ body .page_container #page_main .content_area .terms_of_use_content_area .terms_
   text-align: justify;
   padding: 1rem 0;
   font-size: large;
+}
+
+body .page_container #page_main .content_area .faq_content_area .faq_content {
+  position: relative;
+  z-index: 10;
+  width: 80%;
+  margin: 0  auto;
+  padding: 1rem 0;
+}
+
+body .page_container #page_main .content_area .faq_content_area .faq_content .faq_accordion {
+  border-radius: 2px;
+  background-color: #eee;
+  color: #000;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  font-weight: bold;
+  font-size: medium;
+}
+
+body .page_container #page_main .content_area .faq_content_area .faq_content .faq_accordion:hover {
+  background-color: #c9c9c9;
+}
+
+body .page_container #page_main .content_area .faq_content_area .faq_content .active {
+  background-color: #ccc;
+}
+
+body .page_container #page_main .content_area .faq_content_area .faq_content .faq_panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+  padding: 1.5rem;
+  text-align: justify;
 }
 /*# sourceMappingURL=single-based-text-page.css.map */

@@ -7,6 +7,7 @@ body {
       position: relative;
       .content_area {
         position: inherit;
+        .faq_content_area::before,
         .about_adri_content_area::before,
         .terms_of_use_content_area::before,
         .privacy_policy_content_area::before {
@@ -58,6 +59,44 @@ body {
               text-align: justify;
               padding: 1rem 0;
               font-size: large;
+            }
+          }
+        }
+        .faq_content_area {
+          .faq_content {
+            position: relative;
+            z-index: 10;
+            width: 80%;
+            margin: 0  auto;
+            padding: 1rem 0;
+            
+            .faq_accordion {
+              border-radius: 2px;
+              background-color: #eee;
+              color: #000;
+              cursor: pointer;
+              padding: 18px;
+              width: 100%;
+              text-align: left;
+              border: none;
+              outline: none;
+              transition: 0.4s;
+              font-weight: bold;
+              font-size: medium;
+              &:hover {
+                background-color: color(accent-4);
+              }
+            }
+            .active {
+              background-color: #ccc;
+            }
+            .faq_panel {
+              padding: 0 18px;
+              background-color: white;
+              display: none;
+              overflow: hidden;
+              padding: 1.5rem;
+              text-align: justify;
             }
           }
         }

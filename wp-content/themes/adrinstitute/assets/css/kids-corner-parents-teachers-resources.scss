@@ -119,6 +119,7 @@ body {
             }
             /* End of spinner styling for asynchronous loading of content*/
           }
+
           /*Styling for Reading and Worksheets Activities*/
           .reading_activities_tab_content,
           .worksheets_tab_content {
@@ -136,17 +137,21 @@ body {
                 box-shadow: 1px 1px 4px color(accent-4);
                 border-radius: 2px;
                 transition: 1s;
-
-                .card_img {
-                  width: 200px;
-                  height: 200px;
-                  background-color: color(accent-1);
-                }
-
-                .card_data {
-                  padding: 0.5rem;
-                  background: color(base-1);
-                  border-top: 1px solid color(accent-4);
+                .card_data{
+                  
+                  .card_img {
+                    img{
+                      width: 200px;
+                      height: 200px;
+                    }
+                    background-color: color(accent-1);
+                  }
+  
+                  .card_text {
+                    padding: 0.5rem;
+                    background: color(base-1);
+                    border-top: 1px solid color(accent-4);
+                  }
                 }
 
                 &:hover {
@@ -256,7 +261,6 @@ body {
                 padding-right: 1rem;
                 cursor: pointer;
                 color: color(primary);
-                // visibility: hidden;
               }
               .page_links a.active {
                 font-weight: bold;
@@ -1241,7 +1245,7 @@ body {
             .resources_tab {
               top: 0;
             }
-            /*Use of a third-party grid plugin for instrucitonal videos layout IE10+*/
+            /*Use of gutter grid plugin for instrucitonal videos, Worksheet and reading activities layout IE10+*/
             .instr_video_tab_content {
               overflow: hidden; /* Need this for the chrome bug */
               .videos {
@@ -1255,7 +1259,43 @@ body {
                 }
               }
             }
-            /*End of Use of a third-party grid plugin for instrucitonal videos layout IE10+*/
+
+            .reading_activities_tab_content,
+            .worksheets_tab_content { 
+              .reading_activities_cards,
+              .worksheets_cards {
+
+                @include grid(4,$gutter:20px, $stretch: true,);
+                // display:flex;
+                // align-items: center;
+                .reading_activities_card,
+                .worksheets_card {
+                  border: none;
+                  box-shadow: none;
+                  padding-bottom: 2rem;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+
+                  .card_data{
+                    display:flex;
+                    flex-flow: column;
+                    border: 1px solid color(accent-4);
+                    box-shadow: 1px 1px 4px color(accent-4);
+                    border-radius: 2px;
+                    width:200px;
+                  }
+                 
+                  &:hover {
+                    transform: scale($transform-scale-factor);
+                    animation: normal;
+                    animation-fill-mode: forwards;
+                  }
+
+                }
+              }
+            }
+            /*End of Use of gutter grid plugin for instrucitonal videos, , Worksheet and reading activities layout IE10+*/
           }
         }
       }

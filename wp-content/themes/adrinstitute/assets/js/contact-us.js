@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+    //================================Contact US ======================
     $(".contact_form_request_options input").prop("checked", false); //clear options
 
     $(".contact_form_message textarea").attr("disabled",true);
@@ -26,5 +27,22 @@ $(document).ready(function () {
         $(".contact_form_message textarea").attr("disabled",false);
 
     });
+    //================================ End of Contact US ======================
+
+    //================================FAQ===============================
+    $(".faq_accordion").click(function (){
+        console.log("fa");
+        $(this).toggleClass("active");
+       display =  $(this).next().css("display");
+       if (display == "block"){
+        $(this).next().css("display","none");
+       }else {
+        $(this).next().css("display","block");
+       }
+    });
+    
+    //================================End of FAQ======================
+
+
 
 });

@@ -21,19 +21,21 @@ get_header(); ?>
     ?>
     <section class="content_title">
         <h1>
-            
+
             <?php
             //provide custom titles for some pages
             $title = strtolower(get_the_title());
             if ($title  == "services") echo "Our Services";
             elseif ($title == "resources") echo "Parent & Teacher Resources";
+            elseif ($title == "faq")echo "Frequently Asked Questions";
             else the_title()
             ?>
         </h1>
         <h3 id="sub_title">Sub Title</h3>
     </section>
     <!--
-    <div data-page-title="<?php //echo $post->post_name; ?>" id="nav_touch">
+    <div data-page-title="<?php //echo $post->post_name; 
+                            ?>" id="nav_touch">
         <div id="page_side_nav" class="side_nav">
             <section class="side_bar_1">
                 <div class="close_btn">
@@ -49,7 +51,7 @@ get_header(); ?>
                     case "resources":
                         include "template-parts/resources-side-nav.php";
                     break;
-                endswitch */?>
+                endswitch */ ?>
 
             </section>
             <section class="side_bar_2">
@@ -100,6 +102,9 @@ get_header(); ?>
                     break;
                 case "terms-of-use":
                     include "template-parts/terms-of-use-main.php";
+                    break;
+                case "faq":
+                    include "template-parts/faq-main.php";
                     break;
             endswitch ?>
         </div>

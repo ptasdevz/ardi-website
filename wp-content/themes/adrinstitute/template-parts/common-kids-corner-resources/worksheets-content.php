@@ -17,10 +17,15 @@
 
                 if ($is_active == 'yes') : ?>
                     <div class="worksheets_card <?php echo $category_as_id ?>" data-worksheet-card-cat="<?php echo $category; ?>" data-worksheet-card-url="<?php echo $img_url ?>">
-                    <img class="card_img" img src="<?php echo wp_get_attachment_image_src($img_id, 'medium_1_1')[0]; ?>" alt=""/>
                         <div class="card_data">
-                            <h3><?php echo adri_capitalize_each_word($body[$i][1]['c']); ?></h3>
-                            <h5><?php echo adri_capitalize_each_word($category); ?></h5>
+                            <div class="card_img">
+                                <img src="<?php echo wp_get_attachment_image_src($img_id, 'medium_1_1')[0]; ?>" alt="" />
+                            </div>
+                            <div class="card_text">
+                                <h3><?php echo adri_capitalize_each_word($body[$i][1]['c']); ?></h3>
+                                <h5><?php echo adri_capitalize_each_word($category); ?></h5>
+                            </div>
+
                         </div>
                     </div>
         <?php endif;
