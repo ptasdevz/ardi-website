@@ -66,6 +66,7 @@ $(document).ready(function () {
         curr_per_page_count = Number($("#blogs_per_page").select().val());
         curr_post_offset = Number(0);
         curr_page_offset = Number(0);
+        curr_page_section = Number(-1);
 
         load_categories();
 
