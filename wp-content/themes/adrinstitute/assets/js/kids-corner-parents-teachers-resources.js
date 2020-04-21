@@ -125,7 +125,7 @@ $(document).ready(function () {
 
     //open and close comments
     $(".comments_header").click(function () {
-
+        console.log("asfafaf");
         $(".comments_inner").toggleClass("active");
         $(".close_open_arrow").toggleClass("open");
     })

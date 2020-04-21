@@ -3631,6 +3631,26 @@ body .post_container #post_main .content_area .post_content_area .post_content_a
     -webkit-animation-fill-mode: forwards;
             animation-fill-mode: forwards;
   }
+  body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_author_img,
+  body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_author_img,
+  body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_author_img,
+  body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_author_img {
+    -ms-grid-column: 1;
+    -ms-grid-row: 1;
+  }
+  body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info,
+  body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info,
+  body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info,
+  body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info {
+    -ms-grid-column: 2;
+    -ms-grid-row: 1;
+  }
+  body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata,
+  body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata,
+  body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata,
+  body .post_container #page_main .content_area .post_content_area .post_content_area_data .post_wrapper .comments_container .comments .comments_inner .comment .comment_body .comment_info .comment_meta .comment_metadata {
+    padding: 0.5rem 0;
+  }
   body .page_container #post_main .content_area .post_content_area .post_content_area_data .post_meta_content,
   body .page_container #page_main .content_area .post_content_area .post_content_area_data .post_meta_content,
   body .post_container #post_main .content_area .post_content_area .post_content_area_data .post_meta_content,

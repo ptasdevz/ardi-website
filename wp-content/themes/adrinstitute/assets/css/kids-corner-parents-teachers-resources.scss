@@ -137,16 +137,15 @@ body {
                 box-shadow: 1px 1px 4px color(accent-4);
                 border-radius: 2px;
                 transition: 1s;
-                .card_data{
-                  
+                .card_data {
                   .card_img {
-                    img{
+                    img {
                       width: 200px;
                       height: 200px;
                     }
                     background-color: color(accent-1);
                   }
-  
+
                   .card_text {
                     padding: 0.5rem;
                     background: color(base-1);
@@ -693,8 +692,6 @@ body {
             }
             /*Stylying for popular post area*/
             .post_meta_content {
-              -ms-grid-column: 2;
-                -ms-grid-row: 2;
               grid-area: post_meta_content;
               z-index: 10;
               h2 {
@@ -1189,6 +1186,17 @@ body {
                       .comment {
                         .comment_body {
                           grid-template-columns: 3rem 90%;
+
+                          // .comment_author_img {
+                          //   border: 1px solid red;
+                          //   -ms-grid-column: 1;
+                          //   -ms-grid-row: 1;
+                          // }
+                          // .comment_info {
+                          //   // border: 1px solid red;
+                          //   -ms-grid-column: 2;
+                          //   -ms-grid-row: 1;
+                          // }
                         }
                       }
                     }
@@ -1207,7 +1215,6 @@ body {
 
               /*Stylying for popular post area desktop */
               .post_meta_content {
-               
                 margin-left: 1rem;
                 h2 {
                   border: none;
@@ -1265,11 +1272,10 @@ body {
             }
 
             .reading_activities_tab_content,
-            .worksheets_tab_content { 
+            .worksheets_tab_content {
               .reading_activities_cards,
               .worksheets_cards {
-
-                @include grid(4,$gutter:20px, $stretch: true,);
+                @include grid(4, $gutter: 20px, $stretch: true);
                 // display:flex;
                 // align-items: center;
                 .reading_activities_card,
@@ -1281,33 +1287,59 @@ body {
                   align-items: center;
                   justify-content: center;
 
-                  .card_data{
-                    display:flex;
+                  .card_data {
+                    display: flex;
                     flex-flow: column;
                     border: 1px solid color(accent-4);
                     box-shadow: 1px 1px 4px color(accent-4);
                     border-radius: 2px;
-                    width:200px;
+                    width: 200px;
                   }
-                 
+
                   &:hover {
                     transform: scale($transform-scale-factor);
                     animation: normal;
                     animation-fill-mode: forwards;
                   }
-
                 }
               }
             }
             /*End of Use of gutter grid plugin for instrucitonal videos, , Worksheet and reading activities layout IE10+*/
           }
 
-          .post_content_area{
-            .post_content_area_data{
-              .post_meta_content{
+          .post_content_area {
+            .post_content_area_data {
+              .post_wrapper {
+                .comments_container {
+                  .comments {
+                    .comments_inner {
+                      .comment {
+                        .comment_body {
+                          //grid-template-columns: 10% 90%;
+                          .comment_author_img {
+                            // border: 1px solid red;
+                            -ms-grid-column: 1;
+                            -ms-grid-row: 1;
+                          }
+                          .comment_info {
+                            .comment_meta{
+                              .comment_metadata{
+                                padding:0.5rem 0;
+                              }
+                            }
+                            // border: 1px solid red;
+                            -ms-grid-column: 2;
+                            -ms-grid-row: 1;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              .post_meta_content {
                 -ms-grid-column: 2;
                 -ms-grid-row: 2;
-
               }
             }
           }
