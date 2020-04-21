@@ -20,16 +20,6 @@ include get_template_directory() . "/template-parts/ajax-adri-post.php";
 //enqueue css style sheets
 function load_style_sheets()
 {
-
-    // wp_register_style(
-    //     'bootstrap_style',
-    //     get_template_directory_uri() . '/assets/css/bootstrap/bootstrap.min.css',
-    //     array(),
-    //     false,
-    //     'all'
-    // );
-    wp_enqueue_style('bootstrap_style');
-
     wp_enqueue_style('glider');
 
     wp_register_style(
@@ -51,15 +41,6 @@ function load_style_sheets()
     );
     wp_enqueue_style('glide-optional');
 
-    // wp_register_style(
-    //     'font_awesome',
-    //     "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css",
-    //     array(),
-    //     false,
-    //     'all'
-    // );
-    // wp_enqueue_style('font_awesome');
-
     wp_register_style(
         'adobe_typekit',
         "https://use.typekit.net/zos4hme.css",
@@ -69,8 +50,8 @@ function load_style_sheets()
     );
     wp_enqueue_style('adobe_typekit');
 
-    wp_register_style('imports', get_template_directory_uri() . '/assets/css/imports.css', array(), false, 'all');
-    wp_enqueue_style('imports');
+    wp_register_style('gf_play_fair_display','https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap', false);
+    wp_enqueue_style('gf_play_fair_display');
 
     wp_register_style('scripts_style', get_template_directory_uri() . '/style.css', array(), false, 'all');
     wp_enqueue_style('scripts_style');
@@ -102,23 +83,19 @@ function load_style_sheets()
 }
 add_action('wp_enqueue_scripts', 'load_style_sheets');
 
-//enqueue javascript files
+//enqueue script files
 function load_scripts()
 {
-    if ( ( ! is_admin() ) && is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
+    if ((!is_admin()) && is_singular() && comments_open() && get_option('thread_comments')) {
+        wp_enqueue_script('comment-reply');
     }
-    
+
     wp_deregister_script('jquery');
     wp_register_script('jquery', get_template_directory_uri() . '/assets/js/jquery/jquery.js', '', null, false);
     wp_enqueue_script('jquery');
 
     wp_register_script('google_api', 'https://apis.google.com/js/api.js', '', 1, true);
     wp_enqueue_script('google_api');
-
-
-    // wp_register_script('bootstrap_js', get_template_directory_uri() . '/assets/js/bootstrap/bootstrap.min.js','',null,true);
-    // wp_enqueue_script('bootstrap_js');
 
     wp_deregister_script('glide');
     wp_register_script('glide', get_template_directory_uri() . '/node_modules/@glidejs/glide/dist/glide.min.js', '', null, true);
@@ -143,11 +120,11 @@ function load_scripts()
     wp_enqueue_script('services_js');
 
 
-    wp_register_script('contact_us_js', get_template_directory_uri() . '/assets/js/contact-us.js', '', 1, true);
-    wp_localize_script('contact_us_js', 'ajax', array(
+    wp_register_script('contact_us_faq_js', get_template_directory_uri() . '/assets/js/contact-us-faq.js', '', 1, true);
+    wp_localize_script('contact_us_faq_js', 'ajax', array(
         'ajax_url' => admin_url('admin-ajax.php'),
     ));
-    wp_enqueue_script('contact_us_js');
+    wp_enqueue_script('contact_us_faq_js');
 
 
     wp_register_script('youtube_iframe_api', 'https://www.youtube.com/iframe_api', '', 1, true);
@@ -168,7 +145,6 @@ function load_footer_scripts()
 {
 }
 add_action('wp_footer', 'load_footer_scripts');
-
 
 
 /*Custom logo*/
@@ -209,14 +185,14 @@ function adri_template_redirect()
     }
 }
 
-//retrieves the attachment ID from the file URL
+/*retrieves the attachment ID from the file URL*/
 function adri_get_image_id($image_url)
 {
     global $wpdb;
     $attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE guid='%s';", $image_url));
     return $attachment[0];
 }
-//capitalize each word in a string
+/*capitalize each word in a string*/
 function adri_capitalize_each_word($str_complete)
 {
     $str_arr = explode(" ", strtolower($str_complete));
@@ -230,9 +206,9 @@ function adri_capitalize_each_word($str_complete)
     return $str_captitalize_complete;
 }
 
-//get time elapse
-function time_elapsed($secs, $time_unit = null){
-
+/*get time elapse*/
+function time_elapsed($secs, $time_unit = null)
+{
 
     $bit = array(
         'y' => $secs / 31556926 % 12,
@@ -254,7 +230,6 @@ function time_elapsed($secs, $time_unit = null){
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
- *
  * Note that this function is hooked into the after_setup_theme hook, which
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
@@ -284,6 +259,13 @@ function adri_theme_support()
         )
     );
 
+
+    /*register navigational menu locations*/
+    register_nav_menus(array(
+        "header_menu" => __('Header Menu', 'theme'),
+        "footer_menu" => __('Footer Menu', 'theme'),
+    ));
+
     /*Image sizes 1:1*/
     add_image_size('small_1_1', 150, 150, false);
     add_image_size('small_1_1_fixed', 150, 150, true);
@@ -310,21 +292,10 @@ function adri_theme_support()
 }
 add_action('after_setup_theme', 'adri_theme_support');
 
-// register navigational menu locations
-register_nav_menus(array(
-    "header_menu" => __('Header Menu', 'theme'),
-    "footer_menu" => __('Footer Menu', 'theme'),
-));
-
 /*remove <p> tags that generates from spaces in content and excerpt blocks */
 remove_filter('the_content', 'wpautop');
 remove_filter('the_excerpt', 'wpautop');
-// remove_filter ('acf_the_content', 'wpautop');
-
-/*using ajax to get videos */
-//include get_template_directory() . "/templates/kids-corner-content.php";
-
-
+//remove_filter ('acf_the_content', 'wpautop');
 
 /*Filter to only view excerpt of full content on the service page */
 function service_content_excerpt($text, $excerpt_length)

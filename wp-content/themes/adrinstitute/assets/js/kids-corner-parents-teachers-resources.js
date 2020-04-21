@@ -56,11 +56,8 @@ $(document).ready(function () {
     //===============================End of Helpful/Learning resource Links Content======================
 
     //=================================Resources Content ============================
-
-    //submenu button defaults
-    //$("#cat_all").addClass("btn_visited");
-
-    //get blog categories data
+    
+    /*get blog categories data*/
     $(".adri_blog_cat").click(function () {
         data_cat_id = $(this).attr("data-cat-id");
         if (data_cat_id != "cat_all") current_post_cat_id = data_cat_id.substr(data_cat_id.indexOf("_" + 1));
@@ -100,16 +97,16 @@ $(document).ready(function () {
         if (param != "ignore") load_categories();
 
     });
-
     $("#blog_nav_left").click(function (e, param) {
         curr_post_offset -= Number(curr_per_page_count);
         curr_page_offset--;
         if (param != "ignore") load_categories();
 
-    })
+    });
+    /*end of getting blog categories data*/
+
 
     /*blog comments replies */
-
     //indent replies
     $(".comment").each(function ($idx, $ele) {
 
@@ -156,7 +153,7 @@ $(document).ready(function () {
 
         }
     })
-    /*end of handling errors when submitting  comments on posts*/
+    /*End of handling errors when submitting  comments on posts*/
 
     /*load popular posts */
     post_titles = [];
@@ -198,38 +195,26 @@ $(document).ready(function () {
             }
         });
     }
-    /*load popular posts */
-
-
+    /*End of loading popular posts */
 
     //=================================End of Resources Content=================================
 
-    //====================================Community Content=====================================
-    //intercept all anchor links request to redirect to community tab
-    // $("#af-wrapper a").addClass("community_tab_btn_redirect");
-    // $("#af-wrapper a").attr("data-value", ".resources_tab .tab_wrapper #community_menu #community_tab_btn");
-    // $(".community_tab_btn_redirect").click(function (e) {
-    //     e.preventDefault();
-    //     $(this).attr("data-link", $(this).attr("href"));
-    //     redirectToAResourcesTab(this);
-    // })
-    //====================================End of Community Content===============================
-
     //=====================================Instructional Videos Content =========================
 
-    // prototype function used to get unique items
+    /*Get unique items*/
     Array.prototype.unique = function () {
         return this.filter(function (value, index, self) {
             return self.indexOf(value) === index;
         });
     }
+    /*End of getting unique items*/
 
     var all_video_ids = [];
     var video_ids = [];
     var video_cate = [];
 
 
-    //get all categories and ids from backend.
+    /*get all categories and ids from backend.*/
     $(".you_tube_video_list").children().each(function () {
         video_ids[video_ids.length] = $(this).attr('data-vid-id');
         video_cate_val = $(this).attr('data-vid-cat').toLowerCase();
@@ -240,12 +225,10 @@ $(document).ready(function () {
         }
     });
 
-    //extract unique categories
+    /*extract unique categories*/
     all_video_ids = video_ids;
-    //unique_categories = video_cate.unique();
     var ids_str = video_ids.join();
     video_cate.unshift("all videos");//add "All Videos" sub-menu as the first
-
     video_cate.forEach(function (cate_name, index) {
         //Adjust disply text
         if (cate_name) {
@@ -299,7 +282,7 @@ $(document).ready(function () {
         }
     });
 
-    //load videos from youtube
+    /*load videos from youtube*/
     function load_videos() {
 
         // 1. show spinner icon
@@ -358,7 +341,7 @@ $(document).ready(function () {
     // 1. Load the JavaScript client library.
     //gapi.load('client', load_videos);
 
-    //Create and Manage YouTube Video Player
+    /*Create and Manage YouTube Video Player*/
     $("#close_btn").click(function () {
         closePlayer();
     });
@@ -376,6 +359,7 @@ $(document).ready(function () {
         $(this).hide();
         $("#minimize_btn").show();
     });
+    /*End of creating and managing YouTube Video Player*/
 
     //============================= End of Instructional Videos Content ======================
 
@@ -476,6 +460,7 @@ $(document).ready(function () {
         }
     });
     //==================================End of Reading Activities Content===============================
+
     //=====================================Tab and Side menu Management=======================================
     //Change currently viewing tab
     $(".tablinks").click(function () {
@@ -577,6 +562,8 @@ $(document).ready(function () {
 });
 
 
+//====================================Helper functions=====================================
+
 function setDefaultTabForSession(tab_name, tab_btn) {
     if (tab_name == "resources_tab") {
         sessionStorage.resources_tab = ".resources_tab " + tab_btn;
@@ -585,8 +572,6 @@ function setDefaultTabForSession(tab_name, tab_btn) {
         sessionStorage.kids_corner_tab = ".kids_corner_tab " + tab_btn;
     }
 }
-
-//====================================Helper functions=====================================
 function titleCase(str) {
     var splitStr = str.toLowerCase().split(' ');
     for (var i = 0; i < splitStr.length; i++) {
@@ -762,7 +747,7 @@ function close_side_navigation_bar($this) {
     if ($($this).attr("data-btn-loc") == "side_nav");
     closeSideNav();
 }
-//bind youtube links for call backs
+/*bind youtube links for call backs*/
 function bindVideoLinks() {
     $(".video_links").on("click", function () {
 
@@ -802,14 +787,14 @@ function onYouTubeIframeAPIReady(vid_id) {
     });
 }
 
-// 4. The API will call this function when the video player is ready.
+/*The API will call this function when the video player is ready.*/
 function onPlayerReady(event) {
     event.target.playVideo();
 }
 
-// 5. The API calls this function when the player's state changes.
-//    The function indicates that when playing a video (state=1),
-//    the player should play for six seconds and then stop.
+/*The API calls this function when the player's state changes.
+The function indicates that when playing a video (state=1),
+the player should play for six seconds and then stop. */
 var done = false;
 function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.PLAYING && !done) {
@@ -844,5 +829,5 @@ function showSpinnerWhileIFrameLoads() {
         });
     }
 }
-
+//====================================End of Helper functions=====================================
 

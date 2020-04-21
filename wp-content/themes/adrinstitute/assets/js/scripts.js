@@ -6,18 +6,6 @@ if (sessionStorage.hasNavDrawerRunOnce == undefined) sessionStorage.hasNavDrawer
 
 $(document).ready(function () {
 
-  //=======================Mobile Navigation Drawer=====================
-
-  $("#nav_drawer_btn span").click(function () {
-
-    var currVal = $("#nav_drawer_btn span").html();
-    if (currVal === "☰") openSideNav();
-    else closeSideNav();
-
-  });
-
-  //======================= End Mobile Navigation Drawer=====================
-
   //=========================Testimonials Using Glide=====================
   if ($('.glide').length) {
     var glide = new Glide('.glide', {
@@ -35,9 +23,17 @@ $(document).ready(function () {
   }
   //========================= End Glider Testimonials=====================
 
-  //============================Side Nav============================
+  //=======================Mobile Navigation Drawer=====================
+  /*open/close drawer*/
+  $("#nav_drawer_btn span").click(function () {
 
-  //initially show and close side navigation bar for mobile devices 
+    var currVal = $("#nav_drawer_btn span").html();
+    if (currVal === "☰") openSideNav();
+    else closeSideNav();
+
+  });
+
+  /*initially show and close side navigation bar for mobile devices on first load*/
   if ($('header').width() <= 840) {
     if (sessionStorage.hasNavDrawerRunOnce == "false") {
 
@@ -58,13 +54,13 @@ $(document).ready(function () {
     });
   }
 
-  /*slide in and out side menu */
+  /*slide in and out side drawer*/
   //var nav_bar = document.getElementById("nav_touch");
   //if (nav_bar != undefined) {
     // setUpSlideOutInNavBar(document.getElementById("page_side_nav"), nav_bar, drawer_open_width, 0.5);
   //}
 
-  /*Side menu accordian style - only open one menu at any given point in time   */
+  /*Side menu accordian style - only open one menu at any given point in time  */
   $(".side_menu").click(function () {
 
     var $btn_clicked = $(this);
@@ -84,44 +80,18 @@ $(document).ready(function () {
     });
 
   });
-  //enable side navigation bar on specific pages
-  //  page_title = $("#nav_touch").attr("data-page-title");
-  //  switch (page_title) {
-  //      case "kids-corner":
-  //      case "resources":
-  //          break;
-  //      default:
-  //          $("#nav_touch").css("display", "none");
-  //  }
-  //============================End Side Nav============================
 
-  //============================Load Page Template Pieces======================
+  /*enable side navigation bar on specific pages*/
   /*
-  $("").click(function (e) {
-    // console.log("test");
-    e.preventDefault();
-    nonce = $(this).attr("data-nonce");
-
-    $.ajax({
-      type: "post",
-      dataType: "json",
-      url: ajax.ajax_url,
-      data: { action: "", nonce: nonce },
-      success: function (response) {
-        if (response.type == "success") {
-          $("#page_main").html(response.vote_count)
-        }
-        else {
-          //  alert("Your vote could not be added")
-        }
-      }
-    });
-
-  });
-  */
-  //============================End of Load Page Templates Pieces======================
-
-
+   page_title = $("#nav_touch").attr("data-page-title");
+   switch (page_title) {
+       case "kids-corner":
+       case "resources":
+           break;
+       default:
+           $("#nav_touch").css("display", "none");
+   }*/
+  //======================= End Mobile Navigation Drawer=====================
 
 
 });
@@ -201,3 +171,5 @@ function setMobileNavBtnToCloseIcon() {
   $("#nav_drawer_btn span").css("line-height", "1.1");
   $("#nav_drawer_btn span").css("font-size", "300%");
 }
+//===========================End of Helper Functions=========================
+
