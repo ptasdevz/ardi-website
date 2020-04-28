@@ -103,8 +103,8 @@ get_header(); ?>
                 case "terms-of-use":
                     include "template-parts/terms-of-use-main.php";
                     break;
-                case "faq":
-                    include "template-parts/faq-main.php";
+                case "faqs":
+                    include "template-parts/faqs-main.php";
                     break;
             endswitch ?>
         </div>
