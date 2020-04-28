@@ -11,14 +11,15 @@ var current_post_cat_id;
 var curr_per_page_count;
 var is_more_offset = false;
 var num_of_link_displayed = 4;
+var you_tube_pages = ["resources", "kids-corner"];
 
 
 $(document).ready(function () {
 
+
     //===============================Helpful/Learning resource Links Content======================
     //get all other-links from backend.
     var other_links = [];
-
     //loading links
     $(".other_links_list").children().each(function () {
         other_links[other_links.length] = $(this).attr('id');
@@ -56,7 +57,7 @@ $(document).ready(function () {
     //===============================End of Helpful/Learning resource Links Content======================
 
     //=================================Resources Content ============================
-    
+
     /*get blog categories data*/
     $(".adri_blog_cat").click(function () {
         data_cat_id = $(this).attr("data-cat-id");
@@ -134,7 +135,7 @@ $(document).ready(function () {
         is_error_detected = false;
         vals = $(this).serializeArray();
         $(".error-label").remove();
-        for (let i=0; i<vals.length; i++){
+        for (let i = 0; i < vals.length; i++) {
             element = vals[i];
             $form_ele = $("[name=" + element.name + "]");
             required_val = $form_ele.attr("required");
@@ -202,166 +203,168 @@ $(document).ready(function () {
 
     //=====================================Instructional Videos Content =========================
 
-    /*Get unique items*/
-    Array.prototype.unique = function () {
-        return this.filter(function (value, index, self) {
-            return self.indexOf(value) === index;
+    if (you_tube_pages.includes(ajax.page_name)) {
+
+        /*Get unique items*/
+        Array.prototype.unique = function () {
+            return this.filter(function (value, index, self) {
+                return self.indexOf(value) === index;
+            });
+        }
+        /*End of getting unique items*/
+
+        var all_video_ids = [];
+        var video_ids = [];
+        var video_cate = [];
+
+
+        /*get all categories and ids from backend.*/
+        $(".you_tube_video_list").children().each(function () {
+            video_ids[video_ids.length] = $(this).attr('data-vid-id');
+            video_cate_val = $(this).attr('data-vid-cat').toLowerCase();
+
+            if (video_cate[video_cate_val] == undefined) {
+                video_cate[video_cate_val] = video_cate_val;
+                video_cate[video_cate.length] = video_cate_val;
+            }
         });
+
+        /*extract unique categories*/
+        all_video_ids = video_ids;
+        var ids_str = video_ids.join();
+        video_cate.unshift("all videos");//add "All Videos" sub-menu as the first
+        video_cate.forEach(function (cate_name, index) {
+            //Adjust disply text
+            if (cate_name) {
+                cate_name_as_id = cate_name.replace(/\s/g, '_');// used underscore for spaced words
+                cate_name_capitalized = titleCase(cate_name);
+
+                //Append categories text to tab menu and side menu
+                $('#instr_videos_menu div').append("<button data-btn-loc=tab data-cat-id=" + cate_name_as_id + " class=instr_video_" + cate_name_as_id + ">" + cate_name_capitalized + "</button>");
+                $('#instr_videos_side_sub_menu').append("<button  data-btn-loc=side_nav data-cat-id=" + cate_name_as_id + " class=instr_video_" + cate_name_as_id + ">" + cate_name_capitalized + "</button>");
+
+
+                //Setup callback on buttons for categories
+                $(".instr_video_" + cate_name_as_id).click(function (e) {
+                    e.preventDefault();
+                    $cat_id = $(this).attr("data-cat-id");
+                    if ($cat_id == "all_videos") {
+                        ids_str = all_video_ids.join();
+
+                    } else { //extract from video list only id's that is matching to category
+                        video_ids = [];
+                        $(".you_tube_video_list").children().each(function () {
+                            category = $(this).attr('data-vid-cat');
+                            category = category.replace(/\s/g, '_').toLowerCase();
+                            if (category == $cat_id) {
+                                video_ids[video_ids.length] = $(this).attr('data-vid-id');
+                            }
+                        });
+
+                        ids_str = video_ids.join();
+                    }
+                    //close nav if btn is being accessed from side nav
+                    close_side_navigation_bar(this);
+
+                    //allow sub-menu button to switch tab when clicked
+                    switchTabUsingSubMenu("instr_videos_tab_btn");
+                    $(".video_links").remove();
+                    $("#instr_videos_spinner").addClass("active");
+
+                    //add visted css properites when category is clicked
+                    $("#instr_videos_menu .tab_submenu button").removeClass("btn_visited");
+                    $("#instr_videos_side_sub_menu button").removeClass("btn_visited");
+                    $("." + $(this).attr("class")).addClass("btn_visited"); //apply btn visited to the entier class
+
+                    if (is_yt_client_lib_loaded) load_videos();
+                    else {
+                        is_yt_client_lib_loaded = true;
+                        gapi.load('client', load_videos);
+                    }
+                });
+
+            }
+        });
+
+        /*load videos from youtube*/
+        function load_videos() {
+
+            // 1. show spinner icon
+            $("#instr_videos_spinner").addClass("active");
+
+            // 2. Initialize the JavaScript client library.
+            gapi.client.init({
+                'apiKey': 'AIzaSyDzoGK07J5qwgLJMp_KppKQuxbTgUF1x28',
+            }).then(function () {
+                // 3. Initialize and make the API request.
+                return gapi.client.request({
+                    'params': {
+                        //'id': 'g0F1hYzX0qc,BELlZKpi1Zs,saF3-f0XWAY,_MNETwHzwnE,36IBDpTRVNE,bp8arskkcXg,3zJJ1S6-rMc,sYmwStHMezc,mnanlcyRuuI,k-n_LHGseNk',
+                        'part': 'snippet,contentDetails,status,statistics',
+                        'id': ids_str
+                    },
+                    'path': 'https://www.googleapis.com/youtube/v3/videos',
+                })
+            }).then(function (response) {
+                //4. remove spinner icon
+                $("#instr_videos_spinner").removeClass("active");
+                var items = response.result.items;
+
+                //5. Extract content from response.
+                items.forEach(function (element, index) {
+                    var id = element.id;
+                    var snippet = element.snippet;
+                    var title = snippet.title;
+                    var desc = snippet.description;
+                    var medium_thumbnail = snippet.thumbnails.medium;
+                    var url = medium_thumbnail.url;
+                    var width = medium_thumbnail.width;
+                    var height = medium_thumbnail.height;
+
+                    //6.Generate and append thumbnail cards.
+                    $(".videos").append(
+                        "<div id='" + id + "'class='video_links'>" +
+                        "<div class='video_link_wrapper'>" +
+                        "<div class='video_content' style='background-image:url(" + url + ");  height:" + height + "px; '></div>" +
+                        "<div class='info'>" +
+                        "<h4 id=>" + title + "</h4>" +
+                        "<p>Video</p>" +
+                        "</div>" +
+                        "</div>" +
+                        "</div>");
+
+                });
+                //7. setup call back to play each video
+                bindVideoLinks();
+
+            }, function (reason) {
+                console.log('Error: ' + reason.result.error.message);
+            });
+        };
+
+        // 1. Load the JavaScript client library.
+        //gapi.load('client', load_videos);
+
+        /*Create and Manage YouTube Video Player*/
+        $("#close_btn").click(function () {
+            closePlayer();
+        });
+
+        $("#minimize_btn").click(function () {
+            $(".player_class").addClass("minimize_player");
+            $(".player_class").removeClass("restore_player");
+            $(this).hide();
+            $("#restore_btn").show();
+
+        });
+        $("#restore_btn").click(function () {
+            $(".player_class").removeClass("minimize_player");
+            $(".player_class").addClass("restore_player");
+            $(this).hide();
+            $("#minimize_btn").show();
+        });
+        /*End of creating and managing YouTube Video Player*/
     }
-    /*End of getting unique items*/
-
-    var all_video_ids = [];
-    var video_ids = [];
-    var video_cate = [];
-
-
-    /*get all categories and ids from backend.*/
-    $(".you_tube_video_list").children().each(function () {
-        video_ids[video_ids.length] = $(this).attr('data-vid-id');
-        video_cate_val = $(this).attr('data-vid-cat').toLowerCase();
-
-        if (video_cate[video_cate_val] == undefined) {
-            video_cate[video_cate_val] = video_cate_val;
-            video_cate[video_cate.length] = video_cate_val;
-        }
-    });
-
-    /*extract unique categories*/
-    all_video_ids = video_ids;
-    var ids_str = video_ids.join();
-    video_cate.unshift("all videos");//add "All Videos" sub-menu as the first
-    video_cate.forEach(function (cate_name, index) {
-        //Adjust disply text
-        if (cate_name) {
-            cate_name_as_id = cate_name.replace(/\s/g, '_');// used underscore for spaced words
-            cate_name_capitalized = titleCase(cate_name);
-
-            //Append categories text to tab menu and side menu
-            $('#instr_videos_menu div').append("<button data-btn-loc=tab data-cat-id=" + cate_name_as_id + " class=instr_video_" + cate_name_as_id + ">" + cate_name_capitalized + "</button>");
-            $('#instr_videos_side_sub_menu').append("<button  data-btn-loc=side_nav data-cat-id=" + cate_name_as_id + " class=instr_video_" + cate_name_as_id + ">" + cate_name_capitalized + "</button>");
-
-
-            //Setup callback on buttons for categories
-            $(".instr_video_" + cate_name_as_id).click(function (e) {
-                e.preventDefault();
-                $cat_id = $(this).attr("data-cat-id");
-                if ($cat_id == "all_videos") {
-                    ids_str = all_video_ids.join();
-
-                } else { //extract from video list only id's that is matching to category
-                    video_ids = [];
-                    $(".you_tube_video_list").children().each(function () {
-                        category = $(this).attr('data-vid-cat');
-                        category = category.replace(/\s/g, '_').toLowerCase();
-                        if (category == $cat_id) {
-                            video_ids[video_ids.length] = $(this).attr('data-vid-id');
-                        }
-                    });
-
-                    ids_str = video_ids.join();
-                }
-                //close nav if btn is being accessed from side nav
-                close_side_navigation_bar(this);
-
-                //allow sub-menu button to switch tab when clicked
-                switchTabUsingSubMenu("instr_videos_tab_btn");
-                $(".video_links").remove();
-                $("#instr_videos_spinner").addClass("active");
-
-                //add visted css properites when category is clicked
-                $("#instr_videos_menu .tab_submenu button").removeClass("btn_visited");
-                $("#instr_videos_side_sub_menu button").removeClass("btn_visited");
-                $("." + $(this).attr("class")).addClass("btn_visited"); //apply btn visited to the entier class
-
-                if (is_yt_client_lib_loaded) load_videos();
-                else {
-                    is_yt_client_lib_loaded = true;
-                    gapi.load('client', load_videos);
-                }
-            });
-
-        }
-    });
-
-    /*load videos from youtube*/
-    function load_videos() {
-
-        // 1. show spinner icon
-        $("#instr_videos_spinner").addClass("active");
-
-        // 2. Initialize the JavaScript client library.
-        gapi.client.init({
-            'apiKey': 'AIzaSyDzoGK07J5qwgLJMp_KppKQuxbTgUF1x28',
-        }).then(function () {
-            // 3. Initialize and make the API request.
-            return gapi.client.request({
-                'params': {
-                    //'id': 'g0F1hYzX0qc,BELlZKpi1Zs,saF3-f0XWAY,_MNETwHzwnE,36IBDpTRVNE,bp8arskkcXg,3zJJ1S6-rMc,sYmwStHMezc,mnanlcyRuuI,k-n_LHGseNk',
-                    'part': 'snippet,contentDetails,status,statistics',
-                    'id': ids_str
-                },
-                'path': 'https://www.googleapis.com/youtube/v3/videos',
-            })
-        }).then(function (response) {
-            //4. remove spinner icon
-            $("#instr_videos_spinner").removeClass("active");
-            var items = response.result.items;
-
-            //5. Extract content from response.
-            items.forEach(function (element, index) {
-                var id = element.id;
-                var snippet = element.snippet;
-                var title = snippet.title;
-                var desc = snippet.description;
-                var medium_thumbnail = snippet.thumbnails.medium;
-                var url = medium_thumbnail.url;
-                var width = medium_thumbnail.width;
-                var height = medium_thumbnail.height;
-
-                //6.Generate and append thumbnail cards.
-                $(".videos").append(
-                    "<div id='" + id + "'class='video_links'>" +
-                    "<div class='video_link_wrapper'>" +
-                    "<div class='video_content' style='background-image:url(" + url + ");  height:" + height + "px; '></div>" +
-                    "<div class='info'>" +
-                    "<h4 id=>" + title + "</h4>" +
-                    "<p>Video</p>" +
-                    "</div>" +
-                    "</div>" +
-                    "</div>");
-
-            });
-            //7. setup call back to play each video
-            bindVideoLinks();
-
-        }, function (reason) {
-            console.log('Error: ' + reason.result.error.message);
-        });
-    };
-
-    // 1. Load the JavaScript client library.
-    //gapi.load('client', load_videos);
-
-    /*Create and Manage YouTube Video Player*/
-    $("#close_btn").click(function () {
-        closePlayer();
-    });
-
-    $("#minimize_btn").click(function () {
-        $(".player_class").addClass("minimize_player");
-        $(".player_class").removeClass("restore_player");
-        $(this).hide();
-        $("#restore_btn").show();
-
-    });
-    $("#restore_btn").click(function () {
-        $(".player_class").removeClass("minimize_player");
-        $(".player_class").addClass("restore_player");
-        $(this).hide();
-        $("#minimize_btn").show();
-    });
-    /*End of creating and managing YouTube Video Player*/
-
     //============================= End of Instructional Videos Content ======================
 
     //==================================Reading Activities Content===============================
@@ -547,16 +550,6 @@ $(document).ready(function () {
     // if (sessionStorage.is_resources_change) {
     //     sessionStorage.resources_tab = default_resources;
     // }
-
-    //redirect to the blog resource tab
-    $(".adri_blog_tab_btn").click(function () {
-        redirectToAResourcesTab(this);
-    });
-
-    //redirect to the community resoruce tab
-    $(".community_tab_btn").click(function () {
-        redirectToAResourcesTab(this);
-    });
 
     /*End of Auto-redirection to specific tabs */
     //=====================================End of Tab Management=======================================

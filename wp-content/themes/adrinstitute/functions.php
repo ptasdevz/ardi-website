@@ -107,10 +107,12 @@ function load_scripts()
     ));
     wp_enqueue_script('scripts_js');
 
-    if (is_page(array("resources", "kids-corner"))) {
+    if (is_page(array("resources", "kids-corner")) || is_singular()) {
+        $page_name = explode("/",trim( $_SERVER["REQUEST_URI"] , '/' ));
         wp_register_script('kids_corner_parents_teachers_resources_js', get_template_directory_uri() . '/assets/js/kids-corner-parents-teachers-resources.js', '', 1, true);
         wp_localize_script('kids_corner_parents_teachers_resources_js', 'ajax', array(
             'ajax_url' => admin_url('admin-ajax.php'),
+            'page_name' => $page_name[sizeof($page_name)-1]
         ));
         wp_enqueue_script('kids_corner_parents_teachers_resources_js');
 
