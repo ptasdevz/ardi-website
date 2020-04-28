@@ -3199,3 +3199,9 @@ Stack trace:
 [19-Apr-2020 18:56:54 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\Users\jason\gitprojects\ardi-website\dev\wp-admin\includes\class-wp-site-health.php on line 2305
 [19-Apr-2020 18:56:54 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\Users\jason\gitprojects\ardi-website\dev\wp-admin\includes\class-wp-site-health.php on line 2303
 [19-Apr-2020 18:56:54 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\Users\jason\gitprojects\ardi-website\dev\wp-admin\includes\class-wp-site-health.php on line 2305
+[27-Apr-2020 23:43:15 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\Users\jason\gitprojects\ardi-website\dev\wp-admin\includes\class-wp-site-health.php on line 2303
+[27-Apr-2020 23:43:15 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\Users\jason\gitprojects\ardi-website\dev\wp-admin\includes\class-wp-site-health.php on line 2305
+[27-Apr-2020 23:43:15 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\Users\jason\gitprojects\ardi-website\dev\wp-admin\includes\class-wp-site-health.php on line 2303
+[27-Apr-2020 23:43:15 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\Users\jason\gitprojects\ardi-website\dev\wp-admin\includes\class-wp-site-health.php on line 2305
+[27-Apr-2020 23:43:15 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\Users\jason\gitprojects\ardi-website\dev\wp-admin\includes\class-wp-site-health.php on line 2303
+[27-Apr-2020 23:43:15 UTC] PHP Notice:  Trying to access array offset on value of type int in C:\Users\jason\gitprojects\ardi-website\dev\wp-admin\includes\class-wp-site-health.php on line 2305

@@ -125,11 +125,16 @@ body {
           .worksheets_tab_content {
             .reading_activities_cards,
             .worksheets_cards {
-              display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-              grid-gap: 1rem;
+              // display: grid;
+              // grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+              // grid-gap: 1rem;
+              // align-items: center;
+              // justify-items: center;
+              display:flex;
+              flex-wrap: wrap;
               align-items: center;
-              justify-items: center;
+              justify-content: center;
+            
 
               .reading_activities_card,
               .worksheets_card {
@@ -137,6 +142,7 @@ body {
                 box-shadow: 1px 1px 4px color(accent-4);
                 border-radius: 2px;
                 transition: 1s;
+                margin:0 .75rem 1.5rem .75rem;
                 .card_data {
                   .card_img {
                     img {
@@ -1275,7 +1281,7 @@ body {
             .worksheets_tab_content {
               .reading_activities_cards,
               .worksheets_cards {
-                @include grid(4, $gutter: 20px, $stretch: true);
+                // @include grid(4, $gutter: 20px, $stretch: true);
                 // display:flex;
                 // align-items: center;
                 .reading_activities_card,
