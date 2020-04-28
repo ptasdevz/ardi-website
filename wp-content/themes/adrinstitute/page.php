@@ -27,7 +27,7 @@ get_header(); ?>
             $title = strtolower(get_the_title());
             if ($title  == "services") echo "Our Services";
             elseif ($title == "resources") echo "Parent & Teacher Resources";
-            elseif ($title == "faq")echo "Frequently Asked Questions";
+            elseif ($title == "faqs")echo "Frequently Asked Questions";
             else the_title()
             ?>
         </h1>

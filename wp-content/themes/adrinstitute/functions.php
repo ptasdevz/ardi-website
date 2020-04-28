@@ -50,7 +50,7 @@ function load_style_sheets()
     );
     wp_enqueue_style('adobe_typekit');
 
-    wp_register_style('gf_play_fair_display','https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap', false);
+    wp_register_style('gf_play_fair_display', 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap', false);
     wp_enqueue_style('gf_play_fair_display');
 
     wp_register_style('scripts_style', get_template_directory_uri() . '/style.css', array(), false, 'all');
@@ -107,28 +107,32 @@ function load_scripts()
     ));
     wp_enqueue_script('scripts_js');
 
-    wp_register_script('kids_corner_parents_teachers_resources_js', get_template_directory_uri() . '/assets/js/kids-corner-parents-teachers-resources.js', '', 1, true);
-    wp_localize_script('kids_corner_parents_teachers_resources_js', 'ajax', array(
-        'ajax_url' => admin_url('admin-ajax.php'),
-    ));
-    wp_enqueue_script('kids_corner_parents_teachers_resources_js');
+    if (is_page(array("resources", "kids-corner"))) {
+        wp_register_script('kids_corner_parents_teachers_resources_js', get_template_directory_uri() . '/assets/js/kids-corner-parents-teachers-resources.js', '', 1, true);
+        wp_localize_script('kids_corner_parents_teachers_resources_js', 'ajax', array(
+            'ajax_url' => admin_url('admin-ajax.php'),
+        ));
+        wp_enqueue_script('kids_corner_parents_teachers_resources_js');
 
-    wp_register_script('services_js', get_template_directory_uri() . '/assets/js/services.js', '', 1, true);
-    wp_localize_script('services_js', 'ajax', array(
-        'ajax_url' => admin_url('admin-ajax.php'),
-    ));
-    wp_enqueue_script('services_js');
+        wp_register_script('youtube_iframe_api', 'https://www.youtube.com/iframe_api', '', 1, true);
+        wp_enqueue_script('youtube_iframe_api');
+    }
 
+    if (is_page(array("services"))) {
+        wp_register_script('services_js', get_template_directory_uri() . '/assets/js/services.js', '', 1, true);
+        wp_localize_script('services_js', 'ajax', array(
+            'ajax_url' => admin_url('admin-ajax.php'),
+        ));
+        wp_enqueue_script('services_js');
+    }
 
-    wp_register_script('contact_us_faq_js', get_template_directory_uri() . '/assets/js/contact-us-faq.js', '', 1, true);
-    wp_localize_script('contact_us_faq_js', 'ajax', array(
-        'ajax_url' => admin_url('admin-ajax.php'),
-    ));
-    wp_enqueue_script('contact_us_faq_js');
-
-
-    wp_register_script('youtube_iframe_api', 'https://www.youtube.com/iframe_api', '', 1, true);
-    wp_enqueue_script('youtube_iframe_api');
+    if (is_page(array("contact-us", "faqs"))) {
+        wp_register_script('contact_us_faq_js', get_template_directory_uri() . '/assets/js/contact-us-faq.js', '', 1, true);
+        wp_localize_script('contact_us_faq_js', 'ajax', array(
+            'ajax_url' => admin_url('admin-ajax.php'),
+        ));
+        wp_enqueue_script('contact_us_faq_js');
+    }
 }
 add_action('wp_enqueue_scripts', 'load_scripts');
 
