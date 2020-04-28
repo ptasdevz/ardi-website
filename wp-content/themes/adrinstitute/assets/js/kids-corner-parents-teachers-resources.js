@@ -548,16 +548,6 @@ $(document).ready(function () {
     //     sessionStorage.resources_tab = default_resources;
     // }
 
-    //redirect to the blog resource tab
-    $(".adri_blog_tab_btn").click(function () {
-        redirectToAResourcesTab(this);
-    });
-
-    //redirect to the community resoruce tab
-    $(".community_tab_btn").click(function () {
-        redirectToAResourcesTab(this);
-    });
-
     /*End of Auto-redirection to specific tabs */
     //=====================================End of Tab Management=======================================
 });

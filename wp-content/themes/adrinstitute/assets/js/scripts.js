@@ -45,11 +45,11 @@ $(document).ready(function () {
       sessionStorage.hasNavDrawerRunOnce = true;
     }
 
-    $(".main_nav a").click(function(){
-        closeSideNav();
+    $(".main_nav a").click(function () {
+      closeSideNav();
     });
 
-    $("#overlay").click(function(){
+    $("#overlay").click(function () {
       closeSideNav();
     });
   }
@@ -57,7 +57,7 @@ $(document).ready(function () {
   /*slide in and out side drawer*/
   //var nav_bar = document.getElementById("nav_touch");
   //if (nav_bar != undefined) {
-    // setUpSlideOutInNavBar(document.getElementById("page_side_nav"), nav_bar, drawer_open_width, 0.5);
+  // setUpSlideOutInNavBar(document.getElementById("page_side_nav"), nav_bar, drawer_open_width, 0.5);
   //}
 
   /*Side menu accordian style - only open one menu at any given point in time  */
@@ -92,6 +92,19 @@ $(document).ready(function () {
            $("#nav_touch").css("display", "none");
    }*/
   //======================= End Mobile Navigation Drawer=====================
+  //========================links redircts======================
+
+  //redirect to the community resoruce tab
+  $(".community_tab_btn").click(function () {
+    redirectToAResourcesTab(this);
+  });
+
+  //redirect to the blog resource tab
+  $(".adri_blog_tab_btn").click(function () {
+    redirectToAResourcesTab(this);
+  });
+
+  //==================links redircts============================
 
 
 });
@@ -170,6 +183,12 @@ function setMobileNavBtnToCloseIcon() {
   $("#nav_drawer_btn span").html("×");
   $("#nav_drawer_btn span").css("line-height", "1.1");
   $("#nav_drawer_btn span").css("font-size", "300%");
+}
+
+function redirectToAResourcesTab($this) {
+  sessionStorage.resources_tab = $($this).attr("data-value");
+  sessionStorage.is_resources_change = true;
+  window.location = $($this).attr("data-link");
 }
 //===========================End of Helper Functions=========================
 
