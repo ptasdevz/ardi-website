@@ -219,6 +219,7 @@ function search_file($dir,$file_to_search, $file_path =""){
     }
     return $file_path;
 }
+
 /*retrieves the attachment ID from the file URL*/
 function adri_get_image_id($image_url)
 {
