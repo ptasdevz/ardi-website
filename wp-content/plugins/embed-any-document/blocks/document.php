@@ -19,6 +19,8 @@ class Awsm_embed_Guten_blocks {
 	public function __construct() {
 		add_action( 'init', array( $this, 'register_dynamic_block' ) );
 
+		// Hook: Assets for both editor and front-end.
+		add_action( 'enqueue_block_assets', array( $this, 'block_assets' ) );
 		// Hook: Editor assets.
 		add_action( 'enqueue_block_editor_assets', array( $this, 'block_editor_assets' ) );
 	}
@@ -99,6 +101,14 @@ class Awsm_embed_Guten_blocks {
 	}
 
 	/**
+	 * Enqueue Gutenberg block assets for both editor and front-end.
+	 */
+	public function block_assets() {
+		wp_enqueue_style( 'awsm-ead-public' );
+        wp_enqueue_script( 'awsm-ead-public' );
+	}
+
+	/**
 	 * Enqueue Gutenberg block assets for backend editor.
 	 *
 	 * `wp-blocks`: includes block type registration and related functions.
@@ -111,7 +121,7 @@ class Awsm_embed_Guten_blocks {
 		wp_enqueue_script(
 			'ead-block-editor-js',
 			plugins_url( 'blocks/document/document-block.js', dirname( __FILE__ ) ),
-			array( 'wp-blocks', 'wp-components', 'wp-editor', 'wp-element', 'wp-i18n',  'ead_media_button' ),
+			array( 'wp-blocks', 'wp-components', 'wp-editor', 'wp-element', 'wp-i18n', 'wp-url', 'wp-api-fetch', 'lodash', 'ead_media_button' ),
 			AWSM_EMBED_VERSION,
 			true
 		);

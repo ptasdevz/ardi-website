@@ -29,14 +29,17 @@ $upload_dir = wp_upload_dir();
                 <div class="card-background"></div>
             </div>
             <?php
-              $header_link_2 = get_field('header_link_2');
-              $reg_form_link = $header_link_2["child_registration_form"];
+              $child_reg_form = get_field('child_reg_form');
+              //$reg_form_link = $child_reg_form["child_registration_form"];
+              $reg_form_link = get_home_url() . "/child-registration-form/";
+              $f = search_file("wp-content\uploads", "child_registration_form.pdf");
+
             ?>
-            <div onclick="window.location='<?php  echo $reg_form_link?>'" id="signup" class="card">
+            <div <?php if (empty($f)) echo 'class="card card-disabled"';?> onclick="window.location='<?php if (!empty($f)) echo $reg_form_link; else echo get_home_url() . '/#'; ?>'" id="signup" class="card">
                 <div class="info">
-                    <?php if ($header_link_2) : ?>
-                        <h6><?php echo $header_link_2['title'] ?></h6>
-                        <p><?php echo $header_link_2['sub_title'] ?></p>
+                    <?php if ($child_reg_form) : ?>
+                        <h6><?php echo $child_reg_form['title'] ?></h6>
+                        <p><?php echo $child_reg_form['sub_title'] ?></p>
                     <?php endif ?>
                 </div>
                 <div class="card-background"></div>
@@ -127,20 +130,30 @@ $upload_dir = wp_upload_dir();
         $testimonial_data = get_field('testimonial_data');
         $body = $testimonial_data['body'];
         $count = count($body);
+        $active_testimonials = array();
+        for ($i=0; $i < $count; $i++) { 
+            $testimonial = $body[$i];
+            if (strtolower($testimonial[2]['c']) === 'yes'){
+                $active_testimonials[] = $testimonial; 
+            }
+        }
+        $testimonial_count =count($active_testimonials);
+        if ($testimonial_count > 0):
+            // echo "<pre>";
+            // print_r($active_testimonials);
+            // echo "</pre>"
         ?>
         <div class="glide">
             <h1><?php the_field("testimonial_title"); ?></h1>
             <div class="glide__track" data-glide-el="track">
-                <div class="glide__slides">
+                <div class="glide__slides testimoninal_slides" data-testimonial-count="<?php echo $testimonial_count; ?>">
 
-                    <?php for ($i = 0; $i < $count; $i++) :
-                        if ($body[$i][2]['c'] === 'true') : ?>
-                            <figure class="glide__slide">
-                                <blockquote><?php echo $body[$i][0]['c'] ?></blockquote>
-                                <figcaption><?php echo $body[$i][1]['c'] ?></figcaption>
-                            </figure>
-                    <?php endif;
-                    endfor; ?>
+                    <?php foreach ($active_testimonials as $testimonial) :?>
+                        <figure class="glide__slide">
+                            <blockquote><?php echo $testimonial[0]['c'] ?></blockquote>
+                            <figcaption><?php echo $testimonial[1]['c'] ?></figcaption>
+                        </figure>
+                   <?php endforeach; ?>
                 </div>
             </div>
 
@@ -162,6 +175,7 @@ $upload_dir = wp_upload_dir();
             </div>
 
         </div>
+        <?php endif; ?>
 
     </section>
 </div>

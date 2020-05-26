@@ -1,5 +1,30 @@
 == Changelog ==
 
+= 1.6.0.2 =
+- Fixed: The default value 0 (zero) of the Paragraph Text field does not display on the frontend.
+- Fixed: Product education URL encoding issues.
+- Fixed: Securely store WPForms anonymized cookie, so it cannot be sent along with cross-site requests (samesite).
+- Fixed: Various PHP notices that may appear during wildly complicated forms submissions.
+- Fixed: Improved escaping inside Form Builder live preview, props Fortinet Fortiguard Labs.
+- Fixed: Incorrect interval value was used when running a cleanup job after notifications sent.
+- Fixed: Delete orphaned plugin translation files when cleanup option in plugin settings is checked and the plugin is deleted from the site.
+
+= 1.6.0.1 =
+- Added: Admin bar menu item.
+- Added: Form Builder alert when using browser "Back" button if form contains unsaved changes.
+- Added: Settings > Emails: "Optimize Email Sending" option which enables sending emails asynchronously.
+- Changed: Async form notification emails are now off by default.
+- Changed: Number Slider field display improvements on small devices.
+- Fixed: Error if there are some plugins or themes add `widget_title` filter.
+- Fixed: Choice Images not displaying in form notifications if no label is set.
+- Fixed: Form Builder "drag zone" not available when all fields are deleted.
+- Fixed: Empty `div` appended to end of form display.
+- Fixed: Block alignment issues (WordPress 5.4+).
+- Fixed: Form Builder field option panel is not available if field is placed before the last form field.
+- Fixed: Fallback population for fields with choices (checkbox, radio etc) when special characters are used.
+- Fixed: Integrity of decoded data with additional sanitizing.
+- Fixed: Compatibility issues with Elementor.
+
 = 1.5.9.5 =
 - Fixed: do not try to process entries in Lite.
 

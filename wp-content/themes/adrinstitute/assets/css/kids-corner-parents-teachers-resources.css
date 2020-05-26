@@ -2724,8 +2724,8 @@ body .post_container #post_main .content_area .post_content_area .post_content_a
   body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content,
   body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content,
   body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content {
-    -ms-grid-columns: auto auto;
-        grid-template-columns: auto auto;
+    -ms-grid-columns: 30% auto;
+        grid-template-columns: 30% auto;
     -ms-grid-rows: auto;
         grid-template-rows: auto;
         grid-template-areas: "img content-area";

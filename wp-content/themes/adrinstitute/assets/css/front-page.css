@@ -279,6 +279,24 @@ body .container .front_page_container section.s_img_rq_assessment_signup .s_rq_a
   color: #BF211E;
 }
 
+body .container .front_page_container section.s_img_rq_assessment_signup .s_rq_assessment_signup .card-disabled {
+  background-color: #bdbdbd;
+  color: #707070;
+}
+
+body .container .front_page_container section.s_img_rq_assessment_signup .s_rq_assessment_signup .card-disabled:hover {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+body .container .front_page_container section.s_img_rq_assessment_signup .s_rq_assessment_signup .card-disabled .info {
+  color: inherit;
+}
+
+body .container .front_page_container section.s_img_rq_assessment_signup .s_rq_assessment_signup .card-disabled .info h6 {
+  color: inherit;
+}
+
 @media (min-width: 840px) {
   body .container .front_page_container section.s_img_rq_assessment_signup {
     height: 25rem;
@@ -603,5 +621,10 @@ body .container .front_page_container .s_testimonial .fa {
     position: relative;
     top: 6rem;
   }
+}
+
+body .container .front_page_container .s_testimonial_single {
+  margin: 0 auto;
+  width: 70%;
 }
 /*# sourceMappingURL=front-page.css.map */

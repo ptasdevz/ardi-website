@@ -67,6 +67,19 @@ body {
               }
             }
           }
+          .card-disabled{
+            background-color:lighten(#707070,30%);
+            color: color(text-3);
+            &:hover {
+              transform: scale(1);
+            }
+            .info{
+              color:inherit;
+              h6{
+                color:inherit;
+              }
+            }
+          }
         }
         /*
       *Desktop Layout: image carousel with signup and request assesment links
@@ -306,6 +319,7 @@ body {
           font-size: inherit;
           text-rendering: auto;
         }
+
         /*
         *Desktop devices
         */
@@ -334,6 +348,10 @@ body {
           position: relative;
           top: $header-height-deskop;
         }
+      }
+      .s_testimonial_single{
+        margin: 0 auto;
+        width:70%;
       }
     }
   }

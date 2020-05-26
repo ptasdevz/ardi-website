@@ -7,12 +7,21 @@ if (sessionStorage.hasNavDrawerRunOnce == undefined) sessionStorage.hasNavDrawer
 $(document).ready(function () {
 
   //=========================Testimonials Using Glide=====================
+  testimonial_count = $(".testimoninal_slides").attr("data-testimonial-count");
+  perView = 2;
+  if (testimonial_count == 1) {
+    perView = 1;
+    $(".s_testimonial").addClass("s_testimonial_single");
+  }
+    
   if ($('.glide').length) {
     var glide = new Glide('.glide', {
       type: 'carousel',
       startAt: 1,
-      perView: 2,
+      perView: perView,
       focusAt: '1',
+      autoplay: 3000,
+      keyboard:  true,
       breakpoints: {
         840: {
           perView: 1

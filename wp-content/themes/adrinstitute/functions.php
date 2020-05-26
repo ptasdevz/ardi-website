@@ -173,11 +173,15 @@ add_filter('login_headerurl', 'the_url');
 add_action('template_redirect', 'adri_template_redirect');
 function adri_template_redirect()
 {
+    // echo "<pre>";
+    // print_r(search_file("wp-content\uploads", "child_registration_form.pdf"));
+    // echo "</prev>";
     if (
         $_SERVER['REQUEST_URI'] == '/child-registration-form/' || $_SERVER['REQUEST_URI'] == '/child-registration-form'
         || $_SERVER['REQUEST_URI'] == '/dev/child-registration-form/' || $_SERVER['REQUEST_URI'] == '/dev/child-registration-form'
     ) {
-        $f = "wp-content/uploads/2020/03/child_registration_form.pdf";
+        $f = search_file("wp-content\uploads", "child_registration_form.pdf");
+        if (!empty($f)){
         header('Content-Disposition: attachment; filename=child_registration_form.pdf');
         header("Content-type: application/x-msdownload", true, 200);
         header('Content-Type: application/force-download');
@@ -188,9 +192,33 @@ function adri_template_redirect()
         header('Content-Description: File Transfer');
         header('Content-Length: ' . filesize($f));
         echo file_get_contents($f);
+        }
     }
 }
+function search_file($dir,$file_to_search, $file_path =""){
 
+    $files = scandir($dir);
+    foreach($files as $key => $value){
+    
+        $path = $dir.DIRECTORY_SEPARATOR.$value;
+    
+        if(!is_dir($path)) { //is
+    
+            if($file_to_search == $value){
+                $file_path = $path;
+                break;
+            }
+    
+        } else if($value != "." && $value != "..") {
+    
+            $file_path = search_file($path, $file_to_search, $file_path);
+    
+        }else {//stop search - only parent and and current link available, empty dir 
+
+        } 
+    }
+    return $file_path;
+}
 /*retrieves the attachment ID from the file URL*/
 function adri_get_image_id($image_url)
 {

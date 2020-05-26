@@ -294,7 +294,7 @@ $(document).ready(function () {
 
             // 2. Initialize the JavaScript client library.
             gapi.client.init({
-                'apiKey': 'AIzaSyDzoGK07J5qwgLJMp_KppKQuxbTgUF1x28',
+                'apiKey': 'AIzaSyCC30Z6foq0O0Bp4PtKIyw59_FAG6-HqkQ',
             }).then(function () {
                 // 3. Initialize and make the API request.
                 return gapi.client.request({
