@@ -32,7 +32,7 @@ $upload_dir = wp_upload_dir();
               $child_reg_form = get_field('child_reg_form');
               //$reg_form_link = $child_reg_form["child_registration_form"];
               $reg_form_link = get_home_url() . "/child-registration-form/";
-              $f = search_file("wp-content\uploads", "child_registration_form.pdf");
+              $f = search_file("wp-content/uploads", "child_registration_form.pdf");
 
             ?>
             <div <?php if (empty($f)) echo 'class="card card-disabled"';?> onclick="window.location='<?php if (!empty($f)) echo $reg_form_link; else echo get_home_url() . '/#'; ?>'" id="signup" class="card">

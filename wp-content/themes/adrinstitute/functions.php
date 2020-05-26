@@ -180,7 +180,7 @@ function adri_template_redirect()
         $_SERVER['REQUEST_URI'] == '/child-registration-form/' || $_SERVER['REQUEST_URI'] == '/child-registration-form'
         || $_SERVER['REQUEST_URI'] == '/dev/child-registration-form/' || $_SERVER['REQUEST_URI'] == '/dev/child-registration-form'
     ) {
-        $f = search_file("wp-content\uploads", "child_registration_form.pdf");
+        $f = search_file("wp-content/uploads", "child_registration_form.pdf");
         if (!empty($f)){
         header('Content-Disposition: attachment; filename=child_registration_form.pdf');
         header("Content-type: application/x-msdownload", true, 200);
@@ -219,6 +219,7 @@ function search_file($dir,$file_to_search, $file_path =""){
     }
     return $file_path;
 }
+
 /*retrieves the attachment ID from the file URL*/
 function adri_get_image_id($image_url)
 {
