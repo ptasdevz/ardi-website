@@ -310,8 +310,7 @@ body .page_container #page_main .content_area .resources_content_area .tabconten
   background: #fcba04;
 }
 
-body .page_container #page_main .content_area .resources_content_area .tabcontent .player_class #player_controls a,
-body .page_container #page_main .content_area .resources_content_area .tabcontent .player_class #player_controls i {
+body .page_container #page_main .content_area .resources_content_area .tabcontent .player_class #player_controls a, body .page_container #page_main .content_area .resources_content_area .tabcontent .player_class #player_controls i {
   height: inherit;
   float: right;
   font-weight: bold;

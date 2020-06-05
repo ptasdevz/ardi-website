@@ -199,6 +199,7 @@ $(document).ready(function () {
     }
     /*End of loading popular posts */
 
+
     //=================================End of Resources Content=================================
 
     //=====================================Instructional Videos Content =========================
@@ -711,15 +712,19 @@ function load_categories() {
 
 function append_blog(response) {
 
+    
     $("#adri_blog_spinner").removeClass("active");
     $(".adri_blog_navigation").show();
     post_list = response.post_list;
     cat_url = response.category_url;
     cat_name = response.category_name;
+    
 
     for (let i = 0; i < post_list.length; i++) {
         post = post_list[i];
-        $element = "<div class='adri_blog_content'>" +
+        no_img_class = "";
+    if (!post.featured_img_url) no_img_class ="adri_blog_content_no_img";
+        $element = "<div class='adri_blog_content "+no_img_class+"' >" +
             "<div class='img_container'>" +
             "<img src='" + post.featured_img_url + "'></div>" +
             "<div class='content_container'>" +

@@ -2813,6 +2813,17 @@ body .post_container #post_main .content_area .post_content_area .post_content_a
     margin-right: auto;
     text-align: left;
   }
+  body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content_no_img,
+  body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content_no_img,
+  body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content_no_img,
+  body .page_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content_no_img,
+  body .post_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content_no_img,
+  body .post_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content_no_img,
+  body .post_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_content_no_img,
+  body .post_container #post_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_content_no_img {
+    -ms-grid-columns: 0 auto;
+        grid-template-columns: 0 auto;
+  }
   body .page_container #page_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation,
   body .page_container #page_main .content_area .resources_content_area .adri_blog_tab_content .adri_blog_navigation,
   body .page_container #post_main .content_area .kids_content_area .adri_blog_tab_content .adri_blog_navigation,

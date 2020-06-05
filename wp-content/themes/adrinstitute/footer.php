@@ -1,10 +1,11 @@
+<?php $home_page_id = 32; ?>
 <footer class="theme_layout">
     <div class="footer_social_media">
-        <p><?php the_field('social_media_tagline'); ?></p>
+        <p><?php the_field('social_media_tagline', $home_page_id); ?></p>
         <div class="vertical_line"></div>
         <ul>
             <?php
-            $social_media_list = get_field('social_media');
+            $social_media_list = get_field('social_media', $home_page_id);
             // echo "<pre>";
             // echo print_r($social_media_list);
             // echo "</pre>";
@@ -27,7 +28,7 @@
     </div>
     <div class="copyright">
         <?php
-        $copyright = get_field('copyright');
+        $copyright = get_field('copyright', $home_page_id);
         if ($copyright) :
         ?>
             <p><span class="<?php echo $copyright['icon']; ?>"></span><?php echo $copyright['year']; ?> <?php echo $copyright['text']; ?></p>

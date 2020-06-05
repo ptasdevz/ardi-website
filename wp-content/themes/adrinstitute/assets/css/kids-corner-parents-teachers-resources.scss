@@ -1090,6 +1090,10 @@ body {
                   }
                 }
               }
+              .adri_blog_content_no_img{
+                grid-template-columns: 0 auto;
+
+              }
               /*adri blog navigation*/
               .adri_blog_navigation {
                 top: 156px;
