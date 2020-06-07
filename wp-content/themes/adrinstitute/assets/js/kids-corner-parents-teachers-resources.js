@@ -112,12 +112,11 @@ $(document).ready(function () {
     //indent replies
     $(".comment").each(function ($idx, $ele) {
 
-        classes = $(this).attr("class");
-        if (classes.includes("depth-1") == false) {
-            margin_left = $(this).prev().css("margin-left");
-            margin_left = Number(margin_left.replace(/\D/g, ''));
-            $(this).css("margin-left", margin_left + Number(3) + "rem");
-            $(this).css("margin-top", Number(0.6) + "rem");
+        classAttr = $($ele).attr("class")
+        depth_val = Number(classAttr.replace(/\D/g, ''));
+        if (!classAttr.includes("depth-1")) {
+            $($ele).css("margin-left", Number(3) + "rem");
+            $($ele).css("margin-top", Number(0.6) + "rem");
         }
 
     });
@@ -712,19 +711,19 @@ function load_categories() {
 
 function append_blog(response) {
 
-    
+
     $("#adri_blog_spinner").removeClass("active");
     $(".adri_blog_navigation").show();
     post_list = response.post_list;
     cat_url = response.category_url;
     cat_name = response.category_name;
-    
+
 
     for (let i = 0; i < post_list.length; i++) {
         post = post_list[i];
         no_img_class = "";
-    if (!post.featured_img_url) no_img_class ="adri_blog_content_no_img";
-        $element = "<div class='adri_blog_content "+no_img_class+"' >" +
+        if (!post.featured_img_url) no_img_class = "adri_blog_content_no_img";
+        $element = "<div class='adri_blog_content " + no_img_class + "' >" +
             "<div class='img_container'>" +
             "<img src='" + post.featured_img_url + "'></div>" +
             "<div class='content_container'>" +
